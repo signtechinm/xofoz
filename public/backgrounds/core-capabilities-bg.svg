@@ -1,0 +1,97 @@
+<svg width="1920" height="1120" viewBox="0 0 1920 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1120" fill="#050B14"/>
+  <rect width="1920" height="1120" fill="url(#base)"/>
+  <g opacity="0.34">
+    <circle cx="1540" cy="120" r="520" fill="url(#blueGlow)"/>
+    <circle cx="210" cy="900" r="460" fill="url(#cyanGlow)"/>
+    <circle cx="960" cy="540" r="640" fill="url(#centerGlow)"/>
+  </g>
+  <g opacity="0.18" stroke="#39D2FF" stroke-width="1">
+    <path d="M0 210H1920"/>
+    <path d="M0 410H1920"/>
+    <path d="M0 610H1920"/>
+    <path d="M0 810H1920"/>
+    <path d="M180 0V1120"/>
+    <path d="M420 0V1120"/>
+    <path d="M660 0V1120"/>
+    <path d="M900 0V1120"/>
+    <path d="M1140 0V1120"/>
+    <path d="M1380 0V1120"/>
+    <path d="M1620 0V1120"/>
+  </g>
+  <g opacity="0.34" stroke="#1B76E8" stroke-width="2">
+    <path d="M138 232L306 150L502 224L678 112"/>
+    <path d="M1242 242L1424 118L1628 206L1812 96"/>
+    <path d="M112 880L310 760L504 844L690 722"/>
+    <path d="M1192 848L1382 728L1582 792L1810 650"/>
+  </g>
+  <g fill="#39D2FF">
+    <circle cx="138" cy="232" r="5" opacity="0.8"/>
+    <circle cx="306" cy="150" r="4" opacity="0.55"/>
+    <circle cx="502" cy="224" r="5" opacity="0.7"/>
+    <circle cx="678" cy="112" r="4" opacity="0.5"/>
+    <circle cx="1242" cy="242" r="5" opacity="0.65"/>
+    <circle cx="1424" cy="118" r="4" opacity="0.55"/>
+    <circle cx="1628" cy="206" r="5" opacity="0.7"/>
+    <circle cx="1812" cy="96" r="4" opacity="0.5"/>
+    <circle cx="112" cy="880" r="4" opacity="0.68"/>
+    <circle cx="310" cy="760" r="5" opacity="0.72"/>
+    <circle cx="504" cy="844" r="4" opacity="0.55"/>
+    <circle cx="690" cy="722" r="5" opacity="0.62"/>
+    <circle cx="1192" cy="848" r="4" opacity="0.62"/>
+    <circle cx="1382" cy="728" r="5" opacity="0.7"/>
+    <circle cx="1582" cy="792" r="4" opacity="0.55"/>
+    <circle cx="1810" cy="650" r="5" opacity="0.64"/>
+  </g>
+  <g transform="translate(960 560)" opacity="0.22">
+    <circle r="430" stroke="url(#ringStroke)" stroke-width="3"/>
+    <circle r="326" stroke="#39D2FF" stroke-width="2" stroke-dasharray="180 72"/>
+    <circle r="220" stroke="#EAF4FF" stroke-width="1.5" stroke-dasharray="90 54"/>
+    <path d="M0 -326C180 -326 326 -180 326 0C326 180 180 326 0 326C-180 326 -326 180 -326 0C-326 -180 -180 -326 0 -326Z" fill="url(#metalDisc)"/>
+  </g>
+  <g opacity="0.2">
+    <path d="M0 1010C348 880 642 946 948 998C1290 1056 1550 1018 1920 884V1120H0V1010Z" fill="url(#bottomWave)"/>
+    <path d="M0 74C358 176 612 132 906 78C1224 20 1558 22 1920 150V0H0V74Z" fill="url(#topWave)"/>
+  </g>
+  <defs>
+    <linearGradient id="base" x1="180" y1="0" x2="1684" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="0.48" stop-color="#082652"/>
+      <stop offset="1" stop-color="#020817"/>
+    </linearGradient>
+    <radialGradient id="blueGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1540 120) rotate(90) scale(520)">
+      <stop stop-color="#1B76E8"/>
+      <stop offset="1" stop-color="#1B76E8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 900) rotate(90) scale(460)">
+      <stop stop-color="#39D2FF"/>
+      <stop offset="1" stop-color="#39D2FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="centerGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 540) rotate(90) scale(640)">
+      <stop stop-color="#1057B7"/>
+      <stop offset="1" stop-color="#1057B7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ringStroke" x1="-360" y1="-360" x2="380" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAF4FF"/>
+      <stop offset="0.34" stop-color="#39D2FF"/>
+      <stop offset="0.68" stop-color="#1057B7"/>
+      <stop offset="1" stop-color="#EAF4FF"/>
+    </linearGradient>
+    <radialGradient id="metalDisc" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-92 -142) rotate(48) scale(620)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.28" stop-color="#AAB7C8" stop-opacity="0.42"/>
+      <stop offset="0.58" stop-color="#1057B7" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#020817" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bottomWave" x1="0" y1="884" x2="1920" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39D2FF"/>
+      <stop offset="0.52" stop-color="#1057B7"/>
+      <stop offset="1" stop-color="#020817"/>
+    </linearGradient>
+    <linearGradient id="topWave" x1="0" y1="0" x2="1920" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020817"/>
+      <stop offset="0.5" stop-color="#1057B7"/>
+      <stop offset="1" stop-color="#39D2FF"/>
+    </linearGradient>
+  </defs>
+</svg>
