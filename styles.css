@@ -3024,7 +3024,7 @@ h2.section-title {
 
 .testimonial-carousel__top {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 30px;
 }

@@ -57,7 +57,7 @@ const solutions = [
   },
 ];
 
-const industries = [
+const industries: [string, string][] = [
   ["Hospitality", "Hotels, restaurants, guest networks, CCTV, and always-on business systems."],
   ["Real estate", "Property offices, sales centres, access control, connectivity, and cloud collaboration."],
   ["Construction", "Site offices, temporary networks, cabling, surveillance, and mobile workforce support."],
