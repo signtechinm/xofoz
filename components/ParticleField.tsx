@@ -11,6 +11,8 @@ type Particle = {
   y: number;
   vx: number;
   vy: number;
+  pointerVx: number;
+  pointerVy: number;
   size: number;
   hue: number;
 };
@@ -31,7 +33,8 @@ export default function ParticleField({ variant = "hero" }: ParticleFieldProps) 
     let frame = 0;
     let animationFrame = 0;
     let particles: Particle[] = [];
-    const multiplier = variant === "subtle" ? 0.42 : variant === "story" ? 0.62 : 0.75;
+    const pointer = { x: 0, y: 0, active: false };
+    const multiplier = variant === "subtle" ? 0.42 : variant === "story" ? 0.62 : 1.08;
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
@@ -48,9 +51,25 @@ export default function ParticleField({ variant = "hero" }: ParticleFieldProps) 
         y: (Math.cos(index * 57.3) * 0.5 + 0.5) * height,
         vx: (Math.sin(index * 13.4) * 0.42) + 0.08,
         vy: (Math.cos(index * 17.8) * 0.42) - 0.02,
+        pointerVx: 0,
+        pointerVy: 0,
         size: 1.2 + ((index * 7) % 9) / 8,
         hue: index % 3,
       }));
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (variant === "subtle" || prefersReducedMotion) return;
+
+      const rect = canvas.getBoundingClientRect();
+      pointer.x = event.clientX - rect.left;
+      pointer.y = event.clientY - rect.top;
+      pointer.active =
+        pointer.x >= 0 && pointer.x <= rect.width && pointer.y >= 0 && pointer.y <= rect.height;
+    };
+
+    const handlePointerLeave = () => {
+      pointer.active = false;
     };
 
     const draw = () => {
@@ -60,8 +79,23 @@ export default function ParticleField({ variant = "hero" }: ParticleFieldProps) 
 
       particles.forEach((particle, index) => {
         if (!prefersReducedMotion) {
-          particle.x += particle.vx;
-          particle.y += particle.vy;
+          if (pointer.active) {
+            const dx = particle.x - pointer.x;
+            const dy = particle.y - pointer.y;
+            const distance = Math.max(1, Math.hypot(dx, dy));
+            const radius = 180;
+
+            if (distance < radius) {
+              const force = Math.pow(1 - distance / radius, 2) * 0.48;
+              particle.pointerVx += (dx / distance) * force;
+              particle.pointerVy += (dy / distance) * force;
+            }
+          }
+
+          particle.pointerVx *= 0.91;
+          particle.pointerVy *= 0.91;
+          particle.x += particle.vx + particle.pointerVx;
+          particle.y += particle.vy + particle.pointerVy;
           particle.x += Math.sin((frame + index * 11) * 0.012) * 0.18;
           particle.y += Math.cos((frame + index * 9) * 0.012) * 0.18;
         }
@@ -107,10 +141,14 @@ export default function ParticleField({ variant = "hero" }: ParticleFieldProps) 
     resize();
     draw();
     window.addEventListener("resize", resize);
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("pointerleave", handlePointerLeave);
 
     return () => {
       window.cancelAnimationFrame(animationFrame);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerleave", handlePointerLeave);
     };
   }, [variant]);
 

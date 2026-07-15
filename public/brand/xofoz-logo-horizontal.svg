@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+  <title id="title">XOFOZ</title>
+  <desc id="desc">XOFOZ Karma emblem and original wordmark</desc>
+  <defs>
+    <clipPath id="symbol-crop"><rect x="4" y="4" width="198" height="198" rx="99"/></clipPath>
+    <clipPath id="word-crop"><rect x="218" y="31" width="660" height="132"/></clipPath>
+    <clipPath id="tagline-crop"><rect x="220" y="177" width="535" height="30"/></clipPath>
+    <mask id="symbol-art" mask-type="alpha">
+      <image href="xofoz-logo-source.png" x="-287" y="-18" width="756" height="446" preserveAspectRatio="none"/>
+    </mask>
+    <mask id="word-art" mask-type="alpha">
+      <image href="xofoz-logo-source.png" x="189" y="-173" width="698" height="412" preserveAspectRatio="none"/>
+    </mask>
+    <linearGradient id="living-light" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1d74ea" stop-opacity="0"/>
+      <stop offset="0.43" stop-color="#4ccfff" stop-opacity="0"/>
+      <stop offset="0.52" stop-color="#ffffff" stop-opacity="0.62"/>
+      <stop offset="0.61" stop-color="#4ccfff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#1d74ea" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0;-1 0" dur="10s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="soft-light" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+  </defs>
+
+  <!-- Exact emblem cropped from the approved original logo artwork. -->
+  <g clip-path="url(#symbol-crop)">
+    <image href="xofoz-logo-source.png" x="-287" y="-18" width="756" height="446" preserveAspectRatio="none"/>
+    <g mask="url(#symbol-art)">
+      <rect x="-210" y="0" width="330" height="210" fill="url(#living-light)" opacity="0.22" filter="url(#soft-light)">
+        <animate attributeName="x" values="-250;230;-250" dur="10s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Exact custom XOFOZ lettering, re-positioned to the right. -->
+  <g clip-path="url(#word-crop)">
+    <image href="xofoz-logo-source.png" x="189" y="-173" width="698" height="412" preserveAspectRatio="none"/>
+    <g mask="url(#word-art)">
+      <rect x="120" y="22" width="300" height="150" fill="url(#living-light)" opacity="0.2" filter="url(#soft-light)">
+        <animate attributeName="x" values="100;820;100" dur="12s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Short accent rule and original tagline. -->
+  <path d="M220 169H548" stroke="#123f91" stroke-width="1.6" opacity="0.78"/>
+  <g clip-path="url(#tagline-crop)">
+    <image href="xofoz-logo-source.png" x="196" y="-108" width="570" height="336" preserveAspectRatio="none"/>
+  </g>
+</svg>

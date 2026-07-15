@@ -1,0 +1,527 @@
+
+<style>
+h2.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:13px;color:var(--text-primary)}
+.browser{border:1px solid var(--border-strong);border-radius:10px;overflow:hidden;background:var(--surface-2)}
+.browser-bar{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:8px}
+.b-dots{display:flex;gap:4px}
+.b-dot{width:8px;height:8px;border-radius:50%;background:var(--border-strong)}
+.b-url{flex:1;background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--text-muted);margin:0 8px}
+.site{overflow:hidden}
+.sec{border-bottom:0.5px solid var(--border);padding:12px 16px}
+.sec:last-child{border-bottom:none}
+.sec-tag{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:500;color:var(--text-muted);letter-spacing:0.4px;text-transform:uppercase;margin-bottom:6px}
+.tag{font-size:8px;font-weight:500;padding:1px 5px;border-radius:3px}
+.t-seo{background:#EAF3DE;color:#3B6D11}
+.t-aeo{background:#E1F5EE;color:#0F6E56}
+.t-geo{background:#FAEEDA;color:#854F0B}
+.t-ux{background:#E6F1FB;color:#185FA5}
+.t-ee{background:#FCEBEB;color:#A32D2D}
+@media(prefers-color-scheme:dark){
+.t-seo{background:#173404;color:#C0DD97}
+.t-aeo{background:#04342C;color:#9FE1CB}
+.t-geo{background:#412402;color:#FAC775}
+.t-ux{background:#042C53;color:#B5D4F4}
+.t-ee{background:#501313;color:#F7C1C1}
+}
+.tags{display:flex;gap:3px;flex-wrap:wrap;margin-top:6px}
+
+.nav{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:9px 16px;display:flex;align-items:center;gap:0}
+.nav-logo{font-size:13px;font-weight:500;color:var(--text-accent);margin-right:20px;white-space:nowrap}
+.nav-links{display:flex;gap:2px;flex:1}
+.nav-l{font-size:10px;color:var(--text-secondary);padding:4px 8px;border-radius:4px;white-space:nowrap}
+.nav-l.dd::after{content:" ▾";font-size:8px}
+.nav-right{display:flex;align-items:center;gap:6px;margin-left:auto}
+.nav-cta{background:var(--text-primary);color:var(--surface-2);font-size:9px;padding:5px 10px;border-radius:5px;white-space:nowrap}
+.nav-wa{background:#25D366;color:white;font-size:9px;padding:5px 8px;border-radius:5px;display:flex;align-items:center;gap:3px;white-space:nowrap}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 16px;background:var(--surface-1);border-bottom:0.5px solid var(--border)}
+.hero-left{}
+.hero-eyebrow{font-size:9px;font-weight:500;color:var(--text-accent);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px}
+.hero-h1{font-size:16px;font-weight:500;line-height:1.3;margin-bottom:8px;color:var(--text-primary)}
+.hero-sub{font-size:10px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px}
+.hero-btns{display:flex;gap:6px;flex-wrap:wrap}
+.btn-p{background:var(--text-primary);color:var(--surface-2);font-size:9px;padding:6px 12px;border-radius:5px;white-space:nowrap}
+.btn-s{border:0.5px solid var(--border-strong);color:var(--text-primary);font-size:9px;padding:6px 12px;border-radius:5px;background:none;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.hero-right{background:var(--surface-0);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;min-height:120px;border:0.5px dashed var(--border-strong)}
+.hero-img-label{font-size:9px;color:var(--text-muted)}
+
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:0.5px solid var(--border)}
+.trust-item{padding:10px 14px;border-right:0.5px solid var(--border);text-align:center}
+.trust-item:last-child{border-right:none}
+.trust-n{font-size:16px;font-weight:500;color:var(--text-accent);line-height:1}
+.trust-l{font-size:9px;color:var(--text-muted);margin-top:2px}
+.logo-row{padding:8px 16px;display:flex;align-items:center;gap:5px;overflow:hidden}
+.logo-label{font-size:8px;color:var(--text-muted);white-space:nowrap;margin-right:4px}
+.logo-pill{background:var(--surface-1);border:0.5px solid var(--border);border-radius:3px;padding:2px 7px;font-size:8px;color:var(--text-secondary);white-space:nowrap}
+
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pillar-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.pillar-icon{font-size:18px;color:var(--text-accent);margin-bottom:6px;display:block}
+.pillar-h{font-size:11px;font-weight:500;margin-bottom:3px}
+.pillar-d{font-size:9px;color:var(--text-secondary);line-height:1.4;margin-bottom:6px}
+.pillar-link{font-size:8px;color:var(--text-accent)}
+
+.sec-h2{font-size:13px;font-weight:500;margin-bottom:3px}
+.sec-intro{font-size:9px;color:var(--text-secondary);margin-bottom:10px;line-height:1.5}
+
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.svc-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:7px;padding:10px}
+.svc-icon{font-size:14px;color:var(--text-accent);margin-bottom:4px;display:block}
+.svc-h{font-size:9px;font-weight:500;margin-bottom:2px}
+.svc-d{font-size:8px;color:var(--text-secondary);line-height:1.4}
+.view-all{font-size:8px;color:var(--text-accent);margin-top:8px;display:inline-block}
+
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sol-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px}
+.sol-q{font-size:10px;font-weight:500;margin-bottom:4px;color:var(--text-primary);line-height:1.4}
+.sol-d{font-size:8px;color:var(--text-secondary);line-height:1.5;margin-bottom:6px}
+.sol-steps{display:flex;gap:3px;flex-wrap:wrap}
+.sol-step{background:var(--surface-0);border:0.5px solid var(--border);border-radius:3px;padding:2px 5px;font-size:7px;color:var(--text-muted)}
+.sol-cta{font-size:8px;color:var(--text-accent);margin-top:6px;display:block}
+
+.ind-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.ind-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:7px;padding:10px;text-align:center}
+.ind-icon{font-size:16px;color:var(--text-accent);margin-bottom:4px;display:block}
+.ind-h{font-size:9px;font-weight:500;margin-bottom:2px}
+.ind-c{font-size:7px;color:var(--text-muted);line-height:1.3}
+
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.why-list{display:flex;flex-direction:column;gap:6px}
+.why-item{display:flex;gap:8px;align-items:flex-start;background:var(--surface-1);border:0.5px solid var(--border);border-radius:6px;padding:8px 10px}
+.why-icon{font-size:14px;color:var(--text-success);flex-shrink:0}
+.why-content{}
+.why-h{font-size:9px;font-weight:500;margin-bottom:1px}
+.why-d{font-size:8px;color:var(--text-secondary);line-height:1.4}
+.cert-panel{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px}
+.cert-title{font-size:10px;font-weight:500;margin-bottom:8px}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px}
+.cert-item{background:var(--surface-2);border:0.5px solid var(--border);border-radius:5px;padding:6px 8px;display:flex;align-items:center;gap:5px}
+.cert-dot{width:6px;height:6px;border-radius:50%;background:var(--text-accent);flex-shrink:0}
+.cert-name{font-size:8px;font-weight:500}
+.cert-sub{font-size:7px;color:var(--text-muted)}
+
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.testi-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px}
+.testi-stars{color:#EF9F27;font-size:9px;margin-bottom:4px}
+.testi-q{font-size:8px;color:var(--text-secondary);font-style:italic;line-height:1.5;margin-bottom:6px;padding-bottom:6px;border-bottom:0.5px solid var(--border)}
+.testi-name{font-size:8px;font-weight:500}
+.testi-role{font-size:7px;color:var(--text-muted)}
+
+.cta-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cta-left{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:14px}
+.cta-h{font-size:12px;font-weight:500;margin-bottom:3px}
+.cta-sub{font-size:9px;color:var(--text-secondary);margin-bottom:10px;line-height:1.5}
+.cta-wa{background:#25D366;color:white;font-size:9px;padding:6px 12px;border-radius:5px;display:inline-flex;align-items:center;gap:5px;margin-bottom:10px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
+.f-field{background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:5px 8px;font-size:8px;color:var(--text-muted);width:100%}
+.f-field.full{grid-column:1/-1}
+.form-btn{background:var(--text-primary);color:var(--surface-2);font-size:9px;padding:6px;border-radius:5px;width:100%;text-align:center;margin-top:4px}
+.cta-right{display:flex;flex-direction:column;gap:8px}
+.nap-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px;flex:1}
+.nap-title{font-size:9px;font-weight:500;margin-bottom:8px}
+.nap-item{display:flex;align-items:flex-start;gap:6px;margin-bottom:5px;font-size:8px;color:var(--text-secondary)}
+.nap-icon{font-size:11px;color:var(--text-accent);flex-shrink:0;margin-top:1px}
+.map-placeholder{background:var(--surface-0);border:0.5px dashed var(--border-strong);border-radius:6px;padding:14px;text-align:center;font-size:8px;color:var(--text-muted)}
+
+.footer-box{background:var(--surface-1);padding:14px 16px}
+.footer-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:14px;margin-bottom:12px;padding-bottom:12px;border-bottom:0.5px solid var(--border)}
+.footer-brand-name{font-size:12px;font-weight:500;margin-bottom:3px;color:var(--text-primary)}
+.footer-brand-desc{font-size:8px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px}
+.footer-contact{display:flex;flex-direction:column;gap:3px}
+.footer-c-item{font-size:7px;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+.footer-col-h{font-size:9px;font-weight:500;margin-bottom:6px}
+.footer-link{display:block;font-size:8px;color:var(--text-secondary);margin-bottom:3px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:8px;color:var(--text-muted)}
+.footer-socials{display:flex;gap:8px}
+.soc-icon{font-size:13px;color:var(--text-muted)}
+</style>
+
+<h2 class="sr">XOFOZ homepage desktop wireframe — all 11 sections laid out in desktop grid view with SEO, AEO, GEO and EEAT signal tags per section.</h2>
+
+<div class="browser">
+  <div class="browser-bar">
+    <div class="b-dots"><div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div></div>
+    <div class="b-url">xofoz.com</div>
+  </div>
+
+  <div class="site">
+
+    <div class="nav">
+      <span class="nav-logo">XOFOZ</span>
+      <div class="nav-links">
+        <span class="nav-l dd">Services</span>
+        <span class="nav-l dd">Products</span>
+        <span class="nav-l dd">Solutions</span>
+        <span class="nav-l dd">Industries</span>
+        <span class="nav-l">About</span>
+        <span class="nav-l">Blog</span>
+        <span class="nav-l">Contact</span>
+      </div>
+      <div class="nav-right">
+        <span class="nav-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp</span>
+        <span class="nav-cta">Get a free quote</span>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Abu Dhabi's trusted IT partner since 2016</div>
+        <div class="hero-h1">Your trusted IT solutions<br>provider in Abu Dhabi, UAE</div>
+        <div class="hero-sub">From managed IT services and cybersecurity to Tally Prime software and complete office IT solutions — XOFOZ Information Technology has been powering UAE businesses since 2016.</div>
+        <div class="hero-btns">
+          <span class="btn-p">Explore our solutions</span>
+          <span class="btn-s"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="font-size:11px"></i>WhatsApp us now</span>
+        </div>
+        <div class="tags">
+          <span class="tag t-seo">SEO: H1 primary keyword</span>
+          <span class="tag t-aeo">AEO: answer-first content</span>
+          <span class="tag t-geo">GEO: full entity + year</span>
+          <span class="tag t-ee">EEAT: since 2016</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <i class="ti ti-building-skyscraper" aria-hidden="true" style="font-size:28px;color:var(--border-strong)"></i>
+        <span class="hero-img-label">Hero image — Abu Dhabi office / team</span>
+      </div>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-item"><div class="trust-n">9+</div><div class="trust-l">Years in business</div></div>
+      <div class="trust-item"><div class="trust-n">150+</div><div class="trust-l">AMC clients</div></div>
+      <div class="trust-item"><div class="trust-n">27+</div><div class="trust-l">Enterprise clients</div></div>
+      <div class="trust-item"><div class="trust-n" style="font-size:12px">Abu Dhabi</div><div class="trust-l">UAE based team</div></div>
+    </div>
+    <div class="logo-row">
+      <span class="logo-label">Trusted by:</span>
+      <span class="logo-pill">Marriott</span>
+      <span class="logo-pill">Sobha</span>
+      <span class="logo-pill">Agility</span>
+      <span class="logo-pill">National Holdings</span>
+      <span class="logo-pill">Altrad</span>
+      <span class="logo-pill">China Harbour</span>
+      <span class="logo-pill">Exeed</span>
+      <span class="logo-pill">Cleanco</span>
+      <span class="logo-pill">Bloom</span>
+      <span class="logo-pill">Khadamat</span>
+      <span class="logo-pill">+ 13 more</span>
+    </div>
+    <div class="tags" style="padding:0 16px 10px">
+      <span class="tag t-geo">GEO: named client entities</span>
+      <span class="tag t-ee">EEAT: authoritativeness</span>
+      <span class="tag t-seo">SEO: brand entity signals</span>
+    </div>
+
+    <div class="sec">
+      <div class="sec-tag">03 — Three pillars</div>
+      <div class="sec-h2">IT services. Products. Solutions. All under one roof in Abu Dhabi.</div>
+      <div class="sec-intro">Most IT companies in Abu Dhabi offer one or two of these. XOFOZ delivers all three — making us the only IT partner your business will ever need.</div>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <i class="ti ti-settings" aria-hidden="true" class="pillar-icon"></i>
+          <div class="pillar-h">Managed IT services</div>
+          <div class="pillar-d">Expert IT support, maintenance, and infrastructure management for UAE businesses. 24/7 coverage.</div>
+          <span class="pillar-link">Explore our services →</span>
+        </div>
+        <div class="pillar-card">
+          <i class="ti ti-package" aria-hidden="true" class="pillar-icon"></i>
+          <div class="pillar-h">Authorised IT products</div>
+          <div class="pillar-d">Genuine Tally Prime, Microsoft 365, Fortinet, HikVision — licensed, implemented and supported in UAE.</div>
+          <span class="pillar-link">View our products →</span>
+        </div>
+        <div class="pillar-card">
+          <i class="ti ti-bulb" aria-hidden="true" class="pillar-icon"></i>
+          <div class="pillar-h">Complete IT solutions</div>
+          <div class="pillar-d">Describe the problem — we assess, design, and execute the complete solution from start to finish.</div>
+          <span class="pillar-link">See our solutions →</span>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag t-seo">SEO: H2 secondary keyword + 3 hub links</span>
+        <span class="tag t-aeo">AEO: 3 topic clusters</span>
+        <span class="tag t-geo">GEO: unique positioning</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-tag">04 — Services</div>
+      <div class="sec-h2">IT services built for Abu Dhabi businesses</div>
+      <div class="sec-intro">Comprehensive managed IT services keeping your business secure, connected, and operating at full capacity — backed by 9 years of experience across 150+ UAE clients.</div>
+      <div class="services-grid">
+        <div class="svc-card"><i class="ti ti-file-text" aria-hidden="true" class="svc-icon"></i><div class="svc-h">IT AMC Abu Dhabi</div><div class="svc-d">Annual maintenance contracts, 24/7 helpdesk, remote & on-site support</div></div>
+        <div class="svc-card"><i class="ti ti-network" aria-hidden="true" class="svc-icon"></i><div class="svc-h">Network & infrastructure</div><div class="svc-d">Setup, structured cabling, Unifi & Aruba wireless solutions</div></div>
+        <div class="svc-card"><i class="ti ti-shield" aria-hidden="true" class="svc-icon"></i><div class="svc-h">Cybersecurity solutions</div><div class="svc-d">Fortigate, Sophos, ESET, TrendMicro, Bitdefender</div></div>
+        <div class="svc-card"><i class="ti ti-cloud" aria-hidden="true" class="svc-icon"></i><div class="svc-h">Cloud solutions & M365</div><div class="svc-d">Migration, Microsoft 365, Azure — certified engineers</div></div>
+        <div class="svc-card"><i class="ti ti-camera" aria-hidden="true" class="svc-icon"></i><div class="svc-h">CCTV & access control</div><div class="svc-d">HikVision, biometric access control — installed & maintained</div></div>
+        <div class="svc-card"><i class="ti ti-device-tv" aria-hidden="true" class="svc-icon"></i><div class="svc-h">Hardware & AV solutions</div><div class="svc-d">PABX, POS systems, video conferencing, AV setup</div></div>
+        <div class="svc-card"><i class="ti ti-chart-bar" aria-hidden="true" class="svc-icon"></i><div class="svc-h">ERP & Tally Prime</div><div class="svc-d">ERP implementation, Tally Prime authorised dealer UAE</div></div>
+        <div class="svc-card"><i class="ti ti-world" aria-hidden="true" class="svc-icon"></i><div class="svc-h">Website development</div><div class="svc-d">Business websites built to rank in UAE search results</div></div>
+      </div>
+      <span class="view-all">View all services →</span>
+      <div class="tags">
+        <span class="tag t-seo">SEO: 8 H3s + 8 internal links</span>
+        <span class="tag t-aeo">AEO: structured list snippet</span>
+        <span class="tag t-geo">GEO: brand name mentions</span>
+        <span class="tag t-ee">EEAT: 9 years, 150+ clients</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-tag">05 — Solutions</div>
+      <div class="sec-h2">Facing an IT challenge? We engineer the complete solution.</div>
+      <div class="sec-intro">You don't need to know which hardware to buy or where to start. Tell us the problem — XOFOZ will assess, design, and execute from start to finish.</div>
+      <div class="sol-grid">
+        <div class="sol-card">
+          <i class="ti ti-camera" aria-hidden="true" style="font-size:16px;color:var(--text-accent);margin-bottom:6px;display:block"></i>
+          <div class="sol-q">Need to install CCTV in your building?</div>
+          <div class="sol-d">Our certified engineers conduct a full site survey, design a camera placement blueprint, and handle complete installation with staff training.</div>
+          <div class="sol-steps"><span class="sol-step">Site survey</span><span class="sol-step">Blueprint</span><span class="sol-step">Hardware</span><span class="sol-step">Install</span><span class="sol-step">Handover</span></div>
+          <span class="sol-cta">Get a free CCTV consultation →</span>
+        </div>
+        <div class="sol-card">
+          <i class="ti ti-wifi" aria-hidden="true" style="font-size:16px;color:var(--text-accent);margin-bottom:6px;display:block"></i>
+          <div class="sol-q">Is your office WiFi slow, patchy, or unreliable?</div>
+          <div class="sol-d">We assess your workspace layout, calculate coverage requirements, select the right access points, and deploy a high-performance wireless network.</div>
+          <div class="sol-steps"><span class="sol-step">Coverage plan</span><span class="sol-step">AP selection</span><span class="sol-step">Deployment</span><span class="sol-step">Testing</span></div>
+          <span class="sol-cta">Get a free WiFi assessment →</span>
+        </div>
+        <div class="sol-card">
+          <i class="ti ti-tool" aria-hidden="true" style="font-size:16px;color:var(--text-accent);margin-bottom:6px;display:block"></i>
+          <div class="sol-q">Are your computers or IT systems underperforming?</div>
+          <div class="sol-d">Our engineers diagnose the root cause — hardware failure, software conflict, or network bottleneck — fix the issue and prevent recurrence.</div>
+          <div class="sol-steps"><span class="sol-step">Diagnose</span><span class="sol-step">Fix root cause</span><span class="sol-step">Prevent</span></div>
+          <span class="sol-cta">Get IT support now →</span>
+        </div>
+      </div>
+      <span class="view-all">View all solutions →</span>
+      <div class="tags">
+        <span class="tag t-aeo">AEO: PAA question format</span>
+        <span class="tag t-geo">GEO: problem → solution citations</span>
+        <span class="tag t-seo">SEO: long-tail problem keywords</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-tag">06 — Industries</div>
+      <div class="sec-h2">IT solutions for every major industry in Abu Dhabi</div>
+      <div class="sec-intro">Every sector has unique IT challenges. XOFOZ has the experience, certifications, and proven client track record to deliver — in your sector, for your specific environment.</div>
+      <div class="ind-grid">
+        <div class="ind-card">
+          <i class="ti ti-building" aria-hidden="true" class="ind-icon"></i>
+          <div class="ind-h">Hospitality</div>
+          <div class="ind-c">Marriott · Bloom · Hayatna</div>
+        </div>
+        <div class="ind-card">
+          <i class="ti ti-home" aria-hidden="true" class="ind-icon"></i>
+          <div class="ind-h">Real estate</div>
+          <div class="ind-c">Sobha · Bloom</div>
+        </div>
+        <div class="ind-card">
+          <i class="ti ti-crane" aria-hidden="true" class="ind-icon"></i>
+          <div class="ind-h">Construction</div>
+          <div class="ind-c">Altrad · China Harbour · Jazal</div>
+        </div>
+        <div class="ind-card">
+          <i class="ti ti-truck" aria-hidden="true" class="ind-icon"></i>
+          <div class="ind-h">Logistics</div>
+          <div class="ind-c">Agility · Khadamat · Cleanco</div>
+        </div>
+        <div class="ind-card">
+          <i class="ti ti-settings-2" aria-hidden="true" class="ind-icon"></i>
+          <div class="ind-h">Manufacturing</div>
+          <div class="ind-c">Exeed</div>
+        </div>
+      </div>
+      <div class="tags" style="margin-top:8px">
+        <span class="tag t-seo">SEO: 5 vertical keywords + internal links</span>
+        <span class="tag t-geo">GEO: named clients per sector</span>
+        <span class="tag t-ee">EEAT: sector experience proof</span>
+        <span class="tag t-aeo">AEO: entity signals</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-tag">07 — Why XOFOZ + certifications</div>
+      <div class="sec-h2">Why Abu Dhabi businesses choose XOFOZ and stay</div>
+      <div class="sec-intro" style="margin-bottom:10px">In a market full of IT vendors, the right partner has the certifications, experience, and accountability to back every promise.</div>
+      <div class="why-layout">
+        <div class="why-list">
+          <div class="why-item">
+            <i class="ti ti-rosette" aria-hidden="true" class="why-icon" style="font-size:14px;color:var(--text-success)"></i>
+            <div class="why-content"><div class="why-h">ADMCC certified engineers</div><div class="why-d">UAE compliance-ready IT support meeting Abu Dhabi's institutional standards</div></div>
+          </div>
+          <div class="why-item">
+            <i class="ti ti-clock" aria-hidden="true" class="why-icon" style="font-size:14px;color:var(--text-success)"></i>
+            <div class="why-content"><div class="why-h">4-hour on-site response across Abu Dhabi</div><div class="why-d">Our Abu Dhabi-based team is on-site within 4 hours — every time</div></div>
+          </div>
+          <div class="why-item">
+            <i class="ti ti-map-pin" aria-hidden="true" class="why-icon" style="font-size:14px;color:var(--text-success)"></i>
+            <div class="why-content"><div class="why-h">UAE-based team — zero offshore support</div><div class="why-d">Every call, visit, and ticket handled by our Abu Dhabi team directly</div></div>
+          </div>
+          <div class="why-item">
+            <i class="ti ti-adjustments" aria-hidden="true" class="why-icon" style="font-size:14px;color:var(--text-success)"></i>
+            <div class="why-content"><div class="why-h">Multi-vendor, brand-independent expertise</div><div class="why-d">Certified across Fortinet, Microsoft, HikVision, Aruba, ESET, Acronis</div></div>
+          </div>
+          <div class="why-item">
+            <i class="ti ti-certificate" aria-hidden="true" class="why-icon" style="font-size:14px;color:var(--text-success)"></i>
+            <div class="why-content"><div class="why-h">Authorised Tally Prime dealer in Abu Dhabi</div><div class="why-d">Genuine licensing, full implementation, certified staff training and support</div></div>
+          </div>
+        </div>
+        <div class="cert-panel">
+          <div class="cert-title">Authorised partners and certified implementers</div>
+          <div class="cert-grid">
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Tally Prime</div><div class="cert-sub">Authorised dealer UAE</div></div></div>
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Microsoft</div><div class="cert-sub">Certified partner</div></div></div>
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Fortinet</div><div class="cert-sub">Certified partner</div></div></div>
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">HikVision</div><div class="cert-sub">Authorised dealer</div></div></div>
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">ESET</div><div class="cert-sub">Certified reseller</div></div></div>
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Aruba</div><div class="cert-sub">Certified installer</div></div></div>
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Sophos</div><div class="cert-sub">Certified partner</div></div></div>
+            <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Acronis</div><div class="cert-sub">Authorised partner</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="tags" style="margin-top:8px">
+        <span class="tag t-ee">EEAT: all 4 signals — E E A T</span>
+        <span class="tag t-geo">GEO: cert authority signals</span>
+        <span class="tag t-aeo">AEO: featured snippet list</span>
+        <span class="tag t-seo">SEO: 5 H3 keywords</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-tag">08 — Testimonials</div>
+      <div class="sec-h2">What UAE businesses say about XOFOZ</div>
+      <div class="sec-intro" style="margin-bottom:10px">Over 150 businesses across Abu Dhabi trust XOFOZ with their IT. Here is what some of them have shared.</div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-q">"XOFOZ resolved our server issue within 2 hours of our call. Their team is reliable, professional, and always available when we need them. Highly recommended for any business in Abu Dhabi."</div>
+          <div class="testi-name">IT Manager</div>
+          <div class="testi-role">Hospitality sector · Abu Dhabi</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-q">"Their team understood our construction site requirements from day one. Network setup was completed on schedule and the ongoing support has been excellent. Zero downtime since."</div>
+          <div class="testi-name">Operations Head</div>
+          <div class="testi-role">Construction sector · UAE</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-q">"The Tally Prime implementation was smooth and the staff training was thorough. XOFOZ's ongoing support means we never have to worry about our accounting system. Excellent service."</div>
+          <div class="testi-name">Finance Director</div>
+          <div class="testi-role">Manufacturing sector · Abu Dhabi</div>
+        </div>
+      </div>
+      <div class="tags" style="margin-top:8px">
+        <span class="tag t-seo">SEO: Review schema → star ratings in SERP</span>
+        <span class="tag t-ee">EEAT: trustworthiness — real names + outcomes</span>
+        <span class="tag t-aeo">AEO: rich result eligibility</span>
+        <span class="tag t-geo">GEO: social proof for AI recommendations</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-tag">09 — CTA</div>
+      <div class="sec-h2">Let's solve your IT challenges today</div>
+      <div class="cta-layout" style="margin-top:10px">
+        <div class="cta-left">
+          <div class="cta-h">Ready to get started?</div>
+          <div class="cta-sub">Whether you need an IT maintenance contract, a specific product, or a complete solution built from scratch — XOFOZ is Abu Dhabi's one-stop IT partner. We respond within the hour.</div>
+          <span class="cta-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>Chat with us on WhatsApp</span>
+          <div class="form-row">
+            <div class="f-field">Your name</div>
+            <div class="f-field">Company name</div>
+            <div class="f-field">Phone number</div>
+            <div class="f-field">Email address</div>
+            <div class="f-field full">What do you need help with? ▾</div>
+            <div class="f-field full" style="padding:14px 8px">Message</div>
+          </div>
+          <div class="form-btn">Send message</div>
+        </div>
+        <div class="cta-right">
+          <div class="nap-card">
+            <div class="nap-title">Contact details</div>
+            <div class="nap-item"><i class="ti ti-map-pin" aria-hidden="true" class="nap-icon"></i>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</div>
+            <div class="nap-item"><i class="ti ti-phone" aria-hidden="true" class="nap-icon"></i>026 220 071</div>
+            <div class="nap-item"><i class="ti ti-brand-whatsapp" aria-hidden="true" class="nap-icon"></i>+971 52 355 4202</div>
+            <div class="nap-item"><i class="ti ti-mail" aria-hidden="true" class="nap-icon"></i>hello@xofoz.com</div>
+            <div class="nap-item"><i class="ti ti-clock" aria-hidden="true" class="nap-icon"></i>Monday – Saturday, 8:30 AM – 6:30 PM</div>
+          </div>
+          <div class="map-placeholder">
+            <i class="ti ti-map" aria-hidden="true" style="font-size:18px;color:var(--border-strong);display:block;margin-bottom:4px"></i>
+            Google Maps embed — XOFOZ office location
+          </div>
+        </div>
+      </div>
+      <div class="tags" style="margin-top:8px">
+        <span class="tag t-seo">SEO: full NAP = local SEO signal</span>
+        <span class="tag t-geo">GEO: complete contact entity data</span>
+        <span class="tag t-aeo">AEO: business info extraction</span>
+        <span class="tag t-ux">UX: WhatsApp primary — UAE behavior</span>
+      </div>
+    </div>
+
+    <div class="footer-box">
+      <div class="sec-tag" style="margin-bottom:10px">10 — Footer</div>
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">XOFOZ Information Technology LLC</div>
+          <div class="footer-brand-desc">Abu Dhabi's trusted IT solutions company since 2016 — delivering managed IT services, authorised software products, and complete IT solutions to 150+ businesses across the UAE.</div>
+          <div class="footer-contact">
+            <div class="footer-c-item"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>Mussafah, Abu Dhabi, UAE</div>
+            <div class="footer-c-item"><i class="ti ti-phone" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>026 220 071</div>
+            <div class="footer-c-item"><i class="ti ti-mail" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>hello@xofoz.com</div>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-h">Services</div>
+          <span class="footer-link">IT AMC</span>
+          <span class="footer-link">Network infrastructure</span>
+          <span class="footer-link">Cybersecurity</span>
+          <span class="footer-link">Cloud & Microsoft 365</span>
+          <span class="footer-link">CCTV & access control</span>
+          <span class="footer-link">Website development</span>
+        </div>
+        <div>
+          <div class="footer-col-h">Products</div>
+          <span class="footer-link">Tally Prime</span>
+          <span class="footer-link">Microsoft 365</span>
+          <span class="footer-link">Acronis backup</span>
+          <span class="footer-link">Fortinet firewall</span>
+          <span class="footer-link">HikVision CCTV</span>
+          <span class="footer-link">ESET endpoint</span>
+        </div>
+        <div>
+          <div class="footer-col-h">Solutions</div>
+          <span class="footer-link">CCTV installation</span>
+          <span class="footer-link">Office WiFi setup</span>
+          <span class="footer-link">IT troubleshooting</span>
+          <span class="footer-link">Cloud migration</span>
+          <span class="footer-link">New office IT setup</span>
+          <span class="footer-link">ERP implementation</span>
+        </div>
+        <div>
+          <div class="footer-col-h">Company</div>
+          <span class="footer-link">About XOFOZ</span>
+          <span class="footer-link">Our clients</span>
+          <span class="footer-link">Industries</span>
+          <span class="footer-link">Blog</span>
+          <span class="footer-link">Contact us</span>
+          <span class="footer-link">Privacy policy</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 XOFOZ Information Technology LLC. All rights reserved. Abu Dhabi, United Arab Emirates.</div>
+        <div class="footer-socials">
+          <i class="ti ti-brand-linkedin" aria-hidden="true" class="soc-icon"></i>
+          <i class="ti ti-brand-instagram" aria-hidden="true" class="soc-icon"></i>
+          <i class="ti ti-brand-facebook" aria-hidden="true" class="soc-icon"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

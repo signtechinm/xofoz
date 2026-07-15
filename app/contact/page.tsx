@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ParticleField from "../../components/ParticleField";
 import Reveal from "../../components/Reveal";
+import ConsultationSection from "../../components/ConsultationSection";
 
 export const metadata: Metadata = {
   title: "Contact XOFOZ | IT Support In Abu Dhabi",
@@ -27,83 +28,7 @@ export default function ContactPage() {
         </Reveal>
       </section>
 
-      <section className="contact-layout page-band">
-        <Reveal className="contact-panel">
-          <span className="eyebrow">Quick Contact</span>
-          <h2>Reach the XOFOZ team.</h2>
-          <div className="contact-actions">
-            <a href="tel:026220071">
-              <strong>Call</strong>
-              <span>026 220 071</span>
-            </a>
-            <a href="mailto:hello@xofoz.com">
-              <strong>Email</strong>
-              <span>hello@xofoz.com</span>
-            </a>
-            <a href="tel:0528209174">
-              <strong>Mobile</strong>
-              <span>052-820-9174</span>
-            </a>
-          </div>
-          <div className="office-card">
-            <h3>UAE Office</h3>
-            <p>Office No: M01, Shabia-10, Abu Dhabi, UAE</p>
-            <p>Monday to Saturday, 8:30 AM to 6:30 PM</p>
-          </div>
-          <div className="office-card">
-            <h3>India Office</h3>
-            <p>Thrissur, Kerala, India</p>
-            <p>+91 859 067 0685</p>
-          </div>
-        </Reveal>
-
-        <Reveal
-          as="form"
-          className="contact-form"
-          id="consultation"
-          action="mailto:hello@xofoz.com"
-          method="post"
-          encType="text/plain"
-          delay={0.08}
-        >
-          <span className="eyebrow">Request Consultation</span>
-          <h2>Send your requirement.</h2>
-          <label>
-            Name / Company Name
-            <input name="name" type="text" autoComplete="name" required />
-          </label>
-          <label>
-            Mobile Number
-            <input name="mobile" type="tel" autoComplete="tel" required />
-          </label>
-          <label>
-            Email
-            <input name="email" type="email" autoComplete="email" required />
-          </label>
-          <label>
-            Service Needed
-            <select name="service" required defaultValue="">
-              <option value="" disabled>
-                Select a service
-              </option>
-              <option>IT AMC</option>
-              <option>On-Call IT Support</option>
-              <option>Office IT Setup</option>
-              <option>Cybersecurity Review</option>
-              <option>Structured Cabling</option>
-              <option>Microsoft 365 / Email</option>
-              <option>CCTV / Biometric</option>
-            </select>
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows={5} required />
-          </label>
-          <button className="button button--primary" type="submit">
-            Submit Request
-          </button>
-        </Reveal>
-      </section>
+      <ConsultationSection />
 
       <section className="section page-band section--plain">
         <Reveal className="section-heading">

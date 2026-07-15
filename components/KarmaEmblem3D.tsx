@@ -349,14 +349,5 @@ export default function KarmaEmblem3D() {
     };
   }, []);
 
-  return (
-    <div className="karma-emblem-3d" ref={mountRef} aria-hidden="true">
-      <div className="karma-emblem-fallback karma-emblem-fallback--mercury">
-        <span className="mercury-half mercury-half--light" />
-        <span className="mercury-half mercury-half--dark" />
-        <span className="mercury-dot mercury-dot--dark" />
-        <span className="mercury-dot mercury-dot--light" />
-      </div>
-    </div>
-  );
+  return <div className="karma-emblem-3d" ref={mountRef} aria-hidden="true" />;
 }

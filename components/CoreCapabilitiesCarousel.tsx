@@ -33,6 +33,26 @@ const services = [
     image: "/services/cloud-microsoft-365.png",
     copy: "Handle email migration, Microsoft 365 setup, cloud storage, user onboarding, security hardening, and support.",
   },
+  {
+    title: "CCTV And Access Control",
+    image: "/services/office-it-setup.png",
+    copy: "Plan camera coverage, install surveillance systems, configure recording, and connect biometric or card-based access control.",
+  },
+  {
+    title: "Hardware And AV Solutions",
+    image: "/services/on-call-it-support.png",
+    copy: "Supply and set up business computers, servers, printers, PABX, POS, meeting-room displays, and video-conferencing systems.",
+  },
+  {
+    title: "ERP And Tally Prime",
+    image: "/services/cloud-microsoft-365.png",
+    copy: "Support genuine licensing, implementation, company setup, user training, migration, and ongoing accounting-software requirements.",
+  },
+  {
+    title: "Website Development",
+    image: "/services/cybersecurity.png",
+    copy: "Create responsive business websites with clear service content, enquiry paths, search foundations, analytics, and ongoing support.",
+  },
 ];
 
 const clamp = (value: number, min: number, max: number) =>
@@ -129,6 +149,7 @@ export default function CoreCapabilitiesCarousel() {
                       <span>{String(index + 1).padStart(2, "0")}</span>
                       <h3>{service.title}</h3>
                       <p>{service.copy}</p>
+                      <a href="/contact#consultation">Discuss this service <b aria-hidden="true">→</b></a>
                     </div>
                   </article>
                 );
