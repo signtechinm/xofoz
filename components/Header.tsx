@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { services } from "../data/services";
 import BrandLogo from "./BrandLogo";
 
 const navItems = [
   {
-    label: "Services", href: "/#services", image: "/services/managed-it-amc.png",
+    label: "Services", href: "/services", image: "/services/managed-it-amc.png",
     description: "Reliable day-to-day technology ownership for UAE businesses.",
-    children: ["Managed IT / AMC", "On-call IT support", "Cybersecurity", "Cloud & Microsoft 365", "Structured cabling", "CCTV & access control"],
+    children: services.map((service) => service.label),
   },
   {
     label: "Products", href: "/#products", image: "/pillars/authorised-it-products.png",
@@ -88,7 +89,12 @@ export default function Header() {
           aria-hidden="true"
           onClick={() => setIsOpen(false)}
         />
-        <nav className="header-dropdown__panel" aria-label="Primary navigation">
+        <nav
+          className={`header-dropdown__panel ${
+            navItems[activeMenu].children.length > 12 ? "header-dropdown__panel--expanded" : ""
+          }`}
+          aria-label="Primary navigation"
+        >
           <div className="header-dropdown__main">
             <span className="header-dropdown__eyebrow">Explore XOFOZ</span>
             {navItems.map((item, index) => (
@@ -108,13 +114,19 @@ export default function Header() {
           </div>
           <div className="header-dropdown__subnav">
             <span className="header-dropdown__eyebrow">{navItems[activeMenu].label}</span>
-            <Link className="header-dropdown__all" href={navItems[activeMenu].href} onClick={() => setIsOpen(false)}>
-              View all {navItems[activeMenu].label.toLowerCase()} <span>↗</span>
-            </Link>
+            {navItems[activeMenu].label !== "Services" && (
+              <Link className="header-dropdown__all" href={navItems[activeMenu].href} onClick={() => setIsOpen(false)}>
+                View all {navItems[activeMenu].label.toLowerCase()} <span>↗</span>
+              </Link>
+            )}
             <div>
               {navItems[activeMenu].children.map((child) => (
               <Link
-                href={navItems[activeMenu].href}
+                href={
+                  navItems[activeMenu].label === "Services"
+                    ? `/services/${services.find((service) => service.label === child)?.slug}`
+                    : navItems[activeMenu].href
+                }
                 key={child}
                 onClick={() => setIsOpen(false)}
               >

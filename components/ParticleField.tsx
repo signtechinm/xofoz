@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 type ParticleFieldProps = {
-  variant?: "hero" | "story" | "subtle";
+  variant?: "hero" | "service" | "story" | "subtle";
 };
 
 type Particle = {
@@ -34,7 +34,7 @@ export default function ParticleField({ variant = "hero" }: ParticleFieldProps) 
     let animationFrame = 0;
     let particles: Particle[] = [];
     const pointer = { x: 0, y: 0, active: false };
-    const multiplier = variant === "subtle" ? 0.42 : variant === "story" ? 0.62 : 1.08;
+    const multiplier = variant === "subtle" ? 0.42 : variant === "story" ? 0.62 : variant === "service" ? 0.78 : 1.08;
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();

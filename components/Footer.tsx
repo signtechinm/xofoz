@@ -61,12 +61,12 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h2>Services</h2>
-          <Link href="/#services">IT AMC</Link>
-          <Link href="/#services">Network infrastructure</Link>
-          <Link href="/#services">Cybersecurity</Link>
-          <Link href="/#services">Cloud &amp; Microsoft 365</Link>
-          <Link href="/#services">CCTV &amp; access control</Link>
-          <Link href="/#services">Website development</Link>
+          <Link href="/services/it-amc-abu-dhabi">IT AMC</Link>
+          <Link href="/services/network-infrastructure-abu-dhabi">Network infrastructure</Link>
+          <Link href="/services/cybersecurity-solutions-abu-dhabi">Cybersecurity</Link>
+          <Link href="/services/cloud-solutions-microsoft-365-abu-dhabi">Cloud &amp; Microsoft 365</Link>
+          <Link href="/services/cctv-access-control-abu-dhabi">CCTV &amp; access control</Link>
+          <Link href="/services/website-development-abu-dhabi">Website development</Link>
         </div>
         <div className="footer-column">
           <h2>Products</h2>
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span>Copyright &copy; 2026 XOFOZ Information Technology LLC. All rights reserved. Abu Dhabi, UAE.</span>
-          <div><Link href="/about">About</Link><Link href="/contact">Contact</Link><a href="#">Back to top ↑</a></div>
+          <div><Link href="/about">About</Link><Link href="/contact">Contact</Link><a href="#top">Back to top ↑</a></div>
         </div>
       </div>
     </footer>

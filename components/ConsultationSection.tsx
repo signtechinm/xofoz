@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import HomeLeadForm from "./HomeLeadForm";
 
 export default function ConsultationSection() {
   return (
@@ -23,37 +24,8 @@ export default function ConsultationSection() {
           </a>
         </Reveal>
 
-        <Reveal
-          as="form"
-          className="contact-form home-contact-form"
-          id="consultation"
-          action="mailto:hello@xofoz.com"
-          method="post"
-          encType="text/plain"
-          delay={0.08}
-        >
-          <span className="eyebrow">Free Consultation</span>
-          <h2 className="section-title">Send your requirement.</h2>
-          <div className="form-split">
-            <label>Name<input name="name" type="text" autoComplete="name" required /></label>
-            <label>Company<input name="company" type="text" autoComplete="organization" /></label>
-          </div>
-          <div className="form-split">
-            <label>Phone<input name="phone" type="tel" autoComplete="tel" required /></label>
-            <label>Email<input name="email" type="email" autoComplete="email" required /></label>
-          </div>
-          <label>What do you need help with?
-            <select name="service" defaultValue="" required>
-              <option value="" disabled>Select a requirement</option>
-              <option>Managed IT / AMC</option><option>Urgent IT support</option>
-              <option>Network or Wi-Fi</option><option>Cybersecurity</option>
-              <option>CCTV or access control</option><option>Cloud / Microsoft 365</option>
-              <option>Tally Prime / ERP</option><option>Other</option>
-            </select>
-          </label>
-          <label>Message<textarea name="message" rows={5} required /></label>
-          <button className="button button--primary" type="submit">Send message</button>
-          <p className="sample-note">Sample form currently opens the visitor&apos;s email application.</p>
+        <Reveal delay={0.08}>
+          <HomeLeadForm />
         </Reveal>
       </div>
     </section>

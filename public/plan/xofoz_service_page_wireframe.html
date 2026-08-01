@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XOFOZ — Service Page Wireframe Template</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F2F5;color:#111827;font-size:12px;padding:24px}
+.doc-header{background:#fff;border-radius:12px;padding:24px 32px;margin-bottom:20px;border:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center}
+.doc-logo{font-size:18px;font-weight:700;color:#2563EB;letter-spacing:-0.5px}
+.doc-title{text-align:center}
+.doc-title h1{font-size:15px;font-weight:700;color:#111827;margin-bottom:3px}
+.doc-title p{font-size:11px;color:#6B7280}
+.doc-meta{text-align:right;font-size:10px;color:#6B7280;line-height:1.6}
+.legend{background:#fff;border-radius:8px;padding:12px 20px;margin-bottom:20px;border:1px solid #E5E7EB;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.legend-title{font-size:10px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:0.5px;margin-right:8px}
+.leg{display:flex;align-items:center;gap:5px;font-size:10px}
+.tag{display:inline-flex;padding:2px 7px;border-radius:100px;font-size:9px;font-weight:700}
+.ts{background:#D1FAE5;color:#065F46}
+.ta{background:#CCFBF1;color:#0F766E}
+.tg{background:#FEF3C7;color:#92400E}
+.te{background:#FEE2E2;color:#991B1B}
+.tu{background:#DBEAFE;color:#1E40AF}
+.browser{background:#fff;border-radius:12px;border:1px solid #D1D5DB;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.bbar{background:#F3F4F6;border-bottom:1px solid #E5E7EB;padding:10px 14px;display:flex;align-items:center;gap:8px}
+.bdots{display:flex;gap:5px}
+.bdot{width:10px;height:10px;border-radius:50%}
+.bdot.r{background:#FF5F57}
+.bdot.y{background:#FFBD2E}
+.bdot.g{background:#28C840}
+.burl{flex:1;background:#fff;border:1px solid #E5E7EB;border-radius:6px;padding:4px 12px;font-size:10px;color:#6B7280;margin:0 10px;font-family:monospace}
+.btpl{background:#FEF3C7;color:#92400E;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px}
+.nav{background:#fff;border-bottom:1px solid #E5E7EB;padding:10px 20px;display:flex;align-items:center}
+.nav-logo{font-size:14px;font-weight:700;color:#2563EB;margin-right:24px}
+.nav-links{display:flex;gap:2px;flex:1}
+.nl{font-size:10px;color:#6B7280;padding:4px 10px;border-radius:4px}
+.nl.active{color:#2563EB;font-weight:600;background:#EFF6FF}
+.nav-right{margin-left:auto;display:flex;gap:8px}
+.btn-nav{font-size:9px;padding:5px 12px;border-radius:5px;font-weight:600}
+.btn-wa{background:#25D366;color:#fff}
+.btn-primary{background:#111827;color:#fff}
+.sec{border-bottom:1px solid #E5E7EB;padding:14px 20px}
+.sn{font-size:9px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.sn-badge{background:#F3F4F6;border:1px solid #E5E7EB;color:#6B7280;font-size:8px;padding:1px 6px;border-radius:3px;font-weight:600}
+.sh{font-size:12px;font-weight:700;color:#111827;margin-bottom:4px}
+.sp{font-size:9px;color:#6B7280;line-height:1.5;margin-bottom:6px}
+.tgs{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.card{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:10px 12px}
+.ph{background:#F3F4F6;border:1.5px dashed #D1D5DB;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:20px;text-align:center;min-height:90px}
+.ph-ico{width:24px;height:24px;background:#E5E7EB;border-radius:6px;margin:0 auto 5px}
+.ph-label{font-size:8px;color:#9CA3AF;font-style:italic}
+.crumb{padding:7px 20px;background:#F9FAFB;border-bottom:1px solid #E5E7EB;font-size:9px;color:#9CA3AF;display:flex;align-items:center;gap:5px}
+.clink{color:#2563EB;font-weight:500}
+.hero-eyebrow{font-size:8px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px}
+.hero-h1{font-size:16px;font-weight:700;color:#111827;line-height:1.3;margin-bottom:6px}
+.hero-sub{font-size:9px;color:#374151;line-height:1.6;margin-bottom:10px;padding:8px;background:#EFF6FF;border-left:3px solid #2563EB;border-radius:0 4px 4px 0}
+.hero-sub-label{font-size:8px;font-weight:700;color:#2563EB;display:block;margin-bottom:3px}
+.btns{display:flex;gap:7px;margin-bottom:10px}
+.btn-p{background:#111827;color:#fff;font-size:9px;padding:6px 14px;border-radius:5px;font-weight:600}
+.btn-s{border:1.5px solid #374151;color:#111827;font-size:9px;padding:6px 14px;border-radius:5px;font-weight:600;background:#fff}
+.stats-row{display:flex;gap:8px}
+.stat{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:6px 10px;text-align:center;flex:1}
+.stat-n{font-size:14px;font-weight:700;color:#2563EB}
+.stat-l{font-size:7px;color:#9CA3AF}
+.comp-box{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:10px}
+.comp-panels{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:6px}
+.comp-g{background:#D1FAE5;border-radius:5px;padding:7px;font-size:8px;color:#065F46}
+.comp-r{background:#FEE2E2;border-radius:5px;padding:7px;font-size:8px;color:#991B1B}
+.prob-card{background:#FFF7F7;border:1px solid #FEE2E2;border-radius:0 0 8px 8px;border-top:2px solid #DC2626;padding:10px}
+.prob-icon{width:20px;height:20px;background:#FEE2E2;border-radius:50%;margin-bottom:5px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#DC2626;font-weight:700}
+.check-item{display:flex;gap:7px;align-items:flex-start;padding:5px 0;border-bottom:1px solid #F3F4F6;font-size:9px;color:#374151}
+.check-item:last-child{border-bottom:none}
+.ck{width:14px;height:14px;min-width:14px;background:#D1FAE5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#065F46;font-weight:700;margin-top:1px}
+.custom-box{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:12px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:7px;height:100%;justify-content:center}
+.custom-ico{width:28px;height:28px;background:#DBEAFE;border-radius:8px}
+.step-card{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:12px;text-align:center}
+.step-n{width:26px;height:26px;border-radius:50%;background:#2563EB;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 7px}
+.why-item{display:flex;gap:8px;align-items:flex-start;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:7px 9px;margin-bottom:5px}
+.why-ico{width:18px;height:18px;min-width:18px;background:#D1FAE5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:#059669;font-weight:700;margin-top:1px}
+.cert-panel{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:10px 12px}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:7px}
+.cert-item{background:#fff;border:1px solid #E5E7EB;border-radius:5px;padding:5px 7px}
+.cert-name{font-size:8px;font-weight:700;color:#111827}
+.cert-sub{font-size:7px;color:#9CA3AF}
+.ind-card{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:7px;padding:9px;text-align:center}
+.ind-ico{width:24px;height:24px;background:#DBEAFE;border-radius:6px;margin:0 auto 5px}
+.ind-name{font-size:8px;font-weight:700;margin-bottom:2px}
+.ind-clients{font-size:7px;color:#9CA3AF;line-height:1.3}
+.faq-item{border-bottom:1px solid #F3F4F6;padding:8px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:9px;font-weight:600;color:#111827;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.faq-tag{background:#FEF3C7;color:#92400E;font-size:7px;padding:1px 5px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.faq-a{font-size:8px;color:#6B7280;margin-top:3px;line-height:1.5}
+.trust-block{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:12px;display:flex;gap:14px;align-items:flex-start}
+.trust-logo{width:48px;height:48px;min-width:48px;background:#fff;border:1px solid #E5E7EB;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:7px;color:#9CA3AF;text-align:center;line-height:1.3}
+.trust-stats{display:flex;gap:10px;margin-top:8px}
+.ts-item{text-align:center}
+.ts-n{font-size:13px;font-weight:700;color:#2563EB}
+.ts-l{font-size:7px;color:#9CA3AF}
+.rel-card{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:10px 12px}
+.rel-ico{width:20px;height:20px;background:#DBEAFE;border-radius:5px;margin-bottom:5px}
+.rel-link{font-size:8px;color:#2563EB;font-weight:600;margin-top:5px;display:block}
+.cta-form{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:12px}
+.wa-btn{background:#25D366;color:#fff;font-size:8px;padding:6px 12px;border-radius:5px;font-weight:600;display:inline-flex;align-items:center;gap:4px;margin-bottom:9px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:5px}
+.ff{background:#fff;border:1px solid #D1D5DB;border-radius:4px;padding:6px 8px;font-size:7px;color:#9CA3AF;display:block}
+.ff.full{grid-column:1/-1}
+.f-btn{background:#111827;color:#fff;font-size:9px;padding:7px;border-radius:5px;width:100%;text-align:center;font-weight:600;margin-top:3px}
+.nap-card{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:10px 12px}
+.nap-item{display:flex;gap:6px;align-items:flex-start;font-size:8px;color:#6B7280;margin-bottom:4px}
+.nap-ico{width:12px;height:12px;min-width:12px;background:#DBEAFE;border-radius:3px;margin-top:1px}
+.map-ph{background:#F3F4F6;border:1.5px dashed #D1D5DB;border-radius:6px;padding:14px;text-align:center;font-size:7px;color:#9CA3AF;margin-top:8px}
+.ftr{background:#F9FAFB;padding:14px 20px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:14px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #E5E7EB}
+.fch{font-size:8px;font-weight:700;color:#374151;margin-bottom:6px}
+.fl{display:block;font-size:8px;color:#6B7280;margin-bottom:3px}
+.fbrand{font-size:11px;font-weight:700;margin-bottom:3px}
+.fdesc{font-size:8px;color:#6B7280;line-height:1.5;margin-bottom:8px}
+.fsoc{display:flex;gap:6px}
+.fsoc-icon{width:16px;height:16px;background:#E5E7EB;border-radius:4px}
+.fbot{display:flex;justify-content:space-between;align-items:center}
+.fcopy{font-size:8px;color:#9CA3AF}
+.sec-alert{background:#FFFBEB;border:1px solid #FDE68A;border-radius:6px;padding:8px 12px;font-size:9px;color:#92400E;margin-top:8px}
+.sec-alert strong{font-weight:700}
+.dev-note{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:5px;padding:6px 10px;font-size:8px;color:#1E40AF;margin-top:6px}
+.dev-note strong{font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div>
+    <div class="doc-logo">XOFOZ</div>
+    <div style="font-size:9px;color:#6B7280;margin-top:2px">Information Technology LLC</div>
+  </div>
+  <div class="doc-title">
+    <h1>Service Page — Wireframe Template</h1>
+    <p>Applies to all 20 individual service pages &nbsp;·&nbsp; Desktop view &nbsp;·&nbsp; Structure is identical across all services — only content changes</p>
+  </div>
+  <div class="doc-meta">
+    Prepared by Shaheen ES<br>Digital Marketing Consultant<br>June 2026
+  </div>
+</div>
+
+<div class="legend">
+  <span class="legend-title">Tag legend:</span>
+  <div class="leg"><span class="tag ts">SEO</span> Traditional search optimisation</div>
+  <div class="leg"><span class="tag ta">AEO</span> Google AI overviews</div>
+  <div class="leg"><span class="tag tg">GEO</span> ChatGPT / Perplexity</div>
+  <div class="leg"><span class="tag te">EEAT</span> Authority signal</div>
+  <div class="leg"><span class="tag tu">UX</span> User experience</div>
+</div>
+
+<div class="browser">
+
+  <div class="bbar">
+    <div class="bdots"><div class="bdot r"></div><div class="bdot y"></div><div class="bdot g"></div></div>
+    <div class="burl">xofoz.com/services/[service-name-abu-dhabi]/</div>
+    <div class="btpl">Template — all 20 service pages use this exact structure</div>
+  </div>
+
+  <div class="nav">
+    <div class="nav-logo">XOFOZ</div>
+    <div class="nav-links">
+      <span class="nl active">Services ▾</span>
+      <span class="nl">Products ▾</span>
+      <span class="nl">Solutions ▾</span>
+      <span class="nl">Industries</span>
+      <span class="nl">About</span>
+      <span class="nl">Blog</span>
+      <span class="nl">Contact</span>
+    </div>
+    <div class="nav-right">
+      <span class="btn-nav btn-wa">WhatsApp</span>
+      <span class="btn-nav btn-primary">Get a free quote</span>
+    </div>
+  </div>
+
+  <div class="crumb">
+    <span class="clink">Home</span> <span>›</span> <span class="clink">Services</span> <span>›</span>
+    <span style="color:#374151;font-weight:500">[Service name] Abu Dhabi</span>
+    <div class="tgs" style="margin:0 0 0 auto">
+      <span class="tag ts">SEO: BreadcrumbList schema</span>
+      <span class="tag ta">AEO: page hierarchy signal</span>
+    </div>
+  </div>
+
+  <div class="sec" style="background:#FAFBFF">
+    <div class="sn"><span class="sn-badge">SECTION 01</span> Hero</div>
+    <div class="g2">
+      <div>
+        <div class="hero-eyebrow">[Service name] in Abu Dhabi, UAE — since 2022</div>
+        <div class="hero-h1">[Service name] in Abu Dhabi</div>
+        <div class="hero-sub">
+          <span class="hero-sub-label">5-SECOND HOOK — AI bots extract this first:</span>
+          XOFOZ Information Technology provides [service name] for businesses in Abu Dhabi, UAE. [What is included — 3 to 4 key inclusions]. [Outcome for the business — what stays running, secure, productive]. [One line establishing XOFOZ as the provider since 2022 with 150+ clients].
+        </div>
+        <div class="btns">
+          <span class="btn-p">Get a free [service] quote</span>
+          <span class="btn-s">WhatsApp us now</span>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Active clients</div></div>
+          <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Years experience</div></div>
+          <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Support</div></div>
+          <div class="stat"><div class="stat-n">Abu Dhabi</div><div class="stat-l">Based team</div></div>
+        </div>
+      </div>
+      <div class="ph" style="min-height:140px">
+        <div class="ph-ico"></div>
+        <span class="ph-label">Service-specific hero image</span>
+        <span class="ph-label">Real XOFOZ team / on-site photography</span>
+        <span class="ph-label">Alt text: [service name] Abu Dhabi XOFOZ</span>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ts">SEO: H1 = exact focus keyword — one per page only</span>
+      <span class="tag ta">AEO: subheadline is AI overview extraction zone</span>
+      <span class="tag tg">GEO: full entity name in subheadline</span>
+      <span class="tag te">EEAT: stats — 150+ clients, 3+ years above fold</span>
+      <span class="tag tu">UX: dual CTA — primary and WhatsApp</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> H1 appears only once per page. Stats must be hardcoded — no JS animation. Image must have alt text with focus keyword.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sn"><span class="sn-badge">SECTION 02</span> What is [Service]</div>
+    <div class="g2">
+      <div>
+        <div class="sh">What is [service name] and why does your business need it?</div>
+        <div class="sp">[PARAGRAPH 1 — Direct plain-English answer in first 100 words. No jargon. No preamble. Answer must be complete before the visitor scrolls. Written for a business owner — not a technical person. This is the primary AEO extraction zone.]</div>
+        <div class="sp">[PARAGRAPH 2 — Expanding context. UAE and Abu Dhabi business environment. Second-person language — "your business." Mention Abu Dhabi naturally once here.]</div>
+      </div>
+      <div class="comp-box">
+        <div style="font-size:9px;font-weight:700;color:#374151;margin-bottom:6px">[Service] — at a glance</div>
+        <div class="comp-panels">
+          <div class="comp-g"><div style="font-weight:700;margin-bottom:3px">With XOFOZ</div>[4-5 benefits — one per line — specific and measurable]</div>
+          <div class="comp-r"><div style="font-weight:700;margin-bottom:3px">Without it</div>[4-5 risks — one per line — written as business pain]</div>
+        </div>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ta">AEO: first 100 words = Google AI overview prime target</span>
+      <span class="tag tg">GEO: service entity defined clearly for AI systems</span>
+      <span class="tag ts">SEO: H2 contains secondary keyword</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> Do not use accordion here — all content must be visible on load for SEO crawlability.</div>
+  </div>
+
+  <div class="sec" style="background:#FFFBFB">
+    <div class="sn"><span class="sn-badge">SECTION 03</span> The problem without it</div>
+    <div class="sh">What happens when Abu Dhabi businesses have no [service name]?</div>
+    <div class="sp">Intro line: [One sentence introducing the three pain points that follow]</div>
+    <div class="g3" style="margin-top:8px">
+      <div class="prob-card">
+        <div class="prob-icon">!</div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:3px">H3: [Pain point 1 title]</div>
+        <div class="sp" style="margin:0">[2-3 sentences — real business impact — Abu Dhabi market context — second-person language — "your business"]</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon">!</div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:3px">H3: [Pain point 2 title]</div>
+        <div class="sp" style="margin:0">[2-3 sentences — real business impact — UAE context — second-person language]</div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-icon">!</div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:3px">H3: [Pain point 3 title]</div>
+        <div class="sp" style="margin:0">[2-3 sentences — real business impact — specific risk for UAE businesses — second-person language]</div>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ta">AEO: PAA candidate — addresses searcher pain directly</span>
+      <span class="tag tg">GEO: UAE-specific context makes content citable</span>
+      <span class="tag tu">UX: builds urgency and relevance for conversion</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sn"><span class="sn-badge">SECTION 04</span> What is included</div>
+    <div class="sh">What XOFOZ [service name] includes</div>
+    <div class="sp">Intro: [One sentence introducing the checklist — "Every XOFOZ [service] contract covers:"]</div>
+    <div class="g2" style="margin-top:8px">
+      <div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 1 — specific and concrete — not generic]</div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 2 — specific and concrete — not generic]</div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 3 — specific and concrete — not generic]</div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 4 — specific and concrete — not generic]</div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 5 — specific and concrete — not generic]</div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 6 — specific and concrete — not generic]</div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 7 — specific and concrete — not generic]</div>
+        <div class="check-item"><div class="ck">✓</div>[Inclusion 8 — specific and concrete — not generic]</div>
+      </div>
+      <div class="custom-box">
+        <div class="custom-ico"></div>
+        <div style="font-size:10px;font-weight:700">Custom plans for every business</div>
+        <div class="sp" style="margin:0;text-align:center">[2-3 sentences — no generic packages — tailored to size, industry, and budget]</div>
+        <span style="background:#2563EB;color:#fff;font-size:8px;padding:5px 12px;border-radius:4px;font-weight:600;margin-top:4px">Get a free assessment</span>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ta">AEO: featured snippet — structured list format is critical</span>
+      <span class="tag tg">GEO: specific inclusions AI can cite for this service</span>
+      <span class="tag ts">SEO: LSI keywords naturally placed in list items</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> Checklist must be marked up as a proper unordered list in HTML — not a visual-only design element. This enables Google to extract it as a featured snippet.</div>
+  </div>
+
+  <div class="sec" style="background:#F9FAFB">
+    <div class="sn"><span class="sn-badge">SECTION 05</span> How it works — 3 steps</div>
+    <div class="sh">How XOFOZ delivers [service name] — 3 simple steps</div>
+    <div class="g3" style="margin-top:10px">
+      <div class="step-card">
+        <div class="step-n">1</div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:3px">H3: [Step 1 title]</div>
+        <div class="sp" style="margin:0">[2-3 sentences — what XOFOZ does — what the client experiences — jargon-free — focus on the client outcome not the technical process]</div>
+      </div>
+      <div class="step-card">
+        <div class="step-n">2</div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:3px">H3: [Step 2 title]</div>
+        <div class="sp" style="margin:0">[2-3 sentences — what XOFOZ does — what the client experiences — jargon-free — focus on the client outcome not the technical process]</div>
+      </div>
+      <div class="step-card">
+        <div class="step-n">3</div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:3px">H3: [Step 3 title]</div>
+        <div class="sp" style="margin:0">[2-3 sentences — what XOFOZ does — what the client experiences — jargon-free — focus on the client outcome not the technical process]</div>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ta">AEO: HowTo schema — step format = AI overview extraction</span>
+      <span class="tag tg">GEO: structured process = citable content for AI systems</span>
+      <span class="tag tu">UX: reduces prospect anxiety before contacting</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> Apply HowTo schema to this section. Step names and descriptions must be correctly marked up as JSON-LD in the page head.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sn"><span class="sn-badge">SECTION 06</span> Why XOFOZ</div>
+    <div class="sh">Why Abu Dhabi businesses choose XOFOZ for [service name]</div>
+    <div class="g2" style="margin-top:10px">
+      <div>
+        <div class="why-item"><div class="why-ico">✓</div><div><div style="font-size:9px;font-weight:700;margin-bottom:1px">H3: ADMCC certified engineers</div><div class="sp" style="margin:0">Compliance-ready for Abu Dhabi's regulatory standards — hospitality, real estate, construction</div></div></div>
+        <div class="why-item"><div class="why-ico">✓</div><div><div style="font-size:9px;font-weight:700;margin-bottom:1px">H3: Fast on-site response across Abu Dhabi</div><div class="sp" style="margin:0">Local Abu Dhabi-based engineers — no offshore delays — genuine local accountability</div></div></div>
+        <div class="why-item"><div class="why-ico">✓</div><div><div style="font-size:9px;font-weight:700;margin-bottom:1px">H3: 150+ active clients across UAE</div><div class="sp" style="margin:0">Marriott, Sobha, Agility, National Holdings, Altrad — enterprise-level trust</div></div></div>
+        <div class="why-item"><div class="why-ico">✓</div><div><div style="font-size:9px;font-weight:700;margin-bottom:1px">H3: Multi-vendor, brand-independent expertise</div><div class="sp" style="margin:0">Microsoft, Fortinet, HikVision, Aruba, ESET, Acronis — we recommend what is right for you</div></div></div>
+        <div class="why-item"><div class="why-ico">✓</div><div><div style="font-size:9px;font-weight:700;margin-bottom:1px">H3: UAE-based team — zero offshore support</div><div class="sp" style="margin:0">Every call, visit, and report handled by our Abu Dhabi team directly</div></div></div>
+      </div>
+      <div class="cert-panel">
+        <div style="font-size:9px;font-weight:700;margin-bottom:5px">Certifications and partnerships</div>
+        <div class="cert-grid">
+          <div class="cert-item"><div class="cert-name">ADMCC</div><div class="cert-sub">Certified</div></div>
+          <div class="cert-item"><div class="cert-name">Microsoft</div><div class="cert-sub">Partner</div></div>
+          <div class="cert-item"><div class="cert-name">Fortinet</div><div class="cert-sub">Certified</div></div>
+          <div class="cert-item"><div class="cert-name">HikVision</div><div class="cert-sub">Authorised</div></div>
+          <div class="cert-item"><div class="cert-name">Tally Prime</div><div class="cert-sub">Authorised dealer</div></div>
+          <div class="cert-item"><div class="cert-name">ESET</div><div class="cert-sub">Certified reseller</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag te">EEAT: all 4 signals — experience, expertise, authority, trust</span>
+      <span class="tag tg">GEO: named certs and clients = prime AI citation material</span>
+      <span class="tag ta">AEO: featured snippet for "why choose XOFOZ" queries</span>
+      <span class="tag ts">SEO: 5 H3s with unique keyword combinations</span>
+    </div>
+  </div>
+
+  <div class="sec" style="background:#F9FAFB">
+    <div class="sn"><span class="sn-badge">SECTION 07</span> Industries we serve</div>
+    <div class="sh">Industries we deliver [service name] for in Abu Dhabi</div>
+    <div class="sp">Intro: XOFOZ's experience and proven client track record across Abu Dhabi's major sectors.</div>
+    <div class="g5" style="margin-top:8px">
+      <div class="ind-card"><div class="ind-ico"></div><div class="ind-name">H3: Hospitality</div><div class="ind-clients">Marriott · Bloom · Hayatna</div><div style="font-size:7px;color:#2563EB;margin-top:4px;font-weight:600">View industry page →</div></div>
+      <div class="ind-card"><div class="ind-ico"></div><div class="ind-name">H3: Real estate</div><div class="ind-clients">Sobha · Bloom</div><div style="font-size:7px;color:#2563EB;margin-top:4px;font-weight:600">View industry page →</div></div>
+      <div class="ind-card"><div class="ind-ico"></div><div class="ind-name">H3: Construction</div><div class="ind-clients">Altrad · China Harbour · Jazal</div><div style="font-size:7px;color:#2563EB;margin-top:4px;font-weight:600">View industry page →</div></div>
+      <div class="ind-card"><div class="ind-ico"></div><div class="ind-name">H3: Logistics</div><div class="ind-clients">Agility · Khadamat · Cleanco</div><div style="font-size:7px;color:#2563EB;margin-top:4px;font-weight:600">View industry page →</div></div>
+      <div class="ind-card"><div class="ind-ico"></div><div class="ind-name">H3: Manufacturing</div><div class="ind-clients">Exeed</div><div style="font-size:7px;color:#2563EB;margin-top:4px;font-weight:600">View industry page →</div></div>
+    </div>
+    <div class="tgs">
+      <span class="tag ts">SEO: 5 internal links to industry pages — hub and spoke</span>
+      <span class="tag tg">GEO: named clients per sector = strongest GEO signal</span>
+      <span class="tag te">EEAT: proves real experience in each sector</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> Each card links to a real industry subpage URL — not an anchor link. 5 columns desktop, 2 columns tablet, 1 column mobile.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sn"><span class="sn-badge">SECTION 08</span> FAQ — 6 to 8 questions — FAQPage schema applied</div>
+    <div class="sh">Frequently asked questions about [service name] in Abu Dhabi</div>
+    <div style="margin-top:10px">
+      <div class="faq-item">
+        <div class="faq-q">What is [service name] and why does my business need it? <span class="faq-tag">PAA target</span></div>
+        <div class="faq-a">[Direct 2-4 sentence answer. Must be complete. This is the primary People Also Ask and Google AI Overview target for this keyword.]</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much does [service name] cost in Abu Dhabi? <span class="faq-tag">High intent</span></div>
+        <div class="faq-a">[Honest answer. If pricing is bespoke — say why and direct to free assessment. Never avoid the question entirely.]</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How quickly does XOFOZ respond for [service name]? <span class="faq-tag">Trust signal</span></div>
+        <div class="faq-a">[Specific answer — verified with XOFOZ before publishing. Never guess or use unverified claims.]</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Which businesses in Abu Dhabi need [service name]? <span class="faq-tag">Sector query</span></div>
+        <div class="faq-a">[Sector and size-based answer. Name industries XOFOZ serves. UAE business context.]</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can XOFOZ manage our existing [service] setup? <span class="faq-tag">Objection</span></div>
+        <div class="faq-a">[Yes-first answer. Explain how XOFOZ audits and takes ownership of existing infrastructure.]</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">[Service-specific Q6 — from real PAA research] <span class="faq-tag">PAA research</span></div>
+        <div class="faq-a">[Direct answer based on actual People Also Ask results for this service keyword.]</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">[Service-specific Q7] <span class="faq-tag">PAA research</span></div>
+        <div class="faq-a">[Direct answer.]</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">[Service-specific Q8] <span class="faq-tag">PAA research</span></div>
+        <div class="faq-a">[Direct answer.]</div>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ta">AEO: FAQPage schema = Google AI overview prime target</span>
+      <span class="tag tg">GEO: every question is a real ChatGPT / Perplexity query</span>
+      <span class="tag ts">SEO: long-tail keyword capture for every variation</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> Apply FAQPage schema as JSON-LD in page head. All answers must be complete — Google penalises evasive FAQ schema answers. Test with Google Rich Results Test before launch.</div>
+  </div>
+
+  <div class="sec" style="background:#FAFBFF">
+    <div class="sn"><span class="sn-badge">SECTION 09</span> Client trust block</div>
+    <div class="sh">Trusted by leading businesses across Abu Dhabi</div>
+    <div class="trust-block" style="margin-top:8px">
+      <div class="trust-logo">[Client logo or name]</div>
+      <div style="flex:1">
+        <div style="font-size:10px;font-weight:700;margin-bottom:3px">[Client name] — [service name] for [industry] in Abu Dhabi</div>
+        <div class="sp" style="margin-bottom:8px">[2-3 sentences — specific outcome — named client — named sector — specific numbers where available. This is the highest GEO value block on the page. Named client + specific service + specific outcome = prime AI citation.]</div>
+        <div class="trust-stats">
+          <div class="ts-item"><div class="ts-n">[#]</div><div class="ts-l">[Metric]</div></div>
+          <div class="ts-item"><div class="ts-n">[#]</div><div class="ts-l">[Metric]</div></div>
+          <div class="ts-item"><div class="ts-n">[#]</div><div class="ts-l">[Metric]</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag tg">GEO: named client + specific outcome = highest GEO value on page</span>
+      <span class="tag te">EEAT: real client, real result, real numbers</span>
+      <span class="tag tu">UX: conversion-stage social proof</span>
+    </div>
+    <div class="sec-alert"><strong>Important:</strong> Only use real confirmed client information — verified with XOFOZ before publishing. If client has not given permission to be named — use sector and size description instead.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sn"><span class="sn-badge">SECTION 10</span> Related services — 3 cards</div>
+    <div class="sh">Services that work alongside [service name]</div>
+    <div class="g3" style="margin-top:8px">
+      <div class="rel-card">
+        <div class="rel-ico"></div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:2px">H3: [Related service 1] Abu Dhabi</div>
+        <div class="sp">[1-2 sentences — natural logical connection to the current service — written as the client's next step]</div>
+        <span class="rel-link">View [related service 1] →</span>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico"></div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:2px">H3: [Related service 2] Abu Dhabi</div>
+        <div class="sp">[1-2 sentences — natural logical connection to the current service — written as the client's next step]</div>
+        <span class="rel-link">View [related service 2] →</span>
+      </div>
+      <div class="rel-card">
+        <div class="rel-ico"></div>
+        <div style="font-size:9px;font-weight:700;margin-bottom:2px">H3: [Related service 3] Abu Dhabi</div>
+        <div class="sp">[1-2 sentences — natural logical connection to the current service — written as the client's next step]</div>
+        <span class="rel-link">View [related service 3] →</span>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ts">SEO: 3 internal links — distributes authority across hub and spoke</span>
+      <span class="tag tu">UX: reduces bounce rate — keeps visitor in the site</span>
+      <span class="tag tg">GEO: service connections help AI understand XOFOZ as full-service partner</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> All 3 links must point to real subpage URLs — not anchor links. Related services must be genuinely connected — not random.</div>
+  </div>
+
+  <div class="sec" style="background:#F0F7FF">
+    <div class="sn"><span class="sn-badge">SECTION 11</span> CTA block</div>
+    <div class="sh">Get a free [service name] consultation in Abu Dhabi</div>
+    <div class="g2" style="margin-top:10px">
+      <div class="cta-form">
+        <div style="font-size:11px;font-weight:700;margin-bottom:3px">Ready to get started?</div>
+        <div class="sp">[2-3 lines. Covers all three pillars — services, products, solutions. Includes Abu Dhabi. No obligation. No generic proposals.]</div>
+        <div class="wa-btn">WhatsApp: Chat with us now</div>
+        <div class="f-row">
+          <div class="ff">Your name</div>
+          <div class="ff">Company name</div>
+          <div class="ff">Phone number</div>
+          <div class="ff">[Service-specific field]</div>
+          <div class="ff full" style="padding:14px 8px">Tell us about your [service] needs</div>
+        </div>
+        <div class="f-btn">Request a free [service] assessment</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="nap-card">
+          <div style="font-size:9px;font-weight:700;margin-bottom:7px">Contact XOFOZ</div>
+          <div class="nap-item"><div class="nap-ico"></div>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</div>
+          <div class="nap-item"><div class="nap-ico"></div>026 220 071</div>
+          <div class="nap-item"><div class="nap-ico"></div>+971 52 355 4202 (WhatsApp)</div>
+          <div class="nap-item"><div class="nap-ico"></div>hello@xofoz.com</div>
+          <div class="nap-item"><div class="nap-ico"></div>Monday – Saturday, 8:30 AM – 6:30 PM</div>
+        </div>
+        <div class="map-ph">Google Maps embed — XOFOZ office Abu Dhabi</div>
+      </div>
+    </div>
+    <div class="tgs">
+      <span class="tag ts">SEO: full NAP = critical local SEO signal — must match Google Business Profile exactly</span>
+      <span class="tag ta">AEO: contact info extracted for business information panels</span>
+      <span class="tag tg">GEO: complete entity data — AI uses this to verify and recommend</span>
+      <span class="tag tu">UX: WhatsApp is primary — UAE behaviour</span>
+    </div>
+    <div class="dev-note"><strong>Developer:</strong> NAP must be character-for-character identical to Google Business Profile. Form must have working submission before launch. Apply LocalBusiness schema referencing this NAP data.</div>
+  </div>
+
+  <div class="ftr">
+    <div class="sn" style="margin-bottom:10px"><span class="sn-badge">SECTION 12</span> Footer — identical on every page</div>
+    <div class="fcols">
+      <div>
+        <div class="fbrand">XOFOZ Information Technology LLC</div>
+        <div class="fdesc">Abu Dhabi's trusted IT solutions company since 2022 — delivering managed IT services, authorised software products, and complete IT solutions to 150+ businesses across the UAE.</div>
+        <div class="fsoc"><div class="fsoc-icon"></div><div class="fsoc-icon"></div><div class="fsoc-icon"></div></div>
+      </div>
+      <div><div class="fch">Services</div><span class="fl">IT AMC</span><span class="fl">Network</span><span class="fl">Cybersecurity</span><span class="fl">Cloud and M365</span><span class="fl">CCTV</span><span class="fl">Hardware</span><span class="fl">Web development</span></div>
+      <div><div class="fch">Products</div><span class="fl">Tally Prime</span><span class="fl">Microsoft 365</span><span class="fl">Acronis backup</span><span class="fl">Fortinet</span><span class="fl">HikVision</span><span class="fl">ESET</span><span class="fl">Aruba</span></div>
+      <div><div class="fch">Solutions</div><span class="fl">CCTV installation</span><span class="fl">WiFi setup</span><span class="fl">IT troubleshoot</span><span class="fl">Cloud migration</span><span class="fl">Office IT setup</span><span class="fl">ERP setup</span></div>
+      <div><div class="fch">Company</div><span class="fl">About XOFOZ</span><span class="fl">Our clients</span><span class="fl">Industries</span><span class="fl">Blog</span><span class="fl">Contact us</span><span class="fl">Privacy policy</span><span class="fl">Terms</span></div>
+    </div>
+    <div class="fbot">
+      <div class="fcopy">© 2026 XOFOZ Information Technology LLC. All rights reserved. Abu Dhabi, United Arab Emirates.</div>
+      <div style="font-size:8px;color:#6B7280">Managed by Shaheen ES — Digital Marketing Consultant</div>
+    </div>
+    <div class="tgs" style="margin-top:8px">
+      <span class="tag ts">SEO: footer links give Google full site crawlability</span>
+      <span class="tag tg">GEO: brand block is the most complete entity description on any page</span>
+      <span class="tag te">EEAT: © 2026 signals active, maintained website</span>
+    </div>
+  </div>
+
+</div>
+
+<div style="background:#fff;border-radius:8px;border:1px solid #E5E7EB;padding:16px 20px;margin-top:16px">
+  <div style="font-size:11px;font-weight:700;margin-bottom:10px;color:#111827">Schema markup — all service pages</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700">BreadcrumbList</div><div style="font-size:8px;color:#6B7280;margin-top:2px">Section 01 — Breadcrumb</div></div>
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700">HowTo</div><div style="font-size:8px;color:#6B7280;margin-top:2px">Section 05 — Steps 1, 2, 3</div></div>
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700">FAQPage</div><div style="font-size:8px;color:#6B7280;margin-top:2px">Section 08 — All FAQs</div></div>
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700">AggregateRating</div><div style="font-size:8px;color:#6B7280;margin-top:2px">Section 09 — If ratings available</div></div>
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700">Service</div><div style="font-size:8px;color:#6B7280;margin-top:2px">Full page — service entity</div></div>
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700">LocalBusiness</div><div style="font-size:8px;color:#6B7280;margin-top:2px">Section 11 — Full NAP</div></div>
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700">Organization</div><div style="font-size:8px;color:#6B7280;margin-top:2px">Footer — company entity</div></div>
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:6px;padding:8px 10px"><div style="font-size:9px;font-weight:700;color:#1E40AF">All schema = JSON-LD</div><div style="font-size:8px;color:#1E40AF;margin-top:2px">In page head — never inline</div></div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:16px;font-size:9px;color:#9CA3AF">
+  XOFOZ Information Technology LLC — Service Page Wireframe Template — Prepared by Shaheen ES, Digital Marketing Consultant — June 2026
+</div>
+
+</body>
+</html>
