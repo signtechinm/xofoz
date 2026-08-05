@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { services } from "../data/services";
+import { solutionNavItems } from "../data/solutions";
 import BrandLogo from "./BrandLogo";
 
 const navItems = [
@@ -17,9 +18,9 @@ const navItems = [
     children: ["Microsoft 365", "Tally Prime", "Acronis Backup", "Fortinet Firewalls", "ESET Endpoint", "Business Hardware"],
   },
   {
-    label: "Solutions", href: "/#solutions", image: "/services/office-it-setup.png",
+    label: "Solutions", href: "/solutions", image: "/services/office-it-setup.png",
     description: "Complete solutions engineered around the real office requirement.",
-    children: ["New office IT setup", "Office Wi-Fi", "Cloud migration", "Network infrastructure", "Meeting room & AV", "ERP implementation"],
+    children: solutionNavItems.map((solution) => solution.label),
   },
   {
     label: "Industries", href: "/#industries", image: "/backgrounds/core-capabilities-server-room.png",
@@ -114,7 +115,7 @@ export default function Header() {
           </div>
           <div className="header-dropdown__subnav">
             <span className="header-dropdown__eyebrow">{navItems[activeMenu].label}</span>
-            {navItems[activeMenu].label !== "Services" && (
+            {navItems[activeMenu].label !== "Services" && navItems[activeMenu].label !== "Solutions" && (
               <Link className="header-dropdown__all" href={navItems[activeMenu].href} onClick={() => setIsOpen(false)}>
                 View all {navItems[activeMenu].label.toLowerCase()} <span>↗</span>
               </Link>
@@ -125,6 +126,8 @@ export default function Header() {
                 href={
                   navItems[activeMenu].label === "Services"
                     ? `/services/${services.find((service) => service.label === child)?.slug}`
+                    : navItems[activeMenu].label === "Solutions"
+                      ? solutionNavItems.find((solution) => solution.label === child)?.href || "/solutions"
                     : navItems[activeMenu].href
                 }
                 key={child}

@@ -1,0 +1,378 @@
+
+<style>
+h2.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:12px;color:var(--text-primary)}
+.browser{border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}
+.bar{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:8px}
+.dots{display:flex;gap:4px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border-strong)}
+.url{flex:1;background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--text-muted);margin:0 8px;font-family:var(--font-mono)}
+.tpl{background:#FEF3C7;color:#92400E;font-size:9px;font-weight:500;padding:2px 7px;border-radius:3px}
+.nav{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:8px 14px;display:flex;align-items:center}
+.nav-logo{font-size:13px;font-weight:500;color:var(--text-accent);margin-right:20px}
+.nav-links{display:flex;gap:2px;flex:1}
+.nl{font-size:10px;color:var(--text-secondary);padding:3px 8px}
+.nl.hi{color:var(--text-accent);font-weight:500;background:var(--bg-accent);border-radius:4px}
+.nav-right{margin-left:auto;display:flex;gap:6px}
+.btn-wa{background:#25D366;color:white;font-size:9px;padding:4px 8px;border-radius:4px}
+.btn-cta{background:var(--text-primary);color:var(--surface-2);font-size:9px;padding:4px 10px;border-radius:4px}
+.crumb{padding:7px 16px;background:var(--surface-1);border-bottom:0.5px solid var(--border);font-size:9px;color:var(--text-muted);display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.ca{color:var(--text-accent);font-weight:500}
+.tgs{display:flex;gap:3px;flex-wrap:wrap;margin-left:auto}
+.tag{font-size:8px;font-weight:500;padding:1px 5px;border-radius:3px}
+.ts{background:#EAF3DE;color:#3B6D11}
+.ta{background:#CCFBF1;color:#0F766E}
+.tg{background:#FEF3C7;color:#92400E}
+.te{background:#FEE2E2;color:#991B1B}
+.tu{background:#DBEAFE;color:#185FA5}
+.sec{border-bottom:0.5px solid var(--border);padding:12px 16px}
+.sn{font-size:9px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.sn-b{background:var(--surface-1);border:0.5px solid var(--border);color:var(--text-muted);font-size:8px;padding:1px 5px;border-radius:3px}
+.sh{font-size:13px;font-weight:500;margin-bottom:4px}
+.sp{font-size:9px;color:var(--text-secondary);line-height:1.5;margin-bottom:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px}
+.hero-sec{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:18px 16px}
+.hero-left{}
+.hero-eyebrow{font-size:8px;font-weight:500;color:var(--text-accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.hero-h1{font-size:15px;font-weight:500;line-height:1.3;margin-bottom:5px}
+.hero-sub{font-size:9px;color:var(--text-secondary);line-height:1.5;margin-bottom:10px}
+.hero-badges{display:flex;gap:5px;margin-bottom:10px;flex-wrap:wrap}
+.hero-badge{background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:3px 8px;font-size:8px;color:var(--text-secondary);display:flex;align-items:center;gap:4px}
+.hero-btns{display:flex;gap:6px}
+.btn-p{background:var(--text-primary);color:var(--surface-2);font-size:9px;padding:5px 12px;border-radius:5px}
+.btn-s{border:0.5px solid var(--border-strong);color:var(--text-primary);font-size:9px;padding:5px 12px;border-radius:5px;background:none;display:flex;align-items:center;gap:4px}
+.hero-right{background:var(--surface-0);border:0.5px dashed var(--border-strong);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;min-height:110px;text-align:center;padding:12px}
+.ph-label{font-size:8px;color:var(--text-muted)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:0.5px solid var(--border)}
+.stat{padding:9px 14px;text-align:center;border-right:0.5px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:15px;font-weight:500;color:var(--text-accent)}
+.stat-l{font-size:8px;color:var(--text-muted);margin-top:2px}
+.sub-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:6px;transition:border-color 0.2s}
+.sub-ico{width:28px;height:28px;background:var(--bg-accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-accent)}
+.sub-name{font-size:10px;font-weight:500;color:var(--text-primary);line-height:1.3}
+.sub-desc{font-size:8px;color:var(--text-secondary);line-height:1.4;flex:1}
+.sub-btn{background:var(--surface-1);border:0.5px solid var(--border);border-radius:4px;padding:4px 8px;font-size:8px;color:var(--text-accent);font-weight:500;text-align:center;margin-top:2px}
+.why-item{display:flex;gap:7px;align-items:flex-start;background:var(--surface-1);border:0.5px solid var(--border);border-radius:6px;padding:7px 9px;margin-bottom:4px}
+.why-ico{width:16px;height:16px;min-width:16px;background:var(--bg-success);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--text-success);margin-top:1px}
+.why-h{font-size:9px;font-weight:500;margin-bottom:1px}
+.why-p{font-size:8px;color:var(--text-secondary);line-height:1.4}
+.cert-panel{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:6px}
+.cert-item{background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:4px 7px}
+.cert-n{font-size:8px;font-weight:500}
+.cert-s{font-size:7px;color:var(--text-muted)}
+.ind-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:7px;padding:8px;text-align:center}
+.ind-ico{font-size:14px;color:var(--text-accent);margin-bottom:3px;display:block}
+.ind-n{font-size:8px;font-weight:500;margin-bottom:2px}
+.ind-c{font-size:7px;color:var(--text-muted);line-height:1.3}
+.faq-i{border-bottom:0.5px solid var(--border);padding:7px 0}
+.faq-i:last-child{border-bottom:none}
+.faq-q{font-size:9px;font-weight:500;display:flex;justify-content:space-between}
+.faq-a{font-size:8px;color:var(--text-secondary);margin-top:2px;line-height:1.5}
+.cta-left{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px}
+.cta-h{font-size:11px;font-weight:500;margin-bottom:3px}
+.cta-p{font-size:8px;color:var(--text-secondary);margin-bottom:8px;line-height:1.5}
+.wa-btn{background:#25D366;color:white;font-size:8px;padding:5px 10px;border-radius:4px;display:inline-flex;align-items:center;gap:4px;margin-bottom:8px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px}
+.ff{background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:5px 7px;font-size:7px;color:var(--text-muted);display:block}
+.ff.full{grid-column:1/-1}
+.fbt{background:var(--text-primary);color:var(--surface-2);font-size:8px;padding:5px;border-radius:4px;text-align:center;margin-top:3px}
+.nap-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px}
+.nap-i{display:flex;gap:5px;align-items:flex-start;font-size:8px;color:var(--text-secondary);margin-bottom:3px}
+.nap-ico{font-size:10px;color:var(--text-accent);flex-shrink:0}
+.map-ph{background:var(--surface-0);border:0.5px dashed var(--border-strong);border-radius:6px;padding:12px;text-align:center;font-size:7px;color:var(--text-muted);margin-top:6px}
+.ftr{background:var(--surface-1);padding:12px 16px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:12px;margin-bottom:10px;padding-bottom:10px;border-bottom:0.5px solid var(--border)}
+.fch{font-size:8px;font-weight:500;margin-bottom:5px}
+.fl{display:block;font-size:7px;color:var(--text-secondary);margin-bottom:2px}
+.fbrand{font-size:11px;font-weight:500;margin-bottom:3px}
+.fdesc{font-size:7px;color:var(--text-secondary);line-height:1.5;margin-bottom:6px}
+.fbot{display:flex;justify-content:space-between;align-items:center}
+.fcopy{font-size:7px;color:var(--text-muted)}
+.dev-note{background:var(--bg-accent);border:0.5px solid var(--border-accent);border-radius:5px;padding:5px 9px;font-size:8px;color:var(--text-accent);margin-top:6px}
+.sec-note{background:#FFFBEB;border:0.5px solid #FDE68A;border-radius:5px;padding:6px 9px;font-size:8px;color:#92400E;margin-top:5px}
+</style>
+
+<h2 class="sr">XOFOZ solutions category page wireframe — desktop view showing all sections including hero, subcategory cards grid, why XOFOZ, industries, FAQ, and CTA. Applies to all 10 solution category pages.</h2>
+
+<div class="browser">
+
+<div class="bar">
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="url">xofoz.com/solutions/[category-name]/</div>
+  <div class="tpl">Template — applies to all 10 solution category pages</div>
+</div>
+
+<div class="nav">
+  <span class="nav-logo">XOFOZ</span>
+  <div class="nav-links">
+    <span class="nl">Services ▾</span>
+    <span class="nl hi">Solutions ▾</span>
+    <span class="nl">Products ▾</span>
+    <span class="nl">Industries</span>
+    <span class="nl">About</span>
+    <span class="nl">Blog</span>
+    <span class="nl">Contact</span>
+  </div>
+  <div class="nav-right">
+    <span class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</span>
+    <span class="btn-cta">Get a free quote</span>
+  </div>
+</div>
+
+<div class="crumb">
+  <span class="ca">Home</span><span>›</span>
+  <span class="ca">Solutions</span><span>›</span>
+  <span style="color:var(--text-primary);font-weight:500">[Category name]</span>
+  <div class="tgs">
+    <span class="tag ts">SEO: BreadcrumbList schema</span>
+    <span class="tag ta">AEO: hierarchy signal</span>
+  </div>
+</div>
+
+<div class="hero-sec">
+  <div class="sn"><span class="sn-b">SECTION 01</span> Hero</div>
+  <div class="g2">
+    <div class="hero-left">
+      <div class="hero-eyebrow">[Category name] solutions in Abu Dhabi, UAE</div>
+      <div class="hero-h1">[Category name] solutions for businesses in Abu Dhabi</div>
+      <div class="hero-sub">[2-3 sentences. What this category covers. Who it is for. Why XOFOZ is the right partner for this category in Abu Dhabi. Include UAE, Abu Dhabi, and one brand or certification reference naturally.]</div>
+      <div class="hero-badges">
+        <div class="hero-badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>[Number of solutions in this category]+ solutions</div>
+        <div class="hero-badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>Certified engineers</div>
+        <div class="hero-badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>Abu Dhabi based team</div>
+        <div class="hero-badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>150+ businesses served</div>
+      </div>
+      <div class="hero-btns">
+        <span class="btn-p">Get a free consultation</span>
+        <span class="btn-s"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="font-size:11px"></i>WhatsApp us now</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <i class="ti ti-layout-grid" aria-hidden="true" style="font-size:22px;color:var(--border-strong)"></i>
+      <span class="ph-label">Category-specific hero image</span>
+      <span class="ph-label">Real XOFOZ team or project visual</span>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:8px">
+    <span class="tag ts">SEO: H1 = category keyword + Abu Dhabi</span>
+    <span class="tag ta">AEO: 5-second hook — AI overview extraction zone</span>
+    <span class="tag tg">GEO: entity + location + category defined</span>
+    <span class="tag te">EEAT: certifications and stats above fold</span>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Businesses served</div></div>
+  <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Years in Abu Dhabi</div></div>
+  <div class="stat"><div class="stat-n">[N]+</div><div class="stat-l">Solutions in category</div></div>
+  <div class="stat"><div class="stat-n">UAE</div><div class="stat-l">Based certified team</div></div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="sn-b">SECTION 02</span> What we cover — overview</div>
+  <div class="sh">What XOFOZ [category name] solutions cover</div>
+  <div class="sp">[2 paragraphs. First paragraph — what this category of solutions means for businesses in Abu Dhabi. Written in plain language for a business owner not a technical person. Direct answer in first 100 words — AEO extraction zone. Second paragraph — how XOFOZ approaches this category. What makes XOFOZ the right partner. Include Abu Dhabi and UAE naturally.]</div>
+  <div class="tgs">
+    <span class="tag ta">AEO: first 100 words = Google AI overview prime target</span>
+    <span class="tag tg">GEO: category entity defined clearly for AI systems</span>
+    <span class="tag ts">SEO: H2 secondary keyword</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sn"><span class="sn-b">SECTION 03</span> Subcategory cards — main content of this page</div>
+  <div class="sh">Our [category name] solutions</div>
+  <div class="sp" style="margin-bottom:10px">Intro line: [One sentence introducing the solutions below — "XOFOZ provides the following [category] solutions for businesses across Abu Dhabi and the UAE"]</div>
+  <div class="g4">
+    <div class="sub-card">
+      <div class="sub-ico"><i class="ti ti-shield" aria-hidden="true"></i></div>
+      <div class="sub-name">[Solution name 1]</div>
+      <div class="sub-desc">[2-3 lines description from the document. Explains what this solution is and what it does for a business. Plain language. No jargon.]</div>
+      <div class="sub-btn">Enquire now</div>
+    </div>
+    <div class="sub-card">
+      <div class="sub-ico"><i class="ti ti-lock" aria-hidden="true"></i></div>
+      <div class="sub-name">[Solution name 2]</div>
+      <div class="sub-desc">[2-3 lines description from the document. Explains what this solution is and what it does for a business. Plain language. No jargon.]</div>
+      <div class="sub-btn">Enquire now</div>
+    </div>
+    <div class="sub-card">
+      <div class="sub-ico"><i class="ti ti-mail" aria-hidden="true"></i></div>
+      <div class="sub-name">[Solution name 3]</div>
+      <div class="sub-desc">[2-3 lines description from the document. Explains what this solution is and what it does for a business. Plain language. No jargon.]</div>
+      <div class="sub-btn">Enquire now</div>
+    </div>
+    <div class="sub-card">
+      <div class="sub-ico"><i class="ti ti-search" aria-hidden="true"></i></div>
+      <div class="sub-name">[Solution name 4]</div>
+      <div class="sub-desc">[2-3 lines description from the document. Explains what this solution is and what it does for a business. Plain language. No jargon.]</div>
+      <div class="sub-btn">Enquire now</div>
+    </div>
+    <div class="sub-card">
+      <div class="sub-ico"><i class="ti ti-device-mobile" aria-hidden="true"></i></div>
+      <div class="sub-name">[Solution name 5]</div>
+      <div class="sub-desc">[2-3 lines description from the document. Explains what this solution is and what it does for a business. Plain language. No jargon.]</div>
+      <div class="sub-btn">Enquire now</div>
+    </div>
+    <div class="sub-card">
+      <div class="sub-ico"><i class="ti ti-settings" aria-hidden="true"></i></div>
+      <div class="sub-name">[Solution name 6]</div>
+      <div class="sub-desc">[2-3 lines description from the document. Explains what this solution is and what it does for a business. Plain language. No jargon.]</div>
+      <div class="sub-btn">Enquire now</div>
+    </div>
+    <div class="sub-card">
+      <div class="sub-ico"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+      <div class="sub-name">[Solution name 7]</div>
+      <div class="sub-desc">[2-3 lines description from the document. Explains what this solution is and what it does for a business. Plain language. No jargon.]</div>
+      <div class="sub-btn">Enquire now</div>
+    </div>
+    <div class="sub-card" style="border:0.5px dashed var(--border-strong);background:var(--surface-0)">
+      <div class="sub-ico" style="background:var(--surface-1)"><i class="ti ti-dots" aria-hidden="true" style="color:var(--text-muted)"></i></div>
+      <div class="sub-name" style="color:var(--text-muted)">[More solutions]</div>
+      <div class="sub-desc" style="color:var(--text-muted)">[Add as many cards as needed. Each subcategory from the document gets its own card. No limit on number of cards — grid auto-fills.]</div>
+      <div class="sub-btn" style="color:var(--text-muted)">Enquire now</div>
+    </div>
+  </div>
+  <div class="dev-note" style="margin-top:10px"><strong>Developer note:</strong> Grid auto-fills — 4 columns desktop, 2 columns tablet, 1 column mobile. Add as many subcategory cards as needed. Each card links to the contact form or WhatsApp — no individual solution pages needed.</div>
+  <div class="tgs" style="margin-top:6px">
+    <span class="tag ts">SEO: each card title is a semantic keyword for the category</span>
+    <span class="tag ta">AEO: structured card list = featured snippet candidate</span>
+    <span class="tag tg">GEO: specific solution names AI systems can cite</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="sn-b">SECTION 04</span> Why XOFOZ for this category</div>
+  <div class="sh">Why Abu Dhabi businesses choose XOFOZ for [category name] solutions</div>
+  <div class="g2" style="margin-top:8px">
+    <div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">H3: [Differentiator 1 — category specific]</div><div class="why-p">[2 sentences. Specific to this category. What makes XOFOZ better than alternatives for this solution category.]</div></div></div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">H3: [Differentiator 2 — certified expertise]</div><div class="why-p">[2 sentences. Named certification or brand expertise relevant to this category.]</div></div></div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">H3: 150+ businesses in Abu Dhabi trust XOFOZ</div><div class="why-p">[2 sentences. Named client reference if applicable to this category. Sector specific.]</div></div></div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">H3: Abu Dhabi based team — fast response</div><div class="why-p">[2 sentences. Local presence. No offshore. Direct accountability.]</div></div></div>
+    </div>
+    <div class="cert-panel">
+      <div style="font-size:9px;font-weight:500;margin-bottom:6px">Certifications and brand partnerships</div>
+      <div style="font-size:8px;color:var(--text-secondary);margin-bottom:8px">[List only the certifications and brands relevant to this specific category]</div>
+      <div class="cert-grid">
+        <div class="cert-item"><div class="cert-n">[Brand 1]</div><div class="cert-s">Certified partner</div></div>
+        <div class="cert-item"><div class="cert-n">[Brand 2]</div><div class="cert-s">Authorised dealer</div></div>
+        <div class="cert-item"><div class="cert-n">[Brand 3]</div><div class="cert-s">Certified reseller</div></div>
+        <div class="cert-item"><div class="cert-n">ADMCC</div><div class="cert-s">Certified</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:8px">
+    <span class="tag te">EEAT: all 4 signals — experience, expertise, authority, trust</span>
+    <span class="tag tg">GEO: named certifications = AI citation signals</span>
+    <span class="tag ta">AEO: featured snippet for "why choose XOFOZ" queries</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sn"><span class="sn-b">SECTION 05</span> Industries we serve</div>
+  <div class="sh">Industries we deliver [category name] solutions for in Abu Dhabi</div>
+  <div class="sp" style="margin-bottom:8px">Intro line: [One sentence — XOFOZ experience across Abu Dhabi's major sectors with named clients]</div>
+  <div class="g5">
+    <div class="ind-card"><i class="ti ti-building" aria-hidden="true" class="ind-ico"></i><div class="ind-n">Hospitality</div><div class="ind-c">Marriott · Bloom · Hayatna</div></div>
+    <div class="ind-card"><i class="ti ti-home" aria-hidden="true" class="ind-ico"></i><div class="ind-n">Real estate</div><div class="ind-c">Sobha · Bloom</div></div>
+    <div class="ind-card"><i class="ti ti-crane" aria-hidden="true" class="ind-ico"></i><div class="ind-n">Construction</div><div class="ind-c">Altrad · China Harbour</div></div>
+    <div class="ind-card"><i class="ti ti-truck" aria-hidden="true" class="ind-ico"></i><div class="ind-n">Logistics</div><div class="ind-c">Agility · Khadamat</div></div>
+    <div class="ind-card"><i class="ti ti-settings-2" aria-hidden="true" class="ind-ico"></i><div class="ind-n">Manufacturing</div><div class="ind-c">Exeed</div></div>
+  </div>
+  <div class="tgs" style="margin-top:6px">
+    <span class="tag ts">SEO: 5 internal links to industry pages</span>
+    <span class="tag tg">GEO: named clients per sector = strongest GEO signal</span>
+    <span class="tag te">EEAT: real sector experience with real clients</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="sn-b">SECTION 06</span> FAQ — 5 to 6 questions — FAQPage schema applied</div>
+  <div class="sh">Frequently asked questions about [category name] solutions in Abu Dhabi</div>
+  <div style="margin-top:8px">
+    <div class="faq-i"><div class="faq-q">What [category name] solutions does XOFOZ provide in Abu Dhabi? <span style="color:var(--text-muted)">+</span></div><div class="faq-a">[Direct complete answer listing all subcategories. This is the primary PAA and Google AI Overview target for this category keyword.]</div></div>
+    <div class="faq-i"><div class="faq-q">How much do [category name] solutions cost in Abu Dhabi? <span style="color:var(--text-muted)">+</span></div><div class="faq-a">[Honest answer. Direct to free consultation if pricing is bespoke. Never avoid the question.]</div></div>
+    <div class="faq-i"><div class="faq-q">Which businesses in Abu Dhabi need [category name] solutions? <span style="color:var(--text-muted)">+</span></div><div class="faq-a">[Sector and size-based answer. Name the industries XOFOZ serves. UAE business context.]</div></div>
+    <div class="faq-i"><div class="faq-q">Is XOFOZ certified to deliver [category name] solutions in UAE? <span style="color:var(--text-muted)">+</span></div><div class="faq-a">[Yes-first answer. Name specific certifications and brand partnerships relevant to this category.]</div></div>
+    <div class="faq-i"><div class="faq-q">[Category-specific Q5 — from real PAA research for this keyword] <span style="color:var(--text-muted)">+</span></div><div class="faq-a">[Direct answer based on actual People Also Ask results for this category keyword.]</div></div>
+    <div class="faq-i"><div class="faq-q">[Category-specific Q6] <span style="color:var(--text-muted)">+</span></div><div class="faq-a">[Direct answer.]</div></div>
+  </div>
+  <div class="tgs" style="margin-top:6px">
+    <span class="tag ta">AEO: FAQPage schema = Google AI overview prime target</span>
+    <span class="tag tg">GEO: every question is a real ChatGPT / Perplexity query</span>
+    <span class="tag ts">SEO: long-tail keyword capture per question</span>
+  </div>
+  <div class="dev-note"><strong>Developer note:</strong> Apply FAQPage schema as JSON-LD in page head. All answers must be complete. Test with Google Rich Results Test before launch.</div>
+</div>
+
+<div class="sec" style="background:var(--bg-accent);border-color:var(--border-accent)">
+  <div class="sn"><span class="sn-b">SECTION 07</span> CTA block</div>
+  <div class="sh">Get a free [category name] consultation in Abu Dhabi</div>
+  <div class="g2" style="margin-top:10px">
+    <div class="cta-left">
+      <div class="cta-h">Ready to get started?</div>
+      <div class="cta-p">[2-3 lines. Covers the category. Includes Abu Dhabi. No obligation. Fast response. Written to convert a visitor who has scrolled through the whole page and is ready to enquire.]</div>
+      <div class="wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>Chat with us on WhatsApp</div>
+      <div class="fr">
+        <div class="ff">Your name</div>
+        <div class="ff">Company name</div>
+        <div class="ff">Phone number</div>
+        <div class="ff">[Category-specific field — e.g. which solution are you interested in?]</div>
+        <div class="ff full" style="padding:12px 7px">Tell us about your requirements</div>
+      </div>
+      <div class="fbt">Get a free consultation</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="nap-card">
+        <div style="font-size:9px;font-weight:500;margin-bottom:7px">Contact XOFOZ</div>
+        <div class="nap-i"><i class="ti ti-map-pin" aria-hidden="true" class="nap-ico"></i>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</div>
+        <div class="nap-i"><i class="ti ti-phone" aria-hidden="true" class="nap-ico"></i>026 220 071</div>
+        <div class="nap-i"><i class="ti ti-brand-whatsapp" aria-hidden="true" class="nap-ico"></i>+971 52 355 4202</div>
+        <div class="nap-i"><i class="ti ti-mail" aria-hidden="true" class="nap-ico"></i>hello@xofoz.com</div>
+        <div class="nap-i"><i class="ti ti-clock" aria-hidden="true" class="nap-ico"></i>Monday – Saturday, 8:30 AM – 6:30 PM</div>
+      </div>
+      <div class="map-ph">
+        <i class="ti ti-map" aria-hidden="true" style="font-size:14px;color:var(--border-strong);display:block;margin-bottom:3px"></i>
+        Google Maps embed — XOFOZ office Abu Dhabi
+      </div>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:8px">
+    <span class="tag ts">SEO: full NAP = critical local SEO signal</span>
+    <span class="tag tg">GEO: complete entity contact data</span>
+    <span class="tag ta">AEO: business info extraction</span>
+    <span class="tag tu">UX: WhatsApp primary — UAE behaviour</span>
+  </div>
+</div>
+
+<div class="ftr">
+  <div class="sn" style="margin-bottom:8px"><span class="sn-b">SECTION 08</span> Footer — identical on all pages</div>
+  <div class="fcols">
+    <div>
+      <div class="fbrand">XOFOZ Information Technology LLC</div>
+      <div class="fdesc">Abu Dhabi's trusted IT solutions provider since 2022 — delivering managed IT services, authorised products, and complete IT solutions to 150+ businesses across the UAE.</div>
+    </div>
+    <div><div class="fch">Services</div><span class="fl">IT AMC</span><span class="fl">Cybersecurity</span><span class="fl">Network</span><span class="fl">Cloud and M365</span><span class="fl">CCTV</span></div>
+    <div><div class="fch">Solutions</div><span class="fl">IT Services</span><span class="fl">Cybersecurity</span><span class="fl">Data Backup</span><span class="fl">Communication</span><span class="fl">Microsoft Cloud</span></div>
+    <div><div class="fch">Products</div><span class="fl">Tally Prime</span><span class="fl">Microsoft 365</span><span class="fl">Fortinet</span><span class="fl">HikVision</span><span class="fl">Aruba</span></div>
+    <div><div class="fch">Company</div><span class="fl">About XOFOZ</span><span class="fl">Our clients</span><span class="fl">Industries</span><span class="fl">Blog</span><span class="fl">Contact</span></div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2026 XOFOZ Information Technology LLC. All rights reserved. Abu Dhabi, United Arab Emirates.</div>
+    <div style="display:flex;gap:8px">
+      <i class="ti ti-brand-linkedin" aria-hidden="true" style="font-size:13px;color:var(--text-muted)"></i>
+      <i class="ti ti-brand-instagram" aria-hidden="true" style="font-size:13px;color:var(--text-muted)"></i>
+      <i class="ti ti-brand-facebook" aria-hidden="true" style="font-size:13px;color:var(--text-muted)"></i>
+    </div>
+  </div>
+</div>
+
+</div>
