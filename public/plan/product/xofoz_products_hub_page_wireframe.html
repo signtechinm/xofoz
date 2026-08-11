@@ -1,0 +1,535 @@
+
+<style>
+h2.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:12px;color:var(--text-primary)}
+.browser{border:0.5px solid var(--border-strong);border-radius:10px;overflow:hidden}
+.bar{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:8px}
+.dots{display:flex;gap:4px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--border-strong)}
+.url{flex:1;background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--text-muted);margin:0 8px;font-family:var(--font-mono)}
+.tpl{background:#FEF3C7;color:#92400E;font-size:9px;font-weight:500;padding:2px 7px;border-radius:3px}
+.nav{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:8px 14px;display:flex;align-items:center}
+.nl{font-size:10px;color:var(--text-secondary);padding:3px 8px}
+.nl.hi{color:var(--text-accent);font-weight:500;background:var(--bg-accent);border-radius:4px}
+.nav-logo{font-size:13px;font-weight:500;color:var(--text-accent);margin-right:20px}
+.nav-right{margin-left:auto;display:flex;gap:6px}
+.btn-wa{background:#25D366;color:#fff;font-size:9px;padding:4px 8px;border-radius:4px}
+.btn-cta{background:var(--text-primary);color:var(--surface-2);font-size:9px;padding:4px 10px;border-radius:4px}
+.crumb{padding:7px 14px;background:var(--surface-1);border-bottom:0.5px solid var(--border);font-size:9px;color:var(--text-muted);display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ca{color:var(--text-accent);font-weight:500}
+.sec{border-bottom:0.5px solid var(--border);padding:12px 14px}
+.sn{font-size:9px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.snb{background:var(--surface-1);border:0.5px solid var(--border);color:var(--text-muted);font-size:8px;padding:1px 5px;border-radius:3px}
+.sh{font-size:12px;font-weight:500;margin-bottom:4px}
+.sp{font-size:9px;color:var(--text-secondary);line-height:1.5;margin-bottom:5px}
+.tag{display:inline-flex;padding:2px 7px;border-radius:100px;font-size:8px;font-weight:500}
+.ts{background:#EAF3DE;color:#3B6D11}
+.ta{background:#CCFBF1;color:#0F766E}
+.tg{background:#FEF3C7;color:#92400E}
+.te{background:#FEE2E2;color:#991B1B}
+.tgs{display:flex;gap:3px;flex-wrap:wrap;margin-top:5px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hero-eyebrow{font-size:8px;font-weight:500;color:var(--text-accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+.hero-h1{font-size:14px;font-weight:500;line-height:1.3;margin-bottom:4px}
+.hero-sub{font-size:9px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px;padding:7px;background:var(--bg-accent);border-left:3px solid var(--border-accent)}
+.badge-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px}
+.badge{background:var(--surface-1);border:0.5px solid var(--border);padding:2px 7px;border-radius:3px;font-size:8px;color:var(--text-secondary);display:flex;align-items:center;gap:3px}
+.btns{display:flex;gap:6px}
+.btn-p{background:var(--text-primary);color:var(--surface-2);font-size:8px;padding:4px 10px;border-radius:4px}
+.btn-s{border:0.5px solid var(--border-strong);color:var(--text-primary);font-size:8px;padding:4px 10px;border-radius:4px}
+.hero-right{background:var(--surface-0);border:0.5px dashed var(--border-strong);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:90px;text-align:center;padding:10px}
+.ph-label{font-size:8px;color:var(--text-muted);font-style:italic}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:0.5px solid var(--border)}
+.stat{padding:8px 10px;text-align:center;border-right:0.5px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:13px;font-weight:500;color:var(--text-accent)}
+.stat-l{font-size:7px;color:var(--text-muted);margin-top:1px}
+.prod-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px}
+.prod-header{display:flex;align-items:center;gap:7px;margin-bottom:7px;padding-bottom:7px;border-bottom:0.5px solid var(--border)}
+.prod-ico{width:24px;height:24px;border-radius:5px;background:var(--bg-accent);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-accent);flex-shrink:0}
+.prod-cat{font-size:10px;font-weight:500;color:var(--text-primary)}
+.prod-sub{font-size:8px;color:var(--text-muted)}
+.brand-row{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:7px}
+.brand{background:var(--surface-1);border:0.5px solid var(--border);border-radius:3px;padding:2px 6px;font-size:8px;color:var(--text-secondary)}
+.brand.hi{background:var(--bg-accent);border-color:var(--border-accent);color:var(--text-accent)}
+.prod-link{font-size:8px;color:var(--text-accent);font-weight:500;margin-top:4px;display:block}
+.why-item{display:flex;gap:7px;align-items:flex-start;background:var(--surface-1);border:0.5px solid var(--border);border-radius:6px;padding:7px 9px;margin-bottom:4px}
+.why-ico{width:16px;height:16px;min-width:16px;background:var(--bg-success);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--text-success);margin-top:1px}
+.why-h{font-size:9px;font-weight:500;margin-bottom:1px}
+.why-p{font-size:8px;color:var(--text-secondary);line-height:1.4}
+.cta-box{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px}
+.wa-btn{background:#25D366;color:#fff;font-size:8px;padding:4px 8px;border-radius:4px;display:inline-flex;align-items:center;gap:3px;margin-bottom:7px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px}
+.ff{background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 6px;font-size:7px;color:var(--text-muted);display:block}
+.ff.full{grid-column:1/-1}
+.fbt{background:var(--text-primary);color:var(--surface-2);font-size:8px;padding:4px;border-radius:4px;text-align:center;margin-top:3px}
+.nap-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:6px;padding:8px}
+.nap-i{display:flex;gap:4px;font-size:8px;color:var(--text-secondary);margin-bottom:3px}
+.ftr{background:var(--surface-1);padding:10px 14px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:8px;padding-bottom:8px;border-bottom:0.5px solid var(--border)}
+.fch{font-size:8px;font-weight:500;margin-bottom:4px}
+.fl{display:block;font-size:7px;color:var(--text-secondary);margin-bottom:2px}
+.fbrand{font-size:10px;font-weight:500;margin-bottom:2px}
+.fdesc{font-size:7px;color:var(--text-secondary);line-height:1.5;margin-bottom:5px}
+.fbot{display:flex;justify-content:space-between}
+.fcopy{font-size:7px;color:var(--text-muted)}
+.dev-note{background:var(--bg-accent);border:0.5px solid var(--border-accent);border-radius:4px;padding:4px 8px;font-size:8px;color:var(--text-accent);margin-top:5px}
+.auth-banner{background:var(--bg-success);border:0.5px solid var(--border-success);border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.auth-ico{width:20px;height:20px;background:var(--fill-success);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:white;flex-shrink:0}
+</style>
+
+<h2 class="sr">XOFOZ products hub page wireframe — desktop view showing navigation, hero, product categories grid with brand tags, why buy through XOFOZ, and CTA sections.</h2>
+
+<div class="browser">
+
+<div class="bar">
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="url">xofoz.com/products/</div>
+  <div class="tpl">Products hub — single page — no individual product pages needed</div>
+</div>
+
+<div class="nav">
+  <span class="nav-logo">XOFOZ</span>
+  <span class="nl">Services ▾</span>
+  <span class="nl">Solutions ▾</span>
+  <span class="nl hi">Products ▾</span>
+  <span class="nl">Industries</span>
+  <span class="nl">About</span>
+  <span class="nl">Blog</span>
+  <span class="nl">Contact</span>
+  <div class="nav-right">
+    <span class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</span>
+    <span class="btn-cta">Get a free quote</span>
+  </div>
+</div>
+
+<div class="crumb">
+  <span class="ca">Home</span><span>›</span>
+  <span style="color:var(--text-primary);font-weight:500">Products — authorised products and brands</span>
+  <div style="margin-left:auto;display:flex;gap:3px">
+    <span class="tag ts">SEO: BreadcrumbList schema</span>
+    <span class="tag te">EEAT: authorised dealer list</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="snb">SECTION 01</span> Hero</div>
+  <div class="g2">
+    <div>
+      <div class="hero-eyebrow">Authorised product supplier in Abu Dhabi, UAE — since 2022</div>
+      <div class="hero-h1">Authorised IT products in Abu Dhabi</div>
+      <div class="hero-sub">XOFOZ Information Technology is an authorised dealer and certified reseller for the world's leading IT brands in Abu Dhabi, UAE. Every product we supply comes with genuine manufacturer warranty, official firmware, and full manufacturer support eligibility — not grey market or counterfeit alternatives that carry reliability and legal risk for your business.</div>
+      <div class="badge-row">
+        <div class="badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>Genuine manufacturer warranty</div>
+        <div class="badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>Official firmware</div>
+        <div class="badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>Implementation included</div>
+        <div class="badge"><i class="ti ti-check" aria-hidden="true" style="font-size:10px;color:var(--text-success)"></i>Abu Dhabi based support</div>
+      </div>
+      <div class="btns">
+        <span class="btn-p">Get a product quote</span>
+        <span class="btn-s">WhatsApp us now</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <i class="ti ti-package" aria-hidden="true" style="font-size:22px;color:var(--border-strong)"></i>
+      <span class="ph-label">Authorised brand logos strip</span>
+      <span class="ph-label">HikVision · Fortinet · Microsoft · Tally Prime</span>
+      <span class="ph-label">Aruba · Synology · ESET · Acronis</span>
+    </div>
+  </div>
+  <div class="tgs">
+    <span class="tag ts">SEO: H1 = authorised IT products Abu Dhabi</span>
+    <span class="tag te">EEAT: authorised dealer status above fold</span>
+    <span class="tag tg">GEO: brand + Abu Dhabi + authorised = AI citation signal</span>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat"><div class="stat-n">19+</div><div class="stat-l">Product categories</div></div>
+  <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Authorised brands</div></div>
+  <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Businesses equipped</div></div>
+  <div class="stat"><div class="stat-n">UAE</div><div class="stat-l">Authorised supply chain</div></div>
+</div>
+
+<div class="sec">
+  <div class="sn"><span class="snb">SECTION 02</span> What this page covers</div>
+  <div class="sh">Every product XOFOZ supplies — organised by category</div>
+  <div class="auth-banner">
+    <div class="auth-ico"><i class="ti ti-check" aria-hidden="true" style="font-size:11px"></i></div>
+    <div>
+      <div style="font-size:9px;font-weight:500;color:var(--text-success)">Why authorised supply matters in Abu Dhabi</div>
+      <div style="font-size:8px;color:var(--text-success)">Grey market and counterfeit IT products are common across the UAE. Every brand listed below is supplied by XOFOZ through official UAE distribution channels — with manufacturer warranty, genuine firmware, and full support eligibility. Each product category links to the dedicated service page where XOFOZ implements and supports that product for your business.</div>
+    </div>
+  </div>
+  <div class="sp">Click any service link below to see the full implementation, configuration, and support details for that product category.</div>
+  <div class="tgs">
+    <span class="tag te">EEAT: authorised supply chain = trust signal</span>
+    <span class="tag tg">GEO: brand + authorised + Abu Dhabi = AI citation</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="snb">SECTION 03</span> Product categories — the main content of this page</div>
+  <div class="sh">Our authorised product portfolio</div>
+  <div class="sp" style="margin-bottom:10px">All products supplied from authorised UAE distributors — genuine, warranted, and supported.</div>
+
+  <div class="g3">
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-shield" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Next gen firewall</div><div class="prod-sub">Network perimeter security</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Fortinet</span>
+        <span class="brand">Cisco</span>
+        <span class="brand">Sophos</span>
+        <span class="brand">Sangfor</span>
+        <span class="brand">Check Point</span>
+      </div>
+      <span class="prod-link">View cybersecurity solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-device-laptop" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Endpoint security</div><div class="prod-sub">Device protection</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Bitdefender</span>
+        <span class="brand hi">ESET</span>
+        <span class="brand">Sophos</span>
+      </div>
+      <span class="prod-link">View cybersecurity solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-mail" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Email security</div><div class="prod-sub">Inbox protection</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand">Vircom</span>
+        <span class="brand">Check Point</span>
+      </div>
+      <span class="prod-link">View cybersecurity solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-phone" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">IP phones</div><div class="prod-sub">Voice communication</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Yealink</span>
+        <span class="brand">Grandstream</span>
+        <span class="brand">Cisco</span>
+        <span class="brand">Avaya</span>
+      </div>
+      <span class="prod-link">View PABX and telephone systems →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-video" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Video conferencing</div><div class="prod-sub">Meeting room systems</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Logitech</span>
+        <span class="brand">AVer</span>
+        <span class="brand">PeopleLink</span>
+        <span class="brand">Huawei</span>
+      </div>
+      <span class="prod-link">View video conferencing →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-network" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Network switches</div><div class="prod-sub">Switching and routing</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand">Cisco</span>
+        <span class="brand hi">HPE Aruba</span>
+        <span class="brand">Omada</span>
+        <span class="brand">TP-Link</span>
+        <span class="brand">D-Link</span>
+        <span class="brand">Ubiquiti</span>
+      </div>
+      <span class="prod-link">View network infrastructure →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-wifi" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Wireless access points</div><div class="prod-sub">Enterprise WiFi</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">UniFi</span>
+        <span class="brand hi">HPE Aruba</span>
+        <span class="brand">Omada</span>
+        <span class="brand">Cisco</span>
+        <span class="brand">Ruijie</span>
+      </div>
+      <span class="prod-link">View network infrastructure →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-device-tv" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Display and interactive panels</div><div class="prod-sub">Meeting room displays</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">MAXHUB</span>
+        <span class="brand">Dahua</span>
+        <span class="brand">Huawei</span>
+        <span class="brand">BenQ</span>
+      </div>
+      <span class="prod-link">View hardware and AV solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-building-broadcast-tower" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">IP PBX systems</div><div class="prod-sub">Business telephony</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand">Grandstream</span>
+        <span class="brand">Cisco</span>
+        <span class="brand">Avaya</span>
+        <span class="brand hi">3CX</span>
+      </div>
+      <span class="prod-link">View PABX and telephone systems →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-server" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">NAS storage</div><div class="prod-sub">Network attached storage</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Synology</span>
+        <span class="brand hi">QNAP</span>
+      </div>
+      <span class="prod-link">View server and storage solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-speakerphone" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Intercom systems</div><div class="prod-sub">Building communication</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Hikvision</span>
+        <span class="brand">Dahua</span>
+      </div>
+      <span class="prod-link">View LV and ELV solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-camera" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">CCTV systems</div><div class="prod-sub">IP surveillance cameras</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Hikvision</span>
+        <span class="brand">Dahua</span>
+        <span class="brand">Hanwha</span>
+        <span class="brand">UNV</span>
+        <span class="brand">Axis</span>
+        <span class="brand">Pelco</span>
+      </div>
+      <span class="prod-link">View CCTV and access control →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-volume" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Audio visual systems</div><div class="prod-sub">AV equipment</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand">Logitech</span>
+        <span class="brand hi">Bose</span>
+        <span class="brand hi">Bosch</span>
+        <span class="brand">JBL</span>
+        <span class="brand">Hikvision</span>
+      </div>
+      <span class="prod-link">View hardware and AV solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-clock" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Master clock system</div><div class="prod-sub">Facility time synchronisation</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Mobatime</span>
+      </div>
+      <span class="prod-link">View LV and ELV solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-bolt" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">UPS systems</div><div class="prod-sub">Power protection</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">APC</span>
+        <span class="brand hi">Eaton</span>
+        <span class="brand">Vertiv</span>
+        <span class="brand">Socomec</span>
+      </div>
+      <span class="prod-link">View server and storage solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-fingerprint" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Attendance and access control</div><div class="prod-sub">Biometric systems</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand">Matrix</span>
+        <span class="brand hi">ZKTeco</span>
+        <span class="brand">Hikvision</span>
+        <span class="brand">Dahua</span>
+        <span class="brand">HID</span>
+        <span class="brand">Suprema</span>
+        <span class="brand">dormakaba</span>
+      </div>
+      <span class="prod-link">View biometric systems →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-presentation" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Digital signage</div><div class="prod-sub">Display systems</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Hikvision</span>
+        <span class="brand">Samsung</span>
+      </div>
+      <span class="prod-link">View hardware and AV solutions →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-calculator" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Accounting software</div><div class="prod-sub">Business management</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">Tally Prime</span>
+      </div>
+      <div style="font-size:8px;color:var(--text-success);font-weight:500;margin-bottom:4px;background:var(--bg-success);border-radius:3px;padding:2px 5px;display:inline-block">Authorised dealer</div>
+      <span class="prod-link">View Tally Prime service →</span>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-header">
+        <div class="prod-ico"><i class="ti ti-ruler" aria-hidden="true"></i></div>
+        <div><div class="prod-cat">Design software</div><div class="prod-sub">CAD and technical design</div></div>
+      </div>
+      <div class="brand-row">
+        <span class="brand hi">AutoCAD</span>
+        <span class="brand hi">CADMATE</span>
+      </div>
+      <span class="prod-link">View software solutions →</span>
+    </div>
+
+  </div>
+
+  <div style="font-size:8px;color:var(--text-muted);margin-top:8px;font-style:italic">Highlighted brands indicate authorised dealer or certified reseller status. All other brands are supplied through official UAE distribution channels. Contact XOFOZ to confirm current authorisation status for any specific brand.</div>
+
+  <div class="tgs" style="margin-top:7px">
+    <span class="tag te">EEAT: complete authorised brand list = strongest trust signal on this page</span>
+    <span class="tag tg">GEO: 50+ brand names + Abu Dhabi = prime AI citation content</span>
+    <span class="tag ts">SEO: each card links to service page — strong internal link distribution</span>
+  </div>
+  <div class="dev-note" style="margin-top:7px"><strong>Developer note:</strong> Every card links to an existing service page — not a product-specific page. 3 columns desktop, 2 columns tablet, 1 column mobile. Highlighted brand pills indicate authorised dealer status. Confirm all authorisation statuses with XOFOZ before publishing.</div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="snb">SECTION 04</span> Why buy through XOFOZ</div>
+  <div class="sh">Why buy your IT products through XOFOZ in Abu Dhabi</div>
+  <div class="g2" style="margin-top:8px">
+    <div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">Genuine products — authorised supply chain only</div><div class="why-p">Every product XOFOZ supplies comes from authorised UAE distributors — with manufacturer warranty, official firmware, and full manufacturer support eligibility. No grey market. No counterfeits. No warranty surprises.</div></div></div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">Installation and configuration included</div><div class="why-p">XOFOZ does not supply hardware and leave setup to you. Every product we supply is professionally installed, configured for your specific environment, and tested before handover — by the same certified engineers who recommended it.</div></div></div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">Single supplier for all IT products</div><div class="why-p">Hardware, software, networking, security, and communication — all from one Abu Dhabi supplier who is accountable for how everything works together. No finger-pointing between vendors when components need to integrate.</div></div></div>
+      <div class="why-item"><div class="why-ico">✓</div><div><div class="why-h">Ongoing support from the team that installed it</div><div class="why-p">XOFOZ provides ongoing support for every product we supply — as part of an IT AMC or on-call. When something needs attention, the engineer who responds already knows your specific installation.</div></div></div>
+    </div>
+    <div style="background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px">
+      <div style="font-size:9px;font-weight:500;margin-bottom:6px">Authorised partnerships</div>
+      <div style="font-size:8px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px">XOFOZ holds active authorised dealerships and certified reseller agreements with the following brands — confirmed annually with manufacturer and distributor documentation.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px">
+        <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500">Tally Prime</div><div style="font-size:7px;color:var(--text-muted)">Authorised dealer</div></div>
+        <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500">Microsoft</div><div style="font-size:7px;color:var(--text-muted)">Certified partner</div></div>
+        <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500">HikVision</div><div style="font-size:7px;color:var(--text-muted)">Authorised dealer</div></div>
+        <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500">Fortinet</div><div style="font-size:7px;color:var(--text-muted)">Certified partner</div></div>
+        <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500">ESET</div><div style="font-size:7px;color:var(--text-muted)">Certified reseller</div></div>
+        <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500">Acronis</div><div style="font-size:7px;color:var(--text-muted)">Certified partner</div></div>
+        <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500">Aruba</div><div style="font-size:7px;color:var(--text-muted)">Certified installer</div></div>
+        <div style="background:var(--bg-accent);border:0.5px solid var(--border-accent);border-radius:3px;padding:4px 7px"><div style="font-size:8px;font-weight:500;color:var(--text-accent)">ADMCC</div><div style="font-size:7px;color:var(--text-accent)">Certified</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:7px">
+    <span class="tag te">EEAT: authorised dealer documentation = highest trust signal</span>
+    <span class="tag tg">GEO: named partnerships = AI citation for brand queries</span>
+    <span class="tag ts">SEO: differentiator content for product-related queries</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--bg-accent);border-color:var(--border-accent)">
+  <div class="sn"><span class="snb">SECTION 05</span> CTA</div>
+  <div class="sh">Get a product quote in Abu Dhabi</div>
+  <div class="g2" style="margin-top:8px">
+    <div class="cta-box">
+      <div style="font-size:10px;font-weight:500;margin-bottom:3px">Looking for a specific product?</div>
+      <div class="sp">Contact XOFOZ for a product quote — genuine, warranted, and installed by our Abu Dhabi team. No minimum order. No grey market products. Professional installation available for all hardware.</div>
+      <div class="wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp us now</div>
+      <div class="fr">
+        <div class="ff">Your name</div>
+        <div class="ff">Company name</div>
+        <div class="ff">Phone number</div>
+        <div class="ff">Product or brand you need</div>
+        <div class="ff full" style="padding:10px 6px">Tell us what you need and we will confirm pricing and availability</div>
+      </div>
+      <div class="fbt">Get a product quote</div>
+    </div>
+    <div class="nap-card">
+      <div style="font-size:9px;font-weight:500;margin-bottom:6px">Contact XOFOZ</div>
+      <div class="nap-i"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</div>
+      <div class="nap-i"><i class="ti ti-phone" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>026 220 071</div>
+      <div class="nap-i"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>+971 52 355 4202</div>
+      <div class="nap-i"><i class="ti ti-mail" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>hello@xofoz.com</div>
+      <div class="nap-i"><i class="ti ti-clock" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>Monday – Saturday, 8:30 AM – 6:30 PM</div>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:7px">
+    <span class="tag ts">SEO: NAP must match Google Business Profile exactly</span>
+    <span class="tag tu">UX: WhatsApp primary — UAE buyer behaviour</span>
+  </div>
+</div>
+
+<div class="ftr">
+  <div class="sn" style="margin-bottom:7px"><span class="snb">SECTION 06</span> Footer — identical on all pages</div>
+  <div class="fcols">
+    <div>
+      <div class="fbrand">XOFOZ Information Technology LLC</div>
+      <div class="fdesc">Abu Dhabi's trusted IT solutions provider since 2022 — delivering managed IT services, authorised software products, and complete IT solutions to 150+ businesses across the UAE.</div>
+    </div>
+    <div><div class="fch">Services</div><span class="fl">IT AMC</span><span class="fl">Cybersecurity</span><span class="fl">Network</span><span class="fl">CCTV</span><span class="fl">Cloud and M365</span></div>
+    <div><div class="fch">Solutions</div><span class="fl">LV and ELV</span><span class="fl">Cybersecurity</span><span class="fl">Microsoft Cloud</span><span class="fl">Network</span><span class="fl">AI Solutions</span></div>
+    <div><div class="fch">Products</div><span class="fl">Tally Prime</span><span class="fl">Fortinet</span><span class="fl">HikVision</span><span class="fl">Microsoft 365</span><span class="fl">Aruba</span></div>
+    <div><div class="fch">Company</div><span class="fl">About XOFOZ</span><span class="fl">Our clients</span><span class="fl">Industries</span><span class="fl">Blog</span><span class="fl">Contact</span></div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2026 XOFOZ Information Technology LLC. All rights reserved. Abu Dhabi, United Arab Emirates.</div>
+    <div style="font-size:7px;color:var(--text-muted)">Managed by Shaheen ES — Digital Marketing Consultant</div>
+  </div>
+</div>
+
+</div>

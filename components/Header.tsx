@@ -13,9 +13,9 @@ const navItems = [
     children: services.map((service) => service.label),
   },
   {
-    label: "Products", href: "/#products", image: "/pillars/authorised-it-products.png",
+    label: "Products", href: "/products", image: "/pillars/authorised-it-products.png",
     description: "Genuine business technology, licensing, hardware, and security products.",
-    children: ["Microsoft 365", "Tally Prime", "Acronis Backup", "Fortinet Firewalls", "ESET Endpoint", "Business Hardware"],
+    children: [],
   },
   {
     label: "Solutions", href: "/solutions", image: "/services/office-it-setup.png",
@@ -98,7 +98,20 @@ export default function Header() {
         >
           <div className="header-dropdown__main">
             <span className="header-dropdown__eyebrow">Explore XOFOZ</span>
-            {navItems.map((item, index) => (
+            {navItems.map((item, index) => item.children.length === 0 ? (
+              <Link
+                className={activeMenu === index ? "is-active" : ""}
+                href={item.href}
+                key={item.label}
+                onMouseEnter={() => setActiveMenu(index)}
+                onFocus={() => setActiveMenu(index)}
+                onClick={() => setIsOpen(false)}
+              >
+                <small>0{index + 1}</small>
+                <span>{item.label}</span>
+                <b aria-hidden="true">↗</b>
+              </Link>
+            ) : (
               <button
                 className={activeMenu === index ? "is-active" : ""}
                 type="button"
@@ -115,10 +128,15 @@ export default function Header() {
           </div>
           <div className="header-dropdown__subnav">
             <span className="header-dropdown__eyebrow">{navItems[activeMenu].label}</span>
-            {navItems[activeMenu].label !== "Services" && navItems[activeMenu].label !== "Solutions" && (
+            {navItems[activeMenu].label !== "Services" && navItems[activeMenu].label !== "Solutions" && navItems[activeMenu].label !== "Products" && (
               <Link className="header-dropdown__all" href={navItems[activeMenu].href} onClick={() => setIsOpen(false)}>
                 View all {navItems[activeMenu].label.toLowerCase()} <span>↗</span>
               </Link>
+            )}
+            {navItems[activeMenu].label === "Products" && (
+              <p className="header-dropdown__summary">
+                Explore genuine IT products from authorised brands, supplied and supported by our Abu Dhabi team.
+              </p>
             )}
             <div>
               {navItems[activeMenu].children.map((child) => (

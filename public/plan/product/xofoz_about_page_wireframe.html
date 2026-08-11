@@ -1,0 +1,530 @@
+
+<style>
+h2.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:12px;color:var(--text-primary)}
+.browser{border:0.5px solid var(--border-strong);border-radius:10px;overflow:hidden}
+.bar{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:8px 12px;display:flex;align-items:center;gap:8px}
+.dots{display:flex;gap:4px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--border-strong)}
+.url{flex:1;background:var(--surface-2);border:0.5px solid var(--border);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--text-muted);margin:0 8px;font-family:var(--font-mono)}
+.tpl{background:#FEF3C7;color:#92400E;font-size:9px;font-weight:500;padding:2px 7px;border-radius:3px}
+.nav{background:var(--surface-1);border-bottom:0.5px solid var(--border);padding:8px 14px;display:flex;align-items:center}
+.nl{font-size:10px;color:var(--text-secondary);padding:3px 8px}
+.nl.hi{color:var(--text-accent);font-weight:500;background:var(--bg-accent);border-radius:4px}
+.nav-logo{font-size:13px;font-weight:500;color:var(--text-accent);margin-right:20px}
+.nav-right{margin-left:auto;display:flex;gap:6px}
+.btn-wa{background:#25D366;color:#fff;font-size:9px;padding:4px 8px;border-radius:4px}
+.btn-cta{background:var(--text-primary);color:var(--surface-2);font-size:9px;padding:4px 10px;border-radius:4px}
+.crumb{padding:7px 14px;background:var(--surface-1);border-bottom:0.5px solid var(--border);font-size:9px;color:var(--text-muted);display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ca{color:var(--text-accent);font-weight:500}
+.sec{border-bottom:0.5px solid var(--border);padding:12px 14px}
+.sn{font-size:9px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.snb{background:var(--surface-1);border:0.5px solid var(--border);color:var(--text-muted);font-size:8px;padding:1px 5px;border-radius:3px}
+.sh{font-size:12px;font-weight:500;margin-bottom:4px}
+.sp{font-size:9px;color:var(--text-secondary);line-height:1.5;margin-bottom:5px}
+.tag{display:inline-flex;padding:2px 7px;border-radius:100px;font-size:8px;font-weight:500}
+.ts{background:#EAF3DE;color:#3B6D11}
+.ta{background:#CCFBF1;color:#0F766E}
+.tg{background:#FEF3C7;color:#92400E}
+.te{background:#FEE2E2;color:#991B1B}
+.tu{background:#DBEAFE;color:#1E40AF}
+.tgs{display:flex;gap:3px;flex-wrap:wrap;margin-top:5px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.dev-note{background:var(--bg-accent);border:0.5px solid var(--border-accent);border-radius:4px;padding:4px 8px;font-size:8px;color:var(--text-accent);margin-top:5px}
+.card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px}
+
+.hero-eyebrow{font-size:8px;font-weight:500;color:var(--text-accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+.hero-h1{font-size:14px;font-weight:500;line-height:1.3;margin-bottom:5px}
+.hero-sub{font-size:9px;color:var(--text-secondary);line-height:1.6;margin-bottom:8px}
+.btns{display:flex;gap:6px}
+.btn-p{background:var(--text-primary);color:var(--surface-2);font-size:8px;padding:4px 10px;border-radius:4px}
+.btn-s{border:0.5px solid var(--border-strong);color:var(--text-primary);font-size:8px;padding:4px 10px;border-radius:4px}
+.hero-img{background:var(--surface-0);border:0.5px dashed var(--border-strong);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:100px;text-align:center;padding:10px}
+.ph-label{font-size:8px;color:var(--text-muted);font-style:italic}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:0.5px solid var(--border)}
+.stat{padding:8px 10px;text-align:center;border-right:0.5px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-size:14px;font-weight:500;color:var(--text-accent)}
+.stat-l{font-size:7px;color:var(--text-muted);margin-top:1px}
+
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:10px;padding-bottom:10px;position:relative}
+.tl-left{display:flex;flex-direction:column;align-items:center;gap:0;min-width:60px}
+.tl-year{font-size:10px;font-weight:500;color:var(--text-accent);white-space:nowrap}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--text-accent);margin:3px 0;flex-shrink:0}
+.tl-line{width:1px;flex:1;background:var(--border-strong);margin:0 auto}
+.tl-content{flex:1;padding-bottom:8px;border-bottom:0.5px solid var(--border)}
+.tl-content:last-child{border-bottom:none}
+.tl-title{font-size:9px;font-weight:500;margin-bottom:2px}
+.tl-desc{font-size:8px;color:var(--text-secondary);line-height:1.4}
+
+.pillar-card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+.pillar-ico{width:28px;height:28px;border-radius:6px;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.pillar-n{font-size:9px;font-weight:500;margin-bottom:3px}
+.pillar-p{font-size:8px;color:var(--text-secondary);line-height:1.4}
+
+.cert-strip{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.cert-pill{background:var(--surface-1);border:0.5px solid var(--border);border-radius:4px;padding:4px 8px;font-size:8px;color:var(--text-secondary)}
+.cert-pill.hi{background:var(--bg-accent);border-color:var(--border-accent);color:var(--text-accent);font-weight:500}
+
+.value-card{background:var(--surface-1);border:0.5px solid var(--border);border-left:3px solid var(--border-accent);border-radius:0 6px 6px 0;padding:8px 10px;margin-bottom:5px}
+.value-title{font-size:9px;font-weight:500;margin-bottom:2px;color:var(--text-accent)}
+.value-p{font-size:8px;color:var(--text-secondary);line-height:1.4}
+
+.client-logo-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:7px}
+.client-logo{background:var(--surface-1);border:0.5px solid var(--border);border-radius:4px;padding:5px;text-align:center;font-size:7px;color:var(--text-muted);font-weight:500}
+
+.team-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+.team-av{width:36px;height:36px;border-radius:50%;background:var(--bg-accent);margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--text-accent)}
+.team-n{font-size:9px;font-weight:500;margin-bottom:1px}
+.team-role{font-size:7px;color:var(--text-muted);margin-bottom:4px}
+.team-certs{display:flex;flex-wrap:wrap;gap:2px;justify-content:center}
+.team-cert{background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:1px 4px;font-size:7px;color:var(--text-secondary)}
+
+.cta-box{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:12px}
+.wa-btn{background:#25D366;color:#fff;font-size:8px;padding:4px 8px;border-radius:4px;display:inline-flex;align-items:center;gap:3px;margin-bottom:7px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px}
+.ff{background:var(--surface-2);border:0.5px solid var(--border);border-radius:3px;padding:4px 6px;font-size:7px;color:var(--text-muted);display:block}
+.ff.full{grid-column:1/-1}
+.fbt{background:var(--text-primary);color:var(--surface-2);font-size:8px;padding:4px;border-radius:4px;text-align:center;margin-top:3px}
+.nap-card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:6px;padding:8px}
+.nap-i{display:flex;gap:4px;font-size:8px;color:var(--text-secondary);margin-bottom:3px}
+
+.ftr{background:var(--surface-1);padding:10px 14px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:8px;padding-bottom:8px;border-bottom:0.5px solid var(--border)}
+.fch{font-size:8px;font-weight:500;margin-bottom:4px}
+.fl{display:block;font-size:7px;color:var(--text-secondary);margin-bottom:2px}
+.fbrand{font-size:10px;font-weight:500;margin-bottom:2px}
+.fdesc{font-size:7px;color:var(--text-secondary);line-height:1.5;margin-bottom:5px}
+.fbot{display:flex;justify-content:space-between}
+.fcopy{font-size:7px;color:var(--text-muted)}
+</style>
+
+<h2 class="sr">XOFOZ About page wireframe — desktop view showing company story, stats, timeline, team, certifications, client logos, values, and CTA. Critical EEAT page for Google and AI system entity verification.</h2>
+
+<div class="browser">
+
+<div class="bar">
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="url">xofoz.com/about/</div>
+  <div class="tpl">About page — critical EEAT page — entity verification for Google and AI systems</div>
+</div>
+
+<div class="nav">
+  <span class="nav-logo">XOFOZ</span>
+  <span class="nl">Services ▾</span>
+  <span class="nl">Solutions ▾</span>
+  <span class="nl">Products ▾</span>
+  <span class="nl">Industries</span>
+  <span class="nl hi">About</span>
+  <span class="nl">Blog</span>
+  <span class="nl">Contact</span>
+  <div class="nav-right">
+    <span class="btn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</span>
+    <span class="btn-cta">Get a free quote</span>
+  </div>
+</div>
+
+<div class="crumb">
+  <span class="ca">Home</span><span>›</span>
+  <span style="color:var(--text-primary);font-weight:500">About XOFOZ Information Technology</span>
+  <div style="margin-left:auto;display:flex;gap:3px">
+    <span class="tag ts">SEO: BreadcrumbList schema</span>
+    <span class="tag te">EEAT: primary entity verification page</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="snb">SECTION 01</span> Hero — company identity</div>
+  <div class="g2">
+    <div>
+      <div class="hero-eyebrow">About XOFOZ Information Technology LLC — Abu Dhabi, UAE</div>
+      <div class="hero-h1">Abu Dhabi's trusted IT solutions partner since 2022</div>
+      <div class="hero-sub">XOFOZ Information Technology LLC is an Abu Dhabi-based IT solutions company providing managed IT services, authorised IT products, and complete IT solutions for businesses across the UAE. We work with 150+ businesses — from growing SMEs to enterprise clients including Marriott, Sobha, Agility, and National Holdings — delivering the technology infrastructure, certified products, and ongoing IT support that keeps UAE businesses operating at full capacity.</div>
+      <div class="btns">
+        <span class="btn-p">View our services</span>
+        <span class="btn-s">Contact us</span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <i class="ti ti-building" aria-hidden="true" style="font-size:22px;color:var(--border-strong)"></i>
+      <span class="ph-label">XOFOZ office — Abu Dhabi</span>
+      <span class="ph-label">Real team photography</span>
+      <span class="ph-label">4 Al Ithmid Street, Mussafah</span>
+    </div>
+  </div>
+  <div class="tgs">
+    <span class="tag te">EEAT: company identity — name, location, year established — above fold</span>
+    <span class="tag tg">GEO: full entity name + Abu Dhabi + named clients = prime AI citation</span>
+    <span class="tag ts">SEO: H1 = about XOFOZ IT solutions Abu Dhabi</span>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Active AMC clients</div></div>
+  <div class="stat"><div class="stat-n">27+</div><div class="stat-l">Enterprise clients</div></div>
+  <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Years in Abu Dhabi</div></div>
+  <div class="stat"><div class="stat-n">50+</div><div class="stat-l">Authorised brands</div></div>
+</div>
+
+<div class="sec">
+  <div class="sn"><span class="snb">SECTION 02</span> Our story — company narrative</div>
+  <div class="sh">Our story</div>
+  <div class="g2" style="margin-top:5px">
+    <div class="sp">[PARAGRAPH 1 — How XOFOZ was founded in Abu Dhabi in 2022. What gap in the market the founders identified. The specific problem with IT services in Abu Dhabi that XOFOZ was built to solve — generic IT companies without sector expertise, grey market products, no single accountable partner. Written as a genuine company story — not a marketing brochure. First-person narrative voice where appropriate.]</div>
+    <div class="sp">[PARAGRAPH 2 — How the business has grown since 2022. From initial clients to 150+ businesses and 27+ enterprise clients. Key milestones — first major hospitality client, first construction project, first enterprise AMC. The progression from startup to trusted Abu Dhabi IT partner. Named sectors that shaped the business. Why Abu Dhabi specifically — the market, the clients, the community.]</div>
+  </div>
+  <div class="tgs">
+    <span class="tag te">EEAT: genuine company narrative = experience and authenticity signal</span>
+    <span class="tag tg">GEO: founding story + Abu Dhabi + named sectors = AI entity building block</span>
+  </div>
+  <div class="dev-note"><strong>Content note:</strong> This section must be written with input from XOFOZ founders — not from publicly available information alone. A genuine company story with specific details is significantly more valuable for EEAT than a generic corporate narrative.</div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="snb">SECTION 03</span> Company milestones — timeline</div>
+  <div class="sh">XOFOZ — key milestones</div>
+  <div style="margin-top:8px">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">2022</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">XOFOZ Information Technology LLC established in Abu Dhabi</div>
+          <div class="tl-desc">[Founding story summary — registered in Abu Dhabi, first office location, founding team, initial service focus. Confirm specific details with XOFOZ before publishing.]</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">2022</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">First enterprise client and IT AMC contract delivered</div>
+          <div class="tl-desc">[First major client or project milestone. Confirm with XOFOZ — sector, size, and what was delivered. Named client if permission given.]</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">2023</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Tally Prime authorised dealer status secured in Abu Dhabi</div>
+          <div class="tl-desc">XOFOZ becomes one of Abu Dhabi's authorised Tally Prime dealers — expanding the product offering beyond IT hardware and services to include business software implementation and support.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">2023</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">ADMCC certification achieved — Abu Dhabi compliance milestone</div>
+          <div class="tl-desc">XOFOZ engineers achieve ADMCC — Abu Dhabi Media and Compliance Centre — certification, enabling compliant CCTV and ELV system delivery for Abu Dhabi commercial and government facilities.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">2024</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">50+ active AMC clients — hospitality, construction, logistics</div>
+          <div class="tl-desc">[Growth milestone — sector diversity. Confirm exact timing and numbers with XOFOZ. Named clients from this period if available and permitted.]</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">2025</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-title">Microsoft certified partner status — cloud solutions expansion</div>
+          <div class="tl-desc">[Microsoft partnership milestone. Confirm exact date with XOFOZ. What this enabled — Microsoft 365 migration, Azure, Teams room certification.]</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-year">2026</div>
+          <div class="tl-dot"></div>
+        </div>
+        <div class="tl-content" style="border-bottom:none">
+          <div class="tl-title">150+ clients — 27+ enterprise — Abu Dhabi's trusted IT partner</div>
+          <div class="tl-desc">XOFOZ serves over 150 active clients including Marriott, Sobha, Agility, National Holdings, Altrad, China Harbour, Exeed, Cleanco, and Khadamat — managing complete IT environments across hospitality, real estate, construction, logistics, and manufacturing sectors in Abu Dhabi and the UAE.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tgs">
+    <span class="tag te">EEAT: timeline demonstrates genuine experience and business history</span>
+    <span class="tag tg">GEO: specific milestones AI systems can cite to verify company age and credibility</span>
+  </div>
+  <div class="dev-note"><strong>Content note:</strong> All timeline dates and milestones must be confirmed with XOFOZ before publishing. Do not publish unverified dates or milestone claims.</div>
+</div>
+
+<div class="sec">
+  <div class="sn"><span class="snb">SECTION 04</span> What we do — three pillars</div>
+  <div class="sh">What XOFOZ does for businesses in Abu Dhabi</div>
+  <div class="sp" style="margin-bottom:8px">XOFOZ operates across three interconnected pillars — each addressing a different dimension of how businesses in Abu Dhabi need IT to work for them.</div>
+  <div class="g3">
+    <div class="pillar-card">
+      <div class="pillar-ico" style="background:var(--bg-accent);color:var(--text-accent)"><i class="ti ti-tools" aria-hidden="true"></i></div>
+      <div class="pillar-n">Services</div>
+      <div class="pillar-p">Managed IT services, annual maintenance contracts, and specialist support — keeping your IT environment running reliably, securely, and at full capacity every day.</div>
+      <div style="font-size:8px;color:var(--text-accent);margin-top:5px;font-weight:500">20 service areas →</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-ico" style="background:var(--bg-success);color:var(--text-success)"><i class="ti ti-package" aria-hidden="true"></i></div>
+      <div class="pillar-n">Products</div>
+      <div class="pillar-p">Authorised supply of genuine IT hardware and software from 50+ brands — every product correctly licensed, professionally installed, and fully supported by our Abu Dhabi team.</div>
+      <div style="font-size:8px;color:var(--text-success);margin-top:5px;font-weight:500">19 product categories →</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-ico" style="background:#FEF3C7;color:#92400E"><i class="ti ti-bulb" aria-hidden="true"></i></div>
+      <div class="pillar-n">Solutions</div>
+      <div class="pillar-p">End-to-end IT solutions designed around the specific problem your business is trying to solve — assessed, planned, implemented, and handed over by one accountable team.</div>
+      <div style="font-size:8px;color:#92400E;margin-top:5px;font-weight:500">10 solution categories →</div>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:7px">
+    <span class="tag tg">GEO: three-pillar structure helps AI understand XOFOZ as full-service IT company</span>
+    <span class="tag ts">SEO: internal links to services, products, and solutions sections</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="snb">SECTION 05</span> Our team — expertise and certifications</div>
+  <div class="sh">Our team — certified across the platforms your business runs</div>
+  <div class="sp" style="margin-bottom:8px">XOFOZ engineers hold active certifications across the world's leading IT platforms — meaning every system we install, every product we supply, and every problem we solve is handled by an engineer who is formally qualified on that specific technology.</div>
+  <div class="g4" style="margin-bottom:10px">
+    <div class="team-card">
+      <div class="team-av">IT</div>
+      <div class="team-n">IT Infrastructure team</div>
+      <div class="team-role">Network · Cabling · Server</div>
+      <div class="team-certs">
+        <span class="team-cert">Aruba</span>
+        <span class="team-cert">UniFi</span>
+        <span class="team-cert">Cisco</span>
+        <span class="team-cert">ADMCC</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-av">SC</div>
+      <div class="team-n">Security and ELV team</div>
+      <div class="team-role">CCTV · Access · LV systems</div>
+      <div class="team-certs">
+        <span class="team-cert">HikVision</span>
+        <span class="team-cert">ADMCC</span>
+        <span class="team-cert">Fortinet</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-av">CL</div>
+      <div class="team-n">Cloud and software team</div>
+      <div class="team-role">Microsoft · ERP · Cloud</div>
+      <div class="team-certs">
+        <span class="team-cert">Microsoft</span>
+        <span class="team-cert">Azure</span>
+        <span class="team-cert">Tally Prime</span>
+        <span class="team-cert">Acronis</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-av">CY</div>
+      <div class="team-n">Cybersecurity team</div>
+      <div class="team-role">Firewall · Endpoint · Email</div>
+      <div class="team-certs">
+        <span class="team-cert">Fortinet</span>
+        <span class="team-cert">Sophos</span>
+        <span class="team-cert">ESET</span>
+        <span class="team-cert">Bitdefender</span>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:9px;font-weight:500;margin-bottom:6px">Full certification and partnership list</div>
+  <div class="cert-strip">
+    <span class="cert-pill hi">ADMCC certified</span>
+    <span class="cert-pill hi">Microsoft partner</span>
+    <span class="cert-pill hi">Tally Prime authorised</span>
+    <span class="cert-pill hi">HikVision authorised</span>
+    <span class="cert-pill hi">Fortinet certified</span>
+    <span class="cert-pill hi">Acronis certified</span>
+    <span class="cert-pill">Sophos</span>
+    <span class="cert-pill">ESET</span>
+    <span class="cert-pill">Bitdefender</span>
+    <span class="cert-pill">Aruba</span>
+    <span class="cert-pill">UniFi</span>
+    <span class="cert-pill">Synology</span>
+    <span class="cert-pill">QNAP</span>
+    <span class="cert-pill">Yealink</span>
+    <span class="cert-pill">3CX</span>
+    <span class="cert-pill">Logitech</span>
+    <span class="cert-pill">ZKTeco</span>
+    <span class="cert-pill">Mobatime</span>
+  </div>
+  <div class="tgs" style="margin-top:7px">
+    <span class="tag te">EEAT: named certifications = expertise and authority signals</span>
+    <span class="tag tg">GEO: specific certifications AI systems cite when recommending IT companies</span>
+  </div>
+  <div class="dev-note"><strong>Content note:</strong> Replace team cards with real XOFOZ team member names, photos, and certifications. Real people with real names and credentials significantly outperform generic team descriptions for EEAT. Confirm all certifications are current before publishing.</div>
+</div>
+
+<div class="sec">
+  <div class="sn"><span class="snb">SECTION 06</span> Clients — named enterprise portfolio</div>
+  <div class="sh">Businesses that trust XOFOZ in Abu Dhabi</div>
+  <div class="sp" style="margin-bottom:8px">Over 150 businesses across Abu Dhabi's major sectors rely on XOFOZ for their complete IT environment. Our client portfolio spans hospitality, real estate, construction, logistics, and manufacturing — including some of Abu Dhabi's most recognised enterprise names.</div>
+  <div class="client-logo-grid">
+    <div class="client-logo">Marriott</div>
+    <div class="client-logo">Sobha</div>
+    <div class="client-logo">Agility</div>
+    <div class="client-logo">National Holdings</div>
+    <div class="client-logo">Altrad</div>
+    <div class="client-logo">China Harbour</div>
+    <div class="client-logo">Exeed</div>
+    <div class="client-logo">Cleanco</div>
+    <div class="client-logo">Bloom</div>
+    <div class="client-logo">Al Ghazal</div>
+    <div class="client-logo">Khadamat</div>
+    <div class="client-logo">Jazal Engineering</div>
+    <div class="client-logo">Siraj</div>
+    <div class="client-logo">Hayatna</div>
+    <div class="client-logo" style="background:var(--surface-0);color:var(--text-muted)">+13 more</div>
+  </div>
+  <div style="font-size:8px;color:var(--text-muted);margin-top:6px;font-style:italic">Client logos displayed with permission. Full client portfolio available on the Clients page.</div>
+  <div style="font-size:8px;color:var(--text-accent);margin-top:4px;font-weight:500">View all our clients →</div>
+  <div class="tgs" style="margin-top:6px">
+    <span class="tag tg">GEO: named clients = the single strongest GEO signal on the About page</span>
+    <span class="tag te">EEAT: real enterprise clients = authority and trust at the highest level</span>
+    <span class="tag ts">SEO: internal link to clients page — distributes authority</span>
+  </div>
+</div>
+
+<div class="sec" style="background:var(--surface-0)">
+  <div class="sn"><span class="snb">SECTION 07</span> Our values — what XOFOZ stands for</div>
+  <div class="sh">What we stand for</div>
+  <div class="g2" style="margin-top:8px">
+    <div>
+      <div class="value-card">
+        <div class="value-title">Accountability — one team, complete ownership</div>
+        <div class="value-p">We take complete responsibility for every system we install, every product we supply, and every problem we are asked to solve. When something goes wrong we own it and we fix it — without passing responsibility between vendors or between teams.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Genuine products — no grey market, no exceptions</div>
+        <div class="value-p">Every product XOFOZ supplies comes from authorised UAE distribution channels with manufacturer warranty and genuine firmware. We have never supplied a grey market or counterfeit product and we never will — because our clients' operations depend on products that work exactly as specified.</div>
+      </div>
+    </div>
+    <div>
+      <div class="value-card">
+        <div class="value-title">Local presence — Abu Dhabi team, Abu Dhabi response</div>
+        <div class="value-p">Every support call, every site visit, and every project is handled by our Abu Dhabi-based team. We do not route support offshore, we do not delegate site visits to subcontractors, and we do not manage your IT from a city three hours away. We are here.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Sector knowledge — IT built for how you actually work</div>
+        <div class="value-p">We do not apply a generic IT template to every business. We understand how hotels operate, how construction sites are configured, and how logistics facilities are networked — and we build IT solutions that reflect that understanding, not solutions that require your business to adapt to our limitations.</div>
+      </div>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:7px">
+    <span class="tag te">EEAT: values demonstrate genuine experience and ethical business conduct</span>
+    <span class="tag tg">GEO: specific values AI can cite to characterise XOFOZ as a company</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sn"><span class="snb">SECTION 08</span> Company details — full entity information</div>
+  <div class="sh">Company information</div>
+  <div class="g2" style="margin-top:8px">
+    <div class="card">
+      <div style="font-size:9px;font-weight:500;margin-bottom:7px">Registered company details</div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="display:flex;gap:6px;font-size:8px;border-bottom:0.5px solid var(--border);padding-bottom:4px"><span style="color:var(--text-muted);min-width:100px">Company name</span><span style="color:var(--text-primary);font-weight:500">XOFOZ Information Technology LLC SPC</span></div>
+        <div style="display:flex;gap:6px;font-size:8px;border-bottom:0.5px solid var(--border);padding-bottom:4px"><span style="color:var(--text-muted);min-width:100px">Established</span><span>2022 — Abu Dhabi, UAE</span></div>
+        <div style="display:flex;gap:6px;font-size:8px;border-bottom:0.5px solid var(--border);padding-bottom:4px"><span style="color:var(--text-muted);min-width:100px">Address</span><span>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</span></div>
+        <div style="display:flex;gap:6px;font-size:8px;border-bottom:0.5px solid var(--border);padding-bottom:4px"><span style="color:var(--text-muted);min-width:100px">Phone</span><span>026 220 071</span></div>
+        <div style="display:flex;gap:6px;font-size:8px;border-bottom:0.5px solid var(--border);padding-bottom:4px"><span style="color:var(--text-muted);min-width:100px">WhatsApp</span><span>+971 52 355 4202</span></div>
+        <div style="display:flex;gap:6px;font-size:8px;border-bottom:0.5px solid var(--border);padding-bottom:4px"><span style="color:var(--text-muted);min-width:100px">Email</span><span>hello@xofoz.com</span></div>
+        <div style="display:flex;gap:6px;font-size:8px;border-bottom:0.5px solid var(--border);padding-bottom:4px"><span style="color:var(--text-muted);min-width:100px">Website</span><span style="color:var(--text-accent)">xofoz.com</span></div>
+        <div style="display:flex;gap:6px;font-size:8px"><span style="color:var(--text-muted);min-width:100px">Working hours</span><span>Monday – Saturday, 8:30 AM – 6:30 PM</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="card">
+        <div style="font-size:9px;font-weight:500;margin-bottom:6px">Service coverage</div>
+        <div style="font-size:8px;color:var(--text-secondary);line-height:1.5">Abu Dhabi — Mussafah — Mohamed Bin Zayed City — Khalifa City — Al Reem Island — Yas Island — and all surrounding areas. Remote IT support available across all UAE emirates.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:9px;font-weight:500;margin-bottom:6px">Social media and online presence</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <div style="background:var(--bg-accent);border:0.5px solid var(--border-accent);border-radius:4px;padding:4px 8px;font-size:8px;color:var(--text-accent);display:flex;align-items:center;gap:4px"><i class="ti ti-brand-linkedin" aria-hidden="true" style="font-size:10px"></i>LinkedIn</div>
+          <div style="background:var(--surface-1);border:0.5px solid var(--border);border-radius:4px;padding:4px 8px;font-size:8px;color:var(--text-secondary);display:flex;align-items:center;gap:4px"><i class="ti ti-brand-instagram" aria-hidden="true" style="font-size:10px"></i>@xofozit</div>
+          <div style="background:var(--surface-1);border:0.5px solid var(--border);border-radius:4px;padding:4px 8px;font-size:8px;color:var(--text-secondary);display:flex;align-items:center;gap:4px"><i class="ti ti-brand-facebook" aria-hidden="true" style="font-size:10px"></i>XOFOZ IT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tgs" style="margin-top:7px">
+    <span class="tag te">EEAT: complete entity information — name, address, phone, year — Google entity verification</span>
+    <span class="tag tg">GEO: full NAP + social profiles = AI system entity confirmation</span>
+    <span class="tag ts">SEO: Organisation schema applies to this entire section</span>
+  </div>
+  <div class="dev-note"><strong>Developer note:</strong> Apply Organization schema with all fields populated — name, legalName, foundingDate, address, telephone, email, url, sameAs for social profiles. This is the most important schema block on the entire website for entity verification.</div>
+</div>
+
+<div class="sec" style="background:var(--bg-accent);border-color:var(--border-accent)">
+  <div class="sn"><span class="snb">SECTION 09</span> CTA</div>
+  <div class="sh">Ready to work with XOFOZ?</div>
+  <div class="g2" style="margin-top:8px">
+    <div class="cta-box">
+      <div style="font-size:10px;font-weight:500;margin-bottom:3px">Let us assess your IT requirements</div>
+      <div class="sp">Whether you need IT AMC, a specific product, a complete office IT setup, or a strategic IT partner for your Abu Dhabi business — XOFOZ will assess your requirements and recommend the right solution. No obligation. Abu Dhabi based. Fast response.</div>
+      <div class="wa-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp us now</div>
+      <div class="fr">
+        <div class="ff">Your name</div>
+        <div class="ff">Company name</div>
+        <div class="ff full" style="padding:10px 6px">Tell us about your business and IT requirements</div>
+      </div>
+      <div class="fbt">Contact XOFOZ</div>
+    </div>
+    <div class="nap-card">
+      <div style="font-size:9px;font-weight:500;margin-bottom:6px">Contact XOFOZ</div>
+      <div class="nap-i"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</div>
+      <div class="nap-i"><i class="ti ti-phone" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>026 220 071</div>
+      <div class="nap-i"><i class="ti ti-brand-whatsapp" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>+971 52 355 4202</div>
+      <div class="nap-i"><i class="ti ti-mail" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>hello@xofoz.com</div>
+      <div class="nap-i"><i class="ti ti-clock" aria-hidden="true" style="font-size:10px;color:var(--text-accent)"></i>Monday – Saturday, 8:30 AM – 6:30 PM</div>
+    </div>
+  </div>
+</div>
+
+<div class="ftr">
+  <div class="sn" style="margin-bottom:7px"><span class="snb">SECTION 10</span> Footer — identical on all pages</div>
+  <div class="fcols">
+    <div>
+      <div class="fbrand">XOFOZ Information Technology LLC</div>
+      <div class="fdesc">Abu Dhabi's trusted IT solutions provider since 2022 — delivering managed IT services, authorised software products, and complete IT solutions to 150+ businesses across the UAE.</div>
+    </div>
+    <div><div class="fch">Services</div><span class="fl">IT AMC</span><span class="fl">Cybersecurity</span><span class="fl">Network</span><span class="fl">CCTV</span><span class="fl">Cloud</span></div>
+    <div><div class="fch">Solutions</div><span class="fl">LV and ELV</span><span class="fl">Cybersecurity</span><span class="fl">Microsoft Cloud</span><span class="fl">Network</span><span class="fl">AI Solutions</span></div>
+    <div><div class="fch">Products</div><span class="fl">Tally Prime</span><span class="fl">Fortinet</span><span class="fl">HikVision</span><span class="fl">Microsoft 365</span><span class="fl">Aruba</span></div>
+    <div><div class="fch">Company</div><span class="fl">About XOFOZ</span><span class="fl">Our clients</span><span class="fl">Industries</span><span class="fl">Blog</span><span class="fl">Contact</span></div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2026 XOFOZ Information Technology LLC. All rights reserved. Abu Dhabi, United Arab Emirates.</div>
+    <div style="font-size:7px;color:var(--text-muted)">Managed by Shaheen ES — Digital Marketing Consultant</div>
+  </div>
+</div>
+
+</div>
