@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import ParticleField from "../components/ParticleField";
 import Reveal from "../components/Reveal";
 import KarmaScrollScene from "../components/KarmaScrollScene";
@@ -6,30 +7,36 @@ import PointerLight from "../components/PointerLight";
 import ClientLogoSection from "../components/ClientLogoSection";
 import SolutionsScrollSection from "../components/SolutionsScrollSection";
 import IndustryAccordion from "../components/IndustryAccordion";
-import TestimonialCarousel from "../components/TestimonialCarousel";
 import BusinessHighlights from "../components/BusinessHighlights";
+import ConsultationSection from "../components/ConsultationSection";
+
+export const metadata: Metadata = {
+  title: { absolute: "XOFOZ | IT Solutions Provider in Abu Dhabi, UAE" },
+  description: "XOFOZ is an Abu Dhabi IT solutions provider delivering managed IT services, genuine technology products, and complete business IT solutions across the UAE.",
+  alternates: { canonical: "/" },
+};
 
 const pillars = [
   {
     number: "01",
-    title: "Managed IT services",
-    copy: "Expert support, maintenance, and infrastructure management for UAE businesses, from helpdesk requests to ongoing technical ownership.",
+    title: "Managed IT services Abu Dhabi",
+    copy: "Expert IT support, maintenance, and infrastructure management for UAE businesses, delivered by an accountable team based in Abu Dhabi.",
     link: "Explore our services",
     href: "#services",
     image: "/pillars/managed-it-services.png",
   },
   {
     number: "02",
-    title: "Authorised IT products",
-    copy: "Genuine software, security, cloud, CCTV, and infrastructure products supplied, implemented, and supported by one local team.",
+    title: "Authorised IT products UAE",
+    copy: "Genuine software, security, cloud, CCTV, and infrastructure products supplied, implemented, and supported across the UAE by one local team.",
     link: "View our products",
     href: "#products",
     image: "/pillars/authorised-it-products.png",
   },
   {
     number: "03",
-    title: "Complete IT solutions",
-    copy: "Describe the business problem and XOFOZ will assess, design, install, secure, and hand over the complete solution.",
+    title: "Complete IT solutions Abu Dhabi",
+    copy: "Tell us the business problem. XOFOZ assesses, plans, implements, secures, and hands over the complete solution from start to finish.",
     link: "See our solutions",
     href: "#solutions",
     image: "/pillars/complete-it-solutions.png",
@@ -39,38 +46,38 @@ const pillars = [
 const solutions = [
   {
     title: "Need to install CCTV in your building?",
-    copy: "We survey the site, plan camera coverage, select the equipment, complete the installation, and train your team.",
+    copy: "Our engineers survey your property, design the camera coverage plan, recommend suitable equipment, complete the installation, and train your team.",
     steps: ["Site survey", "Blueprint", "Hardware", "Install", "Handover"],
     cta: "Get a CCTV consultation",
   },
   {
     title: "Is your office Wi-Fi slow or unreliable?",
-    copy: "We assess the workspace, calculate coverage requirements, choose suitable access points, and deploy a tested wireless network.",
+    copy: "We assess the workspace, calculate coverage requirements, select suitable access points, and deploy a tested wireless network without dead zones.",
     steps: ["Coverage plan", "AP selection", "Deployment", "Testing"],
     cta: "Request a Wi-Fi assessment",
   },
   {
     title: "Are your computers or IT systems underperforming?",
-    copy: "Our engineers diagnose hardware, software, and network bottlenecks, resolve the root cause, and help prevent recurrence.",
+    copy: "Our engineers diagnose hardware, software, or network bottlenecks, resolve the root cause, and put preventive measures in place.",
     steps: ["Diagnose", "Fix root cause", "Secure", "Prevent"],
     cta: "Get IT support now",
   },
 ];
 
-const industries: [string, string][] = [
-  ["Hospitality", "Hotels, restaurants, guest networks, CCTV, and always-on business systems."],
-  ["Real estate", "Property offices, sales centres, access control, connectivity, and cloud collaboration."],
-  ["Construction", "Site offices, temporary networks, cabling, surveillance, and mobile workforce support."],
-  ["Logistics", "Warehouses, fleet offices, wireless coverage, devices, security, and business continuity."],
-  ["Manufacturing", "Production offices, ERP environments, endpoint protection, backups, and infrastructure support."],
+const industries: [string, string, string][] = [
+  ["IT solutions for hospitality Abu Dhabi", "Guest WiFi, POS support, CCTV, and complete IT infrastructure management for hotels, resorts, and F&B operations.", "/industries/hospitality"],
+  ["IT solutions for real estate UAE", "Cloud platforms, ERP implementation, secure networks, and multi-site IT support for property businesses.", "/industries/real-estate"],
+  ["IT solutions for construction UAE", "Site-office networks, surveillance, hardware supply, and ongoing IT support for active construction environments.", "/industries/construction"],
+  ["IT solutions for logistics Abu Dhabi", "IT AMC, resilient network infrastructure, ERP systems, and business continuity for warehouses and logistics operations.", "/industries/logistics"],
+  ["IT solutions for manufacturing UAE", "Server infrastructure, ERP, cybersecurity, CCTV, backups, and complete IT maintenance for industrial facilities.", "/industries/manufacturing"],
 ];
 
 const reasons = [
-  ["ADMCC-ready engineering", "Compliance-conscious support for organisations operating in Abu Dhabi."],
-  ["Responsive on-site support", "A local team available for remote troubleshooting and scheduled site visits."],
-  ["UAE-based team", "Calls, visits, and support requirements are handled by engineers familiar with local businesses."],
-  ["Multi-vendor expertise", "Practical experience across Microsoft, Fortinet, Hikvision, Aruba, ESET, Sophos, and Acronis environments."],
-  ["Tally Prime support", "Licensing, implementation, user setup, training, and ongoing accounting-software assistance."],
+  ["ADMCC certified IT engineers", "Compliance-ready local engineering for organisations operating within Abu Dhabi's business and regulatory environment."],
+  ["Fast on-site response across Abu Dhabi", "A locally based team available for remote troubleshooting and on-site support when physical presence is required."],
+  ["UAE-based team — zero offshore support", "Support requirements are handled by engineers familiar with local businesses, systems, and working environments."],
+  ["Multi-vendor, brand-independent expertise", "Experience across Microsoft, Fortinet, Hikvision, Aruba, ESET, Sophos, and Acronis environments enables practical recommendations."],
+  ["Authorised Tally Prime dealer in Abu Dhabi", "Genuine licensing, implementation, UAE VAT configuration, staff training, and ongoing accounting-software support."],
 ];
 
 const partners = [
@@ -82,24 +89,6 @@ const partners = [
   { name: "Aruba", logo: "/partners/aruba.svg" },
   { name: "Sophos", logo: "/partners/sophos.svg" },
   { name: "Acronis", logo: "/partners/acronis.svg" },
-];
-
-const testimonials = [
-  {
-    quote: "XOFOZ responded quickly, identified the server issue, and helped our team return to normal operations with a clear explanation of the fix.",
-    name: "IT Manager",
-    role: "Hospitality sector · Abu Dhabi",
-  },
-  {
-    quote: "The team understood our site requirements, completed the network setup on schedule, and continues to support the project when we need them.",
-    name: "Operations Head",
-    role: "Construction sector · UAE",
-  },
-  {
-    quote: "The Tally Prime setup and staff walkthrough were straightforward. Having one local team for implementation and support made the process easier.",
-    name: "Finance Director",
-    role: "Manufacturing sector · Abu Dhabi",
-  },
 ];
 
 const processSteps = [
@@ -143,7 +132,7 @@ export default function HomePage() {
     openingHours: "Mo-Sa 08:30-18:30",
     areaServed: "United Arab Emirates",
     description:
-      "Managed IT support, office IT setup, cybersecurity, cabling, and business technology services in Abu Dhabi.",
+      "XOFOZ provides managed IT services, genuine technology products, and complete business IT solutions from Abu Dhabi across the UAE.",
   };
 
   return (
@@ -162,8 +151,9 @@ export default function HomePage() {
           <span className="eyebrow">One Technology Partner</span>
           <h2 className="section-title">IT services. Products. Solutions. All under one roof in Abu Dhabi.</h2>
           <p>
-            XOFOZ brings day-to-day support, genuine technology products, and
-            complete project delivery together under one accountable local team.
+            Many providers cover only part of the requirement. XOFOZ brings
+            day-to-day IT services, genuine products, and complete project
+            delivery together under one accountable Abu Dhabi team.
           </p>
         </Reveal>
         <div className="pillar-grid">
@@ -198,9 +188,9 @@ export default function HomePage() {
             <span className="eyebrow">How XOFOZ Works</span>
             <h2 className="section-title">A clear step-by-step path from audit to support.</h2>
             <p>
-              XOFOZ starts with the real office requirement, then moves through
-              a practical sequence so every setup, security decision, and
-              support handover has clear ownership.
+              XOFOZ starts with the real business requirement, then assesses,
+              plans, installs, secures, and supports the complete environment
+              with clear ownership at every stage.
             </p>
             <div className="story-copy__image">
               <img
@@ -232,6 +222,7 @@ export default function HomePage() {
           <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">Why Businesses Choose XOFOZ</span>
             <h2 className="section-title">Why Abu Dhabi businesses choose XOFOZ and stay.</h2>
+            <p>Local accountability, multi-vendor experience, and certified technical capability support every recommendation and implementation.</p>
           </Reveal>
 
           <div className="why-proof-layout">
@@ -259,9 +250,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <TestimonialCarousel testimonials={testimonials} />
-
       <ClientLogoSection />
+
+      <ConsultationSection />
 
     </main>
   );

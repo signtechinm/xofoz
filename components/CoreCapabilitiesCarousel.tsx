@@ -4,54 +4,64 @@ import { useEffect, useRef, useState } from "react";
 
 const services = [
   {
-    title: "Managed IT / AMC",
+    title: "IT Services",
     image: "/services/managed-it-amc.png",
-    copy: "Prevent downtime with maintenance plans, remote support, on-site visits, monitoring, reporting, and dedicated technical ownership.",
+    copy: "Managed IT, IT AMC, support, consulting, relocation, cloud migration, office setup, and complete IT outsourcing for Abu Dhabi businesses.",
+    href: "/services/it-services",
   },
   {
-    title: "On-Call IT Support",
-    image: "/services/on-call-it-support.png",
-    copy: "Resolve laptop, desktop, printer, email, Wi-Fi, server, firewall, backup, CCTV, and office technology issues.",
-  },
-  {
-    title: "Office IT Setup",
-    image: "/services/office-it-setup.png",
-    copy: "Plan and install cabling, internet, firewall, Wi-Fi, workstations, email, printers, CCTV, biometrics, and backup.",
-  },
-  {
-    title: "Cybersecurity",
+    title: "Cyber Security",
     image: "/services/cybersecurity.png",
-    copy: "Protect users, devices, network, and data with firewall, endpoint protection, VPN, policy setup, and monitoring.",
+    copy: "Layered protection for endpoints, identity, email, network perimeter, vulnerabilities, and mobile devices.",
+    href: "/services/cyber-security",
   },
   {
-    title: "Structured Cabling",
+    title: "Data Backup and Protection",
+    image: "/services/cloud-microsoft-365.png",
+    copy: "DLP, disaster recovery, business continuity, managed backup, and device management for critical business data.",
+    href: "/services/data-backup-protection",
+  },
+  {
+    title: "Server and Storage",
+    image: "/services/office-it-setup.png",
+    copy: "Business servers, NAS, scalable storage, and synchronized data platforms designed, installed, and managed as one system.",
+    href: "/services/server-storage",
+  },
+  {
+    title: "Network Solutions",
     image: "/services/structured-cabling.png",
-    copy: "Build reliable office, CCTV, Wi-Fi, telephone, fiber, audio/video, data center, villa, and warehouse cabling systems.",
+    copy: "Network design, switching, routing, structured cabling, enterprise WiFi, proxy services, VPN, and secure remote connectivity.",
+    href: "/services/network-solutions",
   },
   {
-    title: "Cloud And Microsoft 365",
-    image: "/services/cloud-microsoft-365.png",
-    copy: "Handle email migration, Microsoft 365 setup, cloud storage, user onboarding, security hardening, and support.",
-  },
-  {
-    title: "CCTV And Access Control",
+    title: "Communication and LV",
     image: "/services/office-it-setup.png",
-    copy: "Plan camera coverage, install surveillance systems, configure recording, and connect biometric or card-based access control.",
+    copy: "CCTV, access control, IP phones, biometric attendance, intercom, AV, PA, LED panels, and complete ELV systems.",
+    href: "/services/communication-lv",
   },
   {
-    title: "Hardware And AV Solutions",
-    image: "/services/on-call-it-support.png",
-    copy: "Supply and set up business computers, servers, printers, PABX, POS, meeting-room displays, and video-conferencing systems.",
-  },
-  {
-    title: "ERP And Tally Prime",
+    title: "Cloud",
     image: "/services/cloud-microsoft-365.png",
-    copy: "Support genuine licensing, implementation, company setup, user training, migration, and ongoing accounting-software requirements.",
+    copy: "Azure infrastructure, managed web hosting, desktop as a service, and collaboration tools for flexible business operations.",
+    href: "/services/cloud",
   },
   {
-    title: "Website Development",
+    title: "AI Solutions",
     image: "/services/cybersecurity.png",
-    copy: "Create responsive business websites with clear service content, enquiry paths, search foundations, analytics, and ongoing support.",
+    copy: "AI-powered CCTV and intelligent video analytics for automated event detection and proactive security monitoring.",
+    href: "/services/ai-solutions",
+  },
+  {
+    title: "Software Solutions",
+    image: "/services/cloud-microsoft-365.png",
+    copy: "ERP, design software, POS, GPS tracking, visitor management, and professional web design for UAE businesses.",
+    href: "/services/software-solutions",
+  },
+  {
+    title: "Microsoft Cloud",
+    image: "/services/cloud-microsoft-365.png",
+    copy: "Microsoft 365, Copilot, security, migrations, SharePoint, Modern Workplace, and Windows 365 services.",
+    href: "/services/microsoft-cloud",
   },
 ];
 
@@ -108,12 +118,11 @@ export default function CoreCapabilitiesCarousel() {
             <div className="core-carousel-copy">
               <span className="eyebrow">Core Capabilities</span>
               <h2>
-                One accountable partner for support, setup, security, and
-                infrastructure.
+                IT services built for Abu Dhabi businesses.
               </h2>
               <p>
-                Scroll through the service stack XOFOZ manages for growing UAE
-                offices.
+                Explore ten specialist categories that keep UAE businesses
+                secure, connected, productive, and ready to grow.
               </p>
               <div className="core-carousel-progress" aria-hidden="true">
                 <span style={{ transform: `scaleX(${progress})` }} />
@@ -149,7 +158,7 @@ export default function CoreCapabilitiesCarousel() {
                       <span>{String(index + 1).padStart(2, "0")}</span>
                       <h3>{service.title}</h3>
                       <p>{service.copy}</p>
-                      <a href="/contact#consultation">Discuss this service <b aria-hidden="true">→</b></a>
+                      <a href={service.href}>Explore this category <b aria-hidden="true">→</b></a>
                     </div>
                   </article>
                 );

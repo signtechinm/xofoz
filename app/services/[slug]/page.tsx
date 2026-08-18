@@ -1,61 +1,50 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ServicePageTemplate from "../../../components/ServicePageTemplate";
-import { getServiceContent } from "../../../data/service-content";
-import { implementedServiceSlugs, serviceAssets } from "../../../data/service-assets";
-import { getServiceBySlug, services } from "../../../data/services";
+import ServiceCategoryPage from "../../../components/ServiceCategoryPage";
+import { getServiceCategoryContent } from "../../../data/service-category-content";
+import { getServiceCategoryBySlug, serviceCategories } from "../../../data/service-categories";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return services.map((service) => ({ slug: service.slug }));
+  return serviceCategories.map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
-  const content = getServiceContent(slug);
-  const asset = serviceAssets[slug];
+  const category = getServiceCategoryBySlug(slug);
+  const categoryContent = getServiceCategoryContent(slug);
 
-  if (!service || !content) {
-    return {};
+  if (category && categoryContent) {
+    return {
+      title: { absolute: categoryContent.metaTitle },
+      description: categoryContent.metaDescription,
+      alternates: { canonical: categoryContent.canonical },
+      openGraph: {
+        type: "website",
+        url: categoryContent.canonical,
+        title: categoryContent.metaTitle,
+        description: categoryContent.metaDescription,
+        images: [{ url: category.image }],
+      },
+    };
   }
 
-  return {
-    title: {
-      absolute: content.fields["META TITLE"],
-    },
-    description: content.fields["META DESCRIPTION"],
-    alternates: {
-      canonical: `/services/${service.slug}`,
-    },
-    openGraph: {
-      type: "website",
-      url: `/services/${service.slug}`,
-      title: content.fields["META TITLE"],
-      description: content.fields["META DESCRIPTION"],
-      ...(asset && {
-        images: [{ url: asset.social, width: asset.width, height: asset.height }],
-      }),
-    },
-  };
+  return {};
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
-  const content = getServiceContent(slug);
+  const category = getServiceCategoryBySlug(slug);
+  const categoryContent = getServiceCategoryContent(slug);
 
-  if (!getServiceBySlug(slug) || !content) {
-    notFound();
+  if (category && categoryContent) {
+    return <ServiceCategoryPage content={categoryContent} />;
   }
 
-  if (!implementedServiceSlugs.has(slug)) {
-    return <main className="service-page-placeholder" />;
-  }
-
-  return <ServicePageTemplate content={content} />;
+  notFound();
 }

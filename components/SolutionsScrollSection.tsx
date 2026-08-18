@@ -67,7 +67,8 @@ export default function SolutionsScrollSection({ solutions }: { solutions: Solut
             <h2 className="section-title">Facing an IT challenge? We engineer the complete solution.</h2>
             <p>
               You do not need to know which hardware to buy or where to start.
-              Tell us the problem and we will assess, design, implement, and hand over the solution.
+              Tell us the problem—XOFOZ will assess the situation, design the plan,
+              and execute the complete solution from start to finish.
             </p>
             <div className="solutions-scroll__progress" aria-label={`Solution ${activeIndex + 1} of ${solutions.length}`}>
               {solutions.map((solution, index) => (

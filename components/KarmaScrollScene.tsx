@@ -20,7 +20,7 @@ export default function KarmaScrollScene() {
       if (!emblemRef.current) return;
       emblemRef.current.style.transition = `opacity 1.1s ${ease}, transform 1.1s ${ease}`;
       emblemRef.current.style.opacity = "1";
-      emblemRef.current.style.transform = "scale(0.92) translateY(3%)";
+      emblemRef.current.style.transform = "scale(0.92) translateY(0)";
     }, 250);
 
     // 2. Hero content rises in after karma is visible
@@ -60,7 +60,7 @@ export default function KarmaScrollScene() {
       const introY = (1 - introOpacity) * 40;
 
       if (emblemRef.current) {
-        emblemRef.current.style.transform = `scale(${karmaScale}) translateY(3%)`;
+        emblemRef.current.style.transform = `scale(${karmaScale}) translateY(0)`;
       }
       if (heroRef.current) {
         heroRef.current.style.opacity = String(heroOpacity);
@@ -97,7 +97,7 @@ export default function KarmaScrollScene() {
         <div
           ref={emblemRef}
           className="karma-scene__emblem"
-          style={{ opacity: 0, transform: "scale(0.72) translateY(3%)" }}
+          style={{ opacity: 0, transform: "scale(0.72) translateY(0)" }}
         >
           <KarmaEmblem3D />
         </div>
@@ -108,19 +108,20 @@ export default function KarmaScrollScene() {
           className="hero__content hero__content--centered karma-scene__hero"
           style={{ opacity: 0, transform: "translateY(24px)" }}
         >
-          <span className="eyebrow">Abu Dhabi&apos;s IT Partner Since 2016</span>
-          <h1>Your trusted IT solutions provider in Abu Dhabi, UAE.</h1>
+          <span className="eyebrow">IT solutions provider in Abu Dhabi, UAE — since 2022</span>
+          <h1>Your trusted IT solutions provider in Abu Dhabi</h1>
           <p>
-            From managed IT services and cybersecurity to business software and
-            complete office IT solutions, XOFOZ helps UAE businesses stay secure,
-            connected, and productive.
+            XOFOZ Information Technology provides managed IT services, genuine
+            software products, and complete end-to-end IT solutions for businesses
+            in Abu Dhabi and across the UAE—from IT AMC and cybersecurity to
+            business software and full office IT setup.
           </p>
           <div className="hero__actions">
             <a className="button button--primary" href="#solutions">
-              Explore Our Solutions
+              Explore our solutions
             </a>
             <a className="button button--ghost" href="https://wa.me/971523554202">
-              WhatsApp Us Now
+              WhatsApp us now — +971 52 355 4202
             </a>
           </div>
         </div>
@@ -131,18 +132,15 @@ export default function KarmaScrollScene() {
           className="karma-scene__intro"
           style={{ opacity: 0, pointerEvents: "none" }}
         >
-          <span className="eyebrow">IT Company in Abu Dhabi</span>
+          <span className="eyebrow">One accountable technology partner</span>
           <h2 className="intro-band__heading">
-            We understand what you need and we design the solutions
+            Services, products, and complete solutions built around your business
           </h2>
           <p className="intro-band__body">
-            XOFOZ Information Technology is one of the best IT companies in Abu
-            Dhabi with a dedicated team led by a group of young, dynamic,
-            technically proficient, and creative people. Our comprehensive
-            services include on-site technical support, online support, 24/7
-            Emergency support, IT consulting, project planning and
-            implementation, hardware &amp; software sales and daily network
-            administration service.
+            XOFOZ combines ongoing IT support, authorised technology products,
+            and end-to-end project delivery under one Abu Dhabi-based team. We
+            assess the requirement, recommend the right approach, implement it,
+            and remain accountable for ongoing support.
           </p>
         </div>
       </div>

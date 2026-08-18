@@ -51,8 +51,9 @@ export default function Footer() {
             <BrandLogo />
           </Link>
           <p>
-            Abu Dhabi&apos;s IT solutions company since 2016, delivering managed
-            services, technology products, and complete office solutions to UAE businesses.
+            Abu Dhabi&apos;s trusted IT solutions provider since 2022, delivering
+            managed IT services, genuine technology products, and complete
+            business solutions across the UAE.
           </p>
           <div className="footer-contact-chips">
             <a href="mailto:hello@xofoz.com">hello@xofoz.com</a>
@@ -61,12 +62,12 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h2>Services</h2>
-          <Link href="/services/it-amc-abu-dhabi">IT AMC</Link>
-          <Link href="/services/network-infrastructure-abu-dhabi">Network infrastructure</Link>
-          <Link href="/services/cybersecurity-solutions-abu-dhabi">Cybersecurity</Link>
-          <Link href="/services/cloud-solutions-microsoft-365-abu-dhabi">Cloud &amp; Microsoft 365</Link>
-          <Link href="/services/cctv-access-control-abu-dhabi">CCTV &amp; access control</Link>
-          <Link href="/services/website-development-abu-dhabi">Website development</Link>
+          <Link href="/services/it-services">IT Services</Link>
+          <Link href="/services/network-solutions">Network Solutions</Link>
+          <Link href="/services/cyber-security">Cyber Security</Link>
+          <Link href="/services/cloud">Cloud</Link>
+          <Link href="/services/communication-lv">Communication &amp; LV</Link>
+          <Link href="/services/software-solutions">Software Solutions</Link>
         </div>
         <div className="footer-column">
           <h2>Products</h2>
@@ -90,7 +91,7 @@ export default function Footer() {
           <h2>Company</h2>
           <Link href="/about">About XOFOZ</Link>
           <Link href="/#testimonials">Client feedback</Link>
-          <Link href="/#industries">Industries</Link>
+          <Link href="/industries">Industries</Link>
           <Link href="/contact">Contact us</Link>
         </div>
         <div className="footer-bottom">

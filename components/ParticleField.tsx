@@ -17,6 +17,11 @@ type Particle = {
   hue: number;
 };
 
+const seededUnit = (seed: number) => {
+  const value = Math.sin(seed) * 43758.5453;
+  return value - Math.floor(value);
+};
+
 export default function ParticleField({ variant = "hero" }: ParticleFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -34,7 +39,7 @@ export default function ParticleField({ variant = "hero" }: ParticleFieldProps) 
     let animationFrame = 0;
     let particles: Particle[] = [];
     const pointer = { x: 0, y: 0, active: false };
-    const multiplier = variant === "subtle" ? 0.42 : variant === "story" ? 0.62 : variant === "service" ? 0.78 : 1.08;
+    const multiplier = variant === "subtle" ? 0.72 : variant === "story" ? 0.9 : 1;
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
@@ -45,10 +50,11 @@ export default function ParticleField({ variant = "hero" }: ParticleFieldProps) 
       canvas.height = Math.floor(height * ratio);
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-      const count = Math.floor(Math.min(120, Math.max(44, (width * height) / 18000)) * multiplier);
+      const baseCount = Math.min(420, Math.max(160, (width * height) / 3500));
+      const count = Math.floor(baseCount * multiplier);
       particles = Array.from({ length: count }, (_, index) => ({
-        x: (Math.sin(index * 91.7) * 0.5 + 0.5) * width,
-        y: (Math.cos(index * 57.3) * 0.5 + 0.5) * height,
+        x: seededUnit((index + 1) * 12.9898) * width,
+        y: seededUnit((index + 1) * 78.233 + 19.19) * height,
         vx: (Math.sin(index * 13.4) * 0.42) + 0.08,
         vy: (Math.cos(index * 17.8) * 0.42) - 0.02,
         pointerVx: 0,

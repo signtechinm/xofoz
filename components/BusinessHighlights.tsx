@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const highlights = [
-  { value: 9, suffix: "+", label: "Years in business" },
+  { value: 3, suffix: "+", label: "Years in Abu Dhabi" },
   { value: 150, suffix: "+", label: "AMC clients" },
   { value: 27, suffix: "+", label: "Enterprise clients" },
   { text: "Abu Dhabi", label: "UAE-based team" },

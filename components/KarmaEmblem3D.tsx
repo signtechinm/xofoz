@@ -204,9 +204,14 @@ export default function KarmaEmblem3D() {
         color: 0x39d2ff,
         transparent: true,
         opacity: 0.48,
+        depthTest: false,
+        depthWrite: false,
       })
     );
-    outerGlow.position.z = -0.08;
+    // Keep the complete outer orbit in front of the subtly rotating face.
+    // Behind the face, perspective rotation occluded the lower arc on wide screens.
+    outerGlow.position.z = 0.08;
+    outerGlow.renderOrder = 10;
     group.add(outerGlow);
 
     const ambient = new THREE.AmbientLight(0xffffff, 1.3);
@@ -235,7 +240,8 @@ export default function KarmaEmblem3D() {
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      group.scale.setScalar(width < 720 ? 0.82 : 0.96);
+      // Leave enough projection space for the animated outer torus at every angle.
+      group.scale.setScalar(width < 720 ? 0.82 : 0.86);
     };
 
     const updateMeltTarget = (clientX: number, clientY: number) => {
@@ -313,7 +319,8 @@ export default function KarmaEmblem3D() {
           1 + Math.cos(frame * 0.08) * currentMelt * 0.064,
           1
         );
-        outerGlow.scale.setScalar(1 + currentMelt * 0.14);
+        // Keep the hover pulse inside the renderer's projection safe area.
+        outerGlow.scale.setScalar(1 + currentMelt * 0.035);
         outerGlow.rotation.z -= 0.006;
       }
 

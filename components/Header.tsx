@@ -1,16 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { services } from "../data/services";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { serviceCategories } from "../data/service-categories";
 import { solutionNavItems } from "../data/solutions";
+import { industryNavItems } from "../data/industries";
 import BrandLogo from "./BrandLogo";
+
+const productMenuBrands = [
+  ["Microsoft", "/partners/microsoft.svg"],
+  ["Fortinet", "/partners/fortinet.svg"],
+  ["Sophos", "/partners/sophos.svg"],
+  ["ESET", "/partners/eset.svg"],
+  ["Acronis", "/partners/acronis.svg"],
+  ["Aruba", "/partners/aruba.svg"],
+  ["Hikvision", "/partners/hikvision.svg"],
+  ["Tally Prime", "/partners/tally-prime.svg"],
+] as const;
 
 const navItems = [
   {
     label: "Services", href: "/services", image: "/services/managed-it-amc.png",
     description: "Reliable day-to-day technology ownership for UAE businesses.",
-    children: services.map((service) => service.label),
+    children: serviceCategories.map((category) => category.label),
   },
   {
     label: "Products", href: "/products", image: "/pillars/authorised-it-products.png",
@@ -23,9 +36,9 @@ const navItems = [
     children: solutionNavItems.map((solution) => solution.label),
   },
   {
-    label: "Industries", href: "/#industries", image: "/backgrounds/core-capabilities-server-room.png",
+    label: "Industries", href: "/industries", image: "/industries/manufacturing-hero-v2.webp",
     description: "Practical technology experience across major Abu Dhabi industries.",
-    children: ["Construction", "Hospitality", "Healthcare", "Retail", "Professional services", "Warehousing & logistics"],
+    children: industryNavItems.map((industry) => industry.label),
   },
   {
     label: "About", href: "/about", image: "/about/who-we-are-ops-desk.png",
@@ -40,6 +53,7 @@ const navItems = [
 ];
 
 export default function Header() {
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(0);
@@ -56,15 +70,28 @@ export default function Header() {
     return () => document.body.classList.remove("menu-open");
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setIsOpen(false);
+      requestAnimationFrame(() => menuButtonRef.current?.focus());
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
+
   return (
     <>
       <header className={`site-header ${isScrolled ? "is-scrolled" : ""}`}>
         <div className="header-start">
           <button
+            ref={menuButtonRef}
             className={`menu-toggle ${isOpen ? "is-active" : ""}`}
             type="button"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
+            aria-controls="primary-navigation-panel"
             onClick={() => setIsOpen((v) => !v)}
           >
             <span className="hamburger-bar" />
@@ -79,8 +106,17 @@ export default function Header() {
         </Link>
 
         <div className="header-end">
-          <a className="quick-call header-whatsapp" href="https://wa.me/971523554202">WhatsApp</a>
-          <a className="quick-call header-quote" href="/#quote">Free quote</a>
+          <a
+            className="quick-call header-whatsapp"
+            href="https://wa.me/971523554202"
+            aria-label="Chat with XOFOZ on WhatsApp"
+            title="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2a9.84 9.84 0 0 0-8.49 14.8L2 22l5.34-1.4A9.96 9.96 0 1 0 12.04 2Zm0 17.93a8.02 8.02 0 0 1-4.09-1.12l-.3-.18-3.17.83.85-3.08-.2-.32a7.88 7.88 0 0 1-1.21-4.2 8.12 8.12 0 1 1 8.12 8.07Zm4.45-6.08c-.24-.12-1.44-.7-1.66-.79-.22-.08-.38-.12-.55.13-.16.24-.62.78-.76.94-.14.17-.28.19-.52.07-.25-.12-1.03-.38-1.96-1.2a7.38 7.38 0 0 1-1.36-1.68c-.14-.24-.02-.37.1-.49.11-.11.25-.28.37-.42.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.65.3-.22.25-.85.84-.85 2.04 0 1.2.88 2.36 1 2.53.12.16 1.72 2.62 4.16 3.68.58.25 1.04.4 1.39.51.58.19 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.56.2-1.05.14-1.15-.06-.1-.22-.16-.47-.28Z" />
+            </svg>
+          </a>
+          <Link className="quick-call header-quote" href="/#quote">Get a Quote</Link>
         </div>
       </header>
 
@@ -91,6 +127,7 @@ export default function Header() {
           onClick={() => setIsOpen(false)}
         />
         <nav
+          id="primary-navigation-panel"
           className={`header-dropdown__panel ${
             navItems[activeMenu].children.length > 12 ? "header-dropdown__panel--expanded" : ""
           }`}
@@ -134,18 +171,32 @@ export default function Header() {
               </Link>
             )}
             {navItems[activeMenu].label === "Products" && (
-              <p className="header-dropdown__summary">
-                Explore genuine IT products from authorised brands, supplied and supported by our Abu Dhabi team.
-              </p>
+              <>
+                <p className="header-dropdown__summary">
+                  Explore genuine IT products from authorised brands, supplied and supported by our Abu Dhabi team.
+                </p>
+                <div className="header-product-logos" aria-label="Product brands">
+                  {productMenuBrands.map(([name, logo]) => (
+                    <span key={name}>
+                      <Image src={logo} alt={name} width={120} height={42} />
+                    </span>
+                  ))}
+                </div>
+                <Link className="header-dropdown__all header-products-link" href="/products" onClick={() => setIsOpen(false)}>
+                  Explore all products <span>↗</span>
+                </Link>
+              </>
             )}
             <div>
               {navItems[activeMenu].children.map((child) => (
               <Link
                 href={
                   navItems[activeMenu].label === "Services"
-                    ? `/services/${services.find((service) => service.label === child)?.slug}`
+                    ? `/services/${serviceCategories.find((category) => category.label === child)?.slug}`
                     : navItems[activeMenu].label === "Solutions"
                       ? solutionNavItems.find((solution) => solution.label === child)?.href || "/solutions"
+                    : navItems[activeMenu].label === "Industries"
+                      ? industryNavItems.find((industry) => industry.label === child)?.href || "/industries"
                     : navItems[activeMenu].href
                 }
                 key={child}

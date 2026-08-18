@@ -48,8 +48,8 @@ export default function ClientLogoSection() {
       </div>
       <div className="page-band client-section__inner">
         <div className="client-section__heading">
-          <span className="eyebrow">Trusted Partnerships</span>
-          <h2 id="client-section-title">Trusted by businesses across the UAE.</h2>
+          <span className="eyebrow">Client Experience</span>
+          <h2 id="client-section-title">Trusted by leading businesses across the UAE.</h2>
         </div>
         <div className="client-logo-grid">
           {clients.map((client) => (

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
-type Industry = [string, string];
+type Industry = [string, string, string];
 
 const images = [
   "/industries/hospitality.png",
@@ -20,12 +21,12 @@ export default function IndustryAccordion({ industries }: { industries: Industry
       <div className="page-band">
         <div className="section-heading section-heading--center">
           <span className="eyebrow">Industry Experience</span>
-          <h2 className="section-title">IT solutions for major industries in Abu Dhabi.</h2>
-          <p>Every sector has different operational, security, and infrastructure requirements.</p>
+          <h2 className="section-title">IT solutions for every major industry in Abu Dhabi.</h2>
+          <p>Every industry has distinct operational, security, and infrastructure requirements. XOFOZ designs the service around the environment in which your business operates.</p>
         </div>
 
         <div className="industry-accordion">
-          {industries.map(([title, copy], index) => (
+          {industries.map(([title, copy, href], index) => (
             <article
               className={`industry-accordion__panel${index === activeIndex ? " is-active" : ""}`}
               key={title}
@@ -41,6 +42,7 @@ export default function IndustryAccordion({ industries }: { industries: Industry
               <div className="industry-accordion__content">
                 <h3>{title}</h3>
                 <p>{copy}</p>
+                <Link href={href}>Explore this industry <span aria-hidden="true">→</span></Link>
               </div>
             </article>
           ))}

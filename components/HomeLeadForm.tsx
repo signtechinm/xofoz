@@ -37,10 +37,8 @@ export default function HomeLeadForm() {
       <label>What do you need help with?
         <select name="Service" defaultValue="" required>
           <option value="" disabled>Select a requirement</option>
-          <option>Managed IT / AMC</option><option>Urgent IT support</option>
-          <option>Network or Wi-Fi</option><option>Cybersecurity</option>
-          <option>CCTV or access control</option><option>Cloud / Microsoft 365</option>
-          <option>Tally Prime / ERP</option><option>Other</option>
+          <option>IT AMC</option><option>Product enquiry</option>
+          <option>IT solution</option><option>General enquiry</option>
         </select>
       </label>
       <label>Message<textarea name="Message" rows={5} required /></label>
