@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { IndustryDefinition } from "../data/industries";
+import { companyStats } from "../data/company-stats";
 import IndustryLeadForm from "./IndustryLeadForm";
 import ParticleField from "./ParticleField";
 import Reveal from "./Reveal";
@@ -66,9 +67,9 @@ export default function IndustryPage({ industry }: { industry: IndustryDefinitio
         </div>
       </section>
 
-      <section className="industry-highlights" aria-label={`${industry.label} IT solution highlights`}>
+      <section className="industry-highlights" aria-label="XOFOZ company highlights">
         <div className="page-band">
-          {industry.highlights.map((item) => <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}
+          {companyStats.map((stat) => <div key={stat.label}><strong>{stat.value.toLocaleString("en-US")}{stat.suffix}</strong><span>{stat.label}</span></div>)}
         </div>
       </section>
 

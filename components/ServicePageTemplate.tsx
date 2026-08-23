@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ServiceContent } from "../data/service-content";
+import { newServiceIndustryCards, resolveIndustryHref } from "../data/industries";
+import { companyStatLabels } from "../data/company-stats";
 import { serviceAssets } from "../data/service-assets";
 import { resolveRelatedServiceHref } from "../data/services";
 import Reveal from "./Reveal";
@@ -35,11 +37,14 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
     title: fields[`SECTION 5 — DIFFERENTIATOR ${index + 1} — H3`],
     copy: fields[`SECTION 5 — DIFFERENTIATOR ${index + 1} — CONTENT`],
   })).filter((item) => item.title && item.copy);
-  const industries = Array.from({ length: 5 }, (_, index) => ({
+  const industries = [
+    ...Array.from({ length: 5 }, (_, index) => ({
     title: fields[`SECTION 6 — INDUSTRY ${index + 1} — H3`],
     copy: fields[`SECTION 6 — INDUSTRY ${index + 1} — CONTENT`],
     link: fields[`SECTION 6 — INDUSTRY ${index + 1} — LINK`],
-  })).filter((item) => item.title && item.copy);
+    })).filter((item) => item.title && item.copy),
+    ...newServiceIndustryCards.map((industry) => ({ title: industry.title, copy: industry.description, link: industry.linkLabel, href: industry.href })),
+  ];
   const faqs = Array.from({ length: 10 }, (_, index) => ({
     question: fields[`SECTION 7 — FAQ ${index + 1} — QUESTION`],
     answer: fields[`SECTION 7 — FAQ ${index + 1} — ANSWER`],
@@ -49,7 +54,7 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
     copy: fields[`SECTION 9 — RELATED SERVICE ${index + 1} — CONTENT`],
     label: fields[`SECTION 9 — RELATED SERVICE ${index + 1} — LINK`],
   })).map((item) => ({ ...item, href: resolveRelatedServiceHref(item.title) }));
-  const trustStats = numberedFields(fields, (index) => `HERO — TRUST STAT ${index}`, 4);
+  const trustStats = companyStatLabels;
   const certifications = listFromField(fields["SECTION 5 — CERTIFICATIONS LIST"]);
   const breadcrumbLabel = fields.BREADCRUMB?.split("›").at(-1)?.trim() || service.label;
   const asset = serviceAssets[service.slug];
@@ -252,7 +257,7 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
                 <span>0{index + 1}</span>
                 <h3>{industry.title}</h3>
                 <p>{industry.copy}</p>
-                <Link href="/#industries">{industry.link} <b aria-hidden="true">→</b></Link>
+                <Link href={("href" in industry && industry.href) || resolveIndustryHref(industry.title)}>{industry.link} <b aria-hidden="true">→</b></Link>
               </Reveal>
             ))}
           </div>

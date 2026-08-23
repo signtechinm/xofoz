@@ -1,21 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ServiceCategoryContent } from "../data/service-category-content";
+import { newServiceIndustryCards, resolveIndustryHref } from "../data/industries";
+import { companyStatLabels } from "../data/company-stats";
 import ParticleField from "./ParticleField";
 import Reveal from "./Reveal";
 import ServiceCategoryEnquiryButton from "./ServiceCategoryEnquiryButton";
 import ServiceCategoryLeadForm from "./ServiceCategoryLeadForm";
 
-const industryHrefs: Record<string, string> = {
-  hospitality: "/#industries",
-  "real estate": "/#industries",
-  construction: "/#industries",
-  logistics: "/#industries",
-  manufacturing: "/#industries",
-};
-
 export default function ServiceCategoryPage({ content }: { content: ServiceCategoryContent }) {
   const { category, hero, overview, cards, reasons, industries, faqs, cta } = content;
+  const displayedIndustries = [...industries, ...newServiceIndustryCards];
   const categoryWhatsApp = `https://wa.me/971523554202?text=${encodeURIComponent(`Hello XOFOZ, I would like help with ${category.label}.`)}`;
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -85,7 +80,7 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
             {hero.badges.map((badge) => <span key={badge}>✓ {badge}</span>)}
           </div>
           <div className="service-trust-stats" aria-label="XOFOZ service highlights">
-            {hero.stats.map((stat) => <span key={stat}>{stat}</span>)}
+            {companyStatLabels.map((stat) => <span key={stat}>{stat}</span>)}
           </div>
         </Reveal>
         <Reveal className="service-hero__visual" delay={0.08}>
@@ -143,10 +138,7 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
         <div className="page-band">
           <Reveal className="service-section__heading"><span className="eyebrow">Industry experience</span><h2>{content.industriesTitle}</h2><p>{content.industriesIntro}</p></Reveal>
           <div className="service-industry-grid">
-            {industries.map((industry, index) => {
-              const key = Object.keys(industryHrefs).find((name) => industry.title.toLowerCase().includes(name));
-              return <Reveal className="service-industry-card" delay={index * 0.04} key={industry.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{industry.title}</h3><p>{industry.description}</p><Link href={key ? industryHrefs[key] : "/#industries"}>{industry.linkLabel || "View industry solutions"} <b aria-hidden="true">→</b></Link></Reveal>;
-            })}
+            {displayedIndustries.map((industry, index) => <Reveal className="service-industry-card" delay={index * 0.04} key={industry.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{industry.title}</h3><p>{industry.description}</p><Link href={("href" in industry && industry.href) || resolveIndustryHref(industry.title)}>{industry.linkLabel || "View industry solutions"} <b aria-hidden="true">→</b></Link></Reveal>)}
           </div>
         </div>
       </section>

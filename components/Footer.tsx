@@ -92,6 +92,9 @@ export default function Footer() {
           <Link href="/about">About XOFOZ</Link>
           <Link href="/#testimonials">Client feedback</Link>
           <Link href="/industries">Industries</Link>
+          <Link href="/industries/education">Education</Link>
+          <Link href="/industries/government">Government</Link>
+          <Link href="/industries/healthcare">Healthcare</Link>
           <Link href="/contact">Contact us</Link>
         </div>
         <div className="footer-bottom">

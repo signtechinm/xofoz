@@ -3,15 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-type Industry = [string, string, string];
-
-const images = [
-  "/industries/hospitality.png",
-  "/industries/real-estate.png",
-  "/industries/construction.png",
-  "/industries/logistics.png",
-  "/industries/manufacturing.png",
-];
+type Industry = [string, string, string, string];
 
 export default function IndustryAccordion({ industries }: { industries: Industry[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -26,14 +18,14 @@ export default function IndustryAccordion({ industries }: { industries: Industry
         </div>
 
         <div className="industry-accordion">
-          {industries.map(([title, copy, href], index) => (
+          {industries.map(([title, copy, href, image], index) => (
             <article
               className={`industry-accordion__panel${index === activeIndex ? " is-active" : ""}`}
               key={title}
               onClick={() => setActiveIndex(index)}
               onFocus={() => setActiveIndex(index)}
               onMouseEnter={() => setActiveIndex(index)}
-              style={{ backgroundImage: `url(${images[index]})` }}
+              style={{ backgroundImage: `url(${image})` }}
               tabIndex={0}
             >
               <span className="industry-accordion__number" aria-hidden="true">

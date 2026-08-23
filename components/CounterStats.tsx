@@ -1,18 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { companyStats } from "../data/company-stats";
 
 type CounterStat = {
   value: number;
   label: string;
 };
 
-const stats: CounterStat[] = [
-  { value: 100, label: "Completed Projects" },
-  { value: 1000, label: "AMC Clients" },
-  { value: 500, label: "Happy Clients" },
-  { value: 2000, label: "Support Requests" },
-];
+const stats: CounterStat[] = companyStats.map(({ value, label }) => ({ value, label }));
 
 const formatValue = (value: number) => value.toLocaleString("en-US");
 

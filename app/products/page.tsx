@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { companyStats } from "../../data/company-stats";
 import Link from "next/link";
 import ParticleField from "../../components/ParticleField";
 import ProductQuoteForm from "../../components/ProductQuoteForm";
@@ -141,7 +142,7 @@ export default function ProductsPage() {
 
       <section className="products-metrics" aria-label="XOFOZ product supply statistics">
         <div className="page-band">
-          {[['19+', 'Product categories'], ['50+', 'Technology brands'], ['150+', 'Businesses equipped'], ['UAE', 'Authorised supply chain']].map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
+          {companyStats.map((stat) => <div key={stat.label}><strong>{stat.value.toLocaleString("en-US")}{stat.suffix}</strong><span>{stat.label}</span></div>)}
         </div>
       </section>
 

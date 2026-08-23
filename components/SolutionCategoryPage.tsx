@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { SolutionContent } from "../data/solution-content";
+import { companyStatLabels } from "../data/company-stats";
 import ParticleField from "./ParticleField";
 import Reveal from "./Reveal";
 import SolutionEnquiryButton from "./SolutionEnquiryButton";
@@ -27,7 +28,7 @@ export default function SolutionCategoryPage({ content }: { content: SolutionCon
 
       <section className="service-hero page-band">
         <ParticleField variant="service" /><div className="service-hero__glow" aria-hidden="true" />
-        <Reveal className="service-hero__copy"><span className="eyebrow">{hero.eyebrow}</span><h1>{hero.title}</h1><p>{hero.summary}</p><div className="hero__actions"><a className="button button--primary" href="#solution-consultation">{hero.cta}</a><a className="button button--ghost" href="https://wa.me/971523554202">{hero.whatsapp}</a></div><div className="service-trust-stats" aria-label="Solution highlights">{hero.stats.map((stat) => <span key={stat}>{stat}</span>)}</div></Reveal>
+        <Reveal className="service-hero__copy"><span className="eyebrow">{hero.eyebrow}</span><h1>{hero.title}</h1><p>{hero.summary}</p><div className="hero__actions"><a className="button button--primary" href="#solution-consultation">{hero.cta}</a><a className="button button--ghost" href="https://wa.me/971523554202">{hero.whatsapp}</a></div><div className="service-trust-stats" aria-label="XOFOZ company highlights">{companyStatLabels.map((stat) => <span key={stat}>{stat}</span>)}</div></Reveal>
         <Reveal className="service-hero__visual" delay={0.08}><Image src={solution.image} alt={`${solution.label} delivered by XOFOZ in Abu Dhabi`} fill priority sizes="(max-width: 860px) 100vw, 42vw" /><div className="service-hero__image-note"><span>XOFOZ solutions</span><strong>{solution.label}</strong></div></Reveal>
       </section>
 

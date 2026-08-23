@@ -64,12 +64,15 @@ const solutions = [
   },
 ];
 
-const industries: [string, string, string][] = [
-  ["IT solutions for hospitality Abu Dhabi", "Guest WiFi, POS support, CCTV, and complete IT infrastructure management for hotels, resorts, and F&B operations.", "/industries/hospitality"],
-  ["IT solutions for real estate UAE", "Cloud platforms, ERP implementation, secure networks, and multi-site IT support for property businesses.", "/industries/real-estate"],
-  ["IT solutions for construction UAE", "Site-office networks, surveillance, hardware supply, and ongoing IT support for active construction environments.", "/industries/construction"],
-  ["IT solutions for logistics Abu Dhabi", "IT AMC, resilient network infrastructure, ERP systems, and business continuity for warehouses and logistics operations.", "/industries/logistics"],
-  ["IT solutions for manufacturing UAE", "Server infrastructure, ERP, cybersecurity, CCTV, backups, and complete IT maintenance for industrial facilities.", "/industries/manufacturing"],
+const industries: [string, string, string, string][] = [
+  ["IT solutions for hospitality Abu Dhabi", "Guest WiFi, POS support, CCTV, and complete IT infrastructure management for hotels, resorts, and F&B operations.", "/industries/hospitality", "/industries/hospitality-hero-v2.webp"],
+  ["IT solutions for real estate UAE", "Cloud platforms, ERP implementation, secure networks, and multi-site IT support for property businesses.", "/industries/real-estate", "/industries/real-estate-hero-v2.webp"],
+  ["IT solutions for construction UAE", "Site-office networks, surveillance, hardware supply, and ongoing IT support for active construction environments.", "/industries/construction", "/industries/construction-hero-v2.webp"],
+  ["IT solutions for logistics Abu Dhabi", "IT AMC, resilient network infrastructure, ERP systems, and business continuity for warehouses and logistics operations.", "/industries/logistics", "/industries/logistics-hero-v2.webp"],
+  ["IT solutions for manufacturing UAE", "Server infrastructure, ERP, cybersecurity, CCTV, backups, and complete IT maintenance for industrial facilities.", "/industries/manufacturing", "/industries/manufacturing-hero-v2.webp"],
+  ["IT solutions for education Abu Dhabi", "Campus networks, safeguarding-focused CCTV, classroom AV, cybersecurity, and term-aware IT support for education institutions.", "/industries/education", "/industries/education-hero.webp"],
+  ["IT solutions for government Abu Dhabi", "Documented networks, compliant surveillance, cybersecurity, backup, and accountable IT support for public-sector environments.", "/industries/government", "/industries/government-hero.webp"],
+  ["IT solutions for healthcare Abu Dhabi", "Reliable clinic networks, sensitive-data protection, access control, backup, and responsive support for healthcare facilities.", "/industries/healthcare", "/industries/healthcare-hero.webp"],
 ];
 
 const reasons = [

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { companyStats } from "../../data/company-stats";
 import Link from "next/link";
 import ClientLogoSection from "../../components/ClientLogoSection";
 import ParticleField from "../../components/ParticleField";
@@ -83,7 +84,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-new-stats" aria-label="XOFOZ company highlights"><div className="page-band">{[["150+", "Businesses supported"], ["27+", "Enterprise relationships"], ["2022", "Established in Abu Dhabi"], ["50+", "Technology brands"]].map(([value,label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></section>
+      <section className="about-new-stats" aria-label="XOFOZ company highlights"><div className="page-band">{companyStats.map((stat) => <div key={stat.label}><strong>{stat.value.toLocaleString("en-US")}{stat.suffix}</strong><span>{stat.label}</span></div>)}</div></section>
 
       <section className="section page-band about-story">
         <Reveal className="about-story__heading"><span className="eyebrow">Our story</span><h2 className="section-title">Built to make business technology easier to own.</h2></Reveal>

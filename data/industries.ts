@@ -5,7 +5,7 @@ export type IndustryCard = {
 };
 
 export type IndustryDefinition = {
-  slug: "hospitality" | "real-estate" | "construction" | "logistics" | "manufacturing";
+  slug: "hospitality" | "real-estate" | "construction" | "logistics" | "manufacturing" | "education" | "government" | "healthcare";
   label: string;
   navLabel: string;
   image: string;
@@ -331,6 +331,156 @@ export const industries: readonly IndustryDefinition[] = [
     ],
     consultation: { title: "Get an IT consultation for your manufacturing facility", description: "Tell us about the facility, users, systems, network, servers, ERP, production dependencies, and current risks. XOFOZ will recommend a practical assessment or improvement plan.", organisationLabel: "Company or facility name", scaleLabel: "Facility size, users, and locations", requirementsLabel: "Tell us about your manufacturing IT requirements" },
   },
+  {
+    slug: "education",
+    label: "Education",
+    navLabel: "Education",
+    image: "/industries/education-hero.webp",
+    metaTitle: "IT Solutions for Education Abu Dhabi | XOFOZ",
+    metaDescription: "XOFOZ provides IT solutions for schools, training centres, and educational institutions in Abu Dhabi, UAE. Network, CCTV, biometric attendance, cybersecurity, and IT AMC by certified engineers.",
+    hero: { eyebrow: "IT solutions for education institutions in Abu Dhabi, UAE — since 2022", title: "IT solutions for education in Abu Dhabi", summary: "XOFOZ provides complete IT solutions for schools, training centres, and educational institutions in Abu Dhabi. From campus networks and classroom AV to CCTV, biometric attendance, visitor management, cybersecurity, and IT AMC support, our local engineers build reliable technology environments around the academic calendar.", cta: "Get a free education IT consultation", badges: ["ADMCC certified engineers", "Campus-wide network specialists", "2,000+ happy clients", "Abu Dhabi based team"] },
+    highlights: [{ value: "Campus", label: "wide network planning" }, { value: "Secure", label: "student and staff data" }, { value: "Term", label: "aware IT support" }, { value: "Local", label: "Abu Dhabi engineers" }],
+    challengesTitle: "IT challenges facing education institutions in Abu Dhabi",
+    challengesIntro: "Schools and training centres combine high device density, strict safeguarding responsibilities, sensitive records, and a teaching day that gives little room for downtime.",
+    challenges: [
+      { title: "Campus-wide connectivity must reach every classroom", description: "WiFi and wired connectivity must serve classrooms, labs, libraries, and administration consistently. A dead zone can stop a lesson that depends on digital learning tools." },
+      { title: "Student and staff data requires careful protection", description: "Student records, attendance data, health information, and staff records require layered cybersecurity, controlled access, backup, and recovery." },
+      { title: "IT downtime has zero tolerance during the school day", description: "Network, teaching, exam, CCTV, and access-control failures directly interrupt education and safeguarding, making planned maintenance and fast response essential." },
+    ],
+    solutionTitle: "How XOFOZ delivers complete IT solutions for education institutions",
+    solutionParagraphs: ["XOFOZ designs education technology around the operational reality of a campus: reliable networks reaching every learning space, safeguarding-aware CCTV and access control, attendance systems, cybersecurity, classroom AV, and managed support.", "Each engagement starts with a campus survey and academic-calendar plan, so infrastructure is designed for real device density and disruptive work is scheduled during suitable holiday windows wherever possible."],
+    services: [
+      { title: "IT AMC and support", description: "Proactive coverage structured around term dates, holiday maintenance windows, and urgent support during teaching hours.", href: "/services/it-amc-abu-dhabi" },
+      { title: "Campus networks and WiFi", description: "Full-campus wired and wireless design for classrooms, labs, shared spaces, and administration.", href: "/services/network-infrastructure-abu-dhabi" },
+      { title: "CCTV and access control", description: "Safeguarding-focused surveillance and controlled access covering entry points, shared areas, and perimeter.", href: "/services/cctv-access-control-abu-dhabi" },
+      { title: "Biometric attendance", description: "Reliable staff attendance and appropriate campus attendance workflows using biometric systems.", href: "/services/biometric-systems-abu-dhabi" },
+      { title: "Cybersecurity", description: "Layered protection for records, administrative systems, users, devices, email, and campus networks.", href: "/services/cybersecurity-solutions-abu-dhabi" },
+      { title: "Microsoft 365", description: "Secure email, Teams, SharePoint, identity, and document management for teaching and administration.", href: "/services/cloud-solutions-microsoft-365-abu-dhabi" },
+      { title: "Classroom AV", description: "Presentation, collaboration, display, and audio systems for classrooms, halls, and training spaces.", href: "/services/hardware-av-solutions-abu-dhabi" },
+      { title: "Structured cabling", description: "Documented campus cabling that supports current capacity and future expansion.", href: "/services/structured-cabling-abu-dhabi" },
+    ],
+    solutions: [
+      { title: "Network solutions", description: "Campus WiFi and cabling engineered for high device density.", href: "/solutions/network-solutions" },
+      { title: "Communication and LV/ELV", description: "CCTV, access, PA, and communication systems for safer campuses.", href: "/solutions/communication-lv" },
+      { title: "Cybersecurity solutions", description: "Protection suited to sensitive student and staff information.", href: "/solutions/cybersecurity" },
+      { title: "Microsoft Cloud", description: "Secure collaboration and document management across campus teams.", href: "/solutions/microsoft-cloud" },
+    ],
+    proof: { eyebrow: "Education delivery model", title: "Campus technology planned around the academic calendar", description: "Every engagement begins with a site survey covering learning spaces, current infrastructure, safeguarding requirements, device density, and term dates. Disruptive work is planned for holiday periods wherever possible, with responsive support during term time.", outcomes: ["Campus-wide coverage planning", "Safeguarding-aware infrastructure", "Term-time support readiness"] },
+    reasons: [
+      { title: "Campus-scale network experience", description: "Large-site network experience supports full-campus coverage and high device density." },
+      { title: "Safeguarding-aware security", description: "CCTV and access control are planned around campus entry, shared spaces, and perimeter requirements." },
+      { title: "Academic-calendar planning", description: "Maintenance and implementation can be structured around term dates and holiday windows." },
+      { title: "Abu Dhabi based team", description: "Local engineers provide direct remote and on-site support when a campus needs it." },
+    ],
+    capabilities: ["Campus network design", "ADMCC-aligned CCTV", "Classroom AV", "Cybersecurity", "Microsoft 365", "IT AMC support"],
+    faqs: [
+      { question: "What IT services does XOFOZ provide for schools in Abu Dhabi?", answer: "XOFOZ provides campus networks and WiFi, CCTV and access control, biometric attendance, cybersecurity, IT AMC support, classroom AV, structured cabling, and Microsoft 365 for schools and training institutions." },
+      { question: "Can maintenance be scheduled around school terms?", answer: "Yes. Disruptive work can be planned during school holidays wherever possible, with responsive support arrangements during term time." },
+      { question: "Does XOFOZ install safeguarding-focused CCTV?", answer: "XOFOZ installs CCTV and access control to applicable Abu Dhabi requirements, with coverage planned around entry points, corridors, shared spaces, and perimeter." },
+      { question: "How is student and staff data protected?", answer: "Protection can combine firewall, endpoint, email, identity, access, backup, and recovery controls configured around the institution's environment." },
+      { question: "Can XOFOZ design WiFi for an entire campus?", answer: "Yes. The process begins with a survey of buildings, classrooms, device density, materials, and usage patterns before access-point placement is designed and tested." },
+    ],
+    consultation: { title: "Get a free IT consultation for your education institution", description: "Tell us about your campus, users, current systems, safeguarding priorities, and academic calendar. XOFOZ will recommend a practical next step.", organisationLabel: "Institution name", scaleLabel: "Students, staff, and campus size", requirementsLabel: "Tell us about your education IT requirements" },
+  },
+  {
+    slug: "government",
+    label: "Government",
+    navLabel: "Government",
+    image: "/industries/government-hero.webp",
+    metaTitle: "IT Solutions for Government Abu Dhabi | XOFOZ",
+    metaDescription: "XOFOZ provides IT solutions for government entities and public sector organisations in Abu Dhabi, UAE. Network, cybersecurity, CCTV, and IT AMC by ADMCC certified engineers.",
+    hero: { eyebrow: "IT solutions for government entities in Abu Dhabi, UAE — since 2022", title: "IT solutions for government in Abu Dhabi", summary: "XOFOZ provides IT solutions for government entities and public sector organisations in Abu Dhabi. From compliant CCTV and access control to documented network infrastructure, cybersecurity, backup, Microsoft 365, and structured IT support, our engineers deliver accountable technology environments.", cta: "Get a free government IT consultation", badges: ["ADMCC certified engineers", "Full project documentation", "2,000+ happy clients", "Abu Dhabi based team"] },
+    highlights: [{ value: "Documented", label: "infrastructure delivery" }, { value: "Secure", label: "layered architecture" }, { value: "ADMCC", label: "certified engineers" }, { value: "Local", label: "accountable delivery" }],
+    challengesTitle: "IT challenges facing government and public sector entities",
+    challengesIntro: "Public-sector environments require stronger documentation, security, procurement discipline, and delivery accountability than typical commercial operations.",
+    challenges: [
+      { title: "Documentation must be complete and audit-ready", description: "Network diagrams, configuration records, compliance certificates, and system documentation need to be delivered and maintained for authorised review." },
+      { title: "Security standards are higher and non-negotiable", description: "Sensitive operational and citizen-adjacent information requires cybersecurity to be designed for the environment from the outset." },
+      { title: "Procurement demands reliable accountability", description: "Formal scopes, delivery timelines, service expectations, documentation, and a clear accountable contact are essential throughout the engagement." },
+    ],
+    solutionTitle: "How XOFOZ delivers IT solutions for government entities",
+    solutionParagraphs: ["XOFOZ delivers documented infrastructure and support for public-sector and government-adjacent organisations, including CCTV and access control, network infrastructure, layered cybersecurity, data protection, cloud platforms, and structured IT support.", "Documentation, testing, compliance evidence, and named accountability are built into the project approach rather than treated as optional additions after installation."],
+    services: [
+      { title: "IT AMC", description: "Structured coverage with proactive maintenance, clear scope, documentation, and accountable support.", href: "/services/it-amc-abu-dhabi" },
+      { title: "CCTV and access control", description: "Compliant surveillance and access systems with supporting installation documentation.", href: "/services/cctv-access-control-abu-dhabi" },
+      { title: "Cybersecurity", description: "Firewall, endpoint, identity, email, and monitoring controls for higher-sensitivity environments.", href: "/services/cybersecurity-solutions-abu-dhabi" },
+      { title: "Network infrastructure", description: "Documented cabling, switching, routing, WiFi, segmentation, and secure connectivity.", href: "/services/network-infrastructure-abu-dhabi" },
+      { title: "Data backup and protection", description: "Backup, recovery, retention, and continuity planning for important operational data.", href: "/services/data-backup-recovery-abu-dhabi" },
+      { title: "Microsoft 365", description: "Secure collaboration, identity, access, migration, and administrative platforms.", href: "/services/cloud-solutions-microsoft-365-abu-dhabi" },
+    ],
+    solutions: [
+      { title: "Cybersecurity solutions", description: "Layered protection for higher-sensitivity environments.", href: "/solutions/cybersecurity" },
+      { title: "Communication and LV/ELV", description: "Documented CCTV and access infrastructure.", href: "/solutions/communication-lv" },
+      { title: "Network solutions", description: "Documented network infrastructure supporting audit and maintenance.", href: "/solutions/network-solutions" },
+      { title: "Data backup and protection", description: "Recovery planning for operations where availability is critical.", href: "/solutions/data-backup" },
+    ],
+    proof: { eyebrow: "Government delivery model", title: "Formal scope, complete documentation, and one accountable team", description: "Each engagement begins with formal scoping of security, compliance, documentation, procurement, and operational requirements. XOFOZ supplies system records designed for authorised review and future maintenance.", outcomes: ["Audit-ready documentation", "Defined delivery accountability", "Security-led architecture"] },
+    reasons: [
+      { title: "Documentation as standard", description: "Network diagrams, configuration records, and relevant certificates form part of the engagement." },
+      { title: "ADMCC certified engineers", description: "Surveillance and ELV work is delivered with the applicable Abu Dhabi compliance documentation." },
+      { title: "Security-led architecture", description: "Layered network, endpoint, and identity controls are designed for higher-sensitivity environments." },
+      { title: "Direct local accountability", description: "Abu Dhabi-based engineers and a named point of contact support clear project ownership." },
+    ],
+    capabilities: ["Project documentation", "Network architecture", "Cybersecurity", "CCTV and access", "Backup and recovery", "Microsoft platforms"],
+    faqs: [
+      { question: "What IT services does XOFOZ provide for public-sector entities?", answer: "XOFOZ can provide structured IT support, CCTV and access control, cybersecurity, documented networks, backup and recovery, and Microsoft 365 environments for public-sector and government-adjacent organisations." },
+      { question: "Does XOFOZ provide documentation for audit purposes?", answer: "Yes. Project scope can include network diagrams, system configuration records, and applicable compliance documentation for authorised review." },
+      { question: "Is XOFOZ ADMCC certified for CCTV installation?", answer: "XOFOZ states that its engineers are ADMCC certified and delivers CCTV and ELV work with applicable supporting documentation." },
+      { question: "Can XOFOZ support higher-sensitivity IT environments?", answer: "XOFOZ can design layered network, endpoint, identity, email, backup, and monitoring controls around the specific assessed requirements." },
+      { question: "Can XOFOZ work with formal procurement processes?", answer: "XOFOZ can work within formal scopes and service frameworks with defined deliverables, documentation, timelines, and accountable contacts." },
+    ],
+    consultation: { title: "Get a free IT consultation for your government entity", description: "Share your security, documentation, infrastructure, and procurement requirements. XOFOZ will assess the scope and provide a clear next step.", organisationLabel: "Entity or department name", scaleLabel: "Sites, users, and operational scope", requirementsLabel: "Tell us about your public-sector IT requirements" },
+  },
+  {
+    slug: "healthcare",
+    label: "Healthcare",
+    navLabel: "Healthcare",
+    image: "/industries/healthcare-hero.webp",
+    metaTitle: "IT Solutions for Healthcare Abu Dhabi | XOFOZ",
+    metaDescription: "XOFOZ provides IT solutions for clinics, medical centres, and healthcare facilities in Abu Dhabi, UAE. Network, cybersecurity, CCTV, biometric attendance, and IT AMC by certified engineers.",
+    hero: { eyebrow: "IT solutions for healthcare facilities in Abu Dhabi, UAE — since 2022", title: "IT solutions for healthcare in Abu Dhabi", summary: "XOFOZ provides IT solutions for clinics, medical centres, and healthcare facilities in Abu Dhabi. From reliable networks and cybersecurity to CCTV, biometric attendance, backup, Microsoft 365, and responsive IT support, our engineers help keep patient-facing systems available and sensitive information protected.", cta: "Get a free healthcare IT consultation", badges: ["ADMCC certified engineers", "Patient data protection focus", "2,000+ happy clients", "Abu Dhabi based team"] },
+    highlights: [{ value: "Protected", label: "sensitive information" }, { value: "Reliable", label: "patient-facing systems" }, { value: "Secure", label: "controlled accessibility" }, { value: "Local", label: "responsive support" }],
+    challengesTitle: "IT challenges facing healthcare facilities in Abu Dhabi",
+    challengesIntro: "Clinics and medical centres rely on technology where availability, access control, and data protection have a direct effect on patient operations and trust.",
+    challenges: [
+      { title: "Sensitive information requires layered protection", description: "Medical, identity, appointment, and administrative information requires carefully scoped security, permissions, backup, and recovery." },
+      { title: "Patient-facing systems must remain reliable", description: "Failures affecting appointments, reception, communications, or record access can disrupt care delivery during clinic hours." },
+      { title: "Facilities need security and controlled accessibility", description: "CCTV and access control must protect sensitive areas while supporting efficient movement for patients, clinical teams, and support staff." },
+    ],
+    solutionTitle: "How XOFOZ delivers IT solutions for healthcare facilities",
+    solutionParagraphs: ["XOFOZ plans clinic and medical-centre infrastructure around patient-facing availability and sensitive-information protection: reliable networks, layered cybersecurity, CCTV and access control, staff attendance, backup, Microsoft platforms, and managed support.", "The assessment identifies systems with the highest uptime and data-sensitivity requirements, allowing architecture, monitoring, recovery, and support priorities to be aligned with clinic operating hours."],
+    services: [
+      { title: "IT AMC", description: "Proactive coverage and responsive support aligned with patient-facing operating hours.", href: "/services/it-amc-abu-dhabi" },
+      { title: "Cybersecurity", description: "Firewall, endpoint, identity, email, and data controls for sensitive healthcare information.", href: "/services/cybersecurity-solutions-abu-dhabi" },
+      { title: "Network infrastructure", description: "Reliable connectivity for reception, appointments, administration, and clinical-support systems.", href: "/services/network-infrastructure-abu-dhabi" },
+      { title: "CCTV and access control", description: "Security designed around sensitive areas and the accessibility patients and staff require.", href: "/services/cctv-access-control-abu-dhabi" },
+      { title: "Biometric attendance", description: "Accurate workforce attendance across reception, clinical, and support shifts.", href: "/services/biometric-systems-abu-dhabi" },
+      { title: "Backup and recovery", description: "Protected and recoverable administrative and patient-adjacent information.", href: "/services/data-backup-recovery-abu-dhabi" },
+      { title: "Microsoft 365", description: "Secure collaboration and administration with appropriately scoped access controls.", href: "/services/cloud-solutions-microsoft-365-abu-dhabi" },
+    ],
+    solutions: [
+      { title: "Cybersecurity solutions", description: "Layered protection suited to sensitive healthcare information.", href: "/solutions/cybersecurity" },
+      { title: "Network solutions", description: "Reliable connectivity for patient-facing and administrative systems.", href: "/solutions/network-solutions" },
+      { title: "Communication and LV/ELV", description: "CCTV and access control balancing security with accessibility.", href: "/solutions/communication-lv" },
+      { title: "Data backup and protection", description: "Backup and continuity planning for critical records and systems.", href: "/solutions/data-backup" },
+    ],
+    proof: { eyebrow: "Healthcare delivery model", title: "Technology priorities aligned with patient-facing operations", description: "Each engagement identifies the systems that carry the greatest uptime and information-protection requirements. Network, security, monitoring, recovery, and support are then planned around clinic operating hours and real operational impact.", outcomes: ["Patient-facing uptime priorities", "Sensitive-data protection", "Clinic-hours support planning"] },
+    reasons: [
+      { title: "Security for sensitive information", description: "Layered controls are scoped around the sensitivity of medical, identity, and administrative information." },
+      { title: "ADMCC certified engineers", description: "CCTV and access systems are planned for applicable Abu Dhabi compliance and facility access needs." },
+      { title: "Patient-hours response planning", description: "Support arrangements recognise the operational impact of system downtime during clinic hours." },
+      { title: "Abu Dhabi based team", description: "Local engineers provide direct accountability and on-site capability when required." },
+    ],
+    capabilities: ["Healthcare networks", "Cybersecurity", "CCTV and access", "Biometric attendance", "Backup and recovery", "Microsoft 365"],
+    faqs: [
+      { question: "What IT services does XOFOZ provide for clinics?", answer: "XOFOZ provides managed support, cybersecurity, networks, CCTV and access control, biometric attendance, backup and recovery, and Microsoft 365 for clinics and medical centres." },
+      { question: "How does XOFOZ protect sensitive healthcare information?", answer: "Protection can combine firewall, endpoint, identity, access, email, data-loss-prevention, backup, and recovery controls configured around the assessed environment." },
+      { question: "Can XOFOZ provide responsive support during clinic hours?", answer: "Yes. Support scope and response expectations can be structured around clinic operating hours and documented in the service agreement." },
+      { question: "Does XOFOZ install CCTV and access control for healthcare facilities?", answer: "Yes. Systems can be designed to protect sensitive areas while maintaining practical accessibility for patients and authorised staff." },
+      { question: "Can XOFOZ manage attendance for multi-shift teams?", answer: "Yes. Biometric attendance systems can support reception, clinical, and support teams working across multiple shifts." },
+    ],
+    consultation: { title: "Get a free IT consultation for your healthcare facility", description: "Tell us about your facility, operating hours, users, systems, security priorities, and support requirements. XOFOZ will recommend a practical next step.", organisationLabel: "Facility name", scaleLabel: "Staff, sites, and operating hours", requirementsLabel: "Tell us about your healthcare IT requirements" },
+  },
 ] as const;
 
 export function getIndustryBySlug(slug: string) {
@@ -341,3 +491,30 @@ export const industryNavItems = industries.map((industry) => ({
   label: industry.navLabel,
   href: `/industries/${industry.slug}` as const,
 }));
+
+export const newServiceIndustryCards = [
+  {
+    title: "Education institutions",
+    description: "Reliable campus networks, safeguarding-focused CCTV and access control, classroom technology, cybersecurity, and term-aware support for schools and training centres.",
+    href: "/industries/education",
+    linkLabel: "View education IT solutions",
+  },
+  {
+    title: "Government and public sector",
+    description: "Documented infrastructure, compliant surveillance, layered cybersecurity, protected data, and accountable local delivery for public-sector environments.",
+    href: "/industries/government",
+    linkLabel: "View government IT solutions",
+  },
+  {
+    title: "Healthcare facilities",
+    description: "Reliable patient-facing systems, sensitive-information protection, controlled access, backup, and responsive support for clinics and medical centres.",
+    href: "/industries/healthcare",
+    linkLabel: "View healthcare IT solutions",
+  },
+] as const;
+
+export function resolveIndustryHref(title: string) {
+  const normalized = title.toLowerCase();
+  const industry = industries.find((item) => normalized.includes(item.label.toLowerCase()));
+  return industry ? `/industries/${industry.slug}` : "/industries";
+}

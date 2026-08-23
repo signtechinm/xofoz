@@ -1,13 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { companyStats } from "../data/company-stats";
 
-const highlights = [
-  { value: 3, suffix: "+", label: "Years in Abu Dhabi" },
-  { value: 150, suffix: "+", label: "AMC clients" },
-  { value: 27, suffix: "+", label: "Enterprise clients" },
-  { text: "Abu Dhabi", label: "UAE-based team" },
-];
+const highlights = companyStats;
 
 export default function BusinessHighlights() {
   const rootRef = useRef<HTMLElement | null>(null);
@@ -51,9 +47,9 @@ export default function BusinessHighlights() {
   return (
     <section className="trust-strip" aria-label="XOFOZ business highlights" ref={rootRef}>
       {highlights.map((highlight) => (
-        <div className={`trust-item${highlight.text ? " trust-item--location" : ""}`} key={highlight.label}>
+        <div className="trust-item" key={highlight.label}>
           <strong>
-            {highlight.text ?? Math.round((highlight.value ?? 0) * progress)}
+            {Math.round(highlight.value * progress).toLocaleString("en-US")}
             {highlight.suffix}
           </strong>
           <span>{highlight.label}</span>

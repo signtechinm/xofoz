@@ -19,6 +19,95 @@ const productMenuBrands = [
   ["Tally Prime", "/partners/tally-prime.svg"],
 ] as const;
 
+type ServiceMenuLink = { label: string; href?: string };
+
+const serviceMenuDefinitions: Record<string, ServiceMenuLink[]> = {
+  "it-services": [
+    { label: "Managed IT Services" }, { label: "IT Support", href: "/services/it-support-abu-dhabi" },
+    { label: "Remote IT Support", href: "/services/remote-it-support-abu-dhabi" },
+    { label: "IT Relocation" }, { label: "IT Consulting" }, { label: "ICT Solutions" },
+    { label: "IT AMC", href: "/services/it-amc-abu-dhabi" },
+    { label: "New Office IT Setup", href: "/services/office-it-setup-abu-dhabi" },
+    { label: "Cloud Migration Services" }, { label: "IT Outsourcing" },
+  ],
+  "cyber-security": [
+    { label: "Cybersecurity Solutions", href: "/services/cybersecurity-solutions-abu-dhabi" },
+    { label: "Endpoint Security" }, { label: "Device Encryption" }, { label: "Identity and Access Management" },
+    { label: "SOC as a Service" }, { label: "Next Gen Firewall" }, { label: "Email Security" },
+    { label: "Vulnerability Management" }, { label: "Enterprise Mobility" },
+  ],
+  "data-backup-protection": [
+    { label: "DLP Solution" },
+    { label: "Disaster Recovery Solutions", href: "/services/data-backup-recovery-abu-dhabi" },
+    { label: "Device Management" }, { label: "Business Continuity Plan" },
+    { label: "Backup as a Service" }, { label: "Mobile Device Management" },
+  ],
+  "server-storage": [
+    { label: "Server Solutions", href: "/services/server-management-abu-dhabi" },
+    { label: "NAS Storage" }, { label: "Server Storage" }, { label: "Synchronized Data Storage" },
+  ],
+  "network-solutions": [
+    { label: "Network Solutions", href: "/services/network-infrastructure-abu-dhabi" },
+    { label: "Switching and Routing" }, { label: "Proxy Services" },
+    { label: "Structured Cabling", href: "/services/structured-cabling-abu-dhabi" },
+    { label: "WiFi Solutions" }, { label: "VPN Solutions", href: "/services/vpn-network-security-abu-dhabi" },
+    { label: "Work From Home IT" },
+  ],
+  "communication-lv": [
+    { label: "CCTV Solutions", href: "/services/cctv-access-control-abu-dhabi" },
+    { label: "Access Control" }, { label: "Biometric Attendance System", href: "/services/biometric-systems-abu-dhabi" },
+    { label: "IP Phone Solutions", href: "/services/pabx-telephone-systems-abu-dhabi" },
+    { label: "Call Centre Solutions" }, { label: "Intercom Systems" }, { label: "ELV Systems" },
+    { label: "Guard Tour System" }, { label: "Environment Monitoring System" },
+    { label: "Solar Solutions for CCTV and WiFi" }, { label: "Gate Barrier Solutions" },
+    { label: "AV System", href: "/services/hardware-av-solutions-abu-dhabi" },
+    { label: "PA System" }, { label: "LED Panel" }, { label: "Master Clock System" },
+    { label: "Video Conferencing", href: "/services/video-conferencing-abu-dhabi" },
+  ],
+  cloud: [
+    { label: "Azure Cloud Solutions" }, { label: "Web Hosting" },
+    { label: "Desktop as a Service" }, { label: "User Collaboration Tools" },
+  ],
+  "ai-solutions": [{ label: "AI Solutions for CCTV" }],
+  "software-solutions": [
+    { label: "ERP Software", href: "/services/erp-solutions-abu-dhabi" },
+    { label: "POS Software Solutions", href: "/services/pos-systems-abu-dhabi" },
+    { label: "GPS Tracking Solutions" }, { label: "Visitor Management System" },
+    { label: "Web Design", href: "/services/website-development-abu-dhabi" }, { label: "Design Software" },
+    { label: "Tally Prime", href: "/services/tally-prime-abu-dhabi" },
+  ],
+  "microsoft-cloud": [
+    { label: "Microsoft 365 Solutions", href: "/services/cloud-solutions-microsoft-365-abu-dhabi" },
+    { label: "Microsoft 365 Copilot" }, { label: "Microsoft 365 Apps and Services" },
+    { label: "Microsoft Edge for Business" }, { label: "Windows 365 Cloud PC" },
+    { label: "Microsoft 365 Benefits" }, { label: "Microsoft 365 Pricing Plans" },
+    { label: "Microsoft 365 Security" }, { label: "Microsoft 365 Migrations and Consultancy" },
+    { label: "Microsoft Modern Workplace" }, { label: "Microsoft SharePoint Consulting" },
+  ],
+};
+
+const toServiceAnchor = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+const serviceMenuGroups = serviceCategories.map((category) => ({
+  category,
+  services: (serviceMenuDefinitions[category.slug] || []).map((service) => ({
+    ...service,
+    href: service.href || `/services/${category.slug}#${toServiceAnchor(service.label)}`,
+  })),
+}));
+
+const serviceMenuColumns = [
+  ["it-services", "data-backup-protection"],
+  ["cyber-security", "server-storage", "microsoft-cloud"],
+  ["network-solutions", "software-solutions"],
+  ["communication-lv"],
+].map((slugs) => slugs.map((slug) => serviceMenuGroups.find((group) => group.category.slug === slug)!));
+
+const supplementalServiceGroups = {
+  0: serviceMenuGroups.filter((group) => group.category.slug === "ai-solutions"),
+  3: serviceMenuGroups.filter((group) => group.category.slug === "cloud"),
+} as const;
+
 const navItems = [
   {
     label: "Services", href: "/services", image: "/services/managed-it-amc.png",
@@ -54,6 +143,7 @@ const navItems = [
 
 export default function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const serviceHoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(0);
@@ -80,6 +170,20 @@ export default function Header() {
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [isOpen]);
+
+  useEffect(() => () => {
+    if (serviceHoverTimerRef.current) clearTimeout(serviceHoverTimerRef.current);
+  }, []);
+
+  const openServiceDropdown = (element: HTMLDetailsElement) => {
+    if (serviceHoverTimerRef.current) clearTimeout(serviceHoverTimerRef.current);
+    serviceHoverTimerRef.current = setTimeout(() => { element.open = true; }, 120);
+  };
+
+  const closeServiceDropdown = (element: HTMLDetailsElement) => {
+    if (serviceHoverTimerRef.current) clearTimeout(serviceHoverTimerRef.current);
+    serviceHoverTimerRef.current = setTimeout(() => { element.open = false; }, 160);
+  };
 
   return (
     <>
@@ -129,6 +233,7 @@ export default function Header() {
         <nav
           id="primary-navigation-panel"
           className={`header-dropdown__panel ${
+            navItems[activeMenu].label === "Services" ? "header-dropdown__panel--services" :
             navItems[activeMenu].children.length > 12 ? "header-dropdown__panel--expanded" : ""
           }`}
           aria-label="Primary navigation"
@@ -165,6 +270,64 @@ export default function Header() {
           </div>
           <div className="header-dropdown__subnav">
             <span className="header-dropdown__eyebrow">{navItems[activeMenu].label}</span>
+            {navItems[activeMenu].label === "Services" && (
+              <>
+                <section className="header-service-groups" aria-label="Service categories and specialist services">
+                  {serviceMenuColumns.map((column, index) => (
+                    <div className="header-service-column" key={`service-column-${index + 1}`}>
+                      {column.map((group) => (
+                        <details
+                          className="header-service-group"
+                          name="service-menu-category"
+                          key={group.category.slug}
+                          onMouseEnter={(event) => openServiceDropdown(event.currentTarget)}
+                          onMouseLeave={(event) => closeServiceDropdown(event.currentTarget)}
+                        >
+                          <summary className="header-service-group__title">
+                            <span>{group.category.shortLabel}</span><b aria-hidden="true">⌄</b>
+                          </summary>
+                          <div className="header-service-group__links">
+                            <Link className="header-service-group__overview" href={`/services/${group.category.slug}`} onClick={() => setIsOpen(false)}>
+                              {group.category.shortLabel} overview <b aria-hidden="true">→</b>
+                            </Link>
+                            {group.services.map((service) => (
+                              <Link href={service.href} key={`${group.category.slug}-${service.label}`} onClick={() => setIsOpen(false)}>
+                                {service.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </details>
+                      ))}
+                      {(index === 0 || index === 3) && (
+                        <section className="header-standalone-services" aria-label={index === 0 ? "AI service category" : "Cloud service category"}>
+                          {supplementalServiceGroups[index].map((group) => (
+                            <details
+                              className="header-service-group"
+                              name="service-menu-category"
+                              key={group.category.slug}
+                              onMouseEnter={(event) => openServiceDropdown(event.currentTarget)}
+                              onMouseLeave={(event) => closeServiceDropdown(event.currentTarget)}
+                            >
+                              <summary className="header-service-group__title">
+                                <span>{group.category.shortLabel}</span><b aria-hidden="true">⌄</b>
+                              </summary>
+                              <div className="header-service-group__links">
+                                <Link className="header-service-group__overview" href={`/services/${group.category.slug}`} onClick={() => setIsOpen(false)}>
+                                  {group.category.shortLabel} overview <b aria-hidden="true">→</b>
+                                </Link>
+                                {group.services.map((service) => (
+                                  <Link href={service.href} key={`${group.category.slug}-${service.label}`} onClick={() => setIsOpen(false)}>{service.label}</Link>
+                                ))}
+                              </div>
+                            </details>
+                          ))}
+                        </section>
+                      )}
+                    </div>
+                  ))}
+                </section>
+              </>
+            )}
             {navItems[activeMenu].label !== "Services" && navItems[activeMenu].label !== "Solutions" && navItems[activeMenu].label !== "Products" && (
               <Link className="header-dropdown__all" href={navItems[activeMenu].href} onClick={() => setIsOpen(false)}>
                 View all {navItems[activeMenu].label.toLowerCase()} <span>↗</span>
@@ -187,7 +350,7 @@ export default function Header() {
                 </Link>
               </>
             )}
-            <div>
+            {navItems[activeMenu].label !== "Services" && <div>
               {navItems[activeMenu].children.map((child) => (
               <Link
                 href={
@@ -205,15 +368,15 @@ export default function Header() {
                 <span>{child}</span><b aria-hidden="true">↗</b>
               </Link>
               ))}
-            </div>
+            </div>}
           </div>
-          <div className="header-dropdown__visual" key={navItems[activeMenu].label}>
+          {navItems[activeMenu].label !== "Services" && <div className="header-dropdown__visual" key={navItems[activeMenu].label}>
             <img src={navItems[activeMenu].image} alt="" aria-hidden="true" />
             <div>
               <span>XOFOZ / {navItems[activeMenu].label}</span>
               <p>{navItems[activeMenu].description}</p>
             </div>
-          </div>
+          </div>}
         </nav>
       </div>
     </>

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { serviceCategories } from "../data/service-categories";
+import { services } from "../data/services";
 import { solutions } from "../data/solutions";
 import { industries } from "../data/industries";
 
@@ -28,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...services.map((service) => ({
+      url: `${siteUrl}/services/${service.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     })),
     ...solutions.map((solution) => ({
       url: `${siteUrl}/solutions/${solution.slug}`,
