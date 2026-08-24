@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { productCategories } from "../data/products";
 import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
@@ -71,12 +72,11 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h2>Products</h2>
-          <Link href="/#products">Tally Prime</Link>
-          <Link href="/#products">Microsoft 365</Link>
-          <Link href="/#products">Acronis backup</Link>
-          <Link href="/#products">Fortinet firewall</Link>
-          <Link href="/#products">Hikvision CCTV</Link>
-          <Link href="/#products">ESET endpoint</Link>
+          {productCategories.map((product) => (
+            <Link href={product.href} key={product.title}>
+              {product.title}
+            </Link>
+          ))}
         </div>
         <div className="footer-column">
           <h2>Solutions</h2>
@@ -91,10 +91,6 @@ export default function Footer() {
           <h2>Company</h2>
           <Link href="/about">About XOFOZ</Link>
           <Link href="/#testimonials">Client feedback</Link>
-          <Link href="/industries">Industries</Link>
-          <Link href="/industries/education">Education</Link>
-          <Link href="/industries/government">Government</Link>
-          <Link href="/industries/healthcare">Healthcare</Link>
           <Link href="/contact">Contact us</Link>
         </div>
         <div className="footer-bottom">

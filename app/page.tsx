@@ -78,7 +78,7 @@ const industries: [string, string, string, string][] = [
 const reasons = [
   ["ADMCC certified IT engineers", "Compliance-ready local engineering for organisations operating within Abu Dhabi's business and regulatory environment."],
   ["Fast on-site response across Abu Dhabi", "A locally based team available for remote troubleshooting and on-site support when physical presence is required."],
-  ["UAE-based team — zero offshore support", "Support requirements are handled by engineers familiar with local businesses, systems, and working environments."],
+  ["UAE-based team", "Support requirements are handled by engineers familiar with local businesses, systems, and working environments."],
   ["Multi-vendor, brand-independent expertise", "Experience across Microsoft, Fortinet, Hikvision, Aruba, ESET, Sophos, and Acronis environments enables practical recommendations."],
   ["Authorised Tally Prime dealer in Abu Dhabi", "Genuine licensing, implementation, UAE VAT configuration, staff training, and ongoing accounting-software support."],
 ];
@@ -247,7 +247,6 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <p className="sample-note">Sample partner list — authorisation levels should be verified before launch.</p>
             </Reveal>
           </div>
         </div>
