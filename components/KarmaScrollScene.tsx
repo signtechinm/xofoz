@@ -108,7 +108,7 @@ export default function KarmaScrollScene() {
           className="hero__content hero__content--centered karma-scene__hero"
           style={{ opacity: 0, transform: "translateY(24px)" }}
         >
-          <span className="eyebrow">IT solutions provider in Abu Dhabi, UAE — since 2022</span>
+          <span className="eyebrow">IT solutions provider in Abu Dhabi, UAE — since 2015</span>
           <h1>Your trusted IT solutions provider in Abu Dhabi</h1>
           <p>
             XOFOZ Information Technology provides managed IT services, genuine
@@ -119,9 +119,6 @@ export default function KarmaScrollScene() {
           <div className="hero__actions">
             <a className="button button--primary" href="#solutions">
               Explore our solutions
-            </a>
-            <a className="button button--ghost" href="https://wa.me/971523554202">
-              WhatsApp us now — +971 52 355 4202
             </a>
           </div>
         </div>

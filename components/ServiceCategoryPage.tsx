@@ -2,16 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ServiceCategoryContent } from "../data/service-category-content";
 import { newServiceIndustryCards, resolveIndustryHref } from "../data/industries";
-import { companyStatLabels } from "../data/company-stats";
+import CompanyStatsCounter from "./CompanyStatsCounter";
 import ParticleField from "./ParticleField";
 import Reveal from "./Reveal";
 import ServiceCategoryEnquiryButton from "./ServiceCategoryEnquiryButton";
 import ServiceCategoryLeadForm from "./ServiceCategoryLeadForm";
+import ProductBrandMark from "./ProductBrandMark";
 
 export default function ServiceCategoryPage({ content }: { content: ServiceCategoryContent }) {
   const { category, hero, overview, cards, reasons, industries, faqs, cta } = content;
   const displayedIndustries = [...industries, ...newServiceIndustryCards];
-  const categoryWhatsApp = `https://wa.me/971523554202?text=${encodeURIComponent(`Hello XOFOZ, I would like help with ${category.label}.`)}`;
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -74,14 +74,11 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
           <p>{hero.summary}</p>
           <div className="hero__actions">
             <a className="button button--primary" href="#service-category-consultation">{hero.cta}</a>
-            <a className="button button--ghost" href={categoryWhatsApp}>{hero.whatsapp}</a>
           </div>
           <div className="service-category-badges" aria-label="Service category highlights">
             {hero.badges.map((badge) => <span key={badge}>✓ {badge}</span>)}
           </div>
-          <div className="service-trust-stats" aria-label="XOFOZ service highlights">
-            {companyStatLabels.map((stat) => <span key={stat}>{stat}</span>)}
-          </div>
+          <CompanyStatsCounter className="service-trust-stats" ariaLabel="XOFOZ service highlights" />
         </Reveal>
         <Reveal className="service-hero__visual" delay={0.08}>
           <Image
@@ -113,8 +110,8 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
                 <p>{card.description}</p>
                 {(card.authorisedBrands.length > 0 || card.regularBrands.length > 0) && (
                   <div className="service-category-card__brands" aria-label={`Brands for ${card.name}`}>
-                    {card.authorisedBrands.map((brand) => <span className="is-authorised" key={`authorised-${brand}`}>{brand}</span>)}
-                    {card.regularBrands.map((brand) => <span key={`regular-${brand}`}>{brand}</span>)}
+                    {card.authorisedBrands.map((brand) => <ProductBrandMark brand={brand} className="is-authorised" key={`authorised-${brand}`} />)}
+                    {card.regularBrands.map((brand) => <ProductBrandMark brand={brand} key={`regular-${brand}`} />)}
                   </div>
                 )}
                 <ServiceCategoryEnquiryButton category={category.label} subService={card.name} />
@@ -130,7 +127,7 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
           <div className="service-why-list">
             {reasons.map((reason, index) => <Reveal className="service-why-item" delay={index * 0.035} key={reason.title}><span aria-hidden="true">✓</span><div><h3>{reason.title}</h3><p>{reason.description}</p></div></Reveal>)}
           </div>
-          {content.brands.length > 0 && <Reveal className="service-certifications" delay={0.08}><span className="eyebrow">Technology ecosystem</span><h3>Certifications and partnerships</h3><div>{content.brands.map((brand) => <span key={brand}>{brand}</span>)}</div></Reveal>}
+          {content.brands.length > 0 && <Reveal className="service-certifications" delay={0.08}><span className="eyebrow">Technology ecosystem</span><h3>Certifications and partnerships</h3><div>{content.brands.map((brand) => <ProductBrandMark brand={brand} key={brand} />)}</div></Reveal>}
         </div>
       </section>
 
@@ -152,7 +149,7 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
 
       <section className="service-section service-consultation" id="service-category-consultation">
         <div className="page-band service-consultation__layout">
-          <Reveal className="service-consultation__copy"><span className="eyebrow">Start with a clear assessment</span><h2>{cta.title}</h2><p>{cta.summary}</p><a className="button button--whatsapp" href={categoryWhatsApp}>{cta.whatsapp || "WhatsApp us now"}</a><div className="service-contact-list"><span><b>Office</b>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</span><a href="tel:026220071"><b>Phone</b>026 220 071</a><a href="mailto:hello@xofoz.com"><b>Email</b>hello@xofoz.com</a><span><b>Hours</b>Monday to Saturday — 8:30 AM to 6:30 PM</span></div></Reveal>
+          <Reveal className="service-consultation__copy"><span className="eyebrow">Start with a clear assessment</span><h2>{cta.title}</h2><p>{cta.summary}</p><div className="service-contact-list"><span><b>Office</b>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</span><a href="tel:026220071"><b>Phone</b>026 220 071</a><a href="mailto:hello@xofoz.com"><b>Email</b>hello@xofoz.com</a><span><b>Hours</b>Monday to Saturday — 8:30 AM to 6:30 PM</span></div></Reveal>
           <Reveal delay={0.08}><ServiceCategoryLeadForm category={category.label} options={cards.map((card) => card.name)} fields={cta.fields} buttonLabel={cta.button} /></Reveal>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { IndustryDefinition } from "../data/industries";
-import { companyStats } from "../data/company-stats";
+import CompanyStatsCounter from "./CompanyStatsCounter";
 import IndustryLeadForm from "./IndustryLeadForm";
 import ParticleField from "./ParticleField";
 import Reveal from "./Reveal";
@@ -57,7 +57,6 @@ export default function IndustryPage({ industry }: { industry: IndustryDefinitio
             </div>
             <div className="hero__actions">
               <a className="button button--primary" href="#industry-consultation">{industry.hero.cta}</a>
-              <a className="button button--ghost" href={`https://wa.me/971523554202?text=${encodeURIComponent(`Hello XOFOZ, I would like to discuss IT solutions for my ${industry.label.toLowerCase()} business.`)}`}>WhatsApp us now</a>
             </div>
           </Reveal>
           <Reveal className="industry-hero__visual" delay={0.08}>
@@ -68,9 +67,7 @@ export default function IndustryPage({ industry }: { industry: IndustryDefinitio
       </section>
 
       <section className="industry-highlights" aria-label="XOFOZ company highlights">
-        <div className="page-band">
-          {companyStats.map((stat) => <div key={stat.label}><strong>{stat.value.toLocaleString("en-US")}{stat.suffix}</strong><span>{stat.label}</span></div>)}
-        </div>
+        <CompanyStatsCounter className="page-band" />
       </section>
 
       <section className="industry-section industry-challenges page-band">
@@ -123,7 +120,7 @@ export default function IndustryPage({ industry }: { industry: IndustryDefinitio
 
       <section className="industry-section industry-consultation" id="industry-consultation">
         <div className="page-band industry-consultation__layout">
-          <Reveal className="industry-consultation__copy"><span className="eyebrow">Talk to XOFOZ</span><h2>{industry.consultation.title}</h2><p>{industry.consultation.description}</p><a className="button button--ghost" href="https://wa.me/971523554202">WhatsApp +971 52 355 4202</a><address><strong>XOFOZ Information Technology LLC</strong><span>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</span><a href="tel:+97126220071">02 622 0071</a><a href="mailto:hello@xofoz.com">hello@xofoz.com</a><span>Monday–Saturday, 8:30 AM–6:30 PM</span></address></Reveal>
+          <Reveal className="industry-consultation__copy"><span className="eyebrow">Talk to XOFOZ</span><h2>{industry.consultation.title}</h2><p>{industry.consultation.description}</p><address><strong>XOFOZ Information Technology LLC</strong><span>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</span><a href="tel:+97126220071">02 622 0071</a><a href="mailto:hello@xofoz.com">hello@xofoz.com</a><span>Monday–Saturday, 8:30 AM–6:30 PM</span></address></Reveal>
           <Reveal delay={0.08}><IndustryLeadForm industry={industry.label} organisationLabel={industry.consultation.organisationLabel} scaleLabel={industry.consultation.scaleLabel} requirementsLabel={industry.consultation.requirementsLabel} /></Reveal>
         </div>
       </section>

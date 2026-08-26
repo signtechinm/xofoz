@@ -1,6 +1,15 @@
 import Link from "next/link";
-import { productCategories } from "../data/products";
 import BrandLogo from "./BrandLogo";
+
+const footerProducts = [
+  { title: "Firewall", href: "/solutions/cybersecurity" },
+  { title: "Video conferencing", href: "/services/communication-lv#av-system" },
+  { title: "Access points", href: "/services/network-solutions#wifi-solutions" },
+  { title: "CCTV systems", href: "/services/communication-lv#cctv-solutions" },
+  { title: "Attendance and access control", href: "/services/communication-lv#biometric-attendance-system" },
+  { title: "Accounting software", href: "/services/software-solutions#erp-software" },
+  { title: "IP PBX and telephone systems", href: "/services/communication-lv#ip-phone-solutions" },
+] as const;
 
 export default function Footer() {
   return (
@@ -52,7 +61,7 @@ export default function Footer() {
             <BrandLogo />
           </Link>
           <p>
-            Abu Dhabi&apos;s trusted IT solutions provider since 2022, delivering
+            Abu Dhabi&apos;s trusted IT solutions provider since 2015, delivering
             managed IT services, genuine technology products, and complete
             business solutions across the UAE.
           </p>
@@ -72,7 +81,7 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h2>Products</h2>
-          {productCategories.map((product) => (
+          {footerProducts.map((product) => (
             <Link href={product.href} key={product.title}>
               {product.title}
             </Link>

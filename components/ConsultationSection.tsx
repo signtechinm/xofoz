@@ -13,7 +13,6 @@ export default function ConsultationSection() {
             a complete solution built from scratch, XOFOZ is your accountable
             Abu Dhabi IT partner. Send the requirement and our team will respond.
           </p>
-          <a className="button button--whatsapp" href="https://wa.me/971523554202">Chat with us on WhatsApp — +971 52 355 4202</a>
           <div className="home-contact-details">
             <a href="tel:026220071"><strong>Phone</strong><span>026 220 071</span></a>
             <a href="mailto:hello@xofoz.com"><strong>Email</strong><span>hello@xofoz.com</span></a>

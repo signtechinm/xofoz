@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ServiceContent } from "../data/service-content";
 import { newServiceIndustryCards, resolveIndustryHref } from "../data/industries";
-import { companyStatLabels } from "../data/company-stats";
+import CompanyStatsCounter from "./CompanyStatsCounter";
 import { serviceAssets } from "../data/service-assets";
 import { resolveRelatedServiceHref } from "../data/services";
 import Reveal from "./Reveal";
 import ServiceLeadForm from "./ServiceLeadForm";
 import ParticleField from "./ParticleField";
+import ProductBrandMark from "./ProductBrandMark";
 
 function listFromField(value = "") {
   return value.split("|").map((item) => item.trim()).filter(Boolean);
@@ -54,7 +55,6 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
     copy: fields[`SECTION 9 — RELATED SERVICE ${index + 1} — CONTENT`],
     label: fields[`SECTION 9 — RELATED SERVICE ${index + 1} — LINK`],
   })).map((item) => ({ ...item, href: resolveRelatedServiceHref(item.title) }));
-  const trustStats = companyStatLabels;
   const certifications = listFromField(fields["SECTION 5 — CERTIFICATIONS LIST"]);
   const breadcrumbLabel = fields.BREADCRUMB?.split("›").at(-1)?.trim() || service.label;
   const asset = serviceAssets[service.slug];
@@ -118,13 +118,8 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
             <a className="button button--primary" href="#service-consultation">
               {fields["HERO — CTA 1"]}
             </a>
-            <a className="button button--ghost" href="https://wa.me/971523554202">
-              {fields["HERO — CTA 2"]}
-            </a>
           </div>
-          <div className="service-trust-stats" aria-label="XOFOZ service highlights">
-            {trustStats.map((stat) => <span key={stat}>{stat}</span>)}
-          </div>
+          <CompanyStatsCounter className="service-trust-stats" ariaLabel="XOFOZ service highlights" />
         </Reveal>
         <Reveal className="service-hero__visual" delay={0.08}>
           <Image
@@ -239,7 +234,7 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
           <Reveal className="service-certifications" delay={0.08}>
             <span className="eyebrow">Technology ecosystem</span>
             <h3>Certifications and partnerships</h3>
-            <div>{certifications.map((certification) => <span key={certification}>{certification}</span>)}</div>
+            <div>{certifications.map((certification) => <ProductBrandMark brand={certification} key={certification} />)}</div>
           </Reveal>
         </div>
       </section>
@@ -325,9 +320,6 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
             <span className="eyebrow">Start with a clear assessment</span>
             <h2>{fields["SECTION 10 — H2"]}</h2>
             <p>{fields["SECTION 10 — SUBLINE"]}</p>
-            <a className="button button--whatsapp" href="https://wa.me/971523554202">
-              {fields["SECTION 10 — WHATSAPP CTA"]}
-            </a>
             <div className="service-contact-list">
               <span><b>Office</b>{fields["SECTION 10 — NAP ADDRESS"]}</span>
               <a href="tel:026220071"><b>Phone</b>{fields["SECTION 10 — NAP PHONE"]}</a>

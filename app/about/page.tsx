@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { companyStats } from "../../data/company-stats";
+import CompanyStatsCounter from "../../components/CompanyStatsCounter";
 import Link from "next/link";
 import ClientLogoSection from "../../components/ClientLogoSection";
 import ParticleField from "../../components/ParticleField";
 import Reveal from "../../components/Reveal";
+import ProductBrandMark from "../../components/ProductBrandMark";
 
 export const metadata: Metadata = {
   title: "About XOFOZ | IT Solutions Company In Abu Dhabi",
-  description: "Meet XOFOZ Information Technology LLC, an Abu Dhabi IT company delivering managed services, authorised products, and complete technology solutions across the UAE since 2022.",
+  description: "Meet XOFOZ Information Technology LLC, an Abu Dhabi IT company delivering managed services, authorised products, and complete technology solutions across the UAE since 2015.",
   alternates: { canonical: "/about" },
 };
 
 const milestones = [
-  ["2022", "XOFOZ established in Abu Dhabi", "The company began with a clear focus: give UAE businesses one accountable local partner for support, infrastructure, products, and implementation."],
+  ["2015", "XOFOZ established in Abu Dhabi", "The company began with a clear focus: give UAE businesses one accountable local partner for support, infrastructure, products, and implementation."],
   ["2023", "Product and compliance capabilities expanded", "Authorised business-software supply and compliance-conscious CCTV and ELV delivery became part of the growing XOFOZ portfolio."],
   ["2024", "A broader managed-services portfolio", "Support relationships grew across hospitality, construction, logistics, real estate, and manufacturing environments."],
   ["2025", "Cloud and security expertise deepened", "XOFOZ expanded its ability to support Microsoft, network security, backup, collaboration, and modern workplace requirements."],
@@ -26,11 +27,20 @@ const pillars = [
 ] as const;
 
 const teams = [
-  ["IT", "Infrastructure", "Network · Cabling · Server", ["Aruba", "UniFi", "Cisco", "ADMCC"]],
-  ["SE", "Security and ELV", "CCTV · Access · LV systems", ["Hikvision", "Fortinet", "ADMCC"]],
-  ["CL", "Cloud and software", "Microsoft · ERP · Cloud", ["Microsoft", "Azure", "Tally Prime", "Acronis"]],
-  ["CY", "Cybersecurity", "Firewall · Endpoint · Email", ["Fortinet", "Sophos", "ESET", "Bitdefender"]],
+  ["infrastructure", "Infrastructure", "Network · Cabling · Server"],
+  ["elv", "Security and ELV", "CCTV · Access · LV systems"],
+  ["cloud", "Cloud and software", "Microsoft · ERP · Cloud"],
+  ["cybersecurity", "Cybersecurity", "Firewall · Endpoint · Email"],
 ] as const;
+
+const supportedEcosystem = ["Microsoft", "Fortinet", "Hikvision", "Tally Prime", "Acronis", "ESET", "Aruba", "Sophos", "Cisco", "greytHR", "Matrix", "TP-Link", "Vircom", "Sangfor", "Bitdefender", "UniFi", "Synology", "QNAP", "Yealink", "3CX", "ZKTeco"] as const;
+
+function TeamIcon({ type }: { type: typeof teams[number][0] }) {
+  if (type === "infrastructure") return <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="6" rx="1.5"/><rect x="4" y="15" width="16" height="6" rx="1.5"/><path d="M8 9v6M16 9v6M8 6h.01M8 18h.01M12 6h5M12 18h5"/></svg>;
+  if (type === "elv") return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h11l3 3v5H4zM15 10l4-3M8 16v3M5 21h6M18 16l2 3"/><circle cx="9" cy="12" r="2.5"/></svg>;
+  if (type === "cloud") return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 8.6 4.7 4.7 0 0 0 7 18Z"/><path d="m9 14 3-3 3 3M12 11v6"/></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.8 8 7 10 4.2-2 7-5.4 7-10V6z"/><rect x="9" y="10" width="6" height="5" rx="1"/><path d="M10.5 10V8.5a1.5 1.5 0 0 1 3 0V10"/></svg>;
+}
 
 const values = [
   ["Accountability", "One team, complete ownership", "We remain accountable for the systems we recommend, supply, install, and support. When an issue crosses products or vendors, our team coordinates the resolution."],
@@ -41,7 +51,7 @@ const values = [
 
 const companyDetails = [
   ["Company", "XOFOZ Information Technology LLC SPC"],
-  ["Established", "2022 · Abu Dhabi, UAE"],
+  ["Established", "2015 · Abu Dhabi, UAE"],
   ["Address", "4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE"],
   ["Phone", "02 622 0071"],
   ["WhatsApp", "+971 52 355 4202"],
@@ -54,7 +64,7 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization", name: "XOFOZ Information Technology LLC SPC", legalName: "XOFOZ Information Technology LLC SPC", foundingDate: "2022", url: "https://xofoz.com", logo: "https://xofoz.com/brand/xofoz-logo.png", email: "hello@xofoz.com", telephone: "+97126220071",
+        "@type": "Organization", name: "XOFOZ Information Technology LLC SPC", legalName: "XOFOZ Information Technology LLC SPC", foundingDate: "2015", url: "https://xofoz.com", logo: "https://xofoz.com/brand/xofoz-logo.png", email: "hello@xofoz.com", telephone: "+97126220071",
         address: { "@type": "PostalAddress", streetAddress: "4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah", addressLocality: "Abu Dhabi", addressCountry: "AE" },
       },
       { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://xofoz.com/" }, { "@type": "ListItem", position: 2, name: "About XOFOZ", item: "https://xofoz.com/about" }] },
@@ -72,7 +82,7 @@ export default function AboutPage() {
           <div className="about-new-hero__grid">
             <Reveal className="about-new-hero__copy">
               <span className="eyebrow">XOFOZ Information Technology LLC · Abu Dhabi</span>
-              <h1>Abu Dhabi&apos;s trusted IT solutions partner since 2022.</h1>
+              <h1>Abu Dhabi&apos;s trusted IT solutions partner since 2015.</h1>
               <p>XOFOZ brings managed IT services, genuine technology products, and complete IT solutions together under one accountable local team for businesses across Abu Dhabi and the UAE.</p>
               <div className="hero__actions"><Link className="button button--primary" href="/services">View our services</Link><Link className="button button--ghost" href="/contact">Contact XOFOZ</Link></div>
             </Reveal>
@@ -84,12 +94,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-new-stats" aria-label="XOFOZ company highlights"><div className="page-band">{companyStats.map((stat) => <div key={stat.label}><strong>{stat.value.toLocaleString("en-US")}{stat.suffix}</strong><span>{stat.label}</span></div>)}</div></section>
+      <section className="about-new-stats"><CompanyStatsCounter className="page-band" /></section>
 
       <section className="section page-band about-story">
         <Reveal className="about-story__heading"><span className="eyebrow">Our story</span><h2 className="section-title">Built to make business technology easier to own.</h2></Reveal>
         <Reveal className="about-story__copy" delay={0.06}>
-          <p>XOFOZ was established in Abu Dhabi in 2022 around a practical observation: businesses should not need a different vendor for every technology problem. Support, security, hardware, cloud, communication, and infrastructure are connected—and someone needs to remain accountable for the whole environment.</p>
+          <p>XOFOZ was established in Abu Dhabi in 2015 around a practical observation: businesses should not need a different vendor for every technology problem. Support, security, hardware, cloud, communication, and infrastructure are connected—and someone needs to remain accountable for the whole environment.</p>
           <p>That principle shaped the company into a multidisciplinary local technology partner. Today, XOFOZ works across the full lifecycle: understanding the requirement, designing the approach, sourcing genuine products, completing implementation, and staying available after handover.</p>
           <div><span>One local team</span><span>Multi-vendor expertise</span><span>Lifecycle ownership</span></div>
         </Reveal>
@@ -112,8 +122,14 @@ export default function AboutPage() {
       <section className="about-expertise">
         <div className="page-band">
           <Reveal className="section-heading"><span className="eyebrow">Technical expertise</span><h2 className="section-title">Specialists across the platforms your business runs.</h2><p>Capabilities span infrastructure, security, cloud, software, and low-voltage systems so connected requirements can be handled together.</p></Reveal>
-          <div className="about-team-grid">{teams.map(([mark,title,role,certs],index) => <Reveal className="about-team-card" delay={index*.04} key={title}><div><strong>{mark}</strong><span>0{index+1}</span></div><h3>{title}</h3><p>{role}</p><div>{certs.map(cert => <span key={cert}>{cert}</span>)}</div></Reveal>)}</div>
-          <Reveal className="about-cert-strip"><span>Supported ecosystem</span><div>{["Microsoft", "Fortinet", "Hikvision", "Tally Prime", "Acronis", "ESET", "Aruba", "Sophos", "UniFi", "Synology", "QNAP", "Yealink", "3CX", "ZKTeco"].map(cert => <span key={cert}>{cert}</span>)}</div></Reveal>
+          <div className="about-team-grid">{teams.map(([icon,title,role],index) => <Reveal className="about-team-card" delay={index*.04} key={title}><div><strong><TeamIcon type={icon} /></strong><span>0{index+1}</span></div><h3>{title}</h3><p>{role}</p></Reveal>)}</div>
+          <Reveal className="about-cert-strip">
+            <span>Supported ecosystem</span>
+            <div className="about-cert-marquee">
+              <div className="about-cert-track">{supportedEcosystem.map(cert => <ProductBrandMark brand={cert} key={cert} />)}</div>
+              <div className="about-cert-track" aria-hidden="true">{supportedEcosystem.map(cert => <ProductBrandMark brand={cert} key={`duplicate-${cert}`} />)}</div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -133,7 +149,7 @@ export default function AboutPage() {
 
       <section className="about-final-cta">
         <ParticleField variant="subtle" />
-        <Reveal className="page-band"><div><span className="eyebrow">Work with XOFOZ</span><h2 className="section-title">Ready to discuss your IT requirements?</h2><p>Start with the requirement. We’ll help identify a practical next step for support, products, infrastructure, or a complete solution.</p></div><div><Link className="button button--primary" href="/contact">Contact XOFOZ</Link><a className="button button--ghost" href="https://wa.me/971523554202">WhatsApp us</a></div></Reveal>
+        <Reveal className="page-band"><div><span className="eyebrow">Work with XOFOZ</span><h2 className="section-title">Ready to discuss your IT requirements?</h2><p>Start with the requirement. We’ll help identify a practical next step for support, products, infrastructure, or a complete solution.</p></div><div><Link className="button button--primary" href="/contact">Contact XOFOZ</Link></div></Reveal>
       </section>
     </main>
   );

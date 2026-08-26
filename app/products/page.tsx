@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { companyStats } from "../../data/company-stats";
+import type { ReactNode } from "react";
+import CompanyStatsCounter from "../../components/CompanyStatsCounter";
 import Link from "next/link";
 import ParticleField from "../../components/ParticleField";
 import ProductQuoteForm from "../../components/ProductQuoteForm";
 import Reveal from "../../components/Reveal";
 import { authorisedPartnerships, productCategories } from "../../data/products";
+import { productBrandLogoByName, productBrandLogos } from "../../data/product-brand-logos";
 
 export const metadata: Metadata = {
   title: "Authorised IT Products In Abu Dhabi",
@@ -16,18 +18,6 @@ export const metadata: Metadata = {
     url: "/products",
   },
 };
-
-const logoPartners = [
-  ["Fortinet", "/partners/fortinet.svg"],
-  ["Microsoft", "/partners/microsoft.svg"],
-  ["Hikvision", "/partners/hikvision.svg"],
-  ["Aruba", "/partners/aruba.svg"],
-  ["ESET", "/partners/eset.svg"],
-  ["Acronis", "/partners/acronis.svg"],
-  ["Tally Prime", "/partners/tally-prime.svg"],
-] as const;
-
-const partnerLogoByName = Object.fromEntries(logoPartners.map(([name, src]) => [name, src])) as Record<string, string>;
 
 const whyXofoz = [
   ["Genuine products, authorised supply chain only", "Products are sourced from authorised UAE distributors with manufacturer warranty, official firmware, and full manufacturer support eligibility."],
@@ -68,12 +58,28 @@ const productCollections = [
 ] as const;
 
 function ProductIcon({ name }: { name: string }) {
-  const symbols: Record<string, string> = {
-    shield: "⌾", laptop: "▱", mail: "✉", phone: "⌕", video: "◉", network: "⌘",
-    wifi: "◒", display: "▣", pbx: "⌁", server: "▥", intercom: "◫", camera: "◉",
-    audio: "◖", clock: "◷", bolt: "ϟ", fingerprint: "◎", signage: "▤", calculator: "▦", ruler: "⌞",
+  const icons: Record<string, ReactNode> = {
+    shield: <><path d="M12 3 5 6v5c0 4.6 2.8 8 7 10 4.2-2 7-5.4 7-10V6z"/><path d="m9 12 2 2 4-4"/></>,
+    laptop: <><rect x="5" y="4" width="14" height="11" rx="1.5"/><path d="M3 19h18M8 19l1-4h6l1 4"/></>,
+    mail: <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6M8 11l-4 5M16 11l4 5"/></>,
+    phone: <><path d="M7 4h10v16H7zM10 17h4"/><path d="M9 7h6"/></>,
+    video: <><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></>,
+    network: <><rect x="8" y="3" width="8" height="5" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/><rect x="14" y="16" width="7" height="5" rx="1"/><path d="M12 8v4M6.5 16v-4h11v4"/></>,
+    wifi: <><path d="M3 9a14 14 0 0 1 18 0M6 12.5a9.5 9.5 0 0 1 12 0M9.5 16a4 4 0 0 1 5 0"/><circle cx="12" cy="19" r="1"/></>,
+    display: <><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 8h4M7 11h7"/></>,
+    pbx: <><path d="M7 4h10v16H7zM10 7h4M10 10h.01M14 10h.01M10 13h.01M14 13h.01M10 17h4"/></>,
+    server: <><rect x="4" y="3" width="16" height="7" rx="1.5"/><rect x="4" y="14" width="16" height="7" rx="1.5"/><path d="M8 6.5h.01M8 17.5h.01M12 6.5h5M12 17.5h5"/></>,
+    intercom: <><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="8" r="2"/><path d="M9 13h6M9 16h6M12 19h.01"/></>,
+    camera: <><path d="M4 8h11l3 3v5H4zM15 10l4-3M8 16v3M5 21h6"/><circle cx="9" cy="12" r="2.5"/></>,
+    audio: <><path d="M5 10v4M9 7v10M13 4v16M17 8v8M21 10v4"/></>,
+    clock: <><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></>,
+    bolt: <path d="m13 2-8 12h7l-1 8 8-12h-7z"/>,
+    fingerprint: <><path d="M8 9a4 4 0 0 1 8 0c0 5-1 8-3 11M5 12V9a7 7 0 0 1 14 0v3M8 13v-3a4 4 0 0 1 8 0v3c0 2-.3 4-1 6M11 10v4c0 2-.4 4-1.2 5.5"/></>,
+    signage: <><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="m7 12 3-3 3 3 2-2 3 3M9 21h6M12 17v4"/></>,
+    calculator: <><rect x="5" y="3" width="14" height="18" rx="2"/><rect x="8" y="6" width="8" height="3"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01"/></>,
+    ruler: <><path d="m4 17 13-13 3 3L7 20H4z"/><path d="m13 8 3 3M10 11l2 2M7 14l3 3"/></>,
   };
-  return <span aria-hidden="true">{symbols[name] || "◇"}</span>;
+  return <span aria-hidden="true"><svg viewBox="0 0 24 24">{icons[name] ?? icons.display}</svg></span>;
 }
 
 export default function ProductsPage() {
@@ -119,7 +125,6 @@ export default function ProductsPage() {
               </div>
               <div className="products-hero__actions">
                 <a className="button button--primary" href="#product-quote">Get a product quote <span aria-hidden="true">↘</span></a>
-                <a className="button button--ghost" href="https://wa.me/971523554202">WhatsApp us</a>
               </div>
             </Reveal>
             <Reveal className="products-hero__visual" delay={0.08}>
@@ -130,9 +135,9 @@ export default function ProductsPage() {
           </div>
           <div className="products-logo-marquee" aria-label="Selected XOFOZ technology partners">
             <div className="products-logo-track">
-              {[...logoPartners, ...logoPartners].map(([name, src], index) => (
-                <div aria-hidden={index >= logoPartners.length} key={`${name}-${index}`}>
-                  <img src={src} alt={index < logoPartners.length ? `${name} logo` : ""} />
+              {[...productBrandLogos, ...productBrandLogos].map(([name, src], index) => (
+                <div aria-hidden={index >= productBrandLogos.length} className={name === "Sangfor" ? "is-dark" : undefined} key={`${name}-${index}`}>
+                  <img src={src} alt={index < productBrandLogos.length ? `${name} logo` : ""} />
                 </div>
               ))}
             </div>
@@ -141,9 +146,7 @@ export default function ProductsPage() {
       </section>
 
       <section className="products-metrics" aria-label="XOFOZ product supply statistics">
-        <div className="page-band">
-          {companyStats.map((stat) => <div key={stat.label}><strong>{stat.value.toLocaleString("en-US")}{stat.suffix}</strong><span>{stat.label}</span></div>)}
-        </div>
+        <CompanyStatsCounter className="page-band" />
       </section>
 
       <section className="section page-band products-intro">
@@ -191,9 +194,6 @@ export default function ProductsPage() {
                           </div>
                           <h3>{product.title}</h3>
                           <p>{product.subtitle}</p>
-                          <div className="product-brand-list">
-                            {product.brands.map((brand) => <span className={product.authorised.includes(brand) ? "is-authorised" : ""} key={brand}>{brand}{product.authorised.includes(brand) && <i aria-label="authorised or certified">✓</i>}</span>)}
-                          </div>
                           <Link href={product.href}>View {product.linkLabel} <span aria-hidden="true">↗</span></Link>
                         </Reveal>
                       );
@@ -203,7 +203,6 @@ export default function ProductsPage() {
               );
             })}
           </div>
-          <p className="products-status-note"><span>✓</span> Marked brands indicate an authorised dealer or certified reseller relationship. Other brands are supplied through official UAE distribution channels. Contact XOFOZ to confirm current status for a specific brand.</p>
         </div>
       </section>
 
@@ -230,9 +229,9 @@ export default function ProductsPage() {
               <p>Manufacturer and distributor credentials that support genuine procurement, implementation, and after-sales service.</p>
             </div>
             <div className="products-partner-wall__logos">
-              {authorisedPartnerships.filter(([name]) => partnerLogoByName[name]).map(([name, status]) => (
+              {authorisedPartnerships.filter(([name]) => productBrandLogoByName[name]).map(([name, status]) => (
                 <div key={name}>
-                  <img src={partnerLogoByName[name]} alt={`${name} logo`} />
+                  <img src={productBrandLogoByName[name]} alt={`${name} logo`} />
                   <span>{status}</span>
                 </div>
               ))}

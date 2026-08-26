@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ParticleField from "../components/ParticleField";
 import Reveal from "../components/Reveal";
 import KarmaScrollScene from "../components/KarmaScrollScene";
@@ -9,6 +10,7 @@ import SolutionsScrollSection from "../components/SolutionsScrollSection";
 import IndustryAccordion from "../components/IndustryAccordion";
 import BusinessHighlights from "../components/BusinessHighlights";
 import ConsultationSection from "../components/ConsultationSection";
+import { productBrandLogos } from "../data/product-brand-logos";
 
 export const metadata: Metadata = {
   title: { absolute: "XOFOZ | IT Solutions Provider in Abu Dhabi, UAE" },
@@ -83,16 +85,11 @@ const reasons = [
   ["Authorised Tally Prime dealer in Abu Dhabi", "Genuine licensing, implementation, UAE VAT configuration, staff training, and ongoing accounting-software support."],
 ];
 
-const partners = [
-  { name: "TallyPrime", logo: "/partners/tally-prime.svg" },
-  { name: "Microsoft", logo: "/partners/microsoft.svg" },
-  { name: "Fortinet", logo: "/partners/fortinet.svg" },
-  { name: "Hikvision", logo: "/partners/hikvision.svg" },
-  { name: "ESET", logo: "/partners/eset.svg" },
-  { name: "Aruba", logo: "/partners/aruba.svg" },
-  { name: "Sophos", logo: "/partners/sophos.svg" },
-  { name: "Acronis", logo: "/partners/acronis.svg" },
-];
+const partners = productBrandLogos.map(([name, logo]) => ({
+  name,
+  logo,
+  ...(name === "Tally Prime" ? { href: "/services/tally-prime-abu-dhabi" } : {}),
+}));
 
 const processSteps = [
   {
@@ -147,7 +144,20 @@ export default function HomePage() {
 
       <KarmaScrollScene />
 
-      <BusinessHighlights />
+      <section className="home-highlights-section">
+        <BusinessHighlights />
+        <div className="home-logo-scroller page-band" aria-label="Technology partners and platforms we support">
+          <div className="products-logo-marquee">
+            <div className="products-logo-track">
+              {[...productBrandLogos, ...productBrandLogos].map(([name, src], index) => (
+                <div aria-hidden={index >= productBrandLogos.length} className={name === "Sangfor" ? "is-dark" : undefined} key={`home-${name}-${index}`}>
+                  <img src={src} alt={index < productBrandLogos.length ? `${name} logo` : ""} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section pillars-section page-band" id="products">
         <Reveal className="section-heading">
@@ -242,9 +252,15 @@ export default function HomePage() {
               <h3>Partners and platforms we support</h3>
               <div className="partner-grid">
                 {partners.map((partner) => (
-                  <div key={partner.name} title={partner.name}>
-                    <img src={partner.logo} alt={`${partner.name} logo`} />
-                  </div>
+                  "href" in partner ? (
+                    <Link href={partner.href!} key={partner.name} title={`View ${partner.name}`}>
+                      <div className={partner.name === "Sangfor" ? "is-dark" : undefined}><img src={partner.logo} alt={`${partner.name} logo`} /></div>
+                    </Link>
+                  ) : (
+                    <div className={partner.name === "Sangfor" ? "is-dark" : undefined} key={partner.name} title={partner.name}>
+                      <img src={partner.logo} alt={`${partner.name} logo`} />
+                    </div>
+                  )
                 ))}
               </div>
             </Reveal>

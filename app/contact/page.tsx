@@ -38,7 +38,7 @@ export default function ContactPage() {
               <h1>Start with your IT requirement.</h1>
               <p>Whether it is an urgent issue, an AMC quotation, a product, or a complete office project, tell us what is happening and our local team will help identify the right next step.</p>
               <div className="contact-response"><span><b>✓</b> Abu Dhabi-based team</span><span><b>✓</b> Remote and on-site support</span><span><b>✓</b> No-obligation consultation</span></div>
-              <div className="hero__actions"><a className="button button--primary" href="#consultation">Send your requirement</a><a className="button button--ghost" href="https://wa.me/971523554202">WhatsApp now</a></div>
+              <div className="hero__actions"><a className="button button--primary" href="#consultation">Send your requirement</a></div>
             </Reveal>
             <Reveal className="contact-channel-panel" delay={.08}>
               <div className="contact-channel-panel__heading"><span>Direct contact</span><strong>Choose the fastest channel for you.</strong></div>

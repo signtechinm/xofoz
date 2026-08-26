@@ -6,18 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { serviceCategories } from "../data/service-categories";
 import { solutionNavItems } from "../data/solutions";
 import { industryNavItems } from "../data/industries";
+import { productBrandLogos } from "../data/product-brand-logos";
 import BrandLogo from "./BrandLogo";
-
-const productMenuBrands = [
-  ["Microsoft", "/partners/microsoft.svg"],
-  ["Fortinet", "/partners/fortinet.svg"],
-  ["Sophos", "/partners/sophos.svg"],
-  ["ESET", "/partners/eset.svg"],
-  ["Acronis", "/partners/acronis.svg"],
-  ["Aruba", "/partners/aruba.svg"],
-  ["Hikvision", "/partners/hikvision.svg"],
-  ["Tally Prime", "/partners/tally-prime.svg"],
-] as const;
 
 type ServiceMenuLink = { label: string; href?: string };
 
@@ -339,9 +329,9 @@ export default function Header() {
                   Explore genuine IT products from authorised brands, supplied and supported by our Abu Dhabi team.
                 </p>
                 <div className="header-product-logos" aria-label="Product brands">
-                  {productMenuBrands.map(([name, logo]) => (
-                    <span key={name}>
-                      <Image src={logo} alt={name} width={120} height={42} />
+                  {productBrandLogos.map(([name, logo]) => (
+                    <span className={name === "Sangfor" ? "is-dark" : undefined} key={name}>
+                      <Image src={logo} alt={name} width={120} height={42} unoptimized />
                     </span>
                   ))}
                 </div>
