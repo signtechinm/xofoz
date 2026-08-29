@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ServiceCategoryContent } from "../data/service-category-content";
 import { newServiceIndustryCards, resolveIndustryHref } from "../data/industries";
+import { technologyPartnerNames } from "../data/product-brand-logos";
 import CompanyStatsCounter from "./CompanyStatsCounter";
 import ParticleField from "./ParticleField";
 import Reveal from "./Reveal";
@@ -108,12 +109,6 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
                 <span className="solution-card__number">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{card.name}</h3>
                 <p>{card.description}</p>
-                {(card.authorisedBrands.length > 0 || card.regularBrands.length > 0) && (
-                  <div className="service-category-card__brands" aria-label={`Brands for ${card.name}`}>
-                    {card.authorisedBrands.map((brand) => <ProductBrandMark brand={brand} className="is-authorised" key={`authorised-${brand}`} />)}
-                    {card.regularBrands.map((brand) => <ProductBrandMark brand={brand} key={`regular-${brand}`} />)}
-                  </div>
-                )}
                 <ServiceCategoryEnquiryButton category={category.label} subService={card.name} />
               </Reveal>
             ))}
@@ -127,7 +122,7 @@ export default function ServiceCategoryPage({ content }: { content: ServiceCateg
           <div className="service-why-list">
             {reasons.map((reason, index) => <Reveal className="service-why-item" delay={index * 0.035} key={reason.title}><span aria-hidden="true">✓</span><div><h3>{reason.title}</h3><p>{reason.description}</p></div></Reveal>)}
           </div>
-          {content.brands.length > 0 && <Reveal className="service-certifications" delay={0.08}><span className="eyebrow">Technology ecosystem</span><h3>Certifications and partnerships</h3><div>{content.brands.map((brand) => <ProductBrandMark brand={brand} key={brand} />)}</div></Reveal>}
+          <Reveal className="service-certifications" delay={0.08}><span className="eyebrow">Technology ecosystem</span><h3>Certifications and partnerships</h3><div>{technologyPartnerNames.map((brand) => <ProductBrandMark brand={brand} key={brand} />)}</div></Reveal>
         </div>
       </section>
 

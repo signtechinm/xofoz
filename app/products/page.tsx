@@ -136,7 +136,7 @@ export default function ProductsPage() {
           <div className="products-logo-marquee" aria-label="Selected XOFOZ technology partners">
             <div className="products-logo-track">
               {[...productBrandLogos, ...productBrandLogos].map(([name, src], index) => (
-                <div aria-hidden={index >= productBrandLogos.length} className={name === "Sangfor" ? "is-dark" : undefined} key={`${name}-${index}`}>
+                <div aria-hidden={index >= productBrandLogos.length} key={`${name}-${index}`}>
                   <img src={src} alt={index < productBrandLogos.length ? `${name} logo` : ""} />
                 </div>
               ))}
@@ -194,6 +194,11 @@ export default function ProductsPage() {
                           </div>
                           <h3>{product.title}</h3>
                           <p>{product.subtitle}</p>
+                          <div className="product-brand-list">
+                            {product.brands.map((brand) => (
+                              <span key={brand}>{brand}</span>
+                            ))}
+                          </div>
                           <Link href={product.href}>View {product.linkLabel} <span aria-hidden="true">↗</span></Link>
                         </Reveal>
                       );

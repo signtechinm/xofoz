@@ -13,7 +13,7 @@ The supplied PDFs are content references. They do not constitute evidence or pub
 | Specific project outcomes | Complete migrations, site coverage, installed systems, operational results | Evidence not supplied | Do not publish as fact; replace with capability/process statements. |
 | Client-count statistics | 5+, 10+, and sector-specific counts | Evidence not supplied | Omit from public pages until verified. |
 | `150+ businesses served` | Used throughout supplied content | Pending business approval | Avoid on new industry pages until verified. |
-| `3+ years in Abu Dhabi` | Consistent with “since 2022” | Date is internally consistent but still requires owner approval | Use “since 2022” only, matching the current site. |
+| `10+ years in Abu Dhabi` | Consistent with “since 2015” | Date is internally consistent but still requires owner approval | Use “since 2015” only, matching the current site. |
 | 24/7 support | Hospitality and other sections | Service terms not supplied | Use “support arrangements aligned to operations”; do not promise 24/7. |
 | Fast response / response times | Multiple sectors | SLA not supplied | Use local on-site availability without a time guarantee. |
 | ADMCC certification/compliance | Engineers and CCTV installations | Certificate evidence not supplied | Mark as “verification required”; omit from new public proof badges initially. |

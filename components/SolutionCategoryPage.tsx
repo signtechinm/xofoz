@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { SolutionContent } from "../data/solution-content";
+import { technologyPartnerNames } from "../data/product-brand-logos";
 import CompanyStatsCounter from "./CompanyStatsCounter";
 import ParticleField from "./ParticleField";
 import Reveal from "./Reveal";
@@ -13,7 +14,7 @@ const industryHrefs: Record<string, string> = {
 };
 
 export default function SolutionCategoryPage({ content }: { content: SolutionContent }) {
-  const { solution, hero, overview, cards, reasons, brands, industries, faqs, cta } = content;
+  const { solution, hero, overview, cards, reasons, industries, faqs, cta } = content;
   const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: hero.title, description: content.metaDescription, url: `https://xofoz.com/solutions/${solution.slug}`, areaServed: { "@type": "City", name: "Abu Dhabi" }, provider: { "@type": "Organization", name: "XOFOZ Information Technology LLC", url: "https://xofoz.com" } };
   const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://xofoz.com" },
@@ -37,7 +38,7 @@ export default function SolutionCategoryPage({ content }: { content: SolutionCon
 
       <section className="service-section service-section--soft service-section--signal"><div className="page-band"><Reveal className="service-section__heading"><span className="eyebrow">Complete coverage</span><h2>{content.cardsTitle}</h2><p>{content.cardsIntro}</p></Reveal><div className={`solution-card-grid ${cards.length === 1 ? "solution-card-grid--feature" : ""}`}>{cards.map((card, index) => <Reveal className="solution-card" delay={(index % 4) * 0.035} key={card.name}><span className="solution-card__number">{String(index + 1).padStart(2, "0")}</span><h3>{card.name}</h3><p>{card.description}</p><SolutionEnquiryButton solution={card.name} /></Reveal>)}</div></div></section>
 
-      <section className="service-section service-section--orbit page-band"><Reveal className="service-section__heading"><span className="eyebrow">Why XOFOZ</span><h2>{content.whyTitle}</h2></Reveal><div className="service-why-layout"><div className="service-why-list">{reasons.map((reason, index) => <Reveal className="service-why-item" delay={index * 0.035} key={reason.title}><span aria-hidden="true">✓</span><div><h3>{reason.title}</h3><p>{reason.description}</p></div></Reveal>)}</div><Reveal className="service-certifications" delay={0.08}><span className="eyebrow">Technology ecosystem</span><h3>Certifications and partnerships</h3><div>{brands.map((brand) => <ProductBrandMark brand={brand} key={brand} />)}</div></Reveal></div></section>
+      <section className="service-section service-section--orbit page-band"><Reveal className="service-section__heading"><span className="eyebrow">Why XOFOZ</span><h2>{content.whyTitle}</h2></Reveal><div className="service-why-layout"><div className="service-why-list">{reasons.map((reason, index) => <Reveal className="service-why-item" delay={index * 0.035} key={reason.title}><span aria-hidden="true">✓</span><div><h3>{reason.title}</h3><p>{reason.description}</p></div></Reveal>)}</div><Reveal className="service-certifications" delay={0.08}><span className="eyebrow">Technology ecosystem</span><h3>Certifications and partnerships</h3><div>{technologyPartnerNames.map((brand) => <ProductBrandMark brand={brand} key={brand} />)}</div></Reveal></div></section>
 
       <section className="service-section service-section--soft service-section--topography"><div className="page-band"><Reveal className="service-section__heading"><span className="eyebrow">Industry experience</span><h2>{content.industriesTitle}</h2><p>{content.industriesIntro}</p></Reveal><div className="service-industry-grid">{industries.map((industry, index) => { const key = Object.keys(industryHrefs).find((name) => industry.title.toLowerCase().includes(name)); return <Reveal className="service-industry-card" delay={index * 0.04} key={industry.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{industry.title}</h3><p>{industry.description}</p><Link href={key ? industryHrefs[key] : "/#industries"}>{industry.linkLabel} <b aria-hidden="true">→</b></Link></Reveal>; })}</div></div></section>
 

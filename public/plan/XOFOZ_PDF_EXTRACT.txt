@@ -5,7 +5,7 @@ Meta title:​
 XOFOZ | IT Solutions Provider in Abu Dhabi, UAE
 
 Meta description:​
- XOFOZ — Abu Dhabi's trusted IT solutions provider since 2022. Managed IT services,
+ XOFOZ — Abu Dhabi's trusted IT solutions provider since 2015. Managed IT services,
 authorised products, and complete IT solutions for UAE businesses. Get a free consultation
 today.
 
@@ -41,7 +41,7 @@ WhatsApp icon — sticky — always visible
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT solutions provider in Abu Dhabi, UAE — since 2022
+IT solutions provider in Abu Dhabi, UAE — since 2015
 
 H1:​
 Your trusted IT solutions provider in Abu Dhabi
@@ -49,7 +49,7 @@ Your trusted IT solutions provider in Abu Dhabi
  XOFOZ Information Technology provides managed IT services, authorised software products,
 and complete end-to-end IT solutions for businesses in Abu Dhabi, UAE. From IT AMC and
 cybersecurity to Tally Prime software and full office IT setup — we have been powering UAE
-businesses since 2022 with certified engineers, genuine products, and accountable local
+businesses since 2015 with certified engineers, genuine products, and accountable local
 support.
 
 CTA 1: Explore our solutions​
@@ -126,7 +126,7 @@ IT services built for Abu Dhabi businesses
 
 Intro line:​
  Comprehensive managed IT services designed to keep your business secure, connected, and
-operating at full capacity — backed by 3+ years of experience across 150+ UAE clients.
+operating at full capacity — backed by 10+ years of experience across 150+ UAE clients.
 
 
 
@@ -448,7 +448,7 @@ SECTION 10 — FOOTER
 
 Brand block:​
 Company name: XOFOZ Information Technology LLC​
- Description: Abu Dhabi's trusted IT solutions provider since 2022 — delivering managed IT
+ Description: Abu Dhabi's trusted IT solutions provider since 2015 — delivering managed IT
 services, authorised software products, and complete IT solutions to 150+ businesses across
 the UAE.
 
@@ -564,7 +564,7 @@ Home › Services › IT AMC Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-IT AMC services in Abu Dhabi, UAE — since 2022
+IT AMC services in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 IT AMC services in Abu Dhabi
@@ -584,7 +584,7 @@ HERO — TRUST STAT 1​
 150+ active AMC clients
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 24/7 support available
@@ -1043,7 +1043,7 @@ FOOTER — BRAND NAME​
 XOFOZ Information Technology LLC
 
 FOOTER — BRAND DESCRIPTION​
-Abu Dhabi's trusted IT solutions company since 2022 — delivering managed IT services,
+Abu Dhabi's trusted IT solutions company since 2015 — delivering managed IT services,
 authorised software products, and complete IT solutions to 150+ businesses across the UAE.
 ON-CALL IT SUPPORT ABU DHABI
 PAGE — ON-CALL IT SUPPORT ABU DHABI
@@ -1078,7 +1078,7 @@ Home › Services › IT support Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-On-call IT support in Abu Dhabi, UAE — since 2022
+On-call IT support in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 IT support services in Abu Dhabi
@@ -1098,7 +1098,7 @@ HERO — TRUST STAT 1​
 150+ clients supported
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Remote and on-site
@@ -1585,7 +1585,7 @@ Home › Services › Office IT setup Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Complete office IT setup in Abu Dhabi, UAE — since 2022
+Complete office IT setup in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Office IT setup in Abu Dhabi
@@ -1605,7 +1605,7 @@ HERO — TRUST STAT 1​
 150+ clients set up
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 End-to-end delivery
@@ -1813,7 +1813,7 @@ Abu Dhabi experience across multiple sectors
 
 SECTION 5 — DIFFERENTIATOR 4 — CONTENT​
 XOFOZ has set up offices for businesses in hospitality, real estate, construction, logistics, and
-manufacturing across Abu Dhabi since 2022. We understand the regulatory, environmental, and
+manufacturing across Abu Dhabi since 2015. We understand the regulatory, environmental, and
 operational requirements of each sector and build those into your setup from the start.
 
 SECTION 5 — DIFFERENTIATOR 5 — H3​
@@ -2119,7 +2119,7 @@ Home › Services › Network infrastructure Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Network infrastructure setup in Abu Dhabi, UAE — since 2022
+Network infrastructure setup in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Network infrastructure setup in Abu Dhabi
@@ -2139,7 +2139,7 @@ HERO — TRUST STAT 1​
 150+ networks installed
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Unifi and Aruba certified
@@ -2345,7 +2345,7 @@ Abu Dhabi experience across multiple sectors
 
 SECTION 5 — DIFFERENTIATOR 4 — CONTENT​
  XOFOZ has designed and installed networks for businesses in hospitality, real estate,
-construction, logistics, and manufacturing across Abu Dhabi since 2022. We understand the
+construction, logistics, and manufacturing across Abu Dhabi since 2015. We understand the
 specific cabling standards, wireless requirements, and security configurations each sector
 demands.
 
@@ -2659,7 +2659,7 @@ Home › Services › Structured cabling Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Structured cabling services in Abu Dhabi, UAE — since 2022
+Structured cabling services in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Structured cabling services in Abu Dhabi
@@ -2679,7 +2679,7 @@ HERO — TRUST STAT 1​
 150+ installations
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Cat6 and fibre certified
@@ -3206,7 +3206,7 @@ Home › Services › Cybersecurity solutions Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Cybersecurity solutions in Abu Dhabi, UAE — since 2022
+Cybersecurity solutions in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Cybersecurity solutions in Abu Dhabi
@@ -3226,7 +3226,7 @@ HERO — TRUST STAT 1​
 150+ businesses secured
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Fortigate and Sophos certified
@@ -3766,7 +3766,7 @@ Home › Services › Cloud solutions and Microsoft 365 Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Cloud solutions and Microsoft 365 in Abu Dhabi, UAE — since 2022
+Cloud solutions and Microsoft 365 in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Cloud solutions and Microsoft 365 in Abu Dhabi
@@ -3787,7 +3787,7 @@ HERO — TRUST STAT 1​
 150+ businesses migrated
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Microsoft certified partner
@@ -4049,7 +4049,7 @@ Home › Services › CCTV installation and access control Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-CCTV installation and access control in Abu Dhabi, UAE — since 2022
+CCTV installation and access control in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 CCTV installation and access control in Abu Dhabi
@@ -4070,7 +4070,7 @@ HERO — TRUST STAT 1​
 150+ systems installed
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 HikVision authorised dealer
@@ -4631,7 +4631,7 @@ Home › Services › Biometric systems Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Biometric systems in Abu Dhabi, UAE — since 2022
+Biometric systems in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Biometric systems in Abu Dhabi
@@ -4652,7 +4652,7 @@ HERO — TRUST STAT 1​
 150+ businesses equipped
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Fingerprint and facial recognition
@@ -5215,7 +5215,7 @@ Home › Services › IT hardware and AV solutions Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-IT hardware and AV solutions in Abu Dhabi, UAE — since 2022
+IT hardware and AV solutions in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 IT hardware and AV solutions in Abu Dhabi
@@ -5237,7 +5237,7 @@ HERO — TRUST STAT 1​
 150+ businesses equipped
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Multi-brand expertise
@@ -5798,7 +5798,7 @@ Home › Services › PABX telephone systems Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-PABX telephone systems in Abu Dhabi, UAE — since 2022
+PABX telephone systems in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 PABX telephone systems in Abu Dhabi
@@ -5819,7 +5819,7 @@ HERO — TRUST STAT 1​
 150+ businesses connected
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 IP PBX and VoIP certified
@@ -6381,7 +6381,7 @@ Home › Services › Video conferencing solutions Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Video conferencing solutions in Abu Dhabi, UAE — since 2022
+Video conferencing solutions in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Video conferencing solutions in Abu Dhabi
@@ -6403,7 +6403,7 @@ HERO — TRUST STAT 1​
 150+ businesses equipped
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Microsoft Teams certified
@@ -6975,7 +6975,7 @@ Home › Services › POS systems Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-POS system supply and installation in Abu Dhabi, UAE — since 2022
+POS system supply and installation in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 POS systems in Abu Dhabi
@@ -6996,7 +6996,7 @@ HERO — TRUST STAT 1​
 150+ businesses equipped
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Tally Prime integration
@@ -7561,7 +7561,7 @@ Home › Services › ERP solutions Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-ERP solutions in Abu Dhabi, UAE — since 2022
+ERP solutions in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 ERP solutions in Abu Dhabi
@@ -7583,7 +7583,7 @@ HERO — TRUST STAT 1​
 150+ businesses served
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Tally Prime authorised dealer
@@ -8161,7 +8161,7 @@ Home › Services › Tally Prime Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Authorised Tally Prime dealer in Abu Dhabi, UAE — since 2022
+Authorised Tally Prime dealer in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Tally Prime in Abu Dhabi — authorised dealer
@@ -8182,7 +8182,7 @@ HERO — TRUST STAT 1​
 Authorised dealer — UAE
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 UAE VAT compliant setup
@@ -8778,7 +8778,7 @@ Home › Services › Data backup and recovery Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Data backup and recovery solutions in Abu Dhabi, UAE — since 2022
+Data backup and recovery solutions in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Data backup and recovery solutions in Abu Dhabi
@@ -8801,7 +8801,7 @@ HERO — TRUST STAT 1​
 150+ businesses protected
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Acronis certified partner
@@ -9391,7 +9391,7 @@ Home › Services › Server management Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Server management services in Abu Dhabi, UAE — since 2022
+Server management services in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Server management services in Abu Dhabi
@@ -9413,7 +9413,7 @@ HERO — TRUST STAT 1​
 150+ businesses served
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Windows and Linux certified
@@ -10009,7 +10009,7 @@ Home › Services › Website development Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Professional website development in Abu Dhabi, UAE — since 2022
+Professional website development in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Website development in Abu Dhabi
@@ -10030,7 +10030,7 @@ HERO — TRUST STAT 1​
 150+ businesses served
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 SEO and performance built in
@@ -10613,7 +10613,7 @@ Home › Services › Remote IT support Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-Remote IT support in Abu Dhabi, UAE — since 2022
+Remote IT support in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 Remote IT support in Abu Dhabi
@@ -10634,7 +10634,7 @@ HERO — TRUST STAT 1​
 150+ businesses supported
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Secure remote access
@@ -11207,7 +11207,7 @@ Home › Services › VPN and network security Abu Dhabi
 
 
 HERO — EYEBROW TEXT​
-VPN and network security solutions in Abu Dhabi, UAE — since 2022
+VPN and network security solutions in Abu Dhabi, UAE — since 2015
 
 HERO — H1​
 VPN and network security solutions in Abu Dhabi
@@ -11228,7 +11228,7 @@ HERO — TRUST STAT 1​
 150+ businesses secured
 
 HERO — TRUST STAT 2​
-3+ years experience
+10+ years experience
 
 HERO — TRUST STAT 3​
 Fortinet and Sophos certified
@@ -11836,7 +11836,7 @@ Home › Solutions › Communication and Low Voltage
 SECTION 1 — HERO
 
 Eyebrow text:​
-Communication and low voltage solutions in Abu Dhabi, UAE — since 2022
+Communication and low voltage solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Communication and low voltage solutions in Abu Dhabi
@@ -12249,7 +12249,7 @@ Home › Solutions › Cybersecurity Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-Cybersecurity solutions in Abu Dhabi, UAE — since 2022
+Cybersecurity solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Cybersecurity solutions in Abu Dhabi
@@ -12633,7 +12633,7 @@ Home › Solutions › Data Backup and Protection
 SECTION 1 — HERO
 
 Eyebrow text:​
-Data backup and protection solutions in Abu Dhabi, UAE — since 2022
+Data backup and protection solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Data backup and protection solutions in Abu Dhabi
@@ -13003,7 +13003,7 @@ Home › Solutions › Network Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-Network solutions in Abu Dhabi, UAE — since 2022
+Network solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Network solutions in Abu Dhabi
@@ -13377,7 +13377,7 @@ Home › Solutions › Server and Storage Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-Server and storage solutions in Abu Dhabi, UAE — since 2022
+Server and storage solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Server and storage solutions in Abu Dhabi
@@ -13736,7 +13736,7 @@ Home › Solutions › IT Services Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT services solutions in Abu Dhabi, UAE — since 2022
+IT services solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 IT services solutions in Abu Dhabi
@@ -14130,7 +14130,7 @@ Home › Solutions › Cloud Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-Cloud solutions in Abu Dhabi, UAE — since 2022
+Cloud solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Cloud solutions in Abu Dhabi
@@ -14488,7 +14488,7 @@ Home › Solutions › Software Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-Software solutions in Abu Dhabi, UAE — since 2022
+Software solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Software solutions in Abu Dhabi
@@ -14866,7 +14866,7 @@ Home › Solutions › Microsoft Cloud Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-Microsoft Cloud solutions in Abu Dhabi, UAE — since 2022
+Microsoft Cloud solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Microsoft Cloud solutions in Abu Dhabi
@@ -15289,7 +15289,7 @@ Home › Solutions › AI Solutions
 SECTION 1 — HERO
 
 Eyebrow text:​
-AI solutions in Abu Dhabi, UAE — since 2022
+AI solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 AI solutions in Abu Dhabi
@@ -15648,7 +15648,7 @@ Home › Industries › IT Solutions for Hospitality Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT solutions for hospitality businesses in Abu Dhabi, UAE — since 2022
+IT solutions for hospitality businesses in Abu Dhabi, UAE — since 2015
 
 H1:​
 IT solutions for hospitality in Abu Dhabi
@@ -16100,7 +16100,7 @@ Home › Industries › IT Solutions for Real Estate Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT solutions for real estate businesses in Abu Dhabi, UAE — since 2022
+IT solutions for real estate businesses in Abu Dhabi, UAE — since 2015
 
 H1:​
 IT solutions for real estate in Abu Dhabi
@@ -16535,7 +16535,7 @@ Home › Industries › IT Solutions for Construction Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT solutions for construction businesses in Abu Dhabi, UAE — since 2022
+IT solutions for construction businesses in Abu Dhabi, UAE — since 2015
 
 H1:​
 IT solutions for construction in Abu Dhabi
@@ -16985,7 +16985,7 @@ BREADCRUMB
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT solutions for logistics and supply chain businesses in Abu Dhabi, UAE — since 2022
+IT solutions for logistics and supply chain businesses in Abu Dhabi, UAE — since 2015
 
 H1:​
 IT solutions for logistics in Abu Dhabi
@@ -17432,7 +17432,7 @@ Home › Industries › IT Solutions for Manufacturing Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT solutions for manufacturing businesses in Abu Dhabi, UAE — since 2022
+IT solutions for manufacturing businesses in Abu Dhabi, UAE — since 2015
 H1:​
 IT solutions for manufacturing in Abu Dhabi
 
@@ -17897,7 +17897,7 @@ Home › Products — authorised products and brands
 SECTION 1 — HERO
 
 Eyebrow text:​
-Authorised IT product supplier in Abu Dhabi, UAE — since 2022
+Authorised IT product supplier in Abu Dhabi, UAE — since 2015
 
 H1:​
 Authorised IT products in Abu Dhabi
@@ -18269,7 +18269,7 @@ About XOFOZ Information Technology Abu Dhabi | XOFOZ
 
 Meta description:​
 XOFOZ Information Technology LLC is an authorised IT solutions company in Abu Dhabi, UAE.
-Established in 2022 — serving 150+ businesses including Marriott, Sobha, Agility, and National
+Established in 2015 — serving 150+ businesses including Marriott, Sobha, Agility, and National
 Holdings.
 
 URL slug:​
@@ -18299,7 +18299,7 @@ Eyebrow text:​
 About XOFOZ Information Technology LLC — Abu Dhabi, UAE
 
 H1:​
-Abu Dhabi's trusted IT solutions partner since 2022
+Abu Dhabi's trusted IT solutions partner since 2015
 
 Subheadline:​
  XOFOZ Information Technology LLC is an Abu Dhabi-based IT solutions company providing
@@ -18332,9 +18332,9 @@ H2:​
 Our story
 
 Paragraph 1:​
- XOFOZ Information Technology was established in Abu Dhabi in 2022 with a specific purpose
+ XOFOZ Information Technology was established in Abu Dhabi in 2015 with a specific purpose
 — to give businesses in the UAE an IT partner who genuinely takes ownership of their
-technology environment. The Abu Dhabi IT services market in 2022 was fragmented and
+technology environment. The Abu Dhabi IT services market in 2015 was fragmented and
 unreliable in ways that directly cost businesses money and productivity — generic IT companies
 with no sector expertise, grey market products sold without warranty or support, and a culture of
 passing responsibility between vendors whenever a problem crossed system boundaries.
@@ -18350,7 +18350,7 @@ genuine founding narrative written in the founders' voice is significantly more 
 than a polished marketing version.
 
 Paragraph 2:​
- Since 2022 XOFOZ has grown into one of Abu Dhabi's trusted IT solutions companies —
+ Since 2015 XOFOZ has grown into one of Abu Dhabi's trusted IT solutions companies —
 serving 150+ active clients and 27+ enterprise businesses across the UAE's hospitality,
 construction, logistics, real estate, and manufacturing sectors. We have delivered complete IT
 infrastructure for Marriott, Sobha, Agility, National Holdings, Altrad, China Harbour, Exeed,
@@ -18379,7 +18379,7 @@ project briefing.
 
 
 
-Year: 2022​
+Year: 2015​
  Milestone title: XOFOZ Information Technology LLC established in Abu Dhabi​
  Milestone description: XOFOZ Information Technology LLC SPC is registered and begins
 operations from Mussafah, Abu Dhabi — offering IT AMC, network infrastructure, CCTV, and IT
@@ -18390,7 +18390,7 @@ before publishing.
 
 
 
-Year: 2022​
+Year: 2015​
 Milestone title: First enterprise IT AMC contract delivered — [CONFIRM sector]​
 Milestone description: [CONFIRM WITH XOFOZ — their first major client or contract. Sector,
 approximate size, what was delivered. Include named client if permission given. This milestone
@@ -18398,7 +18398,7 @@ humanises the company story and shows they started delivering results from year 
 
 
 
-Year: 2022​
+Year: 2015​
 Milestone title: HikVision authorised dealer status — Abu Dhabi​
 Milestone description: XOFOZ secures authorised HikVision dealer status in Abu Dhabi —
 enabling supply of genuine HikVision cameras, NVRs, and access control hardware with full
@@ -18669,7 +18669,7 @@ Company information
 
 Company details table:
 Company name: XOFOZ Information Technology LLC SPC​
-Established: 2022 — Abu Dhabi, UAE​
+Established: 2015 — Abu Dhabi, UAE​
 Address: 4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE​
 Phone: 026 220 071​
 WhatsApp: +971 52 355 4202​
@@ -18751,7 +18751,7 @@ Schema — this page carries the most important schema on the entire website:
 Organization schema — apply to the entire page with all fields:​
 name: XOFOZ Information Technology LLC SPC​
 legalName: XOFOZ Information Technology LLC SPC​
-foundingDate: 2022​
+foundingDate: 2015​
 foundingLocation: Abu Dhabi, UAE​
 address: 4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE​
 telephone: +97126220071​
@@ -18847,7 +18847,7 @@ Home › Services › IT Services Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-IT services in Abu Dhabi, UAE — since 2022
+IT services in Abu Dhabi, UAE — since 2015
 
 H1:​
 IT services in Abu Dhabi
@@ -19382,7 +19382,7 @@ Home › Services › Cyber Security Services Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Cyber security services in Abu Dhabi, UAE — since 2022
+Cyber security services in Abu Dhabi, UAE — since 2015
 
 H1:​
 Cyber security services in Abu Dhabi
@@ -19933,7 +19933,7 @@ Home › Services › Data Backup and Protection Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Data backup and protection services in Abu Dhabi, UAE — since 2022
+Data backup and protection services in Abu Dhabi, UAE — since 2015
 
 H1:​
 Data backup and protection services in Abu Dhabi
@@ -20452,7 +20452,7 @@ Home › Services › Server and Storage Services Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Server and storage services in Abu Dhabi, UAE — since 2022
+Server and storage services in Abu Dhabi, UAE — since 2015
 
 H1:​
 Server and storage services in Abu Dhabi
@@ -20955,7 +20955,7 @@ Home › Services › Network Solutions Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Network solutions in Abu Dhabi, UAE — since 2022
+Network solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Network solutions in Abu Dhabi
@@ -21506,7 +21506,7 @@ Home › Services › Communication and LV Systems Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Communication and LV systems in Abu Dhabi, UAE — since 2022
+Communication and LV systems in Abu Dhabi, UAE — since 2015
 
 H1:​
 Communication and LV systems in Abu Dhabi
@@ -22226,7 +22226,7 @@ Home › Services › Cloud Services Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Cloud services in Abu Dhabi, UAE — since 2022
+Cloud services in Abu Dhabi, UAE — since 2015
 
 H1:​
 Cloud services in Abu Dhabi
@@ -22746,7 +22746,7 @@ Home › Services › AI Solutions Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-AI solutions in Abu Dhabi, UAE — since 2022
+AI solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 AI solutions in Abu Dhabi
@@ -23223,7 +23223,7 @@ Home › Services › Software Solutions Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Software solutions in Abu Dhabi, UAE — since 2022
+Software solutions in Abu Dhabi, UAE — since 2015
 
 H1:​
 Software solutions in Abu Dhabi
@@ -23796,7 +23796,7 @@ Home › Services › Microsoft Cloud Services Abu Dhabi
 SECTION 1 — HERO
 
 Eyebrow text:​
-Microsoft Cloud services in Abu Dhabi, UAE — since 2022
+Microsoft Cloud services in Abu Dhabi, UAE — since 2015
 
 H1:​
 Microsoft Cloud services in Abu Dhabi

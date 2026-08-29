@@ -120,6 +120,7 @@ function clean(value = "") {
     .replaceAll("\\+", "+")
     .replaceAll("\\&", "&")
     .replaceAll("\\.", ".")
+    .replace(/\b2022\b/g, "2015")
     .replace(/\b150\+\s+(?:active\s+)?(?:AMC\s+)?(?:clients|businesses)(?:\s+(?:served|supported|protected|connected|equipped|migrated))?/gi, "2,000+ happy clients")
     .replace(/\s+/g, " ")
     .trim();

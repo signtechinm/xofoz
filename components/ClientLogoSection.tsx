@@ -1,17 +1,63 @@
 import type { CSSProperties } from "react";
 
 const clients = [
-  { name: "Marriott International", logo: "/clients/marriott.svg", inverse: true },
-  { name: "Sobha Realty", logo: "/clients/sobha.svg", inverse: true },
-  { name: "Agility", logo: "/clients/agility.svg" },
-  { name: "National Holding", logo: "/clients/national-holding.png", inverse: true },
-  { name: "Altrad", logo: "/clients/altrad.jpg" },
-  { name: "China Harbour Engineering Company", logo: "/clients/china-harbour.png" },
-  { name: "Exeed Industries", logo: "/clients/exeed.png" },
-  { name: "Cleanco", logo: "/clients/cleanco.png" },
-  { name: "Bloom Holding", logo: "/clients/bloom.jpg" },
-  { name: "Khadamat", logo: "/clients/khadamat.png" },
+  { name: "Stevin Rock", logo: "/clients/stevin-rock.jpg" },
+  { name: "Hayatna", logo: "/clients/hayatna.jpg" },
+  { name: "Abu Dhabi Sports Council", logo: "/clients/abu-dhabi-sports-council.png" },
+  { name: "Miral", logo: "/clients/miral.png" },
+  { name: "Warner Bros.", logo: "/clients/warner-bros.jpg" },
+  { name: "Altrad", logo: "/clients/altrad-presentation.jpg" },
+  { name: "3t", logo: "/clients/3t.png", background: "#eeeb20" },
+  { name: "Sobha Realty", logo: "/clients/sobha-presentation.jpg", background: "#477654" },
+  { name: "Bloom Holding", logo: "/clients/bloom-presentation.jpg" },
+  { name: "National Holding", logo: "/clients/national-holding-presentation.jpg" },
+  { name: "Marriott International", logo: "/clients/marriott-presentation.png" },
+  { name: "China Harbour Engineering Company", logo: "/clients/china-harbour-presentation.png" },
+  { name: "KIZAD", logo: "/clients/kizad.png", background: "#2b3854" },
+  { name: "Badminton World Federation", logo: "/clients/bwf.gif" },
+  { name: "EDGE", logo: "/clients/edge.png" },
+  { name: "NMC Healthcare", logo: "/clients/nmc.png" },
+  { name: "Agility Engineering & Contracting", logo: "/clients/agility-engineering.jpg" },
+  { name: "Al Bustan Medical Center", logo: "/clients/al-bustan-medical-center.jpg" },
+  { name: "Cleanco", logo: "/clients/cleanco-presentation.jpg" },
+  { name: "Emirates Food Industries", logo: "/clients/emirates-food-industries.jpg" },
+  { name: "Exeed Precast", logo: "/clients/exeed-precast.jpg" },
+  { name: "NDTCCS", logo: "/clients/ndtccs.jpg" },
+  { name: "Scope Investment", logo: "/clients/scope-investment.jpg" },
+  { name: "Siraj Finance", logo: "/clients/siraj-finance.jpg" },
+  { name: "Cardiff", logo: "/clients/cardiff.jpg" },
+  { name: "Hilalco", logo: "/clients/hilalco.png" },
+  { name: "L'Arabia Hotel Apartments", logo: "/clients/l-arabia-hotel-apartments.jpg" },
+  { name: "Al Ghazal Golf Club", logo: "/clients/al-ghazal-golf-club.png" },
+  { name: "Al Taif", logo: "/clients/al-taif.jpg" },
+  { name: "Itinera", logo: "/clients/itinera.png" },
+  { name: "L'ETO London", logo: "/clients/leto-london.jpg" },
 ];
+
+const clientLogoScales: Record<string, number> = {
+  "Stevin Rock": 1.15,
+  Hayatna: 1.18,
+  "Abu Dhabi Sports Council": 1.65,
+  Miral: 1.12,
+  "Warner Bros.": 1.12,
+  "Sobha Realty": 1.1,
+  "Bloom Holding": 1.18,
+  "National Holding": 1.38,
+  "China Harbour Engineering Company": 1.12,
+  KIZAD: 1.48,
+  EDGE: 1.24,
+  "NMC Healthcare": 1.38,
+  "Agility Engineering & Contracting": 1.5,
+  "Al Bustan Medical Center": 1.72,
+  Cleanco: 1.32,
+  "Emirates Food Industries": 1.22,
+  "Exeed Precast": 1.45,
+  NDTCCS: 1.12,
+  "Scope Investment": 1.48,
+  Hilalco: 1.34,
+  "L'Arabia Hotel Apartments": 1.62,
+  "Al Taif": 1.28,
+};
 
 const streaks = [
   [8, 4, 150, 1.8, -1.2, "blue"],
@@ -54,8 +100,12 @@ export default function ClientLogoSection() {
         <div className="client-logo-grid">
           {clients.map((client) => (
             <div
-              className={`client-logo${client.inverse ? " client-logo--inverse" : ""}${client.name === "Cleanco" ? " client-logo--cleanco" : ""}${client.name === "China Harbour Engineering Company" ? " client-logo--china-harbour" : ""}`}
+              className="client-logo"
               key={client.name}
+              style={{
+                "--client-logo-bg": client.background || "#ffffff",
+                "--client-logo-scale": clientLogoScales[client.name] || 1,
+              } as CSSProperties}
               title={client.name}
             >
               <img src={client.logo} alt={`${client.name} logo`} />

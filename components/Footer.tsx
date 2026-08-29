@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { serviceCategoryNavItems } from "../data/service-categories";
+import { solutionNavItems } from "../data/solutions";
 import BrandLogo from "./BrandLogo";
 
 const footerProducts = [
@@ -72,12 +74,9 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h2>Services</h2>
-          <Link href="/services/it-services">IT Services</Link>
-          <Link href="/services/network-solutions">Network Solutions</Link>
-          <Link href="/services/cyber-security">Cyber Security</Link>
-          <Link href="/services/cloud">Cloud</Link>
-          <Link href="/services/communication-lv">Communication &amp; LV</Link>
-          <Link href="/services/software-solutions">Software Solutions</Link>
+          {serviceCategoryNavItems.filter((service) => service.slug !== "ai-solutions").map((service) => (
+            <Link href={service.href} key={service.slug}>{service.label}</Link>
+          ))}
         </div>
         <div className="footer-column">
           <h2>Products</h2>
@@ -89,12 +88,9 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h2>Solutions</h2>
-          <Link href="/#solutions">CCTV installation</Link>
-          <Link href="/#solutions">Office Wi-Fi setup</Link>
-          <Link href="/#solutions">IT troubleshooting</Link>
-          <Link href="/#solutions">Cloud migration</Link>
-          <Link href="/#solutions">New office IT setup</Link>
-          <Link href="/#solutions">ERP implementation</Link>
+          {solutionNavItems.map((solution) => (
+            <Link href={solution.href} key={solution.slug}>{solution.label}</Link>
+          ))}
         </div>
         <div className="footer-column">
           <h2>Company</h2>

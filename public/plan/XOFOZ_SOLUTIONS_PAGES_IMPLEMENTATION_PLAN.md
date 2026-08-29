@@ -110,7 +110,7 @@ These items must be resolved in the content sign-off phase:
 - Cloud Solutions and Microsoft Cloud Solutions overlap significantly. Their search intent and messaging must remain distinct: general/cloud infrastructure versus Microsoft ecosystem/modern workplace.
 - Card names are inconsistent in number/casing (“solution” versus “solutions,” “Next gen,” “WiFi”). Apply an approved editorial style guide.
 - The source mixes `150+ businesses served`, `150+ AMC clients`, and `150+ commercial and enterprise installations`. Each claim has a different meaning and needs evidence.
-- “Since 2022” and `3+ years` should be reviewed as time-sensitive copy rather than hard-coded indefinitely.
+- “Since 2015” and `10+ years` should be reviewed as time-sensitive copy rather than hard-coded indefinitely.
 
 ### 4.2 Claims and compliance gate
 

@@ -150,7 +150,7 @@ export default function HomePage() {
           <div className="products-logo-marquee">
             <div className="products-logo-track">
               {[...productBrandLogos, ...productBrandLogos].map(([name, src], index) => (
-                <div aria-hidden={index >= productBrandLogos.length} className={name === "Sangfor" ? "is-dark" : undefined} key={`home-${name}-${index}`}>
+                <div aria-hidden={index >= productBrandLogos.length} key={`home-${name}-${index}`}>
                   <img src={src} alt={index < productBrandLogos.length ? `${name} logo` : ""} />
                 </div>
               ))}
@@ -254,10 +254,10 @@ export default function HomePage() {
                 {partners.map((partner) => (
                   "href" in partner ? (
                     <Link href={partner.href!} key={partner.name} title={`View ${partner.name}`}>
-                      <div className={partner.name === "Sangfor" ? "is-dark" : undefined}><img src={partner.logo} alt={`${partner.name} logo`} /></div>
+                      <div><img src={partner.logo} alt={`${partner.name} logo`} /></div>
                     </Link>
                   ) : (
-                    <div className={partner.name === "Sangfor" ? "is-dark" : undefined} key={partner.name} title={partner.name}>
+                    <div key={partner.name} title={partner.name}>
                       <img src={partner.logo} alt={`${partner.name} logo`} />
                     </div>
                   )

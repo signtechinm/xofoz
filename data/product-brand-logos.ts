@@ -10,9 +10,11 @@ export const productBrandLogos = [
   ["TP-Link", "/partners/tp-link.png"],
   ["Vircom", "/partners/vircom.png"],
   ["Hikvision", "/partners/hikvision.svg"],
-  ["Sangfor", "/partners/sangfor.png"],
+  ["Sangfor", "/partners/sangfor-black-wordmark.png"],
   ["Bitdefender", "/partners/bitdefender.webp"],
 ] as const;
+
+export const technologyPartnerNames = productBrandLogos.map(([name]) => name);
 
 export const productBrandLogoByName = Object.fromEntries(productBrandLogos) as Record<string, string>;
 

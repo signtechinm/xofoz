@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ServiceContent } from "../data/service-content";
 import { newServiceIndustryCards, resolveIndustryHref } from "../data/industries";
+import { technologyPartnerNames } from "../data/product-brand-logos";
 import CompanyStatsCounter from "./CompanyStatsCounter";
 import { serviceAssets } from "../data/service-assets";
 import { resolveRelatedServiceHref } from "../data/services";
@@ -55,7 +56,6 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
     copy: fields[`SECTION 9 — RELATED SERVICE ${index + 1} — CONTENT`],
     label: fields[`SECTION 9 — RELATED SERVICE ${index + 1} — LINK`],
   })).map((item) => ({ ...item, href: resolveRelatedServiceHref(item.title) }));
-  const certifications = listFromField(fields["SECTION 5 — CERTIFICATIONS LIST"]);
   const breadcrumbLabel = fields.BREADCRUMB?.split("›").at(-1)?.trim() || service.label;
   const asset = serviceAssets[service.slug];
   const formFields = numberedFields(fields, (index) => `SECTION 10 — FORM FIELD ${index}`, 6);
@@ -234,7 +234,7 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
           <Reveal className="service-certifications" delay={0.08}>
             <span className="eyebrow">Technology ecosystem</span>
             <h3>Certifications and partnerships</h3>
-            <div>{certifications.map((certification) => <ProductBrandMark brand={certification} key={certification} />)}</div>
+            <div>{technologyPartnerNames.map((partner) => <ProductBrandMark brand={partner} key={partner} />)}</div>
           </Reveal>
         </div>
       </section>

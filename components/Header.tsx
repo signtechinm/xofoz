@@ -58,7 +58,6 @@ const serviceMenuDefinitions: Record<string, ServiceMenuLink[]> = {
     { label: "Azure Cloud Solutions" }, { label: "Web Hosting" },
     { label: "Desktop as a Service" }, { label: "User Collaboration Tools" },
   ],
-  "ai-solutions": [{ label: "AI Solutions for CCTV" }],
   "software-solutions": [
     { label: "ERP Software", href: "/services/erp-solutions-abu-dhabi" },
     { label: "POS Software Solutions", href: "/services/pos-systems-abu-dhabi" },
@@ -87,14 +86,13 @@ const serviceMenuGroups = serviceCategories.map((category) => ({
 }));
 
 const serviceMenuColumns = [
-  ["it-services", "data-backup-protection"],
-  ["cyber-security", "server-storage", "microsoft-cloud"],
+  ["it-services", "data-backup-protection", "microsoft-cloud"],
+  ["cyber-security", "server-storage"],
   ["network-solutions", "software-solutions"],
   ["communication-lv"],
 ].map((slugs) => slugs.map((slug) => serviceMenuGroups.find((group) => group.category.slug === slug)!));
 
 const supplementalServiceGroups = {
-  0: serviceMenuGroups.filter((group) => group.category.slug === "ai-solutions"),
   3: serviceMenuGroups.filter((group) => group.category.slug === "cloud"),
 } as const;
 
@@ -102,7 +100,7 @@ const navItems = [
   {
     label: "Services", href: "/services", image: "/services/managed-it-amc.png",
     description: "Reliable day-to-day technology ownership for UAE businesses.",
-    children: serviceCategories.map((category) => category.label),
+    children: serviceCategories.filter((category) => category.slug !== "ai-solutions").map((category) => category.label),
   },
   {
     label: "Products", href: "/products", image: "/pillars/authorised-it-products.png",
@@ -288,9 +286,9 @@ export default function Header() {
                           </div>
                         </details>
                       ))}
-                      {(index === 0 || index === 3) && (
-                        <section className="header-standalone-services" aria-label={index === 0 ? "AI service category" : "Cloud service category"}>
-                          {supplementalServiceGroups[index].map((group) => (
+                      {index === 3 && (
+                        <section className="header-standalone-services" aria-label="Cloud service category">
+                          {supplementalServiceGroups[3].map((group) => (
                             <details
                               className="header-service-group"
                               name="service-menu-category"
@@ -330,7 +328,7 @@ export default function Header() {
                 </p>
                 <div className="header-product-logos" aria-label="Product brands">
                   {productBrandLogos.map(([name, logo]) => (
-                    <span className={name === "Sangfor" ? "is-dark" : undefined} key={name}>
+                    <span key={name}>
                       <Image src={logo} alt={name} width={120} height={42} unoptimized />
                     </span>
                   ))}

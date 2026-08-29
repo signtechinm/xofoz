@@ -58,7 +58,7 @@ Each page uses the same ten-part structure:
 - Create a verification table for all named clients: Marriott, Bloom, Hayatna, Sobha, Altrad, China Harbour, Jazal, Agility, Khadamat, Cleanco, and Exeed.
 - Record whether XOFOZ has permission to display each name/logo.
 - Verify ADMCC, Microsoft, manufacturer, reseller, and installer claims.
-- Verify `150+`, `3+ years`, service counts, project outcomes, and any response-time claims.
+- Verify `150+`, `10+ years`, service counts, project outcomes, and any response-time claims.
 - Mark every claim as `approved`, `replace`, `anonymise`, or `pending`.
 
 **Gate**
