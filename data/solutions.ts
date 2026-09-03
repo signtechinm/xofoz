@@ -17,8 +17,15 @@ export function getSolutionBySlug(slug: string) {
   return solutions.find((solution) => solution.slug === slug);
 }
 
-export const solutionNavItems = solutions.map((solution) => ({
-  label: solution.shortLabel,
-  slug: solution.slug,
-  href: `/solutions/${solution.slug}` as const,
-}));
+export const solutionNavItems: { label: string; slug: string; href: string }[] = [
+  ...solutions.filter((solution) => solution.slug !== "it-services").map((solution) => ({
+    label: solution.shortLabel,
+    slug: solution.slug,
+    href: `/solutions/${solution.slug}`,
+  })),
+  {
+    label: "TallyPrime Software",
+    slug: "tally-prime-software-abu-dhabi",
+    href: "/tally-prime-software-abu-dhabi",
+  },
+];

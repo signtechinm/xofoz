@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1, changeFrequency: "weekly" as const },
     { path: "/services", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/solutions", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/tally-prime-software-abu-dhabi", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/products", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/industries", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },

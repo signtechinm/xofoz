@@ -3,7 +3,8 @@
 import { type FormEvent, useEffect, useState } from "react";
 
 export default function SolutionLeadForm({ category, options, fields, buttonLabel }: { category: string; options: string[]; fields: string[]; buttonLabel: string }) {
-  const [selected, setSelected] = useState(options[0] || category);
+  const selectOptions = options.includes("Other") ? options : [...options, "Other"];
+  const [selected, setSelected] = useState(selectOptions[0] || category);
 
   useEffect(() => {
     const select = (event: Event) => setSelected((event as CustomEvent<string>).detail);
@@ -29,7 +30,7 @@ export default function SolutionLeadForm({ category, options, fields, buttonLabe
       </div>
       <div className="form-split">
         <label>{fields[2] || "Phone number"}<input name="Phone" type="tel" autoComplete="tel" required /></label>
-        <label>{fields[3] || "Solution required"}<select name="Solution" value={selected} onChange={(event) => setSelected(event.target.value)}>{options.map((option) => <option key={option}>{option}</option>)}</select></label>
+        <label>{fields[3] || "Solution required"}<select name="Solution" value={selected} onChange={(event) => setSelected(event.target.value)}>{selectOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
       </div>
       <label>{fields[4] || "Tell us about your project requirements"}<textarea name="Requirement" rows={5} required /></label>
       <button className="button button--primary" type="submit">{buttonLabel}</button>

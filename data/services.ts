@@ -47,7 +47,7 @@ const relatedServiceMatchers = [
   ["video conferencing", "communication-lv#av-system"],
   ["pabx", "communication-lv#ip-phone-solutions"],
   ["pos", "software-solutions#pos-software-solutions"],
-  ["tally", "software-solutions#erp-software"],
+  ["tally", "/tally-prime-software-abu-dhabi"],
   ["erp", "software-solutions#erp-software"],
   ["website", "software-solutions#web-design"],
 ] as const;
@@ -55,5 +55,7 @@ const relatedServiceMatchers = [
 export function resolveRelatedServiceHref(title: string) {
   const normalizedTitle = title.toLowerCase();
   const match = relatedServiceMatchers.find(([keyword]) => normalizedTitle.includes(keyword));
-  return match ? `/services/${match[1]}` : "/services";
+  if (!match) return "/services";
+  if (match[1].startsWith("/")) return match[1];
+  return `/services/${match[1]}`;
 }

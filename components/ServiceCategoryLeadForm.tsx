@@ -15,7 +15,8 @@ export default function ServiceCategoryLeadForm({
   fields: string[];
   buttonLabel: string;
 }) {
-  const [selected, setSelected] = useState(options[0] || category);
+  const selectOptions = options.includes("Other") ? options : [...options, "Other"];
+  const [selected, setSelected] = useState(selectOptions[0] || category);
   const [ctaSource, setCtaSource] = useState("category-form");
 
   useEffect(() => {
@@ -67,7 +68,7 @@ export default function ServiceCategoryLeadForm({
         <label>
           Service required
           <select name="Service" value={selected} onChange={(event) => { setSelected(event.target.value); setCtaSource("category-form"); }}>
-            {options.map((option) => <option key={option}>{option}</option>)}
+            {selectOptions.map((option) => <option key={option}>{option}</option>)}
           </select>
         </label>
       </div>

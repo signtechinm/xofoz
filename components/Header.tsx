@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { serviceCategories } from "../data/service-categories";
 import { solutionNavItems } from "../data/solutions";
 import { industryNavItems } from "../data/industries";
-import { productBrandLogos } from "../data/product-brand-logos";
+import { productBrandClassName, productBrandLogos } from "../data/product-brand-logos";
 import BrandLogo from "./BrandLogo";
 
 type ServiceMenuLink = { label: string; href?: string };
@@ -63,7 +63,7 @@ const serviceMenuDefinitions: Record<string, ServiceMenuLink[]> = {
     { label: "POS Software Solutions", href: "/services/pos-systems-abu-dhabi" },
     { label: "GPS Tracking Solutions" }, { label: "Visitor Management System" },
     { label: "Web Design", href: "/services/website-development-abu-dhabi" }, { label: "Design Software" },
-    { label: "Tally Prime", href: "/services/tally-prime-abu-dhabi" },
+    { label: "Tally Prime", href: "/tally-prime-software-abu-dhabi" },
   ],
   "microsoft-cloud": [
     { label: "Microsoft 365 Solutions", href: "/services/cloud-solutions-microsoft-365-abu-dhabi" },
@@ -328,7 +328,7 @@ export default function Header() {
                 </p>
                 <div className="header-product-logos" aria-label="Product brands">
                   {productBrandLogos.map(([name, logo]) => (
-                    <span key={name}>
+                    <span className={productBrandClassName(name)} key={name}>
                       <Image src={logo} alt={name} width={120} height={42} unoptimized />
                     </span>
                   ))}
@@ -339,23 +339,23 @@ export default function Header() {
               </>
             )}
             {navItems[activeMenu].label !== "Services" && <div>
-              {navItems[activeMenu].children.map((child) => (
-              <Link
-                href={
-                  navItems[activeMenu].label === "Services"
-                    ? `/services/${serviceCategories.find((category) => category.label === child)?.slug}`
-                    : navItems[activeMenu].label === "Solutions"
-                      ? solutionNavItems.find((solution) => solution.label === child)?.href || "/solutions"
-                    : navItems[activeMenu].label === "Industries"
-                      ? industryNavItems.find((industry) => industry.label === child)?.href || "/industries"
-                    : navItems[activeMenu].href
-                }
-                key={child}
-                onClick={() => setIsOpen(false)}
-              >
-                <span>{child}</span><b aria-hidden="true">↗</b>
-              </Link>
-              ))}
+              {navItems[activeMenu].children.map((child) => {
+                const href = navItems[activeMenu].label === "Solutions"
+                  ? solutionNavItems.find((solution) => solution.label === child)?.href || "/solutions"
+                  : navItems[activeMenu].label === "Industries"
+                    ? industryNavItems.find((industry) => industry.label === child)?.href || "/industries"
+                    : navItems[activeMenu].href;
+                const link = <Link href={href} onClick={() => setIsOpen(false)}><span>{child}</span><b aria-hidden="true">↗</b></Link>;
+
+                return navItems[activeMenu].label === "Solutions" && child === "TallyPrime Software" ? (
+                  <div className="header-solution-family" key={child}>
+                    {link}
+                    <Link className="header-solution-child" href="/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi" onClick={() => setIsOpen(false)}>
+                      <span>UAE e-Invoicing</span><b aria-hidden="true">↗</b>
+                    </Link>
+                  </div>
+                ) : <span className="header-subnav-item" key={child}>{link}</span>;
+              })}
             </div>}
           </div>
           {navItems[activeMenu].label !== "Services" && <div className="header-dropdown__visual" key={navItems[activeMenu].label}>

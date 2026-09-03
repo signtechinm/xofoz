@@ -18,6 +18,14 @@ export const technologyPartnerNames = productBrandLogos.map(([name]) => name);
 
 export const productBrandLogoByName = Object.fromEntries(productBrandLogos) as Record<string, string>;
 
+export function productBrandClassName(brand: string) {
+  const matchedName = [...productBrandLogos, ...supplementalBrandLogos].find(([name]) =>
+    brand.toLowerCase().includes(name.toLowerCase()),
+  )?.[0] ?? brand;
+
+  return `brand-logo--${matchedName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+}
+
 const supplementalBrandLogos = [
   ["ESET", "/partners/eset.svg"],
   ["Aruba", "/partners/aruba.svg"],

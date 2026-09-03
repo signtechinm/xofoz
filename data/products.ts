@@ -26,17 +26,22 @@ export const productCategories: readonly ProductCategory[] = [
   { title: "UPS systems", subtitle: "Power protection", icon: "bolt", brands: ["APC", "Eaton", "Vertiv", "Socomec"], authorised: ["APC", "Eaton"], href: "/solutions/server-storage", linkLabel: "Server and storage solutions" },
   { title: "Attendance and access control", subtitle: "Biometric systems", icon: "fingerprint", brands: ["Matrix", "ZKTeco", "Hikvision", "Dahua", "HID", "Suprema", "dormakaba"], authorised: ["ZKTeco"], href: "/services/communication-lv#biometric-attendance-system", linkLabel: "Biometric attendance systems" },
   { title: "Digital signage", subtitle: "Display systems", icon: "signage", brands: ["Hikvision", "Samsung"], authorised: ["Hikvision"], href: "/services/communication-lv#led-panel", linkLabel: "LED panels" },
-  { title: "Accounting software", subtitle: "Business management", icon: "calculator", brands: ["Tally Prime"], authorised: ["Tally Prime"], href: "/services/software-solutions#erp-software", linkLabel: "ERP software" },
+  { title: "Accounting software", subtitle: "Business management", icon: "calculator", brands: ["Tally Prime"], authorised: ["Tally Prime"], href: "/tally-prime-software-abu-dhabi", linkLabel: "TallyPrime software" },
   { title: "Design software", subtitle: "CAD and technical design", icon: "ruler", brands: ["AutoCAD", "CADMATE"], authorised: ["AutoCAD", "CADMATE"], href: "/solutions/software", linkLabel: "Software solutions" },
 ];
 
 export const authorisedPartnerships = [
   ["Tally Prime", "Authorised dealer"],
   ["Microsoft", "Certified partner"],
-  ["Hikvision", "Authorised dealer"],
+  ["Cisco", "Technology partner"],
   ["Fortinet", "Certified partner"],
-  ["ESET", "Certified reseller"],
+  ["Sophos", "Technology partner"],
   ["Acronis", "Certified partner"],
-  ["Aruba", "Certified installer"],
-  ["ADMCC", "Certified"],
+  ["greytHR", "Technology partner"],
+  ["Matrix", "Technology partner"],
+  ["TP-Link", "Technology partner"],
+  ["Vircom", "Technology partner"],
+  ["Hikvision", "Authorised dealer"],
+  ["Sangfor", "Technology partner"],
+  ["Bitdefender", "Technology partner"],
 ] as const;

@@ -9,7 +9,7 @@ const footerProducts = [
   { title: "Access points", href: "/services/network-solutions#wifi-solutions" },
   { title: "CCTV systems", href: "/services/communication-lv#cctv-solutions" },
   { title: "Attendance and access control", href: "/services/communication-lv#biometric-attendance-system" },
-  { title: "Accounting software", href: "/services/software-solutions#erp-software" },
+  { title: "Accounting software", href: "/tally-prime-software-abu-dhabi" },
   { title: "IP PBX and telephone systems", href: "/services/communication-lv#ip-phone-solutions" },
 ] as const;
 

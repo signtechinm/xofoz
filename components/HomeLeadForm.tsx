@@ -38,7 +38,7 @@ export default function HomeLeadForm() {
         <select name="Service" defaultValue="" required>
           <option value="" disabled>Select a requirement</option>
           <option>IT AMC</option><option>Product enquiry</option>
-          <option>IT solution</option><option>General enquiry</option>
+          <option>IT solution</option><option>General enquiry</option><option>Other</option>
         </select>
       </label>
       <label>Message<textarea name="Message" rows={5} required /></label>

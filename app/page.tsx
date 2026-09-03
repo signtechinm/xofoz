@@ -10,7 +10,7 @@ import SolutionsScrollSection from "../components/SolutionsScrollSection";
 import IndustryAccordion from "../components/IndustryAccordion";
 import BusinessHighlights from "../components/BusinessHighlights";
 import ConsultationSection from "../components/ConsultationSection";
-import { productBrandLogos } from "../data/product-brand-logos";
+import { productBrandClassName, productBrandLogos } from "../data/product-brand-logos";
 
 export const metadata: Metadata = {
   title: { absolute: "XOFOZ | IT Solutions Provider in Abu Dhabi, UAE" },
@@ -88,7 +88,7 @@ const reasons = [
 const partners = productBrandLogos.map(([name, logo]) => ({
   name,
   logo,
-  ...(name === "Tally Prime" ? { href: "/services/tally-prime-abu-dhabi" } : {}),
+  ...(name === "Tally Prime" ? { href: "/tally-prime-software-abu-dhabi" } : {}),
 }));
 
 const processSteps = [
@@ -150,7 +150,7 @@ export default function HomePage() {
           <div className="products-logo-marquee">
             <div className="products-logo-track">
               {[...productBrandLogos, ...productBrandLogos].map(([name, src], index) => (
-                <div aria-hidden={index >= productBrandLogos.length} key={`home-${name}-${index}`}>
+                <div className={productBrandClassName(name)} aria-hidden={index >= productBrandLogos.length} key={`home-${name}-${index}`}>
                   <img src={src} alt={index < productBrandLogos.length ? `${name} logo` : ""} />
                 </div>
               ))}

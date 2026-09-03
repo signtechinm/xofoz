@@ -6,7 +6,7 @@ import ParticleField from "../../components/ParticleField";
 import ProductQuoteForm from "../../components/ProductQuoteForm";
 import Reveal from "../../components/Reveal";
 import { authorisedPartnerships, productCategories } from "../../data/products";
-import { productBrandLogoByName, productBrandLogos } from "../../data/product-brand-logos";
+import { productBrandClassName, productBrandLogos, resolveProductBrandLogo } from "../../data/product-brand-logos";
 
 export const metadata: Metadata = {
   title: "Authorised IT Products In Abu Dhabi",
@@ -136,7 +136,7 @@ export default function ProductsPage() {
           <div className="products-logo-marquee" aria-label="Selected XOFOZ technology partners">
             <div className="products-logo-track">
               {[...productBrandLogos, ...productBrandLogos].map(([name, src], index) => (
-                <div aria-hidden={index >= productBrandLogos.length} key={`${name}-${index}`}>
+                <div className={productBrandClassName(name)} aria-hidden={index >= productBrandLogos.length} key={`${name}-${index}`}>
                   <img src={src} alt={index < productBrandLogos.length ? `${name} logo` : ""} />
                 </div>
               ))}
@@ -234,12 +234,16 @@ export default function ProductsPage() {
               <p>Manufacturer and distributor credentials that support genuine procurement, implementation, and after-sales service.</p>
             </div>
             <div className="products-partner-wall__logos">
-              {authorisedPartnerships.filter(([name]) => productBrandLogoByName[name]).map(([name, status]) => (
-                <div key={name}>
-                  <img src={productBrandLogoByName[name]} alt={`${name} logo`} />
-                  <span>{status}</span>
-                </div>
-              ))}
+              {authorisedPartnerships.map(([name, status]) => {
+                const logo = resolveProductBrandLogo(name);
+
+                return (
+                  <div className={`${productBrandClassName(name)} ${logo ? "has-partner-logo" : "has-partner-mark"}`} key={name}>
+                    {logo ? <img src={logo} alt={`${name} logo`} /> : <strong className="products-partner-wall__mark">{name}</strong>}
+                    <span>{status}</span>
+                  </div>
+                );
+              })}
             </div>
             <small>Partnership status is reviewed against current documentation. Confirm current authorisation when preparing tender or procurement records.</small>
           </Reveal>
