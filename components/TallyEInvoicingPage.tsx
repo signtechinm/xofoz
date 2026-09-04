@@ -14,7 +14,7 @@ import {
   tallyEInvoicingUpdated,
 } from "../data/tally-einvoicing-content";
 
-const whatsappHref = "https://wa.me/971523554202?text=Hello%20XOFOZ%2C%20I%20would%20like%20a%20UAE%20e-Invoicing%20readiness%20assessment%20for%20our%20TallyPrime%20environment.";
+const whatsappHref = "https://wa.me/971528209231?text=Hello%20XOFOZ%2C%20I%20would%20like%20a%20UAE%20e-Invoicing%20readiness%20assessment%20for%20our%20TallyPrime%20environment.";
 
 export default function TallyEInvoicingPage() {
   const canonical = "https://xofoz.com/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi";

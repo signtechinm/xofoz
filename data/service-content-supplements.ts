@@ -97,7 +97,7 @@ export const serviceContentSupplements: Record<string, Record<string, string>> =
     "SECTION 10 — SUBLINE":
       "Tell XOFOZ about your current email, files, users, and collaboration requirements. We will assess the environment and outline a practical migration or improvement plan.",
     "SECTION 10 — WHATSAPP CTA":
-      "Chat with us on WhatsApp — +971 52 355 4202",
+      "Chat with us on WhatsApp — 0528209231",
     "SECTION 10 — FORM FIELD 1":
       "Your name",
     "SECTION 10 — FORM FIELD 2":
@@ -117,7 +117,7 @@ export const serviceContentSupplements: Record<string, Record<string, string>> =
     "SECTION 10 — NAP PHONE":
       "026 220 071",
     "SECTION 10 — NAP WHATSAPP":
-      "+971 52 355 4202",
+      "0528209231",
     "SECTION 10 — NAP EMAIL":
       "hello@xofoz.com",
     "SECTION 10 — NAP HOURS":

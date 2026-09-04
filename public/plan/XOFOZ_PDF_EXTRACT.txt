@@ -306,7 +306,7 @@ UAE businesses have stayed with us.
 
 Differentiator 1:​
  H3: ADMCC certified IT engineers​
- Content: Our team holds certifications from the Abu Dhabi Media and Compliance Centre —
+ Content: Our team holds certifications from the Abu Dhabi Monitoring and Control Centre —
 giving you qualified, compliance-ready IT support that meets the standards of Abu Dhabi's
 leading institutions. This is accountability that only a genuinely certified local team can offer.
 Differentiator 2:​
@@ -12013,8 +12013,8 @@ H2:​
 Why Abu Dhabi businesses choose XOFOZ for communication and low voltage solutions
 
 H3: ADMCC certified ELV installation​
- Content: XOFOZ installs communication and low voltage systems to Abu Dhabi Media and
-Compliance Centre standards — giving businesses in Abu Dhabi the certified ELV infrastructure
+ Content: XOFOZ installs communication and low voltage systems to Abu Dhabi Monitoring and
+Control Centre standards — giving businesses in Abu Dhabi the certified ELV infrastructure
 required by their building regulations, insurance requirements, and operational compliance
 obligations. Every installation is documented and compliant from day one.
 
@@ -12129,7 +12129,7 @@ FAQ 3 — Question:​
  Is XOFOZ ADMCC certified for CCTV and ELV installation in Abu Dhabi?
 
 FAQ 3 — Answer:​
- Yes. XOFOZ holds ADMCC — Abu Dhabi Media and Compliance Centre — certification and
+ Yes. XOFOZ holds ADMCC — Abu Dhabi Monitoring and Control Centre — certification and
 installs CCTV and ELV systems to the standards required for commercial facilities in Abu Dhabi.
 Our ADMCC-compliant installations meet the regulatory requirements for surveillance system
 coverage, recording retention, and system documentation that businesses in Abu Dhabi are
@@ -15541,7 +15541,7 @@ FAQ 5 — Question:​
  Is AI CCTV ADMCC compliant for businesses in Abu Dhabi?
 
 FAQ 5 — Answer:​
- Yes. XOFOZ implements AI CCTV systems to ADMCC — Abu Dhabi Media and Compliance
+ Yes. XOFOZ implements AI CCTV systems to ADMCC — Abu Dhabi Monitoring and Control
 Centre — standards for commercial facilities in Abu Dhabi. Our AI CCTV installations meet the
 regulatory requirements for camera coverage, recording retention, and system documentation
 that Abu Dhabi businesses are required to maintain — alongside the intelligent analytics
@@ -15963,7 +15963,7 @@ FAQ 3 — Question:​
  Can XOFOZ install ADMCC-compliant CCTV for a hotel in Abu Dhabi?
 
 FAQ 3 — Answer:​
- Yes. XOFOZ installs CCTV systems to ADMCC — Abu Dhabi Media and Compliance Centre —
+ Yes. XOFOZ installs CCTV systems to ADMCC — Abu Dhabi Monitoring and Control Centre —
 standards for commercial and hospitality facilities in Abu Dhabi. Our ADMCC-compliant hotel
 CCTV installations cover all required areas including public spaces, back-of-house, car parks,
 and perimeter — with correct recording retention, system documentation, and camera
@@ -18420,8 +18420,8 @@ DEVELOPER NOTE: Confirm year of Tally Prime authorisation with XOFOZ.
 
 Year: 2023​
 Milestone title: ADMCC certification achieved — compliant CCTV and ELV for Abu Dhabi​
-Milestone description: XOFOZ engineers achieve ADMCC — Abu Dhabi Media and
-Compliance Centre — certification, enabling delivery of fully compliant CCTV surveillance and
+Milestone description: XOFOZ engineers achieve ADMCC — Abu Dhabi Monitoring and
+Control Centre — certification, enabling delivery of fully compliant CCTV surveillance and
 ELV system installations for commercial facilities, hospitality properties, and
 government-adjacent projects across Abu Dhabi.
 
@@ -21868,8 +21868,8 @@ H2:​
 Why Abu Dhabi businesses choose XOFOZ for communication and LV systems
 
 H3: ADMCC certified — compliant CCTV and ELV for Abu Dhabi facilities​
- Content: XOFOZ is ADMCC certified — formally qualified by the Abu Dhabi Media and
-Compliance Centre to design and install surveillance and ELV systems that meet Abu Dhabi's
+ Content: XOFOZ is ADMCC certified — formally qualified by the Abu Dhabi Monitoring and
+Control Centre to design and install surveillance and ELV systems that meet Abu Dhabi's
 regulatory requirements for commercial and institutional facilities. ADMCC compliance is not
 optional for businesses operating CCTV in Abu Dhabi — it is a regulatory requirement that
 carries enforcement risk when ignored and affects insurance validity and liability protection
@@ -22034,7 +22034,7 @@ FAQ 2 — Question:​
  Is XOFOZ ADMCC certified to install CCTV in Abu Dhabi?
 
 FAQ 2 — Answer:​
- Yes. XOFOZ is ADMCC — Abu Dhabi Media and Compliance Centre — certified to design and
+ Yes. XOFOZ is ADMCC — Abu Dhabi Monitoring and Control Centre — certified to design and
 install CCTV and ELV systems for commercial facilities in Abu Dhabi. ADMCC certification is
 required for surveillance system contractors working in Abu Dhabi and covers camera coverage
 standards, recording retention requirements, system documentation, and installation practice
@@ -23075,8 +23075,8 @@ attention rather than environmental noise requiring dismissal.
  Is AI CCTV ADMCC compliant for businesses in Abu Dhabi?
 
 FAQ 5 — Answer:​
- Yes. XOFOZ designs and installs all AI CCTV systems to ADMCC — Abu Dhabi Media and
-Compliance Centre — standards for commercial facilities in Abu Dhabi. Our AI CCTV
+ Yes. XOFOZ designs and installs all AI CCTV systems to ADMCC — Abu Dhabi Monitoring and
+Control Centre — standards for commercial facilities in Abu Dhabi. Our AI CCTV
 installations meet all ADMCC requirements for camera coverage areas, minimum resolution and
 image quality standards, recording retention periods, system documentation, and installation
 practice standards — in addition to delivering the AI analytics capabilities that make the system

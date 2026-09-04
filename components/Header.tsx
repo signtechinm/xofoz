@@ -200,7 +200,7 @@ export default function Header() {
         <div className="header-end">
           <a
             className="quick-call header-whatsapp"
-            href="https://wa.me/971523554202"
+            href="https://wa.me/971528209231"
             aria-label="Chat with XOFOZ on WhatsApp"
             title="WhatsApp"
           >

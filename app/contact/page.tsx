@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const channels = [
-  { mark: "WA", label: "WhatsApp", value: "+971 52 355 4202", href: "https://wa.me/971523554202", note: "Fastest for new enquiries" },
+  { mark: "WA", label: "WhatsApp", value: "0528209231", href: "https://wa.me/971528209231", note: "Fastest for new enquiries" },
   { mark: "PH", label: "Phone", value: "02 622 0071", href: "tel:+97126220071", note: "Monday–Saturday" },
   { mark: "EM", label: "Email", value: "hello@xofoz.com", href: "mailto:hello@xofoz.com", note: "Send documents or scope" },
 ] as const;
@@ -49,7 +49,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="contact-availability"><div className="page-band"><span>Support availability</span><strong>Monday–Saturday · 8:30 AM–6:30 PM</strong><p>For urgent requirements, send the issue and company location through WhatsApp.</p><a href="https://wa.me/971523554202">Start urgent enquiry ↗</a></div></section>
+      <section className="contact-availability"><div className="page-band"><span>Support availability</span><strong>Monday–Saturday · 8:30 AM–6:30 PM</strong><p>For urgent requirements, send the issue and company location through WhatsApp.</p><a href="https://wa.me/971528209231">Start urgent enquiry ↗</a></div></section>
 
       <ConsultationSection />
 

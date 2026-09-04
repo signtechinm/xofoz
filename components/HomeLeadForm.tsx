@@ -12,7 +12,7 @@ export default function HomeLeadForm() {
       .join("\n");
     const message = `Hello XOFOZ,\n\nI would like an IT consultation.\n\n${details}`;
     window.open(
-      `https://wa.me/971523554202?text=${encodeURIComponent(message)}`,
+      `https://wa.me/971528209231?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer",
     );

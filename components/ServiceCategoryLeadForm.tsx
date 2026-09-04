@@ -40,7 +40,7 @@ export default function ServiceCategoryLeadForm({
       .join("\n");
     const message = `Hello XOFOZ,\n\nI would like a consultation for ${category}.\nSelected service: ${selected}\nSource page: ${window.location.href}\nCTA source: ${ctaSource}\n\n${details}`;
     window.open(
-      `https://wa.me/971523554202?text=${encodeURIComponent(message)}`,
+      `https://wa.me/971528209231?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer",
     );

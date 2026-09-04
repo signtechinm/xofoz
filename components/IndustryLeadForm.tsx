@@ -21,7 +21,7 @@ export default function IndustryLeadForm({
       .map(([key, value]) => `${key}: ${String(value).trim()}`)
       .join("\n");
     const message = `Hello XOFOZ,\n\nI would like an IT consultation for a ${industry} business.\nSource: ${window.location.href}\n\n${details}`;
-    window.open(`https://wa.me/971523554202?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/971528209231?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -44,4 +44,3 @@ export default function IndustryLeadForm({
     </form>
   );
 }
-

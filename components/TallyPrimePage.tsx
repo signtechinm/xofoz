@@ -15,7 +15,7 @@ import {
   tallyServices,
 } from "../data/tally-prime-content";
 
-const whatsappHref = "https://wa.me/971523554202?text=Hello%20XOFOZ%2C%20I%20would%20like%20to%20speak%20with%20a%20TallyPrime%20expert%20in%20Abu%20Dhabi.";
+const whatsappHref = "https://wa.me/971528209231?text=Hello%20XOFOZ%2C%20I%20would%20like%20to%20speak%20with%20a%20TallyPrime%20expert%20in%20Abu%20Dhabi.";
 
 const iconLabels = ["TR", "RT", "CO", "RE", "HC", "FB", "MF", "LG", "PS", "ED"];
 

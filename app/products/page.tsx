@@ -258,7 +258,7 @@ export default function ProductsPage() {
             <p>Tell us the product, model, quantity, or outcome you need. We’ll confirm availability, suitable alternatives, warranty, and installation options.</p>
             <div className="products-contact-list">
               <a href="tel:+97126220071"><span>Call</span><strong>02 622 0071</strong></a>
-              <a href="https://wa.me/971523554202"><span>WhatsApp</span><strong>+971 52 355 4202</strong></a>
+              <a href="https://wa.me/971528209231"><span>WhatsApp</span><strong>0528209231</strong></a>
               <a href="mailto:hello@xofoz.com"><span>Email</span><strong>hello@xofoz.com</strong></a>
             </div>
             <address>4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE</address>

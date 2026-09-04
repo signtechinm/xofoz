@@ -11,7 +11,7 @@ export default function ProductQuoteForm() {
       .map(([key, value]) => `${key}: ${String(value).trim()}`)
       .join("\n");
     const message = `Hello XOFOZ,\n\nI would like a product quote.\n\n${details}`;
-    window.open(`https://wa.me/971523554202?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/971528209231?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   }
 
   return (

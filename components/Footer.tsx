@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
           <div className="footer-cta__actions">
             <Link href="/contact#consultation">Start a conversation <span aria-hidden="true">→</span></Link>
-            <a href="https://wa.me/971523554202">WhatsApp us</a>
+            <a href="https://wa.me/971528209231">WhatsApp us</a>
           </div>
         </div>
 

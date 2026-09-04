@@ -17,7 +17,7 @@ export default function SolutionLeadForm({ category, options, fields, buttonLabe
     const data = new FormData(event.currentTarget);
     const details = [...data.entries()].filter(([, value]) => String(value).trim()).map(([key, value]) => `${key}: ${String(value).trim()}`).join("\n");
     const message = `Hello XOFOZ,\n\nI would like a consultation for ${category}.\n\n${details}`;
-    window.open(`https://wa.me/971523554202?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/971528209231?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   }
 
   return (

@@ -54,7 +54,7 @@ const companyDetails = [
   ["Established", "2015 · Abu Dhabi, UAE"],
   ["Address", "4 Al Ithmid Street, Mohamed Bin Zayed City, Mussafah, Abu Dhabi, UAE"],
   ["Phone", "02 622 0071"],
-  ["WhatsApp", "+971 52 355 4202"],
+  ["WhatsApp", "0528209231"],
   ["Email", "hello@xofoz.com"],
   ["Working hours", "Monday–Saturday · 8:30 AM–6:30 PM"],
 ] as const;

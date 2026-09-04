@@ -272,7 +272,7 @@ Intro line:
 
 Differentiator 1:  
  H3: ADMCC certified IT engineers  
- Content: Our team holds certifications from the Abu Dhabi Media and Compliance Centre — giving you qualified, compliance-ready IT support that meets the standards of Abu Dhabi's leading institutions. This is accountability that only a genuinely certified local team can offer.
+ Content: Our team holds certifications from the Abu Dhabi Monitoring and Control Centre — giving you qualified, compliance-ready IT support that meets the standards of Abu Dhabi's leading institutions. This is accountability that only a genuinely certified local team can offer.
 
 ---
 
@@ -9188,7 +9188,7 @@ H2:
  Why Abu Dhabi businesses choose XOFOZ for communication and low voltage solutions
 
 H3: ADMCC certified ELV installation  
- Content: XOFOZ installs communication and low voltage systems to Abu Dhabi Media and Compliance Centre standards — giving businesses in Abu Dhabi the certified ELV infrastructure required by their building regulations, insurance requirements, and operational compliance obligations. Every installation is documented and compliant from day one.
+ Content: XOFOZ installs communication and low voltage systems to Abu Dhabi Monitoring and Control Centre standards — giving businesses in Abu Dhabi the certified ELV infrastructure required by their building regulations, insurance requirements, and operational compliance obligations. Every installation is documented and compliant from day one.
 
 H3: HikVision authorised dealer — genuine equipment guaranteed  
  Content: As an authorised HikVision dealer in Abu Dhabi, XOFOZ supplies only genuine HikVision cameras, NVRs, intercoms, and access control hardware — with manufacturer warranty, official firmware, and full manufacturer support eligibility. Every system we install uses certified genuine equipment — not grey market products that create reliability and warranty risks.
@@ -9260,7 +9260,7 @@ FAQ 3 — Question:
  Is XOFOZ ADMCC certified for CCTV and ELV installation in Abu Dhabi?
 
 FAQ 3 — Answer:  
- Yes. XOFOZ holds ADMCC — Abu Dhabi Media and Compliance Centre — certification and installs CCTV and ELV systems to the standards required for commercial facilities in Abu Dhabi. Our ADMCC-compliant installations meet the regulatory requirements for surveillance system coverage, recording retention, and system documentation that businesses in Abu Dhabi are required to maintain.
+ Yes. XOFOZ holds ADMCC — Abu Dhabi Monitoring and Control Centre — certification and installs CCTV and ELV systems to the standards required for commercial facilities in Abu Dhabi. Our ADMCC-compliant installations meet the regulatory requirements for surveillance system coverage, recording retention, and system documentation that businesses in Abu Dhabi are required to maintain.
 
 FAQ 4 — Question:  
  Does XOFOZ supply genuine HikVision equipment in Abu Dhabi?
@@ -11607,7 +11607,7 @@ FAQ 5 — Question:
  Is AI CCTV ADMCC compliant for businesses in Abu Dhabi?
 
 FAQ 5 — Answer:  
- Yes. XOFOZ implements AI CCTV systems to ADMCC — Abu Dhabi Media and Compliance Centre — standards for commercial facilities in Abu Dhabi. Our AI CCTV installations meet the regulatory requirements for camera coverage, recording retention, and system documentation that Abu Dhabi businesses are required to maintain — alongside the intelligent analytics capabilities that make the system actively effective for security. Compliance and advanced AI capability are standard outcomes of every XOFOZ AI CCTV implementation.
+ Yes. XOFOZ implements AI CCTV systems to ADMCC — Abu Dhabi Monitoring and Control Centre — standards for commercial facilities in Abu Dhabi. Our AI CCTV installations meet the regulatory requirements for camera coverage, recording retention, and system documentation that Abu Dhabi businesses are required to maintain — alongside the intelligent analytics capabilities that make the system actively effective for security. Compliance and advanced AI capability are standard outcomes of every XOFOZ AI CCTV implementation.
 
 FAQ 6 — Question:  
  How much does AI-powered CCTV cost for a business in Abu Dhabi?
@@ -11660,4 +11660,3 @@ Schema: Apply Service, FAQPage, BreadcrumbList, and LocalBusiness schema as JSON
  Future note: this page should be updated as XOFOZ expands its AI solution portfolio beyond CCTV
 
 # Tab 32
-
