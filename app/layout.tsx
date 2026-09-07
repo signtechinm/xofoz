@@ -4,6 +4,7 @@ import "../styles.css";
 import "../industries.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import DidAgent from "../components/DidAgent";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <DidAgent />
       </body>
     </html>
   );
