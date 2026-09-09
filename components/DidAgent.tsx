@@ -3,6 +3,12 @@
 import Script from "next/script";
 
 export default function DidAgent() {
+  // Keep the optional third-party widget from breaking local/offline builds.
+  // Enable it explicitly with NEXT_PUBLIC_ENABLE_DID_AGENT=true.
+  if (process.env.NEXT_PUBLIC_ENABLE_DID_AGENT !== "true") {
+    return null;
+  }
+
   return (
     <Script
       id="did-agent"

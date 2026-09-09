@@ -19,6 +19,11 @@ export const services = [
   { label: "Website Development", slug: "website-development-abu-dhabi", legacySlug: "website-development", sourceHeading: "WEBSITE DEVELOPMENT ABU DHABI" },
   { label: "Remote IT Support", slug: "remote-it-support-abu-dhabi", legacySlug: "remote-it-support", sourceHeading: "REMOTE IT SUPPORT ABU DHABI" },
   { label: "VPN and Network Security", slug: "vpn-network-security-abu-dhabi", legacySlug: "vpn-and-network-security", sourceHeading: "VPN AND NETWORK SECURITY ABU DHABI" },
+  { label: "Chip-Level Repair", slug: "chip-level-repair-abu-dhabi", legacySlug: "chip-level-service", sourceHeading: "CHIP-LEVEL REPAIR ABU DHABI" },
+  { label: "Data Recovery", slug: "data-recovery-abu-dhabi", legacySlug: "data-recovery", sourceHeading: "DATA RECOVERY ABU DHABI" },
+  { label: "ADHICS Compliance Services", slug: "adhics-compliance-services-abu-dhabi", legacySlug: "adhics-compliance-services", sourceHeading: "ADHICS COMPLIANCE SERVICES ABU DHABI" },
+  { label: "Malaffi Integration", slug: "malaffi-integration-abu-dhabi", legacySlug: "malaffi-integration", sourceHeading: "MALAFFI INTEGRATION ABU DHABI" },
+  { label: "AWS Cloud Services", slug: "aws-cloud-services-abu-dhabi", legacySlug: "aws-cloud-services", sourceHeading: "AWS CLOUD SERVICES ABU DHABI" },
 ] as const;
 
 export type ServiceDefinition = (typeof services)[number];

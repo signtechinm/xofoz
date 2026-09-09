@@ -5,6 +5,11 @@ export const serviceAssets: Record<string, {
   height: number;
   note: string;
 }> = {
+  "chip-level-repair-abu-dhabi": { hero: "/services/chip-level-repair/chip-level-repair-abu-dhabi-hero.webp", social: "/services/chip-level-repair/chip-level-repair-abu-dhabi-hero.png", width: 1586, height: 992, note: "Careful diagnosis. Component-level repair." },
+  "data-recovery-abu-dhabi": { hero: "/services/data-recovery/data-recovery-abu-dhabi-hero.webp", social: "/services/data-recovery/data-recovery-abu-dhabi-hero.png", width: 1586, height: 992, note: "Assess first. Recover with care." },
+  "adhics-compliance-services-abu-dhabi": { hero: "/services/adhics-compliance/adhics-compliance-abu-dhabi-hero.webp", social: "/services/adhics-compliance/adhics-compliance-abu-dhabi-hero.png", width: 1586, height: 992, note: "Secure systems. Documented readiness." },
+  "malaffi-integration-abu-dhabi": { hero: "/services/malaffi-integration/malaffi-integration-abu-dhabi-hero.webp", social: "/services/malaffi-integration/malaffi-integration-abu-dhabi-hero.png", width: 1586, height: 992, note: "Connected healthcare data. Practical integration." },
+  "aws-cloud-services-abu-dhabi": { hero: "/services/aws-cloud/aws-cloud-services-abu-dhabi-hero.webp", social: "/services/aws-cloud/aws-cloud-services-abu-dhabi-hero.png", width: 1586, height: 992, note: "Scalable infrastructure. Managed locally." },
   "it-amc-abu-dhabi": {
     hero: "/services/it-amc/it-amc-abu-dhabi-hero.webp",
     social: "/services/it-amc/it-amc-abu-dhabi-hero.png",

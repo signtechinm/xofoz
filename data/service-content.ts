@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { getServiceBySlug, services, type ServiceDefinition } from "./services";
 import { serviceContentSupplements } from "./service-content-supplements";
+import { newServiceContent } from "./new-service-content";
 
 export type ServiceContent = {
   service: ServiceDefinition;
@@ -85,6 +86,7 @@ function loadContent() {
     const fields = {
       ...parseFields(block),
       ...(serviceContentSupplements[service.slug] ?? {}),
+      ...(newServiceContent[service.slug] ?? {}),
     };
     const missingFields = requiredFields.filter((field) => !fields[field]);
 

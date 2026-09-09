@@ -29,7 +29,7 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
   const painPoints = Array.from({ length: 3 }, (_, index) => ({
     title: fields[`SECTION 2 — PAIN POINT ${index + 1} — H3`],
     copy: fields[`SECTION 2 — PAIN POINT ${index + 1} — CONTENT`],
-  }));
+  })).filter((item) => item.title && item.copy);
   const inclusions = numberedFields(fields, (index) => `SECTION 3 — INCLUSION ${index}`, 12);
   const steps = Array.from({ length: 3 }, (_, index) => ({
     title: fields[`SECTION 4 — STEP ${index + 1} — H3`],

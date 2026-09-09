@@ -96,6 +96,14 @@ const supplementalServiceGroups = {
   3: serviceMenuGroups.filter((group) => group.category.slug === "cloud"),
 } as const;
 
+const newServiceLinks = [
+  { label: "Chip-Level Repair", href: "/services/chip-level-repair-abu-dhabi" },
+  { label: "Data Recovery", href: "/services/data-recovery-abu-dhabi" },
+  { label: "ADHICS Compliance Services", href: "/services/adhics-compliance-services-abu-dhabi" },
+  { label: "Malaffi Integration", href: "/services/malaffi-integration-abu-dhabi" },
+  { label: "AWS Cloud Services", href: "/services/aws-cloud-services-abu-dhabi" },
+];
+
 const navItems = [
   {
     label: "Services", href: "/services", image: "/services/managed-it-amc.png",
@@ -286,32 +294,23 @@ export default function Header() {
                           </div>
                         </details>
                       ))}
-                      {index === 3 && (
-                        <section className="header-standalone-services" aria-label="Cloud service category">
-                          {supplementalServiceGroups[3].map((group) => (
-                            <details
-                              className="header-service-group"
-                              name="service-menu-category"
-                              key={group.category.slug}
-                              onMouseEnter={(event) => openServiceDropdown(event.currentTarget)}
-                              onMouseLeave={(event) => closeServiceDropdown(event.currentTarget)}
-                            >
-                              <summary className="header-service-group__title">
-                                <span>{group.category.shortLabel}</span><b aria-hidden="true">⌄</b>
-                              </summary>
-                              <div className="header-service-group__links">
-                                <Link className="header-service-group__overview" href={`/services/${group.category.slug}`} onClick={() => setIsOpen(false)}>
-                                  {group.category.shortLabel} overview <b aria-hidden="true">→</b>
-                                </Link>
-                                {group.services.map((service) => (
-                                  <Link href={service.href} key={`${group.category.slug}-${service.label}`} onClick={() => setIsOpen(false)}>{service.label}</Link>
-                                ))}
-                              </div>
-                            </details>
-                          ))}
-                        </section>
-                      )}
                     </div>
+                  ))}
+                </section>
+                <section className="header-standalone-services" aria-label="Cloud and specialist service links">
+                  {supplementalServiceGroups[3].map((group) => (
+                    <details className="header-service-group" name="service-menu-category" key={group.category.slug} onMouseEnter={(event) => openServiceDropdown(event.currentTarget)} onMouseLeave={(event) => closeServiceDropdown(event.currentTarget)}>
+                      <summary className="header-service-group__title"><span>{group.category.shortLabel}</span><b aria-hidden="true">⌄</b></summary>
+                      <div className="header-service-group__links">
+                        <Link className="header-service-group__overview" href={`/services/${group.category.slug}`} onClick={() => setIsOpen(false)}>{group.category.shortLabel} overview <b aria-hidden="true">→</b></Link>
+                        {group.services.map((service) => <Link href={service.href} key={`${group.category.slug}-${service.label}`} onClick={() => setIsOpen(false)}>{service.label}</Link>)}
+                      </div>
+                    </details>
+                  ))}
+                  {newServiceLinks.map((service) => (
+                    <Link className="header-service-group header-service-group--direct-link" href={service.href} key={service.href} onClick={() => setIsOpen(false)}>
+                      <span className="header-service-group__title"><span>{service.label}</span><b aria-hidden="true">↗</b></span>
+                    </Link>
                   ))}
                 </section>
               </>
