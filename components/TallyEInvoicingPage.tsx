@@ -76,7 +76,17 @@ export default function TallyEInvoicingPage() {
         <Reveal className="service-section__heading"><span className="eyebrow">Understand the framework</span><h2>What is UAE e-Invoicing?</h2><p>The UAE Electronic Invoicing System uses structured digital data based on the Peppol framework and PINT AE specifications. Invoices move between businesses through Accredited Service Providers, with required information reported to the Federal Tax Authority.</p></Reveal>
         <div className="tally-framework-layout">
           <Reveal className="tally-exchange-visual"><Image src="/solutions/tally-prime/e-invoicing/structured-invoice-exchange-network.webp" alt="Abstract secure structured invoice exchange network" fill sizes="(max-width: 900px) 100vw, 46vw" /></Reveal>
-          <Reveal className="tally-five-corner" delay={0.08}><span className="eyebrow">Five-corner model</span><div className="tally-five-corner__flow" aria-label="Five-corner e-Invoicing flow"><span><b>01</b>Seller</span><i aria-hidden="true">→</i><span><b>02</b>Seller ASP</span><i aria-hidden="true">→</i><span><b>03</b>Buyer ASP</span><i aria-hidden="true">→</i><span><b>04</b>Buyer</span><span className="tally-five-corner__report"><b>05</b>FTA reporting</span></div><p>Both the seller and buyer use accredited providers. The fifth corner represents tax-data reporting to the FTA. XOFOZ prepares and supports your TallyPrime environment but does not replace your accredited provider.</p></Reveal>
+          <Reveal className="tally-peppol-model" delay={0.08}>
+            <span className="eyebrow">Peppol e-Invoice exchange</span>
+            <div className="tally-peppol-diagram" aria-label="Peppol five-corner e-Invoicing model">
+              <div className="tally-peppol-node tally-peppol-node--seller"><b>01</b><strong>Seller TallyPrime</strong><span>Generate e-Invoice</span></div>
+              <div className="tally-peppol-arrow">↔</div>
+              <div className="tally-peppol-network"><em>Secure e-Invoice exchange</em><strong>Peppol</strong><div className="tally-peppol-node"><b>02</b><strong>Seller Service Provider</strong><span>Validate &amp; transmit</span></div><div className="tally-peppol-node"><b>03</b><strong>Buyer Service Provider</strong><span>Validate &amp; collect</span></div></div>
+              <div className="tally-peppol-node tally-peppol-node--buyer"><b>04</b><strong>Buyer TallyPrime</strong><span>Accept e-Invoice</span></div>
+              <div className="tally-peppol-node tally-peppol-node--authority"><b>05</b><strong>Tax Authority</strong><span>Collect &amp; store</span></div>
+            </div>
+            <p>The seller and buyer connect through accredited Service Providers on the Peppol network. Tax data is reported to the authority as required. XOFOZ prepares and supports TallyPrime but does not replace the accredited provider.</p>
+          </Reveal>
         </div>
         <Reveal className="service-section__heading tally-applies-heading"><h3>This may apply whether you are a:</h3></Reveal>
         <div className="tally-applicable-grid">{eInvoicingBusinessTypes.map((type, index) => <Reveal className="tally-applicable-card" delay={(index % 3) * 0.035} key={type}><span>{String(index + 1).padStart(2, "0")}</span><p>{type}</p></Reveal>)}</div>

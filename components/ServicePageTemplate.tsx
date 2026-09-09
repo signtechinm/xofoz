@@ -97,7 +97,7 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
   };
 
   return (
-    <main className="service-page">
+    <main className={`service-page service-page--${service.slug}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceSchema, breadcrumbSchema]) }}
