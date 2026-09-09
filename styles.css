@@ -5571,6 +5571,10 @@ textarea:focus {
 }
 
 .service-client-proof__stats span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 112px;
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 9px 13px;
@@ -5578,6 +5582,19 @@ textarea:focus {
   background: var(--bg-soft);
   font-size: 0.76rem;
   font-weight: 820;
+}
+
+.service-client-proof__stats span b {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  flex: 0 0 28px;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(145deg, #1976e8, #0b4fb1);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
 }
 
 .service-related-card {

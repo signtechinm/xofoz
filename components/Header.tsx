@@ -55,7 +55,7 @@ const serviceMenuDefinitions: Record<string, ServiceMenuLink[]> = {
     { label: "Video Conferencing", href: "/services/video-conferencing-abu-dhabi" },
   ],
   cloud: [
-    { label: "Azure Cloud Solutions" }, { label: "Web Hosting" },
+    { label: "Azure Cloud Solutions" }, { label: "AWS Cloud Services", href: "/services/aws-cloud-services-abu-dhabi" }, { label: "Web Hosting" },
     { label: "Desktop as a Service" }, { label: "User Collaboration Tools" },
   ],
   "software-solutions": [

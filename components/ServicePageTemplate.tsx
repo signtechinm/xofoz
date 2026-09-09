@@ -288,8 +288,12 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
               </div>
               <div>
                 <p>{fields["SECTION 8 — CLIENT TRUST CONTENT"]}</p>
-                <div className="service-client-proof__stats">
-                  {[1, 2, 3].map((index) => <span key={index}>{fields[`SECTION 8 — STAT ${index}`]}</span>)}
+                <div className="service-client-proof__stats" aria-label="XOFOZ delivery approach">
+                  {[1, 2, 3].map((index) => {
+                    const value = fields[`SECTION 8 — STAT ${index}`] || `0${index}`;
+                    const [number, ...label] = value.split("·");
+                    return <span key={index}><b>{number.trim()}</b>{label.join("·").trim()}</span>;
+                  })}
                 </div>
               </div>
             </Reveal>
