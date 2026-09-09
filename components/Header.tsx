@@ -39,7 +39,6 @@ const serviceMenuDefinitions: Record<string, ServiceMenuLink[]> = {
   "network-solutions": [
     { label: "Network Solutions", href: "/services/network-infrastructure-abu-dhabi" },
     { label: "Switching and Routing" }, { label: "Proxy Services" },
-    { label: "Structured Cabling", href: "/services/structured-cabling-abu-dhabi" },
     { label: "WiFi Solutions" }, { label: "VPN Solutions", href: "/services/vpn-network-security-abu-dhabi" },
     { label: "Work From Home IT" },
   ],
@@ -97,11 +96,12 @@ const supplementalServiceGroups = {
 } as const;
 
 const newServiceLinks = [
-  { label: "Chip-Level Repair", href: "/services/chip-level-repair-abu-dhabi" },
+  { label: "Chip-Level Support", href: "/services/chip-level-repair-abu-dhabi" },
+  { label: "Structured Cabling", href: "/services/structured-cabling-abu-dhabi" },
   { label: "Data Recovery", href: "/services/data-recovery-abu-dhabi" },
   { label: "ADHICS Compliance Services", href: "/services/adhics-compliance-services-abu-dhabi" },
   { label: "Malaffi Integration", href: "/services/malaffi-integration-abu-dhabi" },
-  { label: "AWS Cloud Services", href: "/services/aws-cloud-services-abu-dhabi" },
+  { label: "UAE e-Invoicing", href: "/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi" },
 ];
 
 const navItems = [
@@ -346,14 +346,7 @@ export default function Header() {
                     : navItems[activeMenu].href;
                 const link = <Link href={href} onClick={() => setIsOpen(false)}><span>{child}</span><b aria-hidden="true">↗</b></Link>;
 
-                return navItems[activeMenu].label === "Solutions" && child === "TallyPrime Software" ? (
-                  <div className="header-solution-family" key={child}>
-                    {link}
-                    <Link className="header-solution-child" href="/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi" onClick={() => setIsOpen(false)}>
-                      <span>UAE e-Invoicing</span><b aria-hidden="true">↗</b>
-                    </Link>
-                  </div>
-                ) : <span className="header-subnav-item" key={child}>{link}</span>;
+                return <span className="header-subnav-item" key={child}>{link}</span>;
               })}
             </div>}
           </div>

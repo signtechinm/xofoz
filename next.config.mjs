@@ -7,7 +7,6 @@ const nextConfig = {
       ["on-call-it-support", "it-support-abu-dhabi", "it-services#it-support"],
       ["office-it-setup", "office-it-setup-abu-dhabi", "it-services#new-office-it-setup"],
       ["network-and-infrastructure", "network-infrastructure-abu-dhabi", "network-solutions#network-solutions"],
-      ["structured-cabling", "structured-cabling-abu-dhabi", "network-solutions#structured-cabling"],
       ["cybersecurity-and-firewall", "cybersecurity-solutions-abu-dhabi", "cyber-security#cyber-security-solutions"],
       ["cloud-solutions-and-microsoft-365", "cloud-solutions-microsoft-365-abu-dhabi", "microsoft-cloud#microsoft-365-solutions"],
       ["cctv-and-access-control", "cctv-access-control-abu-dhabi", "communication-lv"],

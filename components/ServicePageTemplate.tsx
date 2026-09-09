@@ -45,7 +45,9 @@ export default function ServicePageTemplate({ content }: { content: ServiceConte
     copy: fields[`SECTION 6 — INDUSTRY ${index + 1} — CONTENT`],
     link: fields[`SECTION 6 — INDUSTRY ${index + 1} — LINK`],
     })).filter((item) => item.title && item.copy),
-    ...newServiceIndustryCards.map((industry) => ({ title: industry.title, copy: industry.description, link: industry.linkLabel, href: industry.href })),
+    ...newServiceIndustryCards
+      .filter((industry) => !["ADHICS Compliance Services", "Malaffi Integration"].includes(service.label) || industry.href === "/industries/healthcare")
+      .map((industry) => ({ title: industry.title, copy: industry.description, link: industry.linkLabel, href: industry.href })),
   ];
   const faqs = Array.from({ length: 10 }, (_, index) => ({
     question: fields[`SECTION 7 — FAQ ${index + 1} — QUESTION`],

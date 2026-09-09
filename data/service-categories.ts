@@ -42,7 +42,7 @@ export const serviceCategories = [
   {
     id: "network-solutions",
     label: "Network Solutions",
-    shortLabel: "Network Solutions",
+    shortLabel: "Network Support",
     slug: "network-solutions",
     sourceHeading: "Network Solutions Abu Dhabi .",
     image: "/solutions/network-solutions/network-solutions-abu-dhabi-hero.webp",
@@ -52,7 +52,7 @@ export const serviceCategories = [
   {
     id: "communication-lv",
     label: "Communication and LV",
-    shortLabel: "Communication & LV",
+    shortLabel: "Communication & ELV",
     slug: "communication-lv",
     sourceHeading: "Communication and LV Systems Abu\nDhabi",
     image: "/solutions/communication-lv/communication-lv-solutions-abu-dhabi-hero.webp",
@@ -82,7 +82,7 @@ export const serviceCategories = [
   {
     id: "software-solutions",
     label: "Software Solutions",
-    shortLabel: "Software Solutions",
+    shortLabel: "Software Support",
     slug: "software-solutions",
     sourceHeading: "Software Solutions Abu Dhabi.",
     image: "/solutions/software/software-solutions-abu-dhabi-hero.webp",
