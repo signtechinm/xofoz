@@ -11,6 +11,7 @@ import IndustryAccordion from "../components/IndustryAccordion";
 import BusinessHighlights from "../components/BusinessHighlights";
 import ConsultationSection from "../components/ConsultationSection";
 import { productBrandClassName, productBrandLogos } from "../data/product-brand-logos";
+import HomeWelcomePopup from "../components/HomeWelcomePopup";
 
 export const metadata: Metadata = {
   title: { absolute: "XOFOZ | IT Solutions Provider in Abu Dhabi, UAE" },
@@ -136,7 +137,9 @@ export default function HomePage() {
   };
 
   return (
-    <main>
+    <>
+      <HomeWelcomePopup />
+      <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -272,6 +275,7 @@ export default function HomePage() {
 
       <ConsultationSection />
 
-    </main>
+      </main>
+    </>
   );
 }

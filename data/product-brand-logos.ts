@@ -1,5 +1,5 @@
 export const productBrandLogos = [
-  ["Tally Prime", "/partners/tally-prime.svg"],
+  ["Tally Prime", "/partners/tally-brand-logo-cropped.png"],
   ["Microsoft", "/partners/microsoft.svg"],
   ["Cisco", "/partners/cisco.svg"],
   ["Fortinet", "/partners/fortinet.svg"],

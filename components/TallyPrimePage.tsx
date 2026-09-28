@@ -86,10 +86,6 @@ export default function TallyPrimePage() {
             <p>Whether you run a trading company, retail outlet, clinic, consultancy, or construction firm, TallyPrime can be configured around the way your business works.</p>
             <p>Manage accounting, inventory, banking, payroll, VAT, and e-Invoicing readiness through one connected business system.</p>
           </div>
-          <div className="hero__actions">
-            <a className="button button--primary" href={whatsappHref} target="_blank" rel="noreferrer">Talk to a Tally expert</a>
-            <a className="button button--secondary" href="#tally-consultation">Request a consultation</a>
-          </div>
           <div className="tally-trust-strip" aria-label="TallyPrime service highlights">
             <span><strong>Local</strong>Abu Dhabi team</span>
             <span><strong>Complete</strong>Setup to support</span>
@@ -97,9 +93,16 @@ export default function TallyPrimePage() {
             <span><strong>Reliable</strong>AMC available</span>
           </div>
         </Reveal>
-        <Reveal className="service-hero__visual" delay={0.08}>
-          <Image src="/solutions/tally-prime/tallyprime-accounting-abu-dhabi.webp" alt="Finance professionals using accounting software in an Abu Dhabi office" fill priority sizes="(max-width: 860px) 100vw, 42vw" />
-          <div className="service-hero__image-note"><span>XOFOZ business software</span><strong>TallyPrime, configured for your operation</strong></div>
+        <Reveal className="tally-hero__visual-wrap" delay={0.08}>
+          <div className="tally-hero__image-actions">
+            <a className="button button--primary" href={whatsappHref} target="_blank" rel="noreferrer">Consultation for free</a>
+            <Link className="button button--secondary" href="/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi">Explore UAE e-Invoicing</Link>
+          </div>
+          <div className="service-hero__visual">
+            <Image src="/solutions/tally-prime/tallyprime-dashboard-abu-dhabi.png" alt="TallyPrime-style accounting dashboard showing sales, inventory, VAT, cash flow and business performance in Abu Dhabi" fill priority sizes="(max-width: 860px) 100vw, 42vw" />
+            <span className="tally-hero__image-brand"><img src="/partners/tally-brand-logo-cropped.png" alt="Tally logo" /></span>
+            <div className="service-hero__image-note"><span>XOFOZ business software</span><strong>TallyPrime, configured for your operation</strong></div>
+          </div>
         </Reveal>
       </section>
 
@@ -117,7 +120,7 @@ export default function TallyPrimePage() {
         <Reveal className="service-section__heading"><span className="eyebrow">Why XOFOZ</span><h2>Why Abu Dhabi businesses choose XOFOZ for TallyPrime</h2></Reveal>
         <div className="tally-why-layout">
           <div className="service-why-list">{tallyReasons.map((reason, index) => <Reveal className="service-why-item" delay={index * 0.035} key={reason}><span aria-hidden="true">✓</span><div><p>{reason}</p></div></Reveal>)}</div>
-          <Reveal className="tally-partner-panel" delay={0.08}><span className="eyebrow">Business software partner</span><ProductBrandMark brand="Tally Prime" /><h3>Local knowledge, complete delivery</h3><p>Licensing is only the beginning. XOFOZ helps plan, configure, migrate, train, and support the complete working environment.</p><a href={whatsappHref} target="_blank" rel="noreferrer">Discuss your requirement <b aria-hidden="true">↗</b></a></Reveal>
+          <Reveal className="tally-partner-panel" delay={0.08}><span className="eyebrow">Business software partner</span><h3>Local knowledge, complete delivery</h3><p>Licensing is only the beginning. XOFOZ helps plan, configure, migrate, train, and support the complete working environment.</p><a href={whatsappHref} target="_blank" rel="noreferrer">Discuss your requirement <b aria-hidden="true">↗</b></a></Reveal>
         </div>
       </section>
 
