@@ -22,7 +22,7 @@ export default function HomeWelcomePopup() {
         <div className="welcome-modal__countdown"><strong>{days}</strong><span>days left<br /><b>30 October 2026</b></span></div>
         <div className="welcome-modal__body">
           <span className="eyebrow">A practical first step for UAE businesses</span>
-          <h2 id="welcome-modal-title">Is your business ready for structured e-Invoicing?</h2>
+          <h2 id="welcome-modal-title">Is your business ready for e-Invoicing?</h2>
           <p>Make sure your TallyPrime environment, master data, invoice workflow, and team are ready before your appointment milestone.</p>
           <div className="welcome-modal__note"><span>01</span><p>Assess your current setup</p><span>02</span><p>Plan the right configuration</p></div>
           <div className="welcome-modal__actions">

@@ -82,7 +82,7 @@ export const serviceCategories = [
   {
     id: "software-solutions",
     label: "Software Solutions",
-    shortLabel: "Software Support",
+    shortLabel: "Software Services",
     slug: "software-solutions",
     sourceHeading: "Software Solutions Abu Dhabi.",
     image: "/solutions/software/software-solutions-abu-dhabi-hero.webp",
