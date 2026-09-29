@@ -78,6 +78,11 @@ export default function TallyPrimePage() {
         <ParticleField variant="service" />
         <div className="service-hero__glow" aria-hidden="true" />
         <Reveal className="service-hero__copy">
+          <div className="tally-hero__partner-logo">
+            <span className="tally-hero__partner-logo-primary">
+              <img src="/partners/tally-brand-logo-cropped.png" alt="Tally logo" />
+            </span>
+          </div>
           <span className="eyebrow">Authorized TallyPrime Partner in Abu Dhabi</span>
           <h1>TallyPrime Software in Abu Dhabi, Trusted Across Every Industry</h1>
           <div className="tally-hero__intro">
@@ -99,8 +104,7 @@ export default function TallyPrimePage() {
             <Link className="button button--secondary" href="/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi">Explore UAE e-Invoicing</Link>
           </div>
           <div className="service-hero__visual">
-            <Image src="/solutions/tally-prime/tallyprime-dashboard-abu-dhabi.png" alt="TallyPrime-style accounting dashboard showing sales, inventory, VAT, cash flow and business performance in Abu Dhabi" fill priority sizes="(max-width: 860px) 100vw, 42vw" />
-            <span className="tally-hero__image-brand"><img src="/partners/tally-brand-logo-cropped.png" alt="Tally logo" /></span>
+            <Image src="/solutions/tally-prime/tallyprime-dashboard-uploaded.png" alt="TallyPrime dashboard showing sales, purchases, profit, balances and business performance" fill priority sizes="(max-width: 860px) 100vw, 42vw" />
             <div className="service-hero__image-note"><span>XOFOZ business software</span><strong>TallyPrime, configured for your operation</strong></div>
           </div>
         </Reveal>

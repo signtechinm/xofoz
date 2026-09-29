@@ -4582,6 +4582,11 @@ textarea:focus {
   .welcome-modal__actions .button { width: 100%; justify-content: center; }
 }
 .tally-hero { min-height: auto; }
+.tally-hero { grid-template-columns: minmax(0, 0.94fr) minmax(400px, 1.06fr); gap: clamp(28px, 4vw, 64px); }
+.tally-hero h1 { font-size: clamp(1.5rem, 2.2vw, 2.25rem); }
+.tally-hero__partner-logo { display: flex; align-items: center; gap: 14px; width: fit-content; margin-bottom: 18px; padding: 0; border: 0; background: transparent; box-shadow: none; }
+.tally-hero__partner-logo-primary { display: flex; align-items: center; width: min(230px, 46vw); height: 66px; padding: 9px 16px; border-radius: 10px; background: rgba(247, 249, 252, 0.88); box-shadow: 0 10px 24px rgba(2, 8, 23, 0.16); }
+.tally-hero__partner-logo-primary img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .tally-hero__image-brand { position: absolute; top: 50%; left: 50%; z-index: 2; display: grid; width: min(360px, 58%); min-height: 140px; place-items: center; border: 1px solid rgba(255, 255, 255, 0.34); border-radius: 14px; padding: 18px 28px; background: rgba(247, 249, 252, 0.38); box-shadow: 0 14px 34px rgba(2, 8, 23, 0.22); backdrop-filter: blur(6px); transform: translate(-50%, -50%); }
 .tally-hero__image-brand img { position: relative; inset: auto; display: block; width: 100%; max-width: 220px; height: auto; min-height: 0; object-fit: contain; transform: none; }
 .tally-hero__intro { max-width: 760px; margin-top: 22px; }
@@ -4591,6 +4596,9 @@ textarea:focus {
 .tally-hero__visual-wrap { min-width: 0; }
 .tally-hero__image-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-bottom: 12px; }
 .tally-hero__image-actions .button { min-height: 42px; padding: 11px 16px; font-size: 0.72rem; box-shadow: 0 10px 28px rgba(2, 8, 23, 0.28); }
+.tally-hero .service-hero__visual { min-height: 0; aspect-ratio: 3 / 2; }
+.tally-hero .service-hero__visual::after { display: block; background: linear-gradient(145deg, transparent 38%, rgba(2, 8, 23, 0.92) 100%); }
+.tally-hero .service-hero__visual > img { min-height: 0; object-fit: contain; }
 .tally-trust-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 30px; }
 .tally-trust-strip span { display: grid; gap: 4px; min-height: 70px; align-content: center; border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; color: var(--muted); background: color-mix(in srgb, var(--surface) 74%, transparent); font-size: 0.64rem; font-weight: 760; text-align: center; text-transform: uppercase; letter-spacing: 0.035em; backdrop-filter: blur(12px); }
 .tally-trust-strip strong { color: var(--text); font-size: 0.86rem; text-transform: none; letter-spacing: 0; }
@@ -5034,6 +5042,14 @@ textarea:focus {
   bottom: 24px;
   left: 26px;
   z-index: 1;
+}
+
+.tally-hero .service-hero__image-note {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 56px 26px 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(2, 8, 23, 0.9) 68%, rgba(2, 8, 23, 0.98) 100%);
 }
 
 .service-hero__image-note span {
