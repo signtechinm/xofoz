@@ -104,7 +104,7 @@ export default function TallyPrimePage() {
             <Link className="button button--secondary" href="/tally-prime-software-abu-dhabi/e-invoicing-uae-abu-dhabi">Explore UAE e-Invoicing</Link>
           </div>
           <div className="service-hero__visual">
-            <Image src="/solutions/tally-prime/tallyprime-dashboard-uploaded.png" alt="TallyPrime dashboard showing sales, purchases, profit, balances and business performance" fill priority sizes="(max-width: 860px) 100vw, 42vw" />
+            <Image src="/solutions/tally-prime/tallyprime-hero-uploaded.jpg" alt="TallyPrime logo displayed on a laptop screen" fill priority sizes="(max-width: 860px) 100vw, 42vw" />
             <div className="service-hero__image-note"><span>XOFOZ business software</span><strong>TallyPrime, configured for your operation</strong></div>
           </div>
         </Reveal>
