@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist } from "next/font/google";
 import "../styles.css";
 import "../industries.css";
@@ -44,6 +45,18 @@ export default function RootLayout({
   return (
     <html id="top" lang="en" data-theme="dark" suppressHydrationWarning>
       <body className={geistSans.variable} suppressHydrationWarning>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DDBR3XZE9N"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DDBR3XZE9N');
+          `}
+        </Script>
         <Header />
         {children}
         <Footer />
